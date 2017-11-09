@@ -2,10 +2,11 @@
 {% for page in pages %}
     <li>
         <a href="{{ url_for("page", path=page.path) }}">{{ page.title }}</a>
+        | {{ page.date }}
     {% if page.meta.tags|length %}
-        | Tagged:
+        | Tags:
         {% for page_tag in page.meta.tags %}
-            <a href="{{ url_for("tag", tag=page_tag) }}">{{ page_tag }}</a>
+            <a href="{{ url_for("tag", tag=page_tag) }}">{{ page_tag }} </a>
         {% endfor %}
     {% endif %}
     </li>
