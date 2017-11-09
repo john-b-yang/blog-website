@@ -4,21 +4,16 @@
     <meta charset="utf-8">
     <title>{% block page_title %}Home{% endblock page_title %} | John Yang</title>
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <style type="text/css">
-      .container {
-        /*max-width: 500px;*/
-        padding-top: 10px;
-      }
-      </style>
 </head>
 <body>
     <div class="container">
-        <h1><a href="{{ url_for("index") }}">John's Blog</a></h1>
-        <main>
-            {% block content %}
-                <p>Default content to be displayed</p>
-            {% endblock content %}
-        </main>
+      <h1><a href="{{ url_for("index") }}">John's Blog</a></h1>
+      <p></p>
+      <main>
+        {% block content %}
+          <p>Default content to be displayed</p>
+        {% endblock content %}
+      </main>
     </div>
 </body>
 </html>

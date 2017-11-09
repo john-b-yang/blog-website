@@ -1,9 +1,19 @@
 {% extends "base.html" %}
 
+{% block page_title %}
+{{ page.title }}
+{% endblock %}
+
 {% block content %}
   <!-- style="display: inline" -->
   <h2>{{ page.title }}</h2>
-  <p>Published {{ page.date }} </p>
+  <p>Published: {{ page.date }} </p>
+  <p>Tags:
+    {% for page_tag in page.meta.tags %}
+      <a href="{{ url_for("tag", tag=page_tag) }}">{{ page_tag }}</a>
+      {% if not loop.last %} | {% endif %}
+    {% endfor %}
+  </p>
   <hr />
   {{page.html|safe}}
 {% endblock content %}

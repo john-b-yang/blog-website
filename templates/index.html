@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h2>Blog Posts</h2>
+    <h2>Posts</h2>
+    <hr />
     {% with pages = pages %}
         {% include "_list.html" %}
     {% endwith %}
