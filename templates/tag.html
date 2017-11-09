@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h2>Blog Posts tagged <em>{{ tag }}</em></h2>
+    <h2>Posts</h2>
+    <h4>tagged <em>{{ tag }}</em></h4>
+    <hr />
     {% with pages=pages  %}
         {% include "_list.html" %}
     {% endwith %}
