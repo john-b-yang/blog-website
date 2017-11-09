@@ -1,9 +1,11 @@
 import sys
 
+# Imports
 from flask import Flask, render_template
 from flask_flatpages import FlatPages
 from flask_frozen import Freezer
 
+# Configuration
 DEBUG = True
 FLATPAGES_AUTO_RELOAD = DEBUG
 FLATPAGES_EXTENSION = '.md'
@@ -13,9 +15,15 @@ app.config.from_object(__name__)
 pages = FlatPages(app)
 freezer = Freezer(app)
 
+# Routes
 @app.route('/')
 def index():
     return render_template('index.html', pages=pages)
+
+@app.route('/contact/')
+def contact():
+    # return render_template('contact.html')
+    return render_template('contact.html')
 
 @app.route('/tag/<string:tag>/')
 def tag(tag):
