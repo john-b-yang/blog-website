@@ -49,6 +49,24 @@ You've finished Step 2. Congratulations! You're done with the brunt of the progr
 
 I approached this problem in an inductive manner where I identified the starting values, end condition, and iterative step. So where do we start? With a "start" word! This is the list you generated in Step 2 which stores words following terminating punctuation. Randomly choose any word from that list. We have our start point. Now, we need to identify where our sentence should terminate. A sentence terminates with terminating punctuation. Therefore, when we generate our sentence iteratively, let's establish a base case where we stop when the next node we visit is a terminating punctuation mark. So what actually goes inside the loop? The basic inductive principle is that we want to use our current sentence to probabilistically determine which node to append to it next. We begin with the value of a singular node. We identify the node in our Markov Chain. Randomly, we select a subsequent node and append the associated word / phrase to our current sentence. We repeat this node traversal until we visit hit the terminating punctuation condition.
 
+Exactly how to translate the previous paragraph into code is a bit daunting. To help, I'll explain my own implementation of the above idea, and hopefully it'll clarify some statements while providing some inspiration for what you might do.
+
+    def generateSentence(markov_gram_length):
+        curr = random.choice(starts) # Choose starting point
+        sent = curr.capitalize() # Sentence to return
+        prevList = [curr] # List of previous nodes
+        while (curr not in "."):
+            curr = nextWord(prevList)
+            prevList.append(curr)
+            if (len(prevList) > markov_gram_length):
+                prevList.pop(0)
+            if (curr not in ".,!?;"):
+                sent += " " # Spaces between words, not between punctuation
+            sent += curr
+        return sent
+
+This method takes in an int parameter 'markov_gram_length' and returns the generated sentence. The first three lines of the method chooses the starting word, capitalizes the starting word, and adds it to a list. You can think of the list as the storage of previous nodes. The iterative loop ends when the node is a terminating punctuation mark. The 'nextWord' method uses the aforementioned list to determine the next node to visit. The resulting next node's value is added to both the list and the return value 'sent'.
+
 For help, reference the [make_sentence.py](http://bit.ly/2ypSdBy) file, specifically the "generateSentence" method. Keep in mind, my methodology may not translate well to your code, especially if you framed your Markov Chain using a data structure that's different from mine. I encouraged to use it as a launching board for how you might approach your own traversal.
 
 *Files*: make_sentence.py

@@ -4,6 +4,7 @@ import sys
 from flask import Flask, render_template
 from flask_flatpages import FlatPages
 from flask_frozen import Freezer
+from flaskext.markdown import Markdown
 
 # Configuration
 DEBUG = True
@@ -14,6 +15,7 @@ app = Flask(__name__)
 app.config.from_object(__name__)
 pages = FlatPages(app)
 freezer = Freezer(app)
+markdown_manager = Markdown(app, extensions=['fenced_code'], output_format='html5',)
 
 # Routes
 @app.route('/')
