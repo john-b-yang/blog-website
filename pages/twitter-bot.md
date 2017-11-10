@@ -8,9 +8,9 @@ The initial step to creating a successful Twitter Bot depends on finding a repos
 
 For a basic bot, any lengthy novel should suffice. A good place to start would be classical literature. These texts satisfy that 10000 word threshold, but are not so long that text processing takes an inordinate amount of time. In addition, these books are consistently rich in style, so the sentences your chatbot generates will have its own unique and quirky dialect. Usually, you can find online copies of these books in the form of web pages and PDFs. For our purposes, it's better if you find a web page, as it makes the process of reading and parsing the text relatively easier compared to a PDF source. [Project Gutenberg](http://www.gutenberg.org) and many universities' online libraries are excellent places to look.
 
-When you've found a book you like, look into the [Diffbot API](https://www.diffbot.com/products/) for parsing and cleaning up the text. It's a fantastic web crawling API that allows you to download and filter a website's source code. The [generate_corpus.py](http://bit.ly/2zvTTNw) file in my Github repository details how I performed text extraction and clean up. Make sure to remove superfluous HTML tags and unknown characters. It's also important to take into account the context of your text. Ask yourself whether certain characters should actually be removed. For example, while it's reasonable to eliminate "<" or ">" characters if they are part of html tags, given a different context such as a math textbook, the two could be serving as comparison operators. After cleaning the text, store the resulting body inside a text file.
+When you've found a book you like, look into the [Diffbot API](https://www.diffbot.com/products/) for parsing and cleaning up the text. It's a fantastic web crawling API that allows you to download and filter a website's source code. The [generate_corpus.py](http://bit.ly/2zvTTNw) file in my Github repository details how I performed text extraction and clean up. Make sure to remove superfluous HTML tags and unknown characters. It's also important to take into account the context of your text. Ask yourself whether certain characters should actually be removed. For example, while it's reasonable to eliminate "<" or ">" characters if they are part of html tags, given a different context such as a math textbook, the two could be serving as comparison operators. In this situation, you wouldn't want to remove "<" or ">" from your body of text. After cleaning the text, store the resulting body inside a text file.
 
-*Files*: book_sample.txt, generate_corpus.py
+*Files*: book_sample.txt, [generate_corpus.py](http://bit.ly/2zvTTNw)
 
 <br>
 ##### Step 2: Corpus Tokenization & Creating the Markov Chain
@@ -40,7 +40,7 @@ Before I end this section, I'll introduce one more optional concept, the 'N-gram
 
 I'll leave it up to you to implement the Markov Chain construction. The general idea is to iterate through the text, register every word as a key, and record the number of appearances for words that follow it. If you're getting stuck, reference the [make_sentence.py](http://bit.ly/2ypSdBy) file for help.
 
-*Files*: tokenize.py, make_sentence.py
+*Files*: [tokenize.py](http://bit.ly/2zz81Dx), [make_sentence.py](http://bit.ly/2ypSdBy)
 
 <br>
 ##### Step 3: Generate a Sentence
@@ -67,18 +67,36 @@ Exactly how to translate the previous paragraph into code is a bit daunting. To 
 
 This method takes in an int parameter 'markov_gram_length' and returns the generated sentence. The first three lines of the method chooses the starting word, capitalizes the starting word, and adds it to a list. You can think of the list as the storage of previous nodes. The iterative loop ends when the node is a terminating punctuation mark. The 'nextWord' method uses the aforementioned list to determine the next node to visit. The resulting next node's value is added to both the list and the return value 'sent'.
 
-For help, reference the [make_sentence.py](http://bit.ly/2ypSdBy) file, specifically the "generateSentence" method. Keep in mind, my methodology may not translate well to your code, especially if you framed your Markov Chain using a data structure that's different from mine. I encouraged to use it as a launching board for how you might approach your own traversal.
+For help, reference the [make_sentence.py](http://bit.ly/2ypSdBy) file, specifically the "generateSentence" method. Keep in mind, my methodology may not translate well to your code, especially if you framed your Markov Chain using a data structure that's different from mine. I encouraged to use it as a launching board for how you might approach your own traversal. At the end of step, you should be able to perform a traversal of your Markov Chain from Step 2 that generates a grammatically correct sentence. Your main product is complete! In the next steps, you will deploy and push your code to the world!
 
-*Files*: make_sentence.py
+*Files*: [make_sentence.py](http://bit.ly/2ypSdBy)
 
 <br>
 ##### Step 4: Twitter API
 
-Twitter has excellent documentation on how to use their API, and by exploring it more in depth, you can probably come up with much more impressive use cases. For this particular project, I focused on posting a simple tweet with a python module. There are four different kinds of keys required to establish a session with your linked twitter account. With the right url, a simple "post" method call is all that's needed to pass in a sentence for your account to post. Note that the 140 character limit is enforced, so posts that exceed the limit may incur an error code during the requests call.
+By this step, your actual bot is complete! You have a fully functioning Python program that first, can generate a text file of a book from a webpage. It then converts the book into a Markov Chain, and your program can perform a random walk of the model that generates a grammatically sound sentence. In these next three sections, we'll be adding the "Twitter" component to your Twitter Bot. In this step, we'll create a Python module that takes a string value and posts it to a Twitter account hosting our bot. Later, we will pass in our original sentences from Step 3 as a parameter into this Python module to post them for the world to see!
+
+Before we even think about posting, we have to establish a connection between the module and the Twitter account. To do so, we'll be create a OAuth1Session with our Twitter account. OAuth is simply a protocol that authenticates our application with Twitter's API. There are four different kinds of keys required to establish a session. After you create a Twitter Account, you can find / generate all four keys by visiting the [apps](https://apps.twitter.com/) link. Once we've created the session, to post tweets, we can make a POST call that takes 2 parameters: 1. A URL denoting the "tweet" operation and 2. A JSON containing the sentence we want to "tweet". The primary code snippets are presented here (visit the [twitter.py](http://bit.ly/2zNYICA) file for the full detail):
+
+    # Create Authentication Session w/ 4 Keys.
+    # I recommend keeping the values for these keys in a hidden file (refer to last paragraph of this step)
+    session = OAuth1Session(consumer_key, client_secret=consumer_secret,
+            resource_owner_key=access_token, resource_owner_secret=access_token_secret)
+
+    # Tweet method takes a String value and returns the POST request's response code
+    def tweet(status):
+        # URL Endpoint to update status
+        url = "https://api.twitter.com/1.1/statuses/update.json"
+        # POST request to url with 'status' parameter
+        resp = session.post(url, {'status': status})
+        # Show text from response to POST request. Unsuccessful requests will generate error codes
+        return resp.text
+
+Twitter has excellent documentation on how to use their API, and by exploring it more in depth, you can probably come up with much more impressive use cases. Try making your Twitter bot responsive! If someone interacts with your bot, whether in the form of a tweet, like, or share, how can you configure your bot to respond accordingly? For this particular project, I focused exclusively on the post request. Note that the 140 character limit is enforced, so posts that exceed the limit may incur an error code during the requests call.
 
 Quick Note, I do recommend storing the keys within a hidden file as opposed to copy and pasting them directly into your code, especially if you plan on open sourcing the code in the future. To protect your private account keys, store the in a hidden file, then set them as environment variables within your virtualenv. That allows you to reference the key values as environment variables in your code, so while you maintain access, other people will not be able to appropriate your keys if you happen to put the code on Github. Make sure to list hidden files in your gitignore.
 
-*Files*: twitter.py
+*Files*: [twitter.py](http://bit.ly/2zNYICA)
 
 <br>
 ##### Step 5: Flask Development
