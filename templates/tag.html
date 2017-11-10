@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h2>Posts</h2>
-    <h5>tagged <em>{{ tag }}</em></h5>
+    <h4>Posts</h4>
+    <h6>tagged <em>{{ tag }}</em></h6>
     <hr />
     {% with pages=pages  %}
         {% include "_list.html" %}

@@ -1,6 +1,7 @@
-title: Markov Chains + Flask = Twitter Bot!
+title: Twitter Bot!
 date: 2017-11-08
-tags: [Python]
+tags: [Python, Tutorial]
+description: Markov Chains meet Flask meet Twitter API for a simple, mathematical web program
 
 #### Links
 - [Twitter Bot](https://twitter.com/vernesnautilus)

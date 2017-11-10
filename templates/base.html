@@ -3,13 +3,15 @@
 <head>
     <meta charset="utf-8">
     <title>{% block page_title %}Home{% endblock page_title %} | John Yang</title>
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!-- <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="/static/pictures/favicon.ico" rel="shortcut icon">
     <link rel="stylesheet" type="text/css" href="/static/css/style.css">
 </head>
 <body>
     <div class="container">
-      <h1 style="color:#333334;"><a href="{{ url_for("index") }}">John's Blog</a></h1>
+      <h3 style="color:#333334;"><a href="{{ url_for("index") }}">John's Blog</a></h3>
       <main>
         {% block content %}
           <p>Default content to be displayed</p>

@@ -1,16 +1,20 @@
 <ul>
 {% for page in pages %}
     <li>
-        <a href="{{ url_for("page", path=page.path) }}">{{ page.title }}</a>
-        | {{ page.date }}
-    {% if page.meta.tags|length %}
+      <b>{{ page.title }}</b><br />
+      {{ page.date }}
+      {% if page.meta.tags|length %}
         | Tags:
         {% for page_tag in page.meta.tags %}
             <a href="{{ url_for("tag", tag=page_tag) }}">{{ page_tag }}</a>
             {% if not loop.last %},{% endif %}
         {% endfor %}
-    {% endif %}
+      {% endif %}
+      <br />
+      {{ page.description }} <br />
+      <a href="{{ url_for("page", path=page.path) }}">Read More</a>
     </li>
+    {% if not loop.last %}<br />{% endif %}
 {% else %}
     <li>No page.</li>
 {% endfor %}
