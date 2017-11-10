@@ -19,18 +19,34 @@ When you've found a book you like, look into the [Diffbot API](https://www.diffb
 *Files*: book_sample.txt, generate_corpus.py
 
 <br>
-#### Step 2: Corpus Parsing and Tokenization
+#### Step 2: Corpus Tokenization & Creating the Markov Chain
 After Step 1, you've successfully read the source code of the website containing your desired text, cleaned your text of superfluous HTML text and unknown characters, and stored the output into a text file. Now, the next task involves converting this book into a navigable, random, and representative data structure that can be used to generate grammatically sound sentences that emulate our text. Introducing, [Markov Chains](https://en.wikipedia.org/wiki/Markov_chain).
 
-The Markov Chain is a structure that falls under the domain of discrete math and probability. There is a plethora of mathematics and applications that I highly recommend diving into (Google's PageRank algorithm, the backbone of Search, is a Markov Process!). However, for the sake of this tutorial, we'll use Markov Chains primarily for how it can make future predictions of a state based on its present state. To illustrate this concept, let's say we're given a sentence "I eat fast, you eat slow, I eat fast, I eat slow". A Markov Chain can be thought of as a graph-like snapshot of the structure of this sentence, where each node is a word and each edge is a probability reflecting the likelihood of one word coming after another one.
+The Markov Chain is a structure that falls under the domain of discrete math and probability. There is a plethora of mathematics and applications that I highly recommend diving into (Google's PageRank algorithm, the backbone of Search, is a Markov Process!). However, for the sake of this tutorial, we'll use Markov Chains primarily for how it can make future predictions of a state based on its present state. To illustrate this concept, let's say we're given a sentence "I eat fast, you eat slow, I eat fast, I eat slow". A Markov Chain can be thought of as a graph-like snapshot of the structure of this sentence, where each node is a word 'A', and each edge is a probability reflecting the likelihood of a word 'B', following word 'A'.
 
 <br>
 ![](/static/pictures/MarkovChain.png)
 
 <br>
-In the original sentence, the word 'I' appears three times, and it is followed by the word 'eat' all three times. Therefore, there is a probability of 3/3 or 1 that any random traversal of the map involving 'I' will be followed by 'eat'. On the other hand, 'fast' appears two times, followed by 'you' and 'I' respectively. Therefore, there is a 1/2 probability that a random traversal from 'fast' results in 'I', and a 1/2 probability it results in 'you'. In this step of the program, we will be applying the same logic from above to an entire book. In Step 3, we will generate a random sentence by performing a traversal on the resulting Markov Chain representation of the book.
+In the original sentence, the word 'I' appears three times, and it is followed by the word 'eat' all three times. Therefore, there is a probability of 3/3 or 1 that any random traversal of the map involving 'I' will be followed by 'eat'. On the other hand, 'fast' appears two times, followed by 'you' and 'I' respectively. Therefore, there is a 1/2 probability that a random traversal from 'fast' results in 'I', and a 1/2 probability it results in 'you'. In this step of the program, we will be applying the same logic from above to map an entire book. In Step 3, we will generate a random sentence by performing a traversal on the resulting Markov Chain representation of the book.
 
+Let's think about the best data structure for representing a Markov Chain. We want a construct that will be able to store nodes and edges. We also need to preserve relationships between nodes and edges in the format of a one to many association. In this case, a Map / Dictionary would best suite our purposes. Given that each node can have multiple edges, we define the key to be the node, and the value to be a list of edges. We could create Node and Edge classes. However, to reduce the map's complexity, we can define a Node as just the word and the Edge as a list of tuples, where each pair is the subsequent word and the probability it shows up. The above graph would be encoded as such:
 
+```
+  [
+    {"I": [{"eat" : 1}]},
+    {"eat": [{"fast" : 0.5}, {"slow" : 0.5}]},
+    {"you": [{"eat" : 1}]},
+    {"fast": [{"I" : 0.5}, {"you" : 0.5}]},
+    {"slow": [{"I" : 1}]}
+  ]
+```
+
+Looking at the graph and table above, you might be asking yourself an important question: Where does a random traversal of the Markov Chain start? And equally important, where does it end? Later, when we generate sentences, identifying start points and end points is critical to making sure our Markov Chain traversals produce grammatically sound sentences. Let's think about the characteristics of the first word in a sentence. Part of speech (i.e. noun, adverb, preposition, etc.) doesn't quite narrow it down, since there are plenty of types of words the sentence could begin with. The first word is always capitalized, but so are proper nouns. Perhaps the most distinguishable characteristic is that the first word in a sentence always follows some form of terminating punctuation (!?.). Similarly, the last word would precede such punctuation. Therefore, while building the Markov Chain, it'd be wise to identify and store all start and end values based on the criteria above. This data will come in handy in the next step.
+
+Before I end this section, I'll introduce one more optional concept, the 'N-gram Markov Chain'. This section is not necessary to building an MVP version of your Twitter Bot, but it drastically improves the quality of generated sentences. The above Markov Chain features nodes with just one word. What if, instead of one word, each node was two words? This is called a 2nd Order Markov Chain. In the first Markov Chain, the transition probability is defined by only one state. When we introduce two words, the Markov Chain identifies relationships between phrases. It follows that by increasing the length of a node, we introduce more grammatical and stylistic context that results in better sentences. And there's no reason we need to stop at 2 words. An N-gram Order Markov Chain is when each node features 'n' words. Keep in mind that while your sentences do become more rich and grammatically correct, there is a significant tradeoff in extra time and space required to store and identify larger phrases for each node.
+
+I'll leave it up to you to implement the Markov Chain construction. The general idea is to iterate through the text, register every word as a key, and record the number of appearances for words that follow it. If you're getting stuck, reference the [make_sentence.py](http://bit.ly/2ypSdBy) file for help.
 
 *Files*: tokenize.py, make_sentence.py
 
