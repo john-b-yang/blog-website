@@ -1,15 +1,9 @@
 title: Twitter Bot!
 date: 2017-11-08
 tags: [Python, Tutorial]
-description: Markov Chains meet Flask meet Twitter API for a simple, mathematical web program
+description: Markov Chains meet Flask meet Twitter API for a delightful, mathematically driven web program
 
-#### Links
-- [Twitter Bot](https://twitter.com/vernesnautilus)
-- [Github Repository](https://github.com/MakeSchool-17/twitter-bot-python-john-b-yang)
-- [Tweet Generator](https://fast-headland-20951.herokuapp.com)
-
-<br>
-#### Step 1: Selecting + Cleaning a Corpus
+##### Step 1: Selecting + Cleaning a Corpus
 The initial step to creating a successful Twitter Bot depends on finding a repository of words that your bot can emulate. The primary features of this text emphasize consistency and word count. A large amount of text increases the grammatical and contextual patterns that the bot can identify and emulate. To put it simply, the lengthier the book, the richer the sentences. From experimenting with different texts, I'd recommend at least a document of at least ten thousands words.
 
 For a basic bot, any lengthy novel should suffice. A good place to start would be classical literature. These texts satisfy that 10000 word threshold, but are not so long that text processing takes an inordinate amount of time. In addition, these books are consistently rich in style, so the sentences your chatbot generates will have its own unique and quirky dialect. Usually, you can find online copies of these books in the form of web pages and PDFs. For our purposes, it's better if you find a web page, as it makes the process of reading and parsing the text relatively easier compared to a PDF source. [Project Gutenberg](http://www.gutenberg.org) and many universities' online libraries are excellent places to look.
@@ -19,7 +13,7 @@ When you've found a book you like, look into the [Diffbot API](https://www.diffb
 *Files*: book_sample.txt, generate_corpus.py
 
 <br>
-#### Step 2: Corpus Tokenization & Creating the Markov Chain
+##### Step 2: Corpus Tokenization & Creating the Markov Chain
 After Step 1, you've successfully read the source code of the website containing your desired text, cleaned your text of superfluous HTML text and unknown characters, and stored the output into a text file. Now, the next task involves converting this book into a navigable, random, and representative data structure that can be used to generate grammatically sound sentences that emulate our text. Introducing, [Markov Chains](https://en.wikipedia.org/wiki/Markov_chain).
 
 The Markov Chain is a structure that falls under the domain of discrete math and probability. There is a plethora of mathematics and applications that I highly recommend diving into (Google's PageRank algorithm, the backbone of Search, is a Markov Process!). However, for the sake of this tutorial, we'll use Markov Chains primarily for how it can make future predictions of a state based on its present state. To illustrate this concept, let's say we're given a sentence "I eat fast, you eat slow, I eat fast, I eat slow". A Markov Chain can be thought of as a graph-like snapshot of the structure of this sentence, where each node is a word 'A', and each edge is a probability reflecting the likelihood of a word 'B', following word 'A'.
@@ -32,51 +26,58 @@ In the original sentence, the word 'I' appears three times, and it is followed b
 
 Let's think about the best data structure for representing a Markov Chain. We want a construct that will be able to store nodes and edges. We also need to preserve relationships between nodes and edges in the format of a one to many association. In this case, a Map / Dictionary would best suite our purposes. Given that each node can have multiple edges, we define the key to be the node, and the value to be a list of edges. We could create Node and Edge classes. However, to reduce the map's complexity, we can define a Node as just the word and the Edge as a list of tuples, where each pair is the subsequent word and the probability it shows up. The above graph would be encoded as such:
 
-```
-  [
-    {"I": [{"eat" : 1}]},
-    {"eat": [{"fast" : 0.5}, {"slow" : 0.5}]},
-    {"you": [{"eat" : 1}]},
-    {"fast": [{"I" : 0.5}, {"you" : 0.5}]},
-    {"slow": [{"I" : 1}]}
-  ]
-```
+    [
+        {"I": [{"eat" : 1}]},
+        {"eat": [{"fast" : 0.5}, {"slow" : 0.5}]},
+        {"you": [{"eat" : 1}]},
+        {"fast": [{"I" : 0.5}, {"you" : 0.5}]},
+        {"slow": [{"I" : 1}]}
+    ]
 
-Looking at the graph and table above, you might be asking yourself an important question: Where does a random traversal of the Markov Chain start? And equally important, where does it end? Later, when we generate sentences, identifying start points and end points is critical to making sure our Markov Chain traversals produce grammatically sound sentences. Let's think about the characteristics of the first word in a sentence. Part of speech (i.e. noun, adverb, preposition, etc.) doesn't quite narrow it down, since there are plenty of types of words the sentence could begin with. The first word is always capitalized, but so are proper nouns. Perhaps the most distinguishable characteristic is that the first word in a sentence always follows some form of terminating punctuation (!?.). Similarly, the last word would precede such punctuation. Therefore, while building the Markov Chain, it'd be wise to identify and store all start and end values based on the criteria above. This data will come in handy in the next step.
+Looking at the graph and table above, you might be asking yourself an important question: Where does a random traversal of the Markov Chain start? And equally important, where does it end? Later, when we generate sentences, identifying start points and end points is critical to making sure our Markov Chain traversals produce grammatically sound sentences. Let's think about the characteristics of the first word in a sentence. Part of speech (i.e. noun, adverb, preposition, etc.) doesn't quite narrow it down, since there are plenty of types of words the sentence could begin with. The first word is always capitalized, but so are proper nouns. Perhaps the most distinguishable characteristic is that the first word in a sentence always follows some form of terminating punctuation (!?.). Similarly, the last word would precede such punctuation. Therefore, while building the Markov Chain, it'd be wise to identify and store all "start" and "end" values based on the criteria above. This data will come in handy in the next step.
 
-Before I end this section, I'll introduce one more optional concept, the 'N-gram Markov Chain'. This section is not necessary to building an MVP version of your Twitter Bot, but it drastically improves the quality of generated sentences. The above Markov Chain features nodes with just one word. What if, instead of one word, each node was two words? This is called a 2nd Order Markov Chain. In the first Markov Chain, the transition probability is defined by only one state. When we introduce two words, the Markov Chain identifies relationships between phrases. It follows that by increasing the length of a node, we introduce more grammatical and stylistic context that results in better sentences. And there's no reason we need to stop at 2 words. An N-gram Order Markov Chain is when each node features 'n' words. Keep in mind that while your sentences do become more rich and grammatically correct, there is a significant tradeoff in extra time and space required to store and identify larger phrases for each node. 
+Before I end this section, I'll introduce one more optional concept, the 'N-gram Markov Chain'. This section is not necessary to building an MVP version of your Twitter Bot, but it drastically improves the quality of generated sentences. The above Markov Chain features nodes with just one word. What if, instead of one word, each node was two words? This is called a 2nd Order Markov Chain. In the first Markov Chain, the transition probability is defined by only one state. When we introduce two words, the Markov Chain identifies relationships between phrases. It follows that by increasing the length of a node, we introduce more grammatical and stylistic context that results in better sentences. And there's no reason we need to stop at 2 words. An N-gram Order Markov Chain is when each node features 'n' words. Keep in mind that while your sentences do become more rich and grammatically correct, there is a significant tradeoff in extra time and space required to store and identify larger phrases for each node.
 
 I'll leave it up to you to implement the Markov Chain construction. The general idea is to iterate through the text, register every word as a key, and record the number of appearances for words that follow it. If you're getting stuck, reference the [make_sentence.py](http://bit.ly/2ypSdBy) file for help.
 
 *Files*: tokenize.py, make_sentence.py
 
 <br>
-#### Step 3: Generate a Sentence
+##### Step 3: Generate a Sentence
 
-We would be doing the same operation, but instead on the entire book. As you can imagine, the Markov Chain would be quite large. When creating the Markov Chain, it's important to think about what data structures you might use to store it. Personally, I used a dictionary where each key was a word, and the value was a sub-dictionary. The sub dictionary has a word as a key and the number of appearances as its value.
+You've finished Step 2. Congratulations! You're done with the brunt of the program. At this point, you should be able to generate and store your own representation of a Markov Chain somewhere in your code. In addition, you've identified "start" words in your Markov Chain, words you can being your sentences with. Now, it's time to perform a random walk of your code and generate a sentence!
 
-When it comes to randomly generating a sentence, it's important to identify two kinds of words. The first is "start points" aka words that only have outward pointing arrows. We use these words as the beginnings to our sentence. Subsequently, we also have "end points", words with only inward pointing arrows. These words terminate the sentence, as there are no words that could follow. Having these two points is important for maintaining grammatical consistency in our sentences.
+I approached this problem in an inductive manner where I identified the starting values, end condition, and iterative step. So where do we start? With a "start" word! This is the list you generated in Step 2 which stores words following terminating punctuation. Randomly choose any word from that list. We have our start point. Now, we need to identify where our sentence should terminate. A sentence terminates with terminating punctuation. Therefore, when we generate our sentence iteratively, let's establish a base case where we stop when the next node we visit is a terminating punctuation mark. So what actually goes inside the loop? The basic inductive principle is that we want to use our current sentence to probabilistically determine which node to append to it next. We begin with the value of a singular node. We identify the node in our Markov Chain. Randomly, we select a subsequent node and append the associated word / phrase to our current sentence. We repeat this node traversal until we visit hit the terminating punctuation condition.
+
+For help, reference the [make_sentence.py](http://bit.ly/2ypSdBy) file, specifically the "generateSentence" method. Keep in mind, my methodology may not translate well to your code, especially if you framed your Markov Chain using a data structure that's different from mine. I encouraged to use it as a launching board for how you might approach your own traversal.
 
 *Files*: make_sentence.py
 
-#### Step 4: Twitter API
+<br>
+##### Step 4: Twitter API
 
-Twitter has excellent documentation on how to use their API, and by exploring it more in depth, you can probably come up with much more impressive use cases. However, for this particular project, I focused on posting a simple tweet using a python module. There are four different kinds of keys required to establish a session with your linked twitter account. With the right url, a simple "post" method call is all that's needed to pass in a sentence to be placed on the account. Note that the 140 character limit is in effect, so posts that exceed the limit may incur an error code during the requests call.
+Twitter has excellent documentation on how to use their API, and by exploring it more in depth, you can probably come up with much more impressive use cases. For this particular project, I focused on posting a simple tweet with a python module. There are four different kinds of keys required to establish a session with your linked twitter account. With the right url, a simple "post" method call is all that's needed to pass in a sentence for your account to post. Note that the 140 character limit is enforced, so posts that exceed the limit may incur an error code during the requests call.
 
 Quick Note, I do recommend storing the keys within a hidden file as opposed to copy and pasting them directly into your code, especially if you plan on open sourcing the code in the future. To protect your private account keys, store the in a hidden file, then set them as environment variables within your virtualenv. That allows you to reference the key values as environment variables in your code, so while you maintain access, other people will not be able to appropriate your keys if you happen to put the code on Github. Make sure to list hidden files in your gitignore.
 
 *Files*: twitter.py
 
 <br>
-#### Step 5: Flask Development
+##### Step 5: Flask Development
 
 The point of adding a Flask app to this project is to give other people the capability to generate and tweet sentences for your bot. I used the barebone functionality of a Flask server paired with an index.html template to simply display the randomly generated sentence along with a "tweet this" button. If you're like me and not very well versed in web development, i'd definitely recommend Flask for its simplicity and straightforward customizability. It's up to you how you'd like to host your code. I went with Heroku, as they have a good amount of documentation to walk you through deploying Flask driven development.
 
 *Files*: Procfile, requirements.txt, runtime.txt, server.py, app.py
 
 <br>
-#### Step 6: Scripting
+##### Step 6: Scripting
 
 At this, your bot is decked out. Let's just say, a month later, you want to show it off to a couple friends. Unfortunately, no one has visited your website, and you haven't bothered tweeting in a while. This is where scripting comes in. I wrote a simple shell script that runs a python script which sends a tweet. By scheduling that shell script in your cronjob directory, you'll have a bot that tweets consistently, and your project will update itself, hands free!
 
 *Files*: tweetjob.py, tweetscript.sh, output.txt
+
+<br>
+##### Links
+- [Twitter Bot](https://twitter.com/vernesnautilus)
+- [Github Repository](https://github.com/MakeSchool-17/twitter-bot-python-john-b-yang)
+- [Tweet Generator](https://fast-headland-20951.herokuapp.com) (This page takes a while to load)
