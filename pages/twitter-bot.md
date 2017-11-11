@@ -158,9 +158,31 @@ Remember to specify the 'host' parameter in the second line to be '0.0.0.0' as s
 <br>
 ##### Step 7: Scripting
 
-At this, your bot is decked out. Let's just say, a month later, you want to show it off to a couple friends. Unfortunately, no one has visited your website, and you haven't bothered tweeting in a while. This is where scripting comes in. I wrote a simple shell script that runs a python script which sends a tweet. By scheduling that shell script in your cronjob directory, you'll have a bot that tweets consistently, and your project will update itself, hands free!
+All right, your bot is decked out. You have something that can be viewed by anyone in the world! But let's be realistic, unless you're planning to integrate this Twitter bot into a business or service platform, chances are, there's not going to be many people who can Google or Twitter search their way to your website and Twitter account. A couple month later, you pull up the bot to show off your friends, and that's when you notice the last time you tweeted was seven weeks ago. An inactive Twitter bot is as good as a dead Twitter bot. In this section, we'll breath some life into our bot by writing a script that we'll automate to run automatically after a certain amount of time. Your Twitter bot will become a self-operational, autonomous tweeter.
 
-*Files*: tweetjob.py, tweetscript.sh, output.txt
+First and foremost, we want to create a Python module that generates and tweets a sentence in one stroke. This is a pretty straightforward task, where we just mix, order, and daisy chain the modules we wrote in previous steps. I designed my previous modules in such a way that I directly feed the output of the 'make_sentence' method into the 'tweet' function. It's a very simple program, but it combines all the gears to pack a powerful punch of execution. For reference, the function is located in the [tweetjob.py](http://bit.ly/2yQzh3q) file.
+
+    import make_sentence, twitter, datetime
+
+    if __name__ == '__main__':
+        print(datetime.date.today())
+        twitter.tweet(make_sentence.run())
+        print("Completed Successfully")
+
+We have the functionality, but how do we automate it? We'll use a bit of shell programming magic to make it happen! First, you're going to write a dirt simple shell script. Create a file with the extension '.sh'. Then, put the following segment of code inside. Make sure to include the *absolute* path to your Python module. Here's [mine](http://bit.ly/2xFEypz) as an example. You only need the second line, and you can ignore the >> for now.
+
+    python /(Absolute path to your automated tweet file)/tweetjob.py
+
+When you run this shell file (put a './' in front of the filename), it'll execute the automated tweet file, just like it would on terminal. What makes this shell program special is when we register it as a cronjob on our local computer! Cron is a time-based job scheduler that's available in all Unix based computer operating systems. A cronjob is a process or set of commands that we can create and configure to run periodically. All cronjobs are stored within a 'crontab' file. By editing the crontab, we can specify which shell scripts we want to run and often we want to execute them. You can edit the crontab by typing 'crontab -e', and it sends you to a vim editor screen where you'll want to enter the following line:
+
+    0 12 * * * bash /(Absolute path to your shell script)/tweetscript.sh
+
+Let's break this line down. The first five characters, " 0 12 * * * ", specify the frequency with which you want to run the cronjob. The time is specified as min (0-59), hour (0-23), day of month (1-31), month (1-12), and day of week (0-6), respectively. Note that the hour is in Zulu time and day of the week starts with Sunday as 0. In this case above, you would be running the job everyday at 12 p.m. The time is followed by the command you want to run. In this case, we use the 'bash' command to execute the shell script we just wrote. In conclusion, at 12 p.m. everyday, as long as your computer is on, a new tweet will appear under your account!
+
+*Files*: [tweetjob.py](http://bit.ly/2yQzh3q), [tweetscript.sh](http://bit.ly/2xFEypz)
+
+<br>
+**Congrats!** You made it to the end of the tutorial! I hope it was helpful, and maybe a bit fun! If you have any feedback, I'd love to hear from you!
 
 <br>
 ##### Links
