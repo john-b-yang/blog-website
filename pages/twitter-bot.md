@@ -94,19 +94,69 @@ Before we even think about posting, we have to establish a connection between th
 
 Twitter has excellent documentation on how to use their API, and by exploring it more in depth, you can probably come up with much more impressive use cases. Try making your Twitter bot responsive! If someone interacts with your bot, whether in the form of a tweet, like, or share, how can you configure your bot to respond accordingly? For this particular project, I focused exclusively on the post request. Note that the 140 character limit is enforced, so posts that exceed the limit may incur an error code during the requests call.
 
-Quick Note, I do recommend storing the keys within a hidden file as opposed to copy and pasting them directly into your code, especially if you plan on open sourcing the code in the future. To protect your private account keys, store the in a hidden file, then set them as environment variables within your virtualenv. That allows you to reference the key values as environment variables in your code, so while you maintain access, other people will not be able to appropriate your keys if you happen to put the code on Github. Make sure to list hidden files in your gitignore.
+Quick Note, I do recommend storing the keys within a hidden file as opposed to copy and pasting them directly into your code, especially if you plan on open sourcing the code in the future. To protect your private account keys, store the in a hidden file, then set them as environment variables. Look into the python-dotenv library for reading values from hidden files. The dot-env module will allow you to reference the key values stored in your hidden file as environment variables in your code, effectively setting up a layer protection that prevents other people from appropriating your Twitter account's keys if you happen to put the code on Github. Make sure to list hidden files in your gitignore.
 
 *Files*: [twitter.py](http://bit.ly/2zNYICA)
 
 <br>
 ##### Step 5: Flask Development
 
-The point of adding a Flask app to this project is to give other people the capability to generate and tweet sentences for your bot. I used the barebone functionality of a Flask server paired with an index.html template to simply display the randomly generated sentence along with a "tweet this" button. If you're like me and not very well versed in web development, i'd definitely recommend Flask for its simplicity and straightforward customizability. It's up to you how you'd like to host your code. I went with Heroku, as they have a good amount of documentation to walk you through deploying Flask driven development.
+Congrats! By this point, you have an actual Twitter Bot! Now, people all over the world can see your Twitter Bot tweet! In addition to just viewing the tweets, wouldn't it be cool if people could generate and post tweets to your bot? If we deploy our Twitter Bot's functionality onto a website, we can create an extra platform that people can interact with. In this step, we'll be using Flask, a lightweight Python based backend, to create a web app that allows anyone to generate and post tweets to your Twitter Bot's account.
 
-*Files*: Procfile, requirements.txt, runtime.txt, server.py, app.py
+[Flask](http://flask.pocoo.org) is a wonderfully simple microframework for web development. If you're like me and not very well versed in web development, I'd definitely recommend Flask for its simplicity and straightforward customizability. It's very easy to set up and intuitive to use, great for building and understanding web application projects. I've used Flask to build both this Twitter Bot web app and this very website, too! In this particular project, we'll be using Flask to render a HTML file that presents a generated sentence and a "post" button that, when clicked, posts the sentence to the Twitter account. Make sure to use
+
+Here's the main code we'll be looking at (from [server.py](http://bit.ly/2zMEObc)):
+
+    from flask import Flask, render_template, request, redirect
+    import make_sentence, os, twitter
+    app = Flask(__name__)
+
+    @app.route('/')
+    def hello_world():
+        return render_template('index.html', sentence=make_sentence.run())
+
+    @app.route('/tweet', methods=['POST'])
+    def tweet():
+        status = request.form['sentence']
+        twitter.tweet(status)
+        # Returns 400 Bad Request if tweet is longer than 140 characters
+        return redirect('/')
+
+    if __name__ == '__main__':
+        port = int(os.environ.get('PORT', 5000))
+        app.run(host='0.0.0.0', port=port)
+
+Starting up Flask is as simple as passing in your module's name in the form of the '__name__' variable. Each of the methods are preceded by what are called 'route decorators'. Each decorator tells your Flask application what kinds of URL's should trigger what kinds of actions.
+
+The first route decorator with '/' tells the application to execute the "hello_world" method when the base URL is visited. Using the 'render_template' command, we load the [index.html](http://bit.ly/2AAuyA0) file and generate a tweet that is displayed on the webpage. You might be a little surprised that the index.html file doesn't contain typical looking HTML code. That's because Flask uses the [Jinja2](http://jinja.pocoo.org/docs/2.10/) template engine to perform webpage rendering. I'm not going to go into Jinja2 too much because it's not terribly important in the context of this project, but if you continue to pursue Flask driven web development, I highly encourage studying it more to create beautiful and responsive front pages.
+
+The '/tweet' route tells the website to execute the Python module (from Step 4) which posts the generated sentence to your Twitter Account. After finishing the tweet, the return statement redirects the web page to the '/' route decorator which re-renders the homepage.
+
+The last conditional code block can help you test whether your application is whether working. When you run this Python file, Flask will host your web page locally, on your computer. Open the application on any browser to do some debugging and testing before deployment. For reference, this is what my [webpage](https://fast-headland-20951.herokuapp.com) looks like.
+
+*Files*: [server.py](http://bit.ly/2zMEObc)
 
 <br>
-##### Step 6: Scripting
+##### Step 6: Heroku Deployment
+
+So your website's working. Great! But no one can see it because it's hosted locally on your computer. Time to ship your code and deploy it. We'll use Heroku, a popular PaaS service, to host the code behind our web app from Step 5.
+
+So what is Heroku? It's a web application deployment model that supports a plethora of languages, including Python. Through Heroku, you can engage in the building, running, and scaling of your app. Heroku has a fantastic [tutorial](http://bit.ly/1S9ambh) about deploying Python and Flask apps. If your web app is working locally, following these steps should get your app up and running. I'll take this section to explain the new files that you'll need in addition to some issues I ran into while deploying.
+
+The [procfile](http://bit.ly/2hlbm0A) is a file that specifies how to run the web application. Typically, it's a bash command that starts up the web app. In our case, it's simply the command you'd type in to run your Flask webpage from Step 5, which looks like 'python [name of Step 5 file].py'. The [requirements.txt](http://bit.ly/2jkXMig) file is pretty self explanatory. Heroku looks for this file to register the dependencies and libraries needed to run your web application. Make sure to specify both the name of the dependency and the correct version. You can type 'pip list' in terminal to see which dependencies + versions have been installed. Last but not least, you'll also need a [runtime.txt](http://bit.ly/2hrMk3v) file. This is a simple, one line text file specifying what version of Python your web app uses to run.
+
+There are some things to watch out for. Make sure the libraries and, more importantly, their versions that you specified in [requirements.txt](http://bit.ly/2jkXMig) are compatible with the Python runtime version you specified in [runtime.txt](http://bit.ly/2hrMk3v). I ran into error where I submitted a runtime file with version 2.7, yet the versions for the python-dotenv library was too high. Also, remember the conditional block in Step 5?
+
+    if __name__ == '__main__':
+        port = int(os.environ.get('PORT', 5000))
+        app.run(host='0.0.0.0', port=port)
+
+Remember to specify the 'host' parameter in the second line to be '0.0.0.0' as shown. If you don't include it, when Heroku attempts to deploy your app, it will by default attempt to bind to your localhost (127.0.0.1) address. In other words, the app will not bind to a externally visible interface. This stack overflow [question](http://bit.ly/2yRFCqG) details the error.
+
+*Files*: [procfile](http://bit.ly/2hlbm0A), [requirements.txt](http://bit.ly/2jkXMig), [runtime.txt](http://bit.ly/2hrMk3v)
+
+<br>
+##### Step 7: Scripting
 
 At this, your bot is decked out. Let's just say, a month later, you want to show it off to a couple friends. Unfortunately, no one has visited your website, and you haven't bothered tweeting in a while. This is where scripting comes in. I wrote a simple shell script that runs a python script which sends a tweet. By scheduling that shell script in your cronjob directory, you'll have a bot that tweets consistently, and your project will update itself, hands free!
 
@@ -114,6 +164,6 @@ At this, your bot is decked out. Let's just say, a month later, you want to show
 
 <br>
 ##### Links
-- [Twitter Bot](https://twitter.com/vernesnautilus)
-- [Github Repository](https://github.com/MakeSchool-17/twitter-bot-python-john-b-yang)
-- [Tweet Generator](https://fast-headland-20951.herokuapp.com) (This page takes a while to load)
+- [Captain Nemo Twitter Bot](https://twitter.com/vernesnautilus)
+- [Twitter Bot Source Code](https://github.com/MakeSchool-17/twitter-bot-python-john-b-yang)
+- [Tweet Generator Web Page](https://fast-headland-20951.herokuapp.com) (This page takes a while to load)
