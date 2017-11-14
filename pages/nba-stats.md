@@ -50,5 +50,32 @@ The data given to answer the above question came in the form of an excel file wi
 When looking at the three sheets and the information provided, I found some of the columns to be unnecessary. Given that the problem is asking for playoff elimination relative to conference, the 'division' column is not needed. In the ‘scores’ sheet, the final score is not required. We only care about the outcome, not the actual scores. After eliminating these columns from my data set, I had all the information required to tackle the problem: The team names, their respective conference membership, and the win/lose outcome of every regular season game.
 
 **Computation**<br>
+All my computation was completed within a Jupyter notebook. I'll take this section to walk through my code and explain what I did each step of the way. First up is a list of some of the more helpful libraries I decide to use. Pandas and Numpy are pretty standard libraries to do data processing. The assortment of Plotly, Cufflinks and Matplotlib commands are graphing tools.
 
-Based on the results I received, I believe my algorithm worked quite well. The only obstacle I failed to overcome was resolving tiebreakers. This year, the Chicago Bulls and the Miami Heat tied for the eighth seed in the Eastern Conference. In reality, the Chicago Bulls broke the tie by having a better conference record. However, my program only tracks the raw win-loss record, not conference or home wins and losses, so the Bulls and Heat are listed as both making the playoffs. In addition, the ties between the Cleveland Cavaliers- Indiana Pacers and LA Clippers – Utah Jazz are suspect to being in the wrong order. The NBA rule book features a series of criteria for tiebreakers, including head to head records, division / conference win percentages, and win/loss percentages versus conferences. Implementing these tiebreakers would require creating additional columns to store the aforementioned statistics. 
+    import pandas as pd
+    import numpy as np
+    from plotly import __version__
+    from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
+    import cufflinks as cf
+
+    %matplotlib inline
+    init_notebook_mode(connected=True)
+    cf.go_offline()
+
+Before diving into the actual computation process, I cleaned up and reorganized some of the data. The rearrangement made it easier to perform data traversal later in the code. One cool feature of Pandas is the ability to perform multi-indexing aka setting and organizing multiple columns as indices for your table. Through multi-indexing, I was able to group games by the day they occurred.
+
+    # Read excel data sheets in as Panda Tables
+    division_info = pd.read_excel("Analytics_Attachment.xlsx", sheetname="Division_Info")
+    scores = pd.read_excel("Analytics_Attachment.xlsx", sheetname="2016_17_NBA_Scores")
+
+    # For our purposes, the 'division' columns in division_info and 'Home Score', 'Away Score'
+    # columns in scores are unnecessary, so we will remove them.
+    division_info.drop('Division_id', axis=1, inplace=True)
+    scores.drop(['Home Score', 'Away Score'], axis=1, inplace=True)
+
+    # Adding Columns to 'Division Info' table to count wins, loses, and elimination date (by default set to "Playoffs")
+    division_info['Wins'] = 0
+    division_info['Losses'] = 0
+    division_info['Elimination Date'] = "Playoffs"
+
+Based on the results I received, I believe my algorithm worked quite well. The only obstacle I failed to overcome was resolving tiebreakers. This year, the Chicago Bulls and the Miami Heat tied for the eighth seed in the Eastern Conference. In reality, the Chicago Bulls broke the tie by having a better conference record. However, my program only tracks the raw win-loss record, not conference or home wins and losses, so the Bulls and Heat are listed as both making the playoffs. In addition, the ties between the Cleveland Cavaliers- Indiana Pacers and LA Clippers – Utah Jazz are suspect to being in the wrong order. The NBA rule book features a series of criteria for tiebreakers, including head to head records, division / conference win percentages, and win/loss percentages versus conferences. Implementing these tiebreakers would require creating additional columns to store the aforementioned statistics.
