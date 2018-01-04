@@ -17,6 +17,11 @@ pages = FlatPages(app)
 freezer = Freezer(app)
 markdown_manager = Markdown(app, extensions=['fenced_code'], output_format='html5',)
 
+# Functionalities
+# @app.context_processor
+# def clever_function(u):
+#     return 'hello'
+
 # Routes
 @app.route('/')
 def index():
@@ -42,3 +47,6 @@ if __name__ == '__main__':
     else:
         port = int(os.environ.get('PORT', 5000))
         app.run(host='0.0.0.0', port=port)
+
+# app.jinja_env.globals.update(clever_function=clever_function)
+# app.add_template_global(clever_function, name='clever_function')

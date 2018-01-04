@@ -1,5 +1,7 @@
 title: 2017 NBA Hackathon Application
 date: 2017-11-08
+time: SUNDAY. NOVEMBER 11, 2017
+readtime: 6 MINS
 tags: [Basketball, Python]
 description: Will the 2018 Warriors ever lose? And what did the 2017 final regular season standings look like?
 

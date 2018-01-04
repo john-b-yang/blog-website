@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <title>{% block page_title %}Home{% endblock page_title %} | John Yang</title>
@@ -9,33 +10,32 @@
     <link href="/static/pictures/favicon.ico" rel="shortcut icon">
     <link rel="stylesheet" type="text/css" href="/static/css/style.css">
 </head>
-<body style="background-image: url(../static/pictures/background-picture.png);">
+
+<body>
+    <!-- style="background-image: url(../static/pictures/background-picture.png);" -->
     <!-- background-color:red;  width: 450px;-->
     <div class="container" style="background-color:white; margin:auto; padding-left:30px; padding-right:30px; height:100vh;">
-      <div id="wrapper" style="margin-top:10px; margin-bottom:10px">
-          <div style="float:left; margin-right:15px;" id="1">
-            <img style="border-radius:10px" src="/static/pictures/Picture.png" height=90 />
-          </div>
-          <div style="float:left;" id="2">
-            <h4 style="line-height: 15px;"><a href="{{ url_for("index") }}">John Yang</a></h4>
-            <p>EECS '20 at UC Berkeley <br> Former , Future <img style="margin-bottom:-2px" src="/static/pictures/google.png" height=15 /> SWE Intern</p>
-          </div>
-      </div>
-      <p><br><br><br><br></p>
-      <main>
-        {% block content %}
-          <p>Default content to be displayed</p>
-        {% endblock content %}
-      </main>
-      <hr />
-      <footer>
-        &copy; 2018 John Yang
-        &bull; <a href="https://www.linkedin.com/in/jyang20">LinkedIn</a>
-        &bull; <a href="http://github.com/john-b-yang">Github</a>
-        &bull; <a href="https://www.canva.com/byjohnyang">Design</a>
-        &bull; <a href="https://john-b-yang.github.io">Portfolio</a>
-      </footer>
+        <div id="wrapper" style="margin-top:10px; margin-bottom:10px">
+            <div style="float:left; margin-right:15px;" id="1">
+                <img style="border-radius:10px" src="/static/pictures/Picture.png" height=90 />
+            </div>
+            <div style="float:left;" id="2">
+                <h4 style="line-height: 15px;"><a href="{{ url_for("index") }}">John Yang</a></h4>
+                <p>EECS '20 at UC Berkeley <br> Former , Future <img style="margin-bottom:-2px" src="/static/pictures/google.png" height=15 /> SWE Intern</p>
+            </div>
+        </div>
+        <p><br><br><br><br></p>
+        <main>
+            {% block content %}
+            <p>Default content to be displayed</p>
+            {% endblock content %}
+        </main>
+        <hr />
+        <footer>
+            &copy; 2018 John Yang &bull; <a href="https://www.linkedin.com/in/jyang20">LinkedIn</a> &bull; <a href="http://github.com/john-b-yang">Github</a> &bull; <a href="https://www.canva.com/byjohnyang">Design</a> &bull; <a href="https://john-b-yang.github.io">Portfolio</a>
+        </footer>
     </div>
     <p><br></p>
 </body>
+
 </html>

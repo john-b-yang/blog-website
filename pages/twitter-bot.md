@@ -1,5 +1,7 @@
-title: Twitter Bot!
+title: Build a Twitter Bot!
 date: 2017-11-08
+time: SUNDAY. NOVEMBER 11, 2017
+readtime: 11 MINS
 tags: [Python, Tutorial]
 description: Markov Chains meet Flask meet Twitter API for a delightful, mathematically driven web program
 
