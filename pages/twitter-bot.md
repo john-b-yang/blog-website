@@ -7,6 +7,7 @@ description: Markov Chains meet Flask meet Twitter API for a delightful, mathema
 
 Today, around 15% of Twitter, or 48 million accounts, are bots ([CNBC](http://cnb.cx/2zqKaEH))! From more helpful bots like [@earthquakeSF](http://bit.ly/2iNDvhc) to the more notorious use of [propaganda machines](http://nyti.ms/2mNTwnk) in the recent U.S. election, bots have taken on new roles influencing society on cultural, economic and political levels. This tutorial teaches you how to create a full scale Twitter Bot. We'll go through how to generate original sentences, post tweets to a public account, and automate the entire process!
 
+<br>
 ##### Step 1: Selecting + Cleaning a Corpus
 The initial step to creating a successful Twitter Bot depends on finding a repository of words that your bot can emulate. The primary features of this text emphasize consistency and word count. A large amount of text increases the grammatical and contextual patterns that the bot can identify and emulate. To put it simply, the lengthier the book, the richer the sentences. From experimenting with different texts, I'd recommend at least a document of at least ten thousands words.
 
