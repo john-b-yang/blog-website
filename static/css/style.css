@@ -5,8 +5,10 @@ body {
 .container {
     padding: 10px 30px 10px 30px;
     background-color:white;
-    margin:auto;
-    height:100vh;
+    margin: auto;
+    height: 100%;
+    overflow: auto;
+    min-height: 100vh;
 }
 
 #picture-header {
