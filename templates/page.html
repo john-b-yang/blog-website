@@ -5,10 +5,12 @@
 {% block content %}
 
 <div style="text-align:center;">
+    <img src={{ page.image }} alt="Head Image" height=100px />
     <h3>{{ page.title }}</h3>
     <div class="light-text" style="color:rgb(200,200,200)">
         <p>{{ page.time }} &bull; {{ page.readtime }} </p>
-        <p>{% for page_tag in page.meta.tags %}
+        <p>
+            {% for page_tag in page.meta.tags %}
             <div class="block">
                 <a style="color:gray" href="{{ url_for("tag", tag=page_tag) }}">{{ page_tag }}</a>
             </div>

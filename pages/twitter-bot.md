@@ -1,9 +1,10 @@
 title: Build a Twitter Bot!
 date: 2017-11-08
-time: SUNDAY. NOVEMBER 11, 2017
-readtime: 11 MINS
-tags: [Python, Tutorial]
 description: Markov Chains meet Flask meet Twitter API for a delightful, mathematically driven web program
+image: /static/pictures/TwitterBot/head-image.png
+readtime: 11 MINS
+time: SUNDAY. NOVEMBER 11, 2017
+tags: [Python, Tutorial]
 
 Today, around 15% of Twitter, or 48 million accounts, are bots ([CNBC](http://cnb.cx/2zqKaEH))! From more helpful bots like [@earthquakeSF](http://bit.ly/2iNDvhc) to the more notorious use of [propaganda machines](http://nyti.ms/2mNTwnk) in the recent U.S. election, bots have taken on new roles influencing society on cultural, economic and political levels. This tutorial teaches you how to create a full scale Twitter Bot. We'll go through how to generate original sentences, post tweets to a public account, and automate the entire process!
 
