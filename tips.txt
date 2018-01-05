@@ -1,1 +1,11 @@
-Add Social Share Buttons: https://simplesharebuttons.com/html-share-buttons/
+Tutorials:
+- Add Social Share Buttons: https://simplesharebuttons.com/html-share-buttons/
+
+Details:
+- When editing webpages, after editing html and css pages, the html edits will show up, but the css edits will not appear. This is b/c these websites cache those files instead of reloading them. To see css edits, perform a hard reload to bypass the cache
+
+Next Steps:
+- Add Disque Discussion Page
+- Make bottom buttons coverable
+- Edit share blog to be responsive + correct links
+- Edit blog list design

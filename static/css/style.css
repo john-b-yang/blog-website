@@ -12,6 +12,30 @@
     margin-top: -5px;
 }
 
-.fabutton {
+i {
     color: black;
 }
+
+i:hover {
+    color: rgb(27, 156, 226)
+}
+
+/* .fabutton {
+    color: black;
+}
+
+.fabutton:hover {
+    color: blue;
+}
+
+.fa-github {
+    -webkit-transition-duration: 0.4s;
+    transition-duration:0.4s;
+    cursor: pointer;
+    color: black;
+}
+
+.fa-github:hover {
+    background-color: blue;
+    color: blue;
+} */
