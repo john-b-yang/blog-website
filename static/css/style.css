@@ -1,10 +1,12 @@
-.container {
-    padding-top: 10px;
-    padding-bottom: 10px;
+body {
+    font-family: 'Helvetica Neue','Arial',sans-serif;
 }
 
-.footer-style {
-    text-align=center;
+.container {
+    padding: 10px 30px 10px 30px;
+    background-color:white;
+    margin:auto;
+    height:100vh;
 }
 
 #picture-header {
@@ -12,6 +14,25 @@
     margin-top: -5px;
 }
 
+.block {
+    width:auto;
+    padding: 0px 5px 0px 5px;
+    margin:auto;
+    background-color:rgb(225,225,225);
+    display:inline-block;
+    border-radius:5px;
+}
+
+.share {
+    text-align: center;
+}
+
+/* Fonts */
+.light-text {
+    font-family:'HelveticaNeue-Light','Arial',sans-serif;
+}
+
+/* Tag Level Styling */
 i {
     color: black;
 }
@@ -20,22 +41,11 @@ i:hover {
     color: rgb(27, 156, 226)
 }
 
-/* .fabutton {
-    color: black;
+hr.fade {
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
 }
-
-.fabutton:hover {
-    color: blue;
-}
-
-.fa-github {
-    -webkit-transition-duration: 0.4s;
-    transition-duration:0.4s;
-    cursor: pointer;
-    color: black;
-}
-
-.fa-github:hover {
-    background-color: blue;
-    color: blue;
-} */

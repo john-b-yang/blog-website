@@ -5,11 +5,11 @@
 {% block content %}
 
 <div style="text-align:center;">
-    <h3 style="font-family:'Helvetica Neue','Arial',sans-serif;">{{ page.title }}</h3>
-    <div style="font-family:'HelveticaNeue-Light','Arial',sans-serif;color:rgb(200,200,200)">
+    <h3>{{ page.title }}</h3>
+    <div class="light-text" style="color:rgb(200,200,200)">
         <p>{{ page.time }} &bull; {{ page.readtime }} </p>
         <p>{% for page_tag in page.meta.tags %}
-            <div style="width:auto; padding: 0px 5px 0px 5px; margin:auto; background-color:rgb(225,225,225); display:inline-block; border-radius:5px;">
+            <div class="block">
                 <a style="color:gray" href="{{ url_for("tag", tag=page_tag) }}">{{ page_tag }}</a>
             </div>
             <!-- {% if not loop.last %} | {% endif %}  -->
@@ -17,24 +17,30 @@
         </p>
     </div>
 </div>
-<hr />
-<div style="font-family:'Helvetica Neue','Arial',sans-serif; color:rgb(5,5,5)">
+<hr>
+
+<div style="color:rgb(5,5,5)">
     {{page.html|safe}}
 </div>
 <br>
-<h5>Share this blog!</h5>
-<a href="http://www.facebook.com/sharer.php?u=https://john-b-yang.github.io" target="_blank">
-    <img src="/static/pictures/Icons/facebook.png" height=30px alt="Facebook" />
-  </a>
-<a href="https://twitter.com/share?text=Check%20out%20this%20blog!&amp;hashtags=programming" target="_blank">
-    <img src="/static/pictures/Icons/twitter.png" height=30px alt="Twitter" />
-  </a>
-<a href="http://reddit.com/submit?url=https://john-b-yang.github.io&amp;title=John Yang's Blog" target="_blank">
-    <img src="/static/pictures/Icons/reddit.png" height=30px alt="Reddit" />
-  </a>
-<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://john-b-yang.github.io" target="_blank">
-    <img src="/static/pictures/Icons/linkedin.png" height=30px alt="LinkedIn" />
-  </a>
-<a href="mailto:?Subject=John Yang's Blog&amp;Body=Check%20out%20this%20blog:%20john-b-yang.github.io">
-    <img src="/static/pictures/Icons/email.png" height=30px alt="Email" />
-  </a> {% endblock content %}
+<hr class="fade">
+
+<div class="share">
+    <h5 class="light-text">Share this blog!</h5>
+    <a href="http://www.facebook.com/sharer.php?u=https://blog-byjohnyang.herokuapp.com" target="_blank">
+        <img src="/static/pictures/Icons/facebook.png" height=30px alt="Facebook" />
+      </a>
+    &nbsp; <a href="https://twitter.com/share?text=Check%20out%20this%20blog!%20https://blog-byjohnyang.herokuapp.com" target="_blank">
+        <img src="/static/pictures/Icons/twitter.png" height=30px alt="Twitter" />
+      </a>
+    &nbsp; <a href="http://reddit.com/submit?url=https://blog-byjohnyang.herokuapp.com&amp;title=Cool%20Technical%20Blog" target="_blank">
+        <img src="/static/pictures/Icons/reddit.png" height=30px alt="Reddit" />
+      </a>
+    &nbsp; <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://blog-byjohnyang.herokuapp.com" target="_blank">
+        <img src="/static/pictures/Icons/linkedin.png" height=30px alt="LinkedIn" />
+      </a>
+    &nbsp; <a href="mailto:?Subject=John Yang's Blog&amp;Body=Check%20out%20this%20blog:%20https://blog-byjohnyang.herokuapp.com">
+        <img src="/static/pictures/Icons/email.png" height=30px alt="Email" />
+      </a>
+</div>
+{% endblock content %}

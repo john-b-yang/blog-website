@@ -3,8 +3,10 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="author" content="John Yang">
+    <meta name="description" content="Programming technicalities and musings">
+
     <title>{% block page_title %}Home{% endblock page_title %} | John Yang</title>
-    <!-- <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -14,8 +16,7 @@
 
 <body>
     <!-- style="background-image: url(../static/pictures/background-picture.png);" -->
-    <!-- background-color:red;  width: 450px;-->
-    <div class="container" style="background-color:white; margin:auto; padding-left:30px; padding-right:30px; height:100vh;">
+    <div class="container">
         <div id="wrapper" style="margin-top:10px; margin-bottom:10px">
             <div style="float:left; margin-right:15px;" id="1">
                 <img style="border-radius:10px" src="/static/pictures/Picture.png" height=90 />
@@ -31,8 +32,7 @@
             <p>Default content to be displayed</p>
             {% endblock content %}
         </main>
-        <hr />
-        <br>
+        <br><hr><br>
         <div style="text-align:center;">
             <footer>
                 <a href="https://www.linkedin.com/in/jyang20" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a>
@@ -40,7 +40,7 @@
                 &emsp; <a href="https://www.canva.com/byjohnyang" target="_blank"><i class="fa fa-paint-brush fa-lg"></i></a>
                 &emsp; <a href="https://john-b-yang.github.io" target="_blank"><i class="fa fa-desktop fa-lg"></i></a>
             </footer>
-            <p style="font-family:'HelveticaNeue-Light','Arial',sans-serif;color:gray"> John Yang &copy; 2018 </p>
+            <p class="light-text" style="color:gray"> John Yang &copy; 2018 </p>
         </div>
         <p><br></p>
     </div>
