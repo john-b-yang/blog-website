@@ -1,13 +1,17 @@
 .container {
-  padding-top: 10px;
-  padding-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .footer-style {
-  text-align = center;
+    text-align=center;
 }
 
 #picture-header {
-  line-height: 0px;
-  margin-top:-5px;
+    line-height: 0px;
+    margin-top: -5px;
+}
+
+.fabutton {
+    color: black;
 }
