@@ -27,6 +27,27 @@
 <br>
 <hr class="fade">
 
+<div>
+    <div id="disqus_thread"></div>
+    {% block javascript %}
+        <script type="text/javascript">
+            (function() {
+                var d = document,
+                    s = d.createElement('script');
+                s.src = 'https://blog-byjohnyang.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>
+            Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+    {% endblock %}
+</div>
+
+<br>
+<hr class="fade">
+
 <div class="share">
     <h5 class="light-text">Share this blog!</h5>
     <a href="http://www.facebook.com/sharer.php?u=https://blog-byjohnyang.herokuapp.com" target="_blank">
