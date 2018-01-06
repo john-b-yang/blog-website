@@ -12,7 +12,7 @@
         <p>
             {% for page_tag in page.meta.tags %}
             <div class="block">
-                <a style="color:gray" href="{{ url_for("tag", tag=page_tag) }}">{{ page_tag }}</a>
+                <a href="{{ url_for("tag", tag=page_tag) }}">{{ page_tag }}</a>
             </div>
             <!-- {% if not loop.last %} | {% endif %}  -->
             {% endfor %}
@@ -50,20 +50,20 @@
 
 <div class="share">
     <h5 class="light-text">Share this blog!</h5>
-    <a href="http://www.facebook.com/sharer.php?u=https://blog-byjohnyang.herokuapp.com" target="_blank">
-        <img src="/static/pictures/Icons/facebook.png" height=30px alt="Facebook" />
-      </a>
-    &nbsp; <a href="https://twitter.com/share?text=Check%20out%20this%20blog!%20https://blog-byjohnyang.herokuapp.com" target="_blank">
-        <img src="/static/pictures/Icons/twitter.png" height=30px alt="Twitter" />
-      </a>
-    &nbsp; <a href="http://reddit.com/submit?url=https://blog-byjohnyang.herokuapp.com&amp;title=Cool%20Technical%20Blog" target="_blank">
-        <img src="/static/pictures/Icons/reddit.png" height=30px alt="Reddit" />
-      </a>
-    &nbsp; <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://blog-byjohnyang.herokuapp.com" target="_blank">
-        <img src="/static/pictures/Icons/linkedin.png" height=30px alt="LinkedIn" />
-      </a>
-    &nbsp; <a href="mailto:?Subject=John Yang's Blog&amp;Body=Check%20out%20this%20blog:%20https://blog-byjohnyang.herokuapp.com">
-        <img src="/static/pictures/Icons/email.png" height=30px alt="Email" />
-      </a>
+    <a href="http://www.facebook.com/sharer.php?u=https://blog-byjohnyang.herokuapp.com" target="_blank" class="icon-button facebook">
+        <i class="icon-facebook"></i><span></span></a>
+        <!-- <img src="/static/pictures/Icons/facebook.png" height=30px alt="Facebook" /> -->
+
+    &nbsp; <a href="https://twitter.com/share?text=Check%20out%20this%20blog!%20https://blog-byjohnyang.herokuapp.com" target="_blank" class="icon-button twitter">
+        <i class="icon-twitter"></i><span></span></a>
+
+    &nbsp; <a href="https://plus.google.com/share?url=https://blog-byjohnyang.herokuapp.com" target="_blank" class="icon-button google-plus">
+        <i class="icon-google-plus"></i><span></span></a>
+
+    &nbsp; <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://blog-byjohnyang.herokuapp.com" target="_blank" class="icon-button linkedin">
+        <i class="icon-linkedin"></i><span></span></a>
+
+    &nbsp; <a href="mailto:?Subject=John Yang's Blog&amp;Body=Check%20out%20this%20blog:%20https://blog-byjohnyang.herokuapp.com" class="icon-button mail-forward">
+        <i class="icon-mail-forward"></i><span></span></a>
 </div>
 {% endblock content %}

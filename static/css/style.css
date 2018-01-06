@@ -16,13 +16,31 @@ body {
     margin-top: -5px;
 }
 
+/* Tag Blocks */
 .block {
     width:auto;
-    padding: 0px 5px 0px 5px;
+    padding: 1px 5px 1px 5px;
     margin:auto;
     background-color:rgb(225,225,225);
     display:inline-block;
     border-radius:5px;
+
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+
+.block a {
+    color: gray;
+}
+
+.block:hover {
+    background-color: rgb(27, 156, 226);
+}
+
+.block a:hover {
+    color: white;
 }
 
 .share {
@@ -36,11 +54,15 @@ body {
 
 /* Tag Level Styling */
 i {
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
     color: black;
 }
 
 i:hover {
-    color: rgb(27, 156, 226)
+    color: rgb(27, 156, 226);
 }
 
 hr.fade {

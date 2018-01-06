@@ -1,6 +1,7 @@
 Tutorials:
 - Add Social Share Buttons: https://simplesharebuttons.com/html-share-buttons/
 - Cool HR Styles: https://codepen.io/ibrahimjabbari/pen/ozinB
+- Social Sharing Buttons: https://codepen.io/minimalmonkey/pen/Ecpla?editors=1100
 
 Details:
 - When editing webpages, after editing html and css pages, the html edits will show up, but the css edits will not appear. This is b/c these websites cache those files instead of reloading them. To see css edits, perform a hard reload to bypass the cache. Hard Reload list: https://en.wikipedia.org/wiki/Wikipedia:Bypass_your_cache
@@ -12,11 +13,12 @@ Other
 - Stylesheets: <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
 
 Next Steps:
-- Add Disque Discussion Page
-- Edit share blog to be responsive
 - Edit blog list design
 - Put box around code + better code formatting
+- Figure out readme styling extensions
 
 Finished:
 - Make bottom buttons colorable
 - Correct links for share buttons
+- Add Disque Discussion Page
+- Edit share blog button to be responsive
