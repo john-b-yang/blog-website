@@ -14,11 +14,11 @@ Other
 
 Next Steps:
 - Edit blog list design
-- Put box around code + better code formatting
-- Figure out readme styling extensions
 
 Finished:
 - Make bottom buttons colorable
 - Correct links for share buttons
 - Add Disque Discussion Page
 - Edit share blog button to be responsive
+- Put box around code + better code formatting
+- Figure out readme styling extensions
