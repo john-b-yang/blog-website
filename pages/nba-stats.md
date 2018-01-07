@@ -55,76 +55,83 @@ When looking at the three sheets and the information provided, I found some of t
 **Computation**<br>
 All my computation was completed within a Jupyter notebook. I'll take this section to walk through my code and explain what I did each step of the way. First up is a list of some of the more helpful libraries I decide to use. Pandas and Numpy are pretty standard libraries to do data processing. The assortment of Plotly, Cufflinks and Matplotlib commands are graphing tools.
 
-    1  import pandas as pd
-    2  import numpy as np
-    3  from plotly import __version__
-    4  from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
-    5  import cufflinks as cf
-    6
-    7  %matplotlib inline
-    8  init_notebook_mode(connected=True)
-    9  cf.go_offline()
+<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+import pandas as pd
+import numpy as np
+from plotly import __version__
+from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
+import cufflinks as cf
+</pre>
+
+%matplotlib inline
+init_notebook_mode(connected=True)
+cf.go_offline()
 
 Before diving into the actual computation process, I cleaned up and reorganized some of the data. The rearrangement made it easier to perform data traversal later in the code. One cool feature of Pandas is the ability to perform multi-indexing aka setting and organizing multiple columns as indices for your table. Through multi-indexing, I was able to group games by the day they occurred. This made for an easier traversal process.
 
-    1  # Read excel data sheets in as Panda Tables
-    2  division_info = pd.read_excel("Analytics_Attachment.xlsx", sheetname="Division_Info")
-    3  scores = pd.read_excel("Analytics_Attachment.xlsx", sheetname="2016_17_NBA_Scores")
-    4
-    5  # For our purposes, the 'division' columns in division_info and 'Home Score', 'Away Score'
-    6  # columns in scores are unnecessary, so we will remove them.
-    7  division_info.drop('Division_id', axis=1, inplace=True)
-    8  scores.drop(['Home Score', 'Away Score'], axis=1, inplace=True)
-    9
-    10  # Adding Columns to 'Division Info' table to count wins, loses, and elimination date (by default set to "Playoffs")
-    11 division_info['Wins'] = 0
-    12 division_info['Losses'] = 0
-    13 division_info['Elimination Date'] = "Playoffs"
-    14
-    15 # Using a MultiIndex Pandas Dataframe, we group the games occurring on the same with each other to make traversal
-    16 # easier. The reason a 'Dummy' column is b/c multiple index groups are required.
-    17 scores['Game No.'] = range(0, scores['Date'].count())
-    18 scores.set_index(['Date', 'Game No.'], inplace=True)
+<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+# Read excel data sheets in as Panda Tables
+division_info = pd.read_excel("Analytics_Attachment.xlsx", sheetname="Division_Info")
+scores = pd.read_excel("Analytics_Attachment.xlsx", sheetname="2016_17_NBA_Scores")
+
+# For our purposes, the 'division' columns in division_info and 'Home Score', 'Away Score'
+# columns in scores are unnecessary, so we will remove them.
+division_info.drop('Division_id', axis=1, inplace=True)
+scores.drop(['Home Score', 'Away Score'], axis=1, inplace=True)
+
+# Adding Columns to 'Division Info' table to count wins, loses, and elimination date (by default set to "Playoffs")
+division_info['Wins'] = 0
+division_info['Losses'] = 0
+division_info['Elimination Date'] = "Playoffs"
+
+# Using a MultiIndex Pandas Dataframe, we group the games occurring on the same with each other to make traversal
+# easier. The reason a 'Dummy' column is b/c multiple index groups are required.
+scores['Game No.'] = range(0, scores['Date'].count())
+scores.set_index(['Date', 'Game No.'], inplace=True)
+</pre>
 
 Now that the data has been organized properly, we'll proceed to iterate through the table and make the appropriate modifications to the division_info table to reflect the correct answers. The general idea is to have an outer 'for' loop that iterates through every single date. We pull the games associated with each date and iterate through those, updating the 'division_info' table as we go. Then, we perform elimination calculation as follows: Find the eighth place team and the last place team that has not been eliminated yet. If the number of games left + last place team's wins is less than the eighth place team's wins, then the last place team is eliminated. If and when a team is eliminated, the day of the game in that iteration is registered under the 'Eliminate Date' column (created in line 13 in the previous code block).
 
-    1  # Iterating through the MultiIndex Dataframe by Date
-    2  for value in scores.index.get_level_values('Date').unique():
-    3      currentDate = value.strftime('%Y-%m-%d') # Reformatting the date index value
-    4      miniFrame = scores.xs(currentDate) # Returns cross section of data based on 'date' layer index
-    5      
-    6      # Iterate through all games that occurred on 'currentDate' and adjust records accordingly
-    7      for index, row in miniFrame.iterrows():
-    8          if (row['Winner'] == 'Home'):
-    9              # Home Team Won, find matching home team and iterate wins, matching away team and iterate losses
-    10             division_info.loc[division_info['Team_Name'] == row['Home Team'], 'Wins'] += 1
-    11             division_info.loc[division_info['Team_Name'] == row['Away Team'], 'Losses'] += 1
-    12         elif (row['Winner'] == 'Away'):
-    13              # Away Team Won, matching home team +1 loss, team +1 win
-    14             division_info.loc[division_info['Team_Name'] == row['Home Team'], 'Losses'] += 1
-    15             division_info.loc[division_info['Team_Name'] == row['Away Team'], 'Wins'] += 1
-    16         else:
-    17             print("Error: Invalid 'Winner' Value")
-    18     
-    19      # Split teams into eastern and western conferences, sort by number of wins, limit to uneliminated teams
-    20      eastern_Conference = division_info[(division_info['Conference_id'] == 'East') & (division_info['Elimination Date'] == "Playoffs")].sort_values(['Wins'], ascending=False)
-    21      western_Conference = division_info[(division_info['Conference_id'] == 'West') & (division_info['Elimination Date'] == "Playoffs")].sort_values(['Wins'], ascending=False)
-    22
-    23      # Find last place, non-eliminated team in each conference
-    24      eastLast = eastern_Conference[eastern_Conference['Losses'] == max(eastern_Conference['Losses'])]
-    25      westLast = western_Conference[western_Conference['Losses'] == max(western_Conference['Losses'])]
-    26
-    27      # Find eighth place team (off by 1 indexing)
-    28      eastEighth = eastern_Conference.iloc[[7]]
-    29      westEighth = western_Conference.iloc[[7]]
-    30
-    31      # Find maximum possible wins for last place team. If less than 8th place team's wins, they're eliminated
-    32      maxWins = eastLast['Wins'].values[0] + (82 - eastLast['Wins'].values[0] - eastLast['Losses'].values[0])
-    33      if (eastEighth['Wins'].values[0] > maxWins):
-    34          division_info.loc[division_info['Team_Name'] == eastLast['Team_Name'].values[0], ['Elimination Date']] = currentDate
-    35      maxWins = westLast['Wins'].values[0] + (82 - westLast['Wins'].values[0] - westLast['Losses'].values[0])
-    36      if (westEighth['Wins'].values[0] > maxWins):
-    37          division_info.loc[division_info['Team_Name'] == westLast['Team_Name'].values[0], ['Elimination Date']] = currentDate
+<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+# Iterating through the MultiIndex Dataframe by Date
+for value in scores.index.get_level_values('Date').unique():
+    currentDate = value.strftime('%Y-%m-%d') # Reformatting the date index value
+    miniFrame = scores.xs(currentDate) # Returns cross section of data based on 'date' layer index
+
+    # Iterate through all games that occurred on 'currentDate' and adjust records accordingly
+    for index, row in miniFrame.iterrows():
+        if (row['Winner'] == 'Home'):
+            # Home Team Won, find matching home team and iterate wins, matching away team and iterate losses
+            division_info.loc[division_info['Team_Name'] == row['Home Team'], 'Wins'] += 1
+            division_info.loc[division_info['Team_Name'] == row['Away Team'], 'Losses'] += 1
+        elif (row['Winner'] == 'Away'):
+            # Away Team Won, matching home team +1 loss, team +1 win
+            division_info.loc[division_info['Team_Name'] == row['Home Team'], 'Losses'] += 1
+            division_info.loc[division_info['Team_Name'] == row['Away Team'], 'Wins'] += 1
+        else:
+            print("Error: Invalid 'Winner' Value")
+
+    # Split teams into eastern and western conferences, sort by number of wins, limit to uneliminated teams
+    eastern_Conference = division_info[(division_info['Conference_id'] == 'East') & (division_info['Elimination Date'] == "Playoffs")].sort_values(['Wins'], ascending=False)
+    western_Conference = division_info[(division_info['Conference_id'] == 'West') & (division_info['Elimination Date'] == "Playoffs")].sort_values(['Wins'], ascending=False)
+
+    # Find last place, non-eliminated team in each conference
+    eastLast = eastern_Conference[eastern_Conference['Losses'] == max(eastern_Conference['Losses'])]
+    westLast = western_Conference[western_Conference['Losses'] == max(western_Conference['Losses'])]
+
+    # Find eighth place team (off by 1 indexing)
+    eastEighth = eastern_Conference.iloc[[7]]
+    westEighth = western_Conference.iloc[[7]]
+
+    # Find maximum possible wins for last place team. If less than 8th place team's wins, they're eliminated
+    maxWins = eastLast['Wins'].values[0] + (82 - eastLast['Wins'].values[0] - eastLast['Losses'].values[0])
+    if (eastEighth['Wins'].values[0] > maxWins):
+        division_info.loc[division_info['Team_Name'] == eastLast['Team_Name'].values[0], ['Elimination Date']] = currentDate
+
+    maxWins = westLast['Wins'].values[0] + (82 - westLast['Wins'].values[0] - westLast['Losses'].values[0])
+    if (westEighth['Wins'].values[0] > maxWins):
+        division_info.loc[division_info['Team_Name'] == westLast['Team_Name'].values[0], ['Elimination Date']] = currentDate
+</pre>
 
 Here is a screenshot of the results for the Western Conference standings the code above generated:
 
