@@ -1,10 +1,10 @@
 body {
-    font-family: 'Helvetica Neue','Arial',sans-serif;
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
 }
 
 .container {
     padding: 10px 30px 10px 30px;
-    background-color:white;
+    background-color: white;
     margin: auto;
     height: 100%;
     overflow: auto;
@@ -16,15 +16,16 @@ body {
     margin-top: -5px;
 }
 
-/* Tag Blocks */
-.block {
-    width:auto;
-    padding: 1px 5px 1px 5px;
-    margin:auto;
-    background-color:rgb(225,225,225);
-    display:inline-block;
-    border-radius:5px;
 
+/* Tag Blocks */
+
+.block {
+    width: auto;
+    padding: 1px 5px 1px 5px;
+    margin: auto;
+    background-color: rgb(225, 225, 225);
+    display: inline-block;
+    border-radius: 5px;
     -moz-transition: all .2s ease-in;
     -o-transition: all .2s ease-in;
     -webkit-transition: all .2s ease-in;
@@ -47,12 +48,16 @@ body {
     text-align: center;
 }
 
+
 /* Fonts */
+
 .light-text {
-    font-family:'HelveticaNeue-Light','Arial',sans-serif;
+    font-family: 'HelveticaNeue-Light', 'Arial', sans-serif;
 }
 
+
 /* Tag Level Styling */
+
 i {
     -moz-transition: all .2s ease-in;
     -o-transition: all .2s ease-in;

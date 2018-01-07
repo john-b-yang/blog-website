@@ -32,13 +32,15 @@ In the original sentence, the word 'I' appears three times, and it is followed b
 
 Let's think about the best data structure for representing a Markov Chain. We want a construct that will be able to store nodes and edges. We also need to preserve relationships between nodes and edges in the format of a one to many association. In this case, a Map / Dictionary would best suite our purposes. Given that each node can have multiple edges, we define the key to be the node, and the value to be a list of edges. We could create Node and Edge classes. However, to reduce the map's complexity, we can define a Node as just the word and the Edge as a list of tuples, where each pair is the subsequent word and the probability it shows up. The above graph would be encoded as such:
 
-    [
-        {"I": [{"eat" : 1}]},
-        {"eat": [{"fast" : 0.5}, {"slow" : 0.5}]},
-        {"you": [{"eat" : 1}]},
-        {"fast": [{"I" : 0.5}, {"you" : 0.5}]},
-        {"slow": [{"I" : 1}]}
-    ]
+<pre class="inline-block prettyprint lang-js" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+[
+    {"I": [{"eat" : 1}]},
+    {"eat": [{"fast" : 0.5}, {"slow" : 0.5}]},
+    {"you": [{"eat" : 1}]},
+    {"fast": [{"I" : 0.5}, {"you" : 0.5}]},
+    {"slow": [{"I" : 1}]}
+]
+</pre>
 
 Looking at the graph and table above, you might be asking yourself an important question: Where does a random traversal of the Markov Chain start? And equally important, where does it end? Later, when we generate sentences, identifying start points and end points is critical to making sure our Markov Chain traversals produce grammatically sound sentences. Let's think about the characteristics of the first word in a sentence. Part of speech (i.e. noun, adverb, preposition, etc.) doesn't quite narrow it down, since there are plenty of types of words the sentence could begin with. The first word is always capitalized, but so are proper nouns. Perhaps the most distinguishable characteristic is that the first word in a sentence always follows some form of terminating punctuation (!?.). Similarly, the last word would precede such punctuation. Therefore, while building the Markov Chain, it'd be wise to identify and store all "start" and "end" values based on the criteria above. This data will come in handy in the next step.
 
@@ -57,19 +59,21 @@ I approached this problem in an inductive manner where I identified the starting
 
 Exactly how to translate the previous paragraph into code is a bit daunting. To help, I'll explain my own implementation of the above idea, and hopefully it'll clarify some statements while providing some inspiration for what you might do.
 
-    def generateSentence(markov_gram_length):
-        curr = random.choice(starts) # Choose starting point
-        sent = curr.capitalize() # Sentence to return
-        prevList = [curr] # List of previous nodes
-        while (curr not in "."):
-            curr = nextWord(prevList)
-            prevList.append(curr)
-            if (len(prevList) > markov_gram_length):
-                prevList.pop(0)
-            if (curr not in ".,!?;"):
-                sent += " " # Spaces between words, not between punctuation
-            sent += curr
-        return sent
+<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+def generateSentence(markov_gram_length):
+    curr = random.choice(starts) # Choose starting point
+    sent = curr.capitalize() # Sentence to return
+    prevList = [curr] # List of previous nodes
+    while (curr not in "."):
+        curr = nextWord(prevList)
+        prevList.append(curr)
+        if (len(prevList) > markov_gram_length):
+            prevList.pop(0)
+        if (curr not in ".,!?;"):
+            sent += " " # Spaces between words, not between punctuation
+        sent += curr
+    return sent
+</pre>
 
 This method takes in an int parameter 'markov_gram_length' and returns the generated sentence. The first three lines of the method chooses the starting word, capitalizes the starting word, and adds it to a list. You can think of the list as the storage of previous nodes. The iterative loop ends when the node is a terminating punctuation mark. The 'nextWord' method uses the aforementioned list to determine the next node to visit. The resulting next node's value is added to both the list and the return value 'sent'.
 
@@ -84,19 +88,21 @@ By this step, your actual bot is complete! You have a fully functioning Python p
 
 Before we even think about posting, we have to establish a connection between the module and the Twitter account. To do so, we'll be create a OAuth1Session with our Twitter account. OAuth is simply a protocol that authenticates our application with Twitter's API. There are four different kinds of keys required to establish a session. After you create a Twitter Account, you can find / generate all four keys by visiting the [apps](https://apps.twitter.com/) link. Once we've created the session, to post tweets, we can make a POST call that takes 2 parameters: 1. A URL denoting the "tweet" operation and 2. A JSON containing the sentence we want to "tweet". The primary code snippets are presented here (visit the [twitter.py](http://bit.ly/2zNYICA) file for the full detail):
 
-    # Create Authentication Session w/ 4 Keys.
-    # I recommend keeping the values for these keys in a hidden file (refer to last paragraph of this step)
-    session = OAuth1Session(consumer_key, client_secret=consumer_secret,
-            resource_owner_key=access_token, resource_owner_secret=access_token_secret)
+<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+# Create Authentication Session w/ 4 Keys.
+# I recommend keeping the values for these keys in a hidden file (refer to last paragraph of this step)
+session = OAuth1Session(consumer_key, client_secret=consumer_secret,
+        resource_owner_key=access_token, resource_owner_secret=access_token_secret)
 
-    # Tweet method takes a String value and returns the POST request's response code
-    def tweet(status):
-        # URL Endpoint to update status
-        url = "https://api.twitter.com/1.1/statuses/update.json"
-        # POST request to url with 'status' parameter
-        resp = session.post(url, {'status': status})
-        # Show text from response to POST request. Unsuccessful requests will generate error codes
-        return resp.text
+# Tweet method takes a String value and returns the POST request's response code
+def tweet(status):
+    # URL Endpoint to update status
+    url = "https://api.twitter.com/1.1/statuses/update.json"
+    # POST request to url with 'status' parameter
+    resp = session.post(url, {'status': status})
+    # Show text from response to POST request. Unsuccessful requests will generate error codes
+    return resp.text
+</pre>
 
 Twitter has excellent documentation on how to use their API, and by exploring it more in depth, you can probably come up with much more impressive use cases. Try making your Twitter bot responsive! If someone interacts with your bot, whether in the form of a tweet, like, or share, how can you configure your bot to respond accordingly? For this particular project, I focused exclusively on the post request. Note that the 140 character limit is enforced, so posts that exceed the limit may incur an error code during the requests call.
 
@@ -113,24 +119,26 @@ Congrats! By this point, you have an actual Twitter Bot! Now, people all over th
 
 Here's the main code we'll be looking at (from [server.py](http://bit.ly/2zMEObc)):
 
-    from flask import Flask, render_template, request, redirect
-    import make_sentence, os, twitter
-    app = Flask(__name__)
+<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+from flask import Flask, render_template, request, redirect
+import make_sentence, os, twitter
+app = Flask(__name__)
 
-    @app.route('/')
-    def hello_world():
-        return render_template('index.html', sentence=make_sentence.run())
+@app.route('/')
+def hello_world():
+    return render_template('index.html', sentence=make_sentence.run())
 
-    @app.route('/tweet', methods=['POST'])
-    def tweet():
-        status = request.form['sentence']
-        twitter.tweet(status)
-        # Returns 400 Bad Request if tweet is longer than 140 characters
-        return redirect('/')
+@app.route('/tweet', methods=['POST'])
+def tweet():
+    status = request.form['sentence']
+    twitter.tweet(status)
+    # Returns 400 Bad Request if tweet is longer than 140 characters
+    return redirect('/')
 
-    if __name__ == '__main__':
-        port = int(os.environ.get('PORT', 5000))
-        app.run(host='0.0.0.0', port=port)
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
+</pre>
 
 Starting up Flask is as simple as passing in your module's name in the form of the '__name__' variable. Each of the methods are preceded by what are called 'route decorators'. Each decorator tells your Flask application what kinds of URL's should trigger what kinds of actions.
 
@@ -153,9 +161,11 @@ The [procfile](http://bit.ly/2hlbm0A) is a file that specifies how to run the we
 
 There are some things to watch out for. Make sure the libraries and, more importantly, their versions that you specified in [requirements.txt](http://bit.ly/2jkXMig) are compatible with the Python runtime version you specified in [runtime.txt](http://bit.ly/2hrMk3v). I ran into error where I submitted a runtime file with version 2.7, yet the versions for the python-dotenv library was too high. Also, remember the conditional block in Step 5?
 
-    if __name__ == '__main__':
-        port = int(os.environ.get('PORT', 5000))
-        app.run(host='0.0.0.0', port=port)
+<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
+</pre>
 
 Remember to specify the 'host' parameter in the second line to be '0.0.0.0' as shown. If you don't include it, when Heroku attempts to deploy your app, it will by default attempt to bind to your localhost (127.0.0.1) address. In other words, the app will not bind to a externally visible interface. This stack overflow [question](http://bit.ly/2yRFCqG) details the error.
 
@@ -168,20 +178,26 @@ All right, your bot is decked out. You have something that can be viewed by anyo
 
 First and foremost, we want to create a Python module that generates and tweets a sentence in one stroke. This is a pretty straightforward task, where we just mix, order, and daisy chain the modules we wrote in previous steps. I designed my previous modules in such a way that I directly feed the output of the 'make_sentence' method into the 'tweet' function. It's a very simple program, but it combines all the gears to pack a powerful punch of execution. For reference, the function is located in the [tweetjob.py](http://bit.ly/2yQzh3q) file.
 
-    import make_sentence, twitter, datetime
+<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+import make_sentence, twitter, datetime
 
-    if __name__ == '__main__':
-        print(datetime.date.today())
-        twitter.tweet(make_sentence.run())
-        print("Completed Successfully")
+if __name__ == '__main__':
+    print(datetime.date.today())
+    twitter.tweet(make_sentence.run())
+    print("Completed Successfully")
+</pre>
 
 We have the functionality, but how do we automate it? We'll use a bit of shell programming magic to make it happen! First, you're going to write a dirt simple shell script. Create a file with the extension '.sh'. Then, put the following segment of code inside. Make sure to include the *absolute* path to your Python module. Here's [mine](http://bit.ly/2xFEypz) as an example. You only need the second line, and you can ignore the >> for now.
 
-    python /(Absolute path to your automated tweet file)/tweetjob.py
+<pre class="inline-block prettyprint lang-bash" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+python /(Absolute path to your automated tweet file)/tweetjob.py
+</pre>
 
 When you run this shell file (put a './' in front of the filename), it'll execute the automated tweet file, just like it would on terminal. What makes this shell program special is when we register it as a cronjob on our local computer! Cron is a time-based job scheduler that's available in all Unix based computer operating systems. A cronjob is a process or set of commands that we can create and configure to run periodically. All cronjobs are stored within a 'crontab' file. By editing the crontab, we can specify which shell scripts we want to run and often we want to execute them. You can edit the crontab by typing 'crontab -e', and it sends you to a vim editor screen where you'll want to enter the following line:
 
-    0 12 * * * bash /(Absolute path to your shell script)/tweetscript.sh
+<pre class="inline-block prettyprint lang-bash" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+0 12 * * * bash /(Absolute path to your shell script)/tweetscript.sh
+</pre>
 
 Let's break this line down. The first five characters, " 0 12 * * * ", specify the frequency with which you want to run the cronjob. The time is specified as min (0-59), hour (0-23), day of month (1-31), month (1-12), and day of week (0-6), respectively. Note that the hour is in Zulu time and day of the week starts with Sunday as 0. In this case above, you would be running the job everyday at 12 p.m. The time is followed by the command you want to run. In this case, we use the 'bash' command to execute the shell script we just wrote. In conclusion, at 12 p.m. everyday, as long as your computer is on, a new tweet will appear under your account!
 
