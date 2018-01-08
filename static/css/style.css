@@ -55,6 +55,11 @@ body {
     font-family: 'HelveticaNeue-Light', 'Arial', sans-serif;
 }
 
+.post-title {
+    font-family: 'Raleway', sans-serif;
+    text-align: left;
+}
+
 
 /* Tag Level Styling */
 

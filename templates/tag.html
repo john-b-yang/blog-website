@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h4 style="text-align:center;">Posts</h4>
-    <h6 style="text-align:center;">tagged <em>{{ tag }}</em></h6>
-    <hr />
+    <!-- <div style="clear: both;"> -->
+        <h4 class="post-title">Posts</h4>
+        <h6>tagged <em>{{ tag }}</em></h6>
+    <!-- </div> -->
     {% with pages=pages  %}
         {% include "_list.html" %}
     {% endwith %}

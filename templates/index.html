@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h4 style="text-align:center;">Posts</h4>
-    <hr />
+    <h4 class="post-title">Posts</h4>
+
     {% with pages = pages %}
         {% include "_list.html" %}
     {% endwith %}
