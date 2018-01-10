@@ -25,3 +25,4 @@ Finished:
 - Edit share blog button to be responsive
 - Put box around code + better code formatting
 - Figure out readme styling extensions
+- Organize Articles by Date
