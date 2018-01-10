@@ -4,9 +4,9 @@
       <b>{{ page.title }}</b><br />
       {{ page.date }}
       {% if page.meta.tags|length %}
-        | Tags:
+        | <img style="margin-bottom:-2px" src="/static/pictures/tags.png" height=15/>
         {% for page_tag in page.meta.tags %}
-            <a href="{{ url_for("tag", tag=page_tag) }}">{{ page_tag}} </a>
+            <a href="{{ url_for("tag", tag=page_tag) }}">{{ page_tag}}</a>
             {% if not loop.last %},{% endif %}
         {% endfor %}
       {% endif %}

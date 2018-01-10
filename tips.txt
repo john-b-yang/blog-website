@@ -14,6 +14,9 @@ Other
 
 Next Steps:
 - Edit blog list design
+- Mask URL
+- Deploy on Elastic Beanstalk
+- Background illustration disappears when tag requested
 
 Finished:
 - Make bottom buttons colorable
