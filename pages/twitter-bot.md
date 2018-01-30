@@ -210,4 +210,4 @@ Let's break this line down. The first five characters, " 0 12 * * * ", specify t
 ##### Links
 - [Captain Nemo Twitter Bot](https://twitter.com/vernesnautilus)
 - [Twitter Bot Source Code](https://github.com/MakeSchool-17/twitter-bot-python-john-b-yang)
-- [Tweet Generator Web Page](https://fast-headland-20951.herokuapp.com) (This page takes a while to load)
+- [Tweet Generator Web Page](https://fast-headland-20951.herokuapp.com) (This page takes a while to load b/c Heroku)
