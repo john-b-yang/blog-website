@@ -41,9 +41,9 @@ x_data = data_frame.drop(axis=1, labels=["Survived"])
 X_train, X_test, Y_train, Y_test = train_test_split(x_data, y_data, train_size=split_ratio, random_state=0)
 
 # Creating model, performing classification, and calculating performance accuracy
-random_forest = RandomForestClassifier()
-random_forest.fit(X_train, Y_train)
-Y_prediction = random_forest.predict(Y_test)
+model = RandomForestClassifier()
+model.fit(X_train, Y_train)
+Y_prediction = model.predict(Y_test)
 print(classification_report(Y_test, Y_prediction))
 
 # Converting to MLModel file
@@ -51,7 +51,7 @@ coreml_model = coremltools.converters.sklearn.convert(model, ["Pclass", "Age", "
 coreml_model.save('TitanicSurvival.mlmodel')
 </pre>
 
-Voila! Your machine learning model is now ready to be integrated and used in your iOS application. I won't be diving too much into what that process looks like, but if your curious, Apple's official CoreML [documentation](https://developer.apple.com/documentation/coreml) gives you step by step instructions on how to get your ML model file up and running.
+Voila! Your machine learning model is now ready to be integrated and used in your iOS application. I won't be diving too much into what that process looks like, but if you're curious, Apple's official CoreML [documentation](https://developer.apple.com/documentation/coreml) gives you step by step instructions on how to get your ML model file up and running.
 
 Before CoreML, performing machine learning on iOS went in one of two directions. You could either reimplement it entirely in Swift and Objective-C, or you could host the model for a more server side approach. Reimplementation is a tedious undertaking because of the lack of flexibility that iOS development languages have in the math and logic departments, especially when compared to a language like Python with a myriad of tailored ML and calculation libraries. A traditional server side approach allows for more flexibility in your model, but it comes at a tradeoff. Latency and reliability. will perpetually be an issue. In addition, maintaining a server could be an expensive and unscalable solution that becomes a greater headache as an app gains users (which should be a good thing)!
 
@@ -59,7 +59,9 @@ CoreML represents the best of both worlds. As a localized file that sits within 
 
 <br>
 ##### Automating CoreML's solution
-Highlighting the redundancy behind custom scripts for generating CoreML files
+As we can see from above, the actual code that goes into creating a customized CoreML file isn't all that hard. What's interesting to note is that this same structure of code will persist pretty much across the board. Whether it's a regression or classification problem, different models can be fed through essentially the same structure of code without any drastic changes. For example, if I were to create a Random Forest Classifier as opposed to a Support Vector Machine, the only change that's required is instead of *model = RandomForestClassifier()*, we would import the SVM library (i.e. *from sklearn.svm import SVC()*) and use *model = SVC()* instead.
+
+This singular observation is the foundation of my idea for automated CoreML conversion. Instead of forcing developers to rewrite this same set of redundant code, what if we could add a platform on top of this Python script that could change the model being trained with just a click of the button? This is where the "automated" aspect of CoreML conversion comes in. With this idea in mind, it's easy to see how making that one line of code dynamic can make this script a reusable way to generate different machine learning models with all sorts of test sets.
 
 <br>
 ##### Designing a Flexible Script for ML Testing
