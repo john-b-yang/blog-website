@@ -1,4 +1,4 @@
-title: Automated CoreML Conversion
+title: Automated CoreML Conversion V1.0
 date: 2018-01-29
 description: Automating the redundancy of writing, testing, and deploying basic machine learning scripts to real world settings
 image: /static/pictures/CoreMLConvert/CoreMLLogo.png
@@ -58,14 +58,95 @@ Before CoreML, performing machine learning on iOS went in one of two directions.
 CoreML represents the best of both worlds. As a localized file that sits within your app, it eliminates the latency and scalability qualms of server side solutions, allowing you to front load any ML work onto your users' devices as opposed to your own. In addition, the ability to convert models preserves the flexibility that comes with Python written code. In addition, an MLModel is optimized for fast performance by the iOS architecture itself. Hopefully, I've convinced you somewhat of how much of a game changer CoreML is.
 
 <br>
-##### Automating CoreML's solution
+##### Automating CoreML's Solution 
 As we can see from above, the actual code that goes into creating a customized CoreML file isn't all that hard. What's interesting to note is that this same structure of code will persist pretty much across the board. Whether it's a regression or classification problem, different models can be fed through essentially the same structure of code without any drastic changes. For example, if I were to create a Random Forest Classifier as opposed to a Support Vector Machine, the only change that's required is instead of *model = RandomForestClassifier()*, we would import the SVM library (i.e. *from sklearn.svm import SVC()*) and use *model = SVC()* instead.
 
-This singular observation is the foundation of my idea for automated CoreML conversion. Instead of forcing developers to rewrite this same set of redundant code, what if we could add a platform on top of this Python script that could change the model being trained with just a click of the button? This is where the "automated" aspect of CoreML conversion comes in. With this idea in mind, it's easy to see how making that one line of code dynamic can make this script a reusable way to generate different machine learning models with all sorts of test sets.
+This singular observation is the foundation of my idea for automated CoreML conversion. Instead of forcing developers to rewrite this same set of redundant code, what if we could add a platform on top of this Python script that could change the model being trained with just a click of the button? This is where the "automated" aspect of CoreML conversion comes in. With this idea in mind, it's easy to see how making that one line of code dynamic can make this script a reusable method for generating different machine learning models with all sorts of test sets.
 
-<br>
-##### Designing a Flexible Script for ML Testing
-Discuss what goes in, how it's processed, and what comes out
+My implementation is as follows:
+
+<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+# Basics
+import sys
+import numpy as np
+import pandas as pd
+
+# Sklearn Models
+import sklearn
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.svm import LinearSVC, SVC
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.tree import DecisionTreeClassifier
+
+# Sklearn Metrics
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report, confusion_matrix
+from sklearn.pipeline import Pipeline
+
+def conversion(data_file, split_ratio, user_models, y_data_column):
+
+    raw_data = open(data_file, 'r')
+    data_frame = pd.read_csv(data_file, index_col=0) # Removing index column
+    y_data = data_frame[[y_data_column]]
+    x_data = data_frame.drop(axis=1, labels=[y_data_column])
+
+    X_train, X_test, Y_train, Y_test = train_test_split(x_data, y_data, train_size=split_ratio, random_state=0)
+
+    requested_models = user_models.split()
+    requested_models = [x.lower() for x in requested_models]
+
+    available_models = ["svc", "knn", "decision-trees", "random-forest", "gradient-boosted"]
+
+    svc = Pipeline([('clf', SVC())])
+    knn = Pipeline([('clf', KNeighborsClassifier(n_neighbors=3))])
+    decision_trees = Pipeline([('clf', DecisionTreeClassifier())])
+    random_forest = Pipeline([('clf', RandomForestClassifier())])
+    gradient_boosted = Pipeline([('clf', GradientBoostingClassifier())])
+
+    available_pipelines = [svc, knn, decision_trees, random_forest, gradient_boosted]
+
+    requested_pipelines = []
+    requested_models_filtered = []
+    for model in requested_models:
+        model = model.strip('"')
+        membership = str(model) in available_models
+        if membership:
+            requested_models_filtered.append(model)
+            requested_pipelines.append(available_pipelines[available_models.index(model)])
+
+    output_text_file = open('output.txt', 'w')
+    return_value = ""
+    count = 0
+    for index in range(len(requested_pipelines)):
+        pipeline = requested_pipelines[index]
+
+        pipeline.fit(X_train, Y_train)
+        Y_predict = pipeline.predict(X_test)
+
+        report = classification_report(Y_test, Y_predict)
+        matrix = confusion_matrix(Y_test, Y_predict)
+
+        return_value += str("Model: %s\n" % requested_models_filtered[index])
+        return_value += str("Classification Report: \n%s\n" % report)
+        return_value += str("Confusion Matrix: \n%s\n\n\n" % matrix)
+
+        count = count + 1
+
+    output_text_file.write(return_value)
+    output_text_file.close()
+    return return_value
+</pre>
+
+Let's walk through it. Before the function declaration, I've imported multiple classification models from the SKLearn library. I've also included the "classification_report" and "confusion_matrix" tools that will help quantitatively evaluate each model. The conversion function itself takes in a user data file, a split ratio, a list of models requested by the user, and the name of the y-data column. The user data file is expected to contain both the labels and their corresponding vector data. First, the user data file is opened and placed into a data frame. Then, using the y-data column name identified by the user, the data set is separated into the 'x_data' and 'y_data' portions. Using the 'train_test_split' method, the X and Y data is then split into training and testing data sets.
+
+Next, we figure out which models the user requested to be tested. Based on the import statements, we currently have five available models (SVC, Random Forest, Gradient Boosted, KNN, Decision Trees). The user's requested models are checked to see if they are available. The *requested_models_filtered* reflects those models that are requested and available. Now for the fun part. As opposed to using a single model, we utilize the *Pipeline* sklearn class along with a simple for loop to run through each requested model, fit the training data, and generate a classification report based on the alignment between the predictions and actual Y_test data. The function returns a string containing the classification reports and confusion matrices for each tested model.
+
+So how did I do? Objectively speaking, maybe a 5/10. This script definitely introduces the concept of flexibility, allowing users to enter 'n' data sets and models without having to create 'n' different python scripts for each model. However, it's a very constrained sense of flexibility, aka there is a good amount of hard coding. So what are the challenges / potential improvements for this script? First and foremost, a truly flexible model would not have a list of 'available models' that the user is limited too. Theoretically, it'd be very nice if the user could type in any model in the world and have it run through the script. However, the obstacle that I ran into was this concept of importing the correct corresponding library for models on the fly. For example, let's say the user wanted a convolutional neural network to perform image classification. How can I locate and import the correct CNN library from Caffe or Keras without a hard coded import statement?
+
+Second, there's not that much model customizability. For instance, the KNN model that I've included above is hard wired with a neighbors value of 3 (n_neighbors = 3). It'd be pretty fantastic if the script could reflect the exact specifications of their model. Right now, the user would only be getting a very bland K-Neighbors Classifier . What'd be cooler would be if a user could request and receive a KNN that considers the 6 nearest neighbors using a KDTree search approach with a leaf size of 50. It's nice in theory, but difficult in implementation. Each machine learning model has a very disparate set of parameters. Yes, I could hard code the fields associated with each model, but for true flexibility, that's not the route to pursue. So once again, the question boils down to how to design a more dynamic framework.
+
+In summary, I'm pretty proud of the framework above. It's a functional and sensible prototype that satisfies the "automated" aspect of CoreML conversion. However, there are definitely improvements to be made, and the eventual goal is for the conversion script to be largely free of hard coded imports. Instead, I hope to create a flexible function that allows the code to find, import, and define the correct user models during execution. I'm really hoping to revisit this segment of this project as I continue to work on it. However, for now, the above program works. At the time, I wanted to build out the minimum viable product, so I just rolled with it. Time to build a platform around the script!
 
 <br>
 ##### Decorations: An Accessible Platform
