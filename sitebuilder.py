@@ -27,9 +27,9 @@ markdown_manager = Markdown(app, extensions=['fenced_code'], output_format='html
 def index():
     return render_template('index.html', pages=pages)
 
-@app.route('/contact/')
-def contact():
-    return render_template('contact.html')
+@app.route('/about/')
+def about():
+    return render_template('about.html')
 
 @app.route('/tag/<string:tag>/')
 def tag(tag):

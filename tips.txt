@@ -17,6 +17,7 @@ Next Steps:
 - Mask URL
 - Deploy on Elastic Beanstalk
 - Background illustration disappears when tag requested
+- Create Projects Tab
 
 Finished:
 - Make bottom buttons colorable
@@ -26,3 +27,4 @@ Finished:
 - Put box around code + better code formatting
 - Figure out readme styling extensions
 - Organize Articles by Date
+- Included About Page

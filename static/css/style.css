@@ -16,6 +16,19 @@ body {
     margin-top: -5px;
 }
 
+/* Upper Right Links Animations */
+
+#link-list {
+  display: inline-block;
+  font-family: 'HelveticaNeue-Light', 'Arial', sans-serif;
+  font-size: 20px;
+  zoom: 1;
+  *display: inline;
+  padding-left: 25px;
+  color:black;
+}
+
+/* Text Fade Animation */
 #body-fade {
     animation: fadein 1s;
     -moz-animation: fadein 1s; /* Firefox */
