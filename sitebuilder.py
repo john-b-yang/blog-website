@@ -31,6 +31,10 @@ def index():
 def about():
     return render_template('about.html')
 
+@app.route('/projects/')
+def projects():
+    return render_template('projects.html')
+
 @app.route('/tag/<string:tag>/')
 def tag(tag):
     tagged = [p for p in pages if tag in p.meta.get('tags', [])]
