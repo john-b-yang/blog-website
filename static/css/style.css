@@ -163,6 +163,7 @@ hr.fade {
     text-align: center;
     vertical-align: middle;
     line-height: 150px;
+    border-radius: 15px;
 }
 
 .card-1 {
