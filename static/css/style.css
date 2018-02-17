@@ -19,50 +19,60 @@ body {
 /* Upper Right Links Animations */
 
 #link-list {
-  display: inline-block;
-  font-family: 'HelveticaNeue-Light', 'Arial', sans-serif;
-  font-size: 20px;
-  zoom: 1;
-  *display: inline;
-  padding-left: 25px;
-  color:black;
+    display: inline-block;
+    font-family: 'HelveticaNeue-Light', 'Arial', sans-serif;
+    font-size: 20px;
+    zoom: 1;
+    *display: inline;
+    padding-left: 25px;
+    color: black;
 }
 
 /* Text Fade Animation */
+
 #body-fade {
     animation: fadein 1s;
-    -moz-animation: fadein 1s; /* Firefox */
-    -webkit-animation: fadein 1s; /* Safari and Chrome */
-    -o-animation: fadein 1s; /* Opera */
+    -moz-animation: fadein 1s;
+    /* Firefox */
+    -webkit-animation: fadein 1s;
+    /* Safari and Chrome */
+    -o-animation: fadein 1s;
+    /* Opera */
 }
 
 @keyframes fadein {
     from {
-        opacity:0;
+        opacity: 0;
     }
     to {
-        opacity:1;
+        opacity: 1;
     }
 }
-@-moz-keyframes fadein { /* Firefox */
+
+@-moz-keyframes fadein {
+    /* Firefox */
     from {
-        opacity:0;
+        opacity: 0;
     }
     to {
-        opacity:1;
+        opacity: 1;
     }
 }
-@-webkit-keyframes fadein { /* Safari and Chrome */
+
+@-webkit-keyframes fadein {
+    /* Safari and Chrome */
     from {
-        opacity:0;
+        opacity: 0;
     }
     to {
-        opacity:1;
+        opacity: 1;
     }
 }
-@-o-keyframes fadein { /* Opera */
+
+@-o-keyframes fadein {
+    /* Opera */
     from {
-        opacity:0;
+        opacity: 0;
     }
     to {
         opacity: 1;
@@ -100,7 +110,6 @@ body {
     text-align: center;
 }
 
-
 /* Fonts */
 
 .light-text {
@@ -111,7 +120,6 @@ body {
     font-family: 'Raleway', sans-serif;
     text-align: left;
 }
-
 
 /* Tag Level Styling */
 
@@ -134,4 +142,34 @@ hr.fade {
     background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
     background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
     background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+}
+
+/* Project Section Boxes */
+
+.card-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    background: #fff;
+    border-radius: 2px;
+    display: inline-block;
+    height: 300px;
+    margin: 1rem;
+    position: relative;
+    width: 300px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 150px;
+}
+
+.card-1 {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.card-1:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
