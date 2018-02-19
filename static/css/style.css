@@ -154,7 +154,6 @@ hr.fade {
 
 .card {
     background: #fff;
-    border-radius: 2px;
     display: inline-block;
     height: 300px;
     margin: 1rem;
@@ -162,8 +161,8 @@ hr.fade {
     width: 300px;
     text-align: center;
     vertical-align: middle;
-    line-height: 150px;
     border-radius: 15px;
+    padding: 15px;
 }
 
 .card-1 {
@@ -173,4 +172,25 @@ hr.fade {
 
 .card-1:hover {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+/* Project Section Text */
+
+#card-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-color: black;
+    border-width: 2px;
+}
+
+.project-title {
+    color: black;
+    -webkit-transition: all 0.50s;
+    transition: all 0.50s;
+    font-size: 24px;
+}
+
+.project-title:hover {
+    color: rgb(27, 156, 226);
 }
