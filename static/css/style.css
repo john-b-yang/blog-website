@@ -162,7 +162,7 @@ hr.fade {
     text-align: center;
     vertical-align: middle;
     border-radius: 15px;
-    padding: 15px;
+    padding: 25px 15px 15px 15px;
 }
 
 .card-1 {
@@ -188,7 +188,7 @@ hr.fade {
     color: black;
     -webkit-transition: all 0.50s;
     transition: all 0.50s;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .project-title:hover {
