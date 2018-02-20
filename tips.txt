@@ -3,6 +3,7 @@ Tutorials:
 - Cool HR Styles: https://codepen.io/ibrahimjabbari/pen/ozinB
 - Social Sharing Buttons: https://codepen.io/minimalmonkey/pen/Ecpla?editors=1100
 - Project Page Boxes: https://codepen.io/sdthornton/pen/wBZdXq?q=box&limit=all&type=type-pens
+- Tagging Git Commits: https://stackoverflow.com/questions/18216991/create-a-tag-in-github-repository
 
 Details:
 - When editing webpages, after editing html and css pages, the html edits will show up, but the css edits will not appear. This is b/c these websites cache those files instead of reloading them. To see css edits, perform a hard reload to bypass the cache. Hard Reload list: https://en.wikipedia.org/wiki/Wikipedia:Bypass_your_cache
