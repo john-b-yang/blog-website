@@ -22,12 +22,14 @@
 .pop {
     display: none;
     position: fixed;
+    margin: auto;
     top: 10.3%;
     left: 10.3%;
     width: 80%;
     height: 80%;
     background: white;
-    outline: 10px solid;
+    border: 2px solid;
+    border-radius: 15px;
 }
 
 .pop>p {
