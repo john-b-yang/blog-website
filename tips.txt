@@ -19,6 +19,7 @@ Next Steps:
 - Mask URL
 - Deploy on Elastic Beanstalk
 - Background illustration disappears when tag requested
+- Pop up project descriptions
 
 Finished:
 - Make bottom buttons colorable

@@ -1,0 +1,49 @@
+.buttonSec {
+    text-align: center;
+}
+
+.buttonSec>button {
+    width: 200px;
+    line-height: 20px;
+    padding: 12px 15px 12px;
+    color: black;
+    -webkit-transition: all 3s ease-in-out;
+    -moz-transition: all 3s ease-in-out;
+    transition: all 3s ease-in-out;
+}
+
+.buttonSec>button:hover {
+    opacity: 0.8;
+    -webkit-transition: all 3s ease-in-out;
+    -moz-transition: all 3s ease-in-out;
+    transition: all 3s ease-in-out;
+}
+
+.pop {
+    display: none;
+    position: fixed;
+    top: 10.3%;
+    left: 10.3%;
+    width: 80%;
+    height: 80%;
+    background: white;
+    outline: 10px solid;
+}
+
+.pop>p {
+    padding-left: 30px;
+    font-size: 100%;
+}
+
+.pop>span {
+    position: absolute;
+    top: 4%;
+    right: 4%;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    padding: 6px 0px 0px 6px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
