@@ -23,9 +23,9 @@
     display: none;
     position: fixed;
     margin: auto;
-    top: 10.3%;
-    left: 10.3%;
-    width: 80%;
+    top: 10%;
+    left: 25.3%;
+    width: 50%;
     height: 80%;
     background: white;
     border: 2px solid;
@@ -44,7 +44,6 @@
     -webkit-border-radius: 100px;
     -moz-border-radius: 100px;
     border-radius: 100px;
-    padding: 6px 0px 0px 6px;
     width: 30px;
     height: 30px;
     cursor: pointer;
