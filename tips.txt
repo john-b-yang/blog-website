@@ -22,6 +22,7 @@ Next Steps:
 - Pop up project descriptions
 - Design page below projects?
 - Collection of enjoyable readings
+- Convert projects page to flask metadata loop
 
 Finished:
 - Make bottom buttons colorable
