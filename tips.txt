@@ -20,6 +20,8 @@ Next Steps:
 - Deploy on Elastic Beanstalk
 - Background illustration disappears when tag requested
 - Pop up project descriptions
+- Design page below projects?
+- Collection of enjoyable readings
 
 Finished:
 - Make bottom buttons colorable

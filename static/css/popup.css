@@ -1,22 +1,27 @@
 .buttonSec {
-    text-align: center;
-}
-
-.buttonSec>button {
-    width: 200px;
-    line-height: 20px;
-    padding: 12px 15px 12px;
+    /* text-align: center; */
+    /* width: 200px;
+    line-height: 20px; */
     color: black;
-    -webkit-transition: all 3s ease-in-out;
+    /* -webkit-transition: all 3s ease-in-out;
     -moz-transition: all 3s ease-in-out;
-    transition: all 3s ease-in-out;
+    transition: all 3s ease-in-out; */
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
 }
 
-.buttonSec>button:hover {
+.buttonSec:hover {
     opacity: 0.8;
     -webkit-transition: all 3s ease-in-out;
     -moz-transition: all 3s ease-in-out;
     transition: all 3s ease-in-out;
+    background: none;
+}
+
+.buttonSec:focus {
+    background:none;
 }
 
 .pop {
@@ -24,7 +29,7 @@
     position: fixed;
     margin: auto;
     top: 10%;
-    left: 25.3%;
+    left: 25%;
     width: 50%;
     height: 80%;
     background: white;
