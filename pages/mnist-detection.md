@@ -21,3 +21,5 @@ from sklearn import svm
 # Data Set
 from mnist import MNIST
 </pre>
+
+Download the complete ipython notebook for this tutorial by clicking this [link](../static/pictures/MNIST/mnist_detection.ipynb)
