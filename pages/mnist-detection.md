@@ -6,6 +6,8 @@ readtime: 6 MINS
 tags: [Python, Tutorial]
 time: SUNDAY, MAY 13, 2018
 
+In this article, my goal is to use the MNIST Classification problem as a conduit for building practical analogies that illustrate how different machine learning models perform. By using one of the most rudimentary, introductory data set out there, I hope to highlight some of the tradeoffs that come with different approaches to a very traditional classification problem.
+
 ##### Part 1: Data Processing Tools
 
 <pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
