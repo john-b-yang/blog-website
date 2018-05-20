@@ -143,4 +143,36 @@ print("Accuracy: " + str(round(accuracy, 4)))
 print(classification_report(train_labels, predictions))
 </pre>
 
+##### Part 6: Logistic Regression
+
+<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+import tensorflow as tf
+from tensorflow.examples.tutorials.mnist import input_data
+mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
+</pre>
+
+<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+# Placeholder: Value to be input when asking TensorFlow to run computation
+x = tf.placeholder(tf.float32, [None, 784])
+
+# Variable: Modifiable tensor living in the TensorFlow graph
+W = tf.Variable(tf.zeros([784, 10]))
+b = tf.Variable(tf.zeros([10]))
+
+# Softmax Regression!
+y = tf.nn.softmax(tf.matmul(x, W) + b)
+</pre>
+
+<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+# Cost / Loss Function: How far off our model is from desired outcome
+
+# Cross-entropy: Measures how inefficient predictions are for describing the truth
+# Function = - summation (y' * log(y))
+y_prime = tf.placeholder(tf.float32, [None, 10])
+cross_entropy = tf.reduce_mean(-tf.reduce_sum(y_prime * tf.log(y), reduction_indices=[1]))
+
+# Minimize cross_entropy function with gradient descent + 0.5 Learning Rate
+train_step = tf.train.GradientDescentOptimizer(0.5).minimize(cross_entropy)
+</pre>
+
 View the complete ipython notebook for this tutorial by following this [link](https://github.com/john-b-yang/blog-website/blob/master/static/misc/mnist-detection.ipynb)!
