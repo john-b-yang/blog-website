@@ -151,6 +151,7 @@ from tensorflow.examples.tutorials.mnist import input_data
 mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
 </pre>
 
+Softmax Regression Implementation
 <pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
 # Placeholder: Value to be input when asking TensorFlow to run computation
 x = tf.placeholder(tf.float32, [None, 784])
@@ -163,11 +164,10 @@ b = tf.Variable(tf.zeros([10]))
 y = tf.nn.softmax(tf.matmul(x, W) + b)
 </pre>
 
+Model Training
 <pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
 # Cost / Loss Function: How far off our model is from desired outcome
-
 # Cross-entropy: Measures how inefficient predictions are for describing the truth
-# Function = - summation (y' * log(y))
 y_prime = tf.placeholder(tf.float32, [None, 10])
 cross_entropy = tf.reduce_mean(-tf.reduce_sum(y_prime * tf.log(y), reduction_indices=[1]))
 
@@ -175,4 +175,24 @@ cross_entropy = tf.reduce_mean(-tf.reduce_sum(y_prime * tf.log(y), reduction_ind
 train_step = tf.train.GradientDescentOptimizer(0.5).minimize(cross_entropy)
 </pre>
 
+Model Evaluation
+<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+session = tf.InteractiveSession()
+tf.global_variables_initializer().run()
+
+for _ in range(1000):
+    batch_xs, batch_ys = mnist.train.next_batch(100)
+    session.run(train_step, feed_dict={x: batch_xs, y_prime: batch_ys})
+
+# tf.argmax - Index of highest entry in tensor (y) along an axis (1)
+# correct_prediction is an array of booleans
+correct_prediction = tf.equal(tf.argmax(y, 1), tf.argmax(y_prime, 1))
+
+# Calculate accuracy: Cast to floating point numbers, take mean
+accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+
+print(session.run(accuracy, feed_dict={x: mnist.test.images, y_prime: mnist.test.labels}))
+</pre>
+
 View the complete ipython notebook for this tutorial by following this [link](https://github.com/john-b-yang/blog-website/blob/master/static/misc/mnist-detection.ipynb)!
+View this [link](http://rodrigob.github.io/are_we_there_yet/build/classification_datasets_results.html) to check out different classification models have stacked up against one another in terms of performance.
