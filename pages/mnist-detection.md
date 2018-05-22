@@ -3,12 +3,14 @@ date: 2018-05-13
 description: Exploring different machine learning models through the "Hello World" of data sets
 image: /static/pictures/MNIST/head-image.png
 readtime: 6 MINS
-tags: [Python, Tutorial]
+tags: [ML, Python, Tutorial]
 time: SUNDAY, MAY 13, 2018
 
 In this article, my goal is to use the MNIST Classification problem as a conduit for building practical analogies that illustrate how different machine learning models perform. By using one of the most rudimentary, introductory data set out there, I hope to highlight some of the tradeoffs that come with different approaches to a very traditional classification problem.
 
 ##### Part 1: Data Processing Tools
+
+First and foremost, we're going to import the python-mnist library that contains the data set we want. In addition, we will also be using numpy and pandas as our main data processing tools along with multiple pre-built machine learning models from the sci-kit library.
 
 <pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
 # Data Processing Tools
@@ -152,6 +154,7 @@ mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
 </pre>
 
 Softmax Regression Implementation
+
 <pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
 # Placeholder: Value to be input when asking TensorFlow to run computation
 x = tf.placeholder(tf.float32, [None, 784])
@@ -165,6 +168,7 @@ y = tf.nn.softmax(tf.matmul(x, W) + b)
 </pre>
 
 Model Training
+
 <pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
 # Cost / Loss Function: How far off our model is from desired outcome
 # Cross-entropy: Measures how inefficient predictions are for describing the truth
@@ -176,6 +180,7 @@ train_step = tf.train.GradientDescentOptimizer(0.5).minimize(cross_entropy)
 </pre>
 
 Model Evaluation
+
 <pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
 session = tf.InteractiveSession()
 tf.global_variables_initializer().run()
