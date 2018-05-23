@@ -38,6 +38,8 @@ warnings.filterwarnings('ignore')
 
 ##### Part 2: MNIST Data Organization
 
+With the following code, we load in the data, take the first 5000 data points, and randomly separate them into testing and training sets of images and labels. We perform some type-casting to make data manipulation a bit easier.
+
 <pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
 mndata = MNIST('/Users/johnyang/Desktop/')
 mnist_images, mnist_labels = mndata.load_testing()
