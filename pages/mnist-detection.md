@@ -68,6 +68,8 @@ train_labels_array = train_labels.as_matrix()
 
 ##### Part 3: Data Visualization
 
+Here, we take the first row value in our data set, reshape the vector into a square matrix, and plot the result to graphically illustrate what the data looks like. As we can see, the original row vector is simply a flattened interpretation of the image data, and each square has a grayscale value between 0 and 1 where 0 is white and 1 is black.
+
 <pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
 # Select first image from training set
 image = train_images.iloc[0].as_matrix()
