@@ -87,6 +87,12 @@ plt.hist(train_images.iloc[0])
 
 ##### Part 4: K Nearest Neighbors
 
+The general idea of KNN is encapsulated as assuming the value of similar data. In other words, if the feature vector of the number we're trying to detect looks similar to training data that is mostly labeled as 4's, then we classify it with the label '4'. To use an old adage, birds of a feather flock together. With K Nearest Neighbors, the proximity of different flocks helps determine what the label is.
+
+When you think about it, the KNN model works pretty intuitively with this data set. Data sets that work well with KNN classification can usually be visualized as different clusters of data. In this case, most numbers are quite distinguishable from one another in written form. A good context to think about this data is how your typical, run of the mill digital clocks depict numbers. The 1's are most likely going to be a straight, vertical column of 0 neons surrounded by 1's.
+
+The only potential downside to this approach is that due to human handwriting, some numbers could be confused with one another. A poorly written '6' that doesn't have a very clear head could easily be confused as a '0'. In addition, a '7' without a distinguishable, top horizontal line could be classified incorrectly as a 1.
+
 <pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
 test_images_len = test_images.shape[0]
 predictions = []
