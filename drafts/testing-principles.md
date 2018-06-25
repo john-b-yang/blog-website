@@ -20,6 +20,10 @@ Michael Feathers, author of "Working Effectively with Legacy Code", describes go
 
 So what does "lightweight" exactly mean? A general rule of thumb is that unit tests should not be overly reliant on external dependencies or frameworks that are outside the realm of the class being tested. Practically speaking, unit tests don't require communicating on a network or switching between processes (see [integration testing](https://en.wikipedia.org/wiki/Integration_testing)). When we discuss testing on this level, we're intentionally limiting our scope to just the class itself. Respecting this contextualization is what makes unit tests bit-sized simple and yet absolute in its pass/fail results.
 
+##### Anatomy of a Unit Test
+
+TODO(john-b-yang) Include basic example here
+
 ##### Name Unit Tests Intuitively
 
 For any class, it's never a bad idea to write a corresponding set of test methods. Each method's name conveys a responsibility of the object, as opposed to the class's methods or inputs/outputs themselves. Keep in mind that the point of unit tests are to serve as small, testable modules that can be run independently from one another. Unit tests are there to ensure that code meets design and behavior guidelines, *not* the durability of one particular function. Great unit tests are straightforward enough that someone else reading your code can understand its purpose without needing to dive into the implementation itself.
@@ -38,3 +42,7 @@ In this format, testing code is much more readable. When someone else reviews yo
 - Date Time Converter converts UTC to PST.
 - Date Time Converter throws exception if incorrect format.
 - Date Time Converter does not modify time parameter.
+
+##### Overcoming Module Dependencies
+
+TODO(john-b-yang) Discuss the inevitability of how classes are interdependent. Introduce and create examples for terms: test double, dummy, fakes, stubs, mocks.
