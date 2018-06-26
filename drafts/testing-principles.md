@@ -12,6 +12,8 @@ To be honest, I felt pretty overwhelmed when faced with a task that is character
 
 At Google, there's a company-wide emphasis on writing robust, comprehensive tests. Most code waiting to be checked in is complemented by a suite of tests.
 
+In this article, I hope my experience portrays testing as an intuitive, logical art form. Testing is, and should be a lot easier than a university Operating Systems or Machine Learning class. This article's true purpose is to introduce mainstream industry concepts, structures, and conventions that helped shape my raw, initial instincts towards the art of software testing.
+
 ##### Basic Terminology
 
 Wikipedia provides a pretty well rounded definition of unit testing: "In computer programming unit testing is a software testing method by which individual units of source code, sets of one or more computer program modules...are tested to determine whether they are fit for use."
@@ -44,5 +46,9 @@ In this format, testing code is much more readable. When someone else reviews yo
 - Date Time Converter does not modify time parameter.
 
 ##### Overcoming Module Dependencies
+
+In Dr. Robert Cecil Martin's book, [Clean Code](https://www.investigatii.md/uploads/resurse/Clean_Code.pdf), Dr. Martin discusses an idea called the "Single Responsibility Principle". This principle encourages readable, simple code by enforcing a standard which states that every module has responsibility over one and only one part of the software's functionality. I thought about it this way: Imagine you're a watchmaker designing the mechanism for turning the hour and minute hands. By Dr. Martin's principle, it's better to have multiple small cogs rather than one large cog powering each tick (It's not a very realistic analogy, but hopefully it illustrates his point more vividly).
+
+The Single Responsibility Principle has merit across the software development board. When it comes to maintenance, bit-sized modules of code makes it easier to identify points of failure. Microservices' emphasis on designing software as individual, isolated services with singular purposes is what makes this architecture so favorable for deploying and maintaining production code. In his article "Understanding Microservices", Michael Douglass makes a fantastic point on how "Complexity [in monolithic codebases] comes from low cohesion and high coupling". Tying things together, unit tests are perfectly in line with this ideology.
 
 TODO(john-b-yang) Discuss the inevitability of how classes are interdependent. Introduce and create examples for terms: test double, dummy, fakes, stubs, mocks.
