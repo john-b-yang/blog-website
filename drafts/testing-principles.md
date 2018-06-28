@@ -53,4 +53,13 @@ The Single Responsibility Principle has merit across the software development bo
 
 However, the more modularized code is, the more inevitable inter-class dependencies become. In the context of unit testing, the parameters and libraries that modules are reliant on become obstacles to the incubated nature of unit tests. But not to worry, the solution is entertainingly simple: Fake it till you make it!
 
+Instead of having to deal with time consuming dependencies, you can substitute in custom objects to help thoroughly test your code, increase coverage, and execute tests at superior speeds. Creating custom objects frees you from expectations and limitations that might be projected by dependencies. For example, creating a custom object can allow you to simulate rare edge case dependency failures that otherwise could not be offered by a service that has to be up and running.
+
+"Custom Objects" is a broad term that encompasses a variety of mock testing components. In his book [xUnit Test Patterns](https://martinfowler.com/books/meszaros.html), author Gerard Meszaros identifies a couple categories and definitions for different custom objects.
+- Test Double: Test object that replaces a production object
+- Dummy: Objects that are passed around by not actually used. The best example is as fillers for parameter lists.
+- Fakes: Components with semi-working implementations. They work well enough to run a test, but take shortcuts to cut out irrelevant functionalities.
+- Stubs: Canned answers to calls made during a test. For instance, an artificial server with the same response to a post request.
+- Mocks: Expectations which form a specification of the calls they do and do not receive.
+
 TODO(john-b-yang) Discuss the inevitability of how classes are interdependent. Introduce and create examples for terms: test double, dummy, fakes, stubs, mocks.
