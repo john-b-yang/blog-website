@@ -55,6 +55,10 @@ However, the more modularized code is, the more inevitable inter-class dependenc
 
 Instead of having to deal with time consuming dependencies, you can substitute in custom objects to help thoroughly test your code, increase coverage, and execute tests at superior speeds. Creating custom objects frees you from expectations and limitations that might be projected by dependencies. For example, creating a custom object can allow you to simulate rare edge case dependency failures that otherwise could not be offered by a service that has to be up and running.
 
+There's an excerpt of Gerard Meszaros that I thought provided a great, pithy explanation behind the problem and solution to module dependencies:
+
+"Sometimes it is just plain hard to test the system under test (SUT) because it depends on other components that cannot be used in the test environment. This could be because they aren’t available, they will not return the results needed for the test or because executing them would have undesirable side effects. In other cases, our test strategy requires us to have more control or visibility of the internal behavior of the SUT.  When we are writing a test in which we cannot (or chose not to) use a real depended-on component (DOC), we can replace it with a Test Double. The Test Double doesn’t have to behave exactly like the real DOC; it merely has to provide the same API as the real one so that the SUT thinks it is the real one!"
+
 "Custom Objects" is a broad term that encompasses a variety of mock testing components. In his book [xUnit Test Patterns](https://martinfowler.com/books/meszaros.html), author Gerard Meszaros identifies a couple categories and definitions for different custom objects.
 - Test Double: Test object that replaces a production object
 - Dummy: Objects that are passed around by not actually used. The best example is as fillers for parameter lists.
