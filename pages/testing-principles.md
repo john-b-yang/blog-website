@@ -1,9 +1,9 @@
-title: Principles of Testing (Pt. 1 - Unit Tests)
+title: Principles of Testing | Unit Tests
 date: 2018-06-04
-description: A unit test a day keeps the exceptions away.
-image: /static/pictures/MNIST/head-image.png
+description: A unit test a day keeps the null pointer exceptions away.
+image: /static/pictures/UnitTests/UnitTestLogo.jpeg
 readtime: 6 MINS
-tags: []
+tags: [Testing]
 time: WEDNESDAY, JUNE 20, 2018
 
 This past semester as a student at UC Berkeley, I took a computer science course titled "CS61C: Great Ideas in Computer Architecture". This course servers as a primer for the C programming language. It dives into the so called "low level" machine structures that hosts the nitty gritty details of "what" and "how" a computer works. CS61C is known for having a handful of long projects. In my opinion, the challenge for doing well was two fold. First, the implementation for these solutions were very lengthy. Second, due to the lack of scaffolding, it became common for work in progress to start veering in the wrong direction.
@@ -65,5 +65,3 @@ There's an excerpt of Gerard Meszaros that I thought provided a great, pithy exp
 - Fakes: Components with semi-working implementations. They work well enough to run a test, but take shortcuts to cut out irrelevant functionalities.
 - Stubs: Canned answers to calls made during a test. For instance, an artificial server with the same response to a post request.
 - Mocks: Expectations which form a specification of the calls they do and do not receive.
-
-TODO(john-b-yang) Discuss the inevitability of how classes are interdependent. Introduce and create examples for terms: test double, dummy, fakes, stubs, mocks.
