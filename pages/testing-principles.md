@@ -22,6 +22,10 @@ Michael Feathers, author of "Working Effectively with Legacy Code", describes go
 
 So what does "lightweight" exactly mean? A general rule of thumb is that unit tests should not be overly reliant on external dependencies or frameworks that are outside the realm of the class being tested. Practically speaking, unit tests don't require communicating on a network or switching between processes (see [integration testing](https://en.wikipedia.org/wiki/Integration_testing)). When we discuss testing on this level, we're intentionally limiting our scope to just the class itself. Respecting this contextualization is what makes unit tests bit-sized simple and yet absolute in its pass/fail results.
 
+##### Goals of a Unit Test
+
+
+
 ##### Anatomy of a Unit Test
 
 TODO(john-b-yang) Include basic example here
