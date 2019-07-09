@@ -58,12 +58,18 @@ Initially, this design was a bit confusing to me. Why record transactions that, 
 
 The big picture...
 
-<img src="/static/pictures/Libra/2-ledger-cumulative.png" alt="Resource" style="height:600px;display:block;margin-left:auto;margin-right:auto"/>
+<img src="/static/pictures/Libra/2-ledger-cumulative.png" alt="Big Picture" style="height:600px;display:block;margin-left:auto;margin-right:auto"/>
 
 <br>
 ##### 3 Executing Transactions
 
-Now that we've got the data model down, this section explores, to greater depths, the logical and technical flow of transitioning from one ledger state to the next via an executed transaction.
+Now that we've got the data model down, this section explores, to greater depths, the logical and technical flow of transitioning from one ledger state to the next via an executed transaction. Section 3.1 is largely derivative of existing blockchain systems' execution requirements, namely deterministic transaction outputs and metered execution (a.k.a. Ethereum's gas model). Determinism ensures consensus among multiple validators can be achieved. Metered execution, broken down into gas price (Libra / unit of gas client will pay) and gas cost (gas needed to execute Xact entirely), is a technique for preventing Libra from being overwhelmed with too many transactions.
+
+The anatomy of a transaction and its execution by the Move Virtual Machine are detailed below. This diagram is essentially a summary of sections 3.2 and 3.3.
+
+<img src="/static/pictures/Libra/3-Xact-Flow.gif" alt="Xact Flow" style="height:450px;display:block;margin-left:auto;margin-right:auto"/>
+
+Although the Prologue and Epilogue steps involve running Move bytecode, the client is not charged gas costs for their execution since its is required no matter what transaction is executed. The code is also distinct from the client's transaction's bytecode. Perhaps the most interesting development is Step 3, where the transaction's script and modules are verified. Designing a smart contract involves many safety issues, and in recent years, vulnerabilities such as [reentrancy attacks](https://medium.com/@gus_tavo_guim/reentrancy-attack-on-smart-contracts-how-to-identify-the-exploitable-and-an-example-of-an-attack-4470a2d8dfe4) have cost many contract authors and clients a great deal of money. There is much ongoing research in industry and academia designing tools for catching exploitable bugs within smart contracts before they are committed to the blockchain and become immutable. Libra's script + module verification step represents a notable first time where contract checking is being directly integrated in the transaction deployment process. Unfortunately, how exactly contract checking is implemented in Libra is not discussed in greater detail anywhere else in the paper.
 
 <br>
 ##### 4 Authenticated Data Structures and Storage
