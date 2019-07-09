@@ -38,7 +38,7 @@ From a high level, the Libra Blockchain can be visualized by the following diagr
 
 <img src="/static/pictures/Libra/2-ledger-overview.png" alt="Ledger Overview" style="height:200px;display:block;margin-left:auto;margin-right:auto"/>
 
-The next question that might naturally arise is, what goes into a ledger's state? It's really just a simple key-value store associating each account address with a set of resources (data values, i.e. how much Libra Coin does 0x123... have?) and modules (smart contracts, a.k.a. Move bytecode defining a new resource's type + associated procedures. i.e. transfer of Libra Coin between accounts). The below diagram is essentially appropriated from the paper, just with a couple additional illustrations for greater clarity and detail.
+The next question that might naturally arise is, what goes into a **ledger's state**? It's really just a simple key-value store associating each account address with a set of resources (data values, i.e. how much Libra Coin does 0x123... have?) and modules (smart contracts, a.k.a. Move bytecode defining a new resource's type + associated procedures. i.e. transfer of Libra Coin between accounts). The below diagram is essentially appropriated from the paper, just with a couple additional illustrations for greater clarity and detail.
 
 <img src="/static/pictures/Libra/2-ledger-state.png" alt="Ledger State" style="height:300px;display:block;margin-left:auto;margin-right:auto"/>
 
@@ -48,7 +48,22 @@ The schematics governing account addresses are nothing new. Each user has a veri
 
 <img src="/static/pictures/Libra/2-ledger-resource.png" alt="Resource" style="height:150px;display:block;margin-left:auto;margin-right:auto"/>
 
-Notice that a resource is uniquely identified by &lt;account address (creator)&gt; / &lt;module name&gt; / &lt;resource type&gt;. In other words, multiple modules and resources could have the same name, but are distinguished by their creators, making them distinct types. Therefore, in the above diagram, the two coins in account 0x27... have the same module name (Coin) and resource name (Coin.T), but ultimately, are different types (0x27.Coin.T vs. 0x45.Coin.T). I like this convention for identifying resource types because it prevents a first-come-first-serve issue for naming modules or resources (ala [domain squatting](https://en.wikipedia.org/wiki/Cybersquatting)). Similar to smart contracts, modules wholly define rules for mutating, deleting, and publishing a resource. As of this point, a published module is immutable, although methods for safe updates are being explored for release in the future.
+Notice that a resource is uniquely identified by &lt;account address (creator)&gt; / &lt;module name&gt; / &lt;resource type&gt;. In other words, multiple modules and resources could have the same name, but are distinguished by their creators, making them distinct types. Therefore, in the above diagram, the two coins in account 0x27... have the same module name (Coin) and resource name (Coin.T), but ultimately, are different types (0x27.Coin.T vs. 0x45.Coin.T). I like this convention for identifying resource types because it prevents a first-come-first-serve issue for naming modules or resources (ala [domain squatting](https://en.wikipedia.org/wiki/Cybersquatting)). Similar to smart contracts, modules wholly define rules for mutating, deleting, and publishing a resource. As of this point, a module published to Libra is immutable, although methods for safe updates are being explored for release in the future.
+
+Ok, now that we've defined state, what about **transactions**, the medium for going from one state to another? A transaction consists of a transaction script (Move bytecode) + arguments. Section 3 will go into the flow of executing and committing a transaction.
+
+One noteworthy distinction is between an *output* and an *event*. An *output* details information consistently associated with every executed transaction, specifically the new resulting ledger state, gas usage, and execution status code. *Events* are much more open-ended and defined by the transaction code. This difference highlights an interesting distinction. In Libra, a transaction that is processed and recorded in the ledger history does not imply successful execution. This is where an *event* helps indicate whether the transaction actually took effect.
+
+Initially, this design was a bit confusing to me. Why record transactions that, if they presumably failed due to an error or running out of gas, don't actually change the ledger state? Upon some additional thought, such a record would be necessary because regardless of the transaction's ultimate output, the validator that attempted to process the transaction still receives Libra Coin for its effort; thus, such a exchange should be recorded. This necessitates *events* in addition to a fixed set of *output* fields.
+
+The big picture...
+
+<img src="/static/pictures/Libra/2-ledger-cumulative.png" alt="Resource" style="height:600px;display:block;margin-left:auto;margin-right:auto"/>
+
+<br>
+##### 3 Executing Transactions
+
+Now that we've got the data model down, this section explores, to greater depths, the logical and technical flow of transitioning from one ledger state to the next via an executed transaction.
 
 <br>
 ##### 4 Authenticated Data Structures and Storage
