@@ -67,9 +67,19 @@ Now that we've got the data model down, this section explores, to greater depths
 
 The anatomy of a transaction and its execution by the Move Virtual Machine are detailed below. This diagram is essentially a summary of sections 3.2 and 3.3.
 
-<img src="/static/pictures/Libra/3-Xact-Flow.gif" alt="Xact Flow" style="height:450px;display:block;margin-left:auto;margin-right:auto"/>
+<img src="/static/pictures/Libra/3-Xact-Flow.gif" alt="Xact Flow" style="height:400px;display:block;margin-left:auto;margin-right:auto"/>
 
 Although the Prologue and Epilogue steps involve running Move bytecode, the client is not charged gas costs for their execution since its is required no matter what transaction is executed. The code is also distinct from the client's transaction's bytecode. Perhaps the most interesting development is Step 3, where the transaction's script and modules are verified. Designing a smart contract involves many safety issues, and in recent years, vulnerabilities such as [reentrancy attacks](https://medium.com/@gus_tavo_guim/reentrancy-attack-on-smart-contracts-how-to-identify-the-exploitable-and-an-example-of-an-attack-4470a2d8dfe4) have cost many contract authors and clients a great deal of money. There is much ongoing research in industry and academia designing tools for catching exploitable bugs within smart contracts before they are committed to the blockchain and become immutable. Libra's script + module verification step represents a notable first time where contract checking is being directly integrated in the transaction deployment process. Unfortunately, how exactly contract checking is implemented in Libra is not discussed in greater detail anywhere else in the paper.
+
+The remainder of this section previews the technical foundations and design motivations of the Move DSL for writing modules and scripts in Libra. The Move programming language can be broken down into three different representations. As of this article, the source language is not available to the general public, so preliminary script and module development can only be written in the intermediate representation, which the authors claim is still human readable.
+
+<img src="/static/pictures/Libra/3-move-basics.png" alt="Move Basics" style="height:150px;display:block;margin-left:auto;margin-right:auto"/>
+
+There are two notable facets of Move that I think are worth pointing out with regards to security. First, the safety checks and guarantees that the Move Virtual Machine performs before processing a transaction (recall Step 3 from above) are enacted on Move bytecode (a.k.a. *bytecode verification*). This is wise design; performing safety checks at the IR or Source Code level presents an opportunity for malicious clients to evade these checks by simply just writing the code at a lower level. Again, however, how comprehensive these checks are have yet to be elaborated upon by the Libra team.
+
+Another trend is that the more low-level the representation, the more constrained the code base becomes. While the Source Language and IR support more complex paradigms such as conditionals and loops, the bytecode representing these patterns, when compiled, is based on a much smaller instruction set. In fact, the Move VM ultimately supports just six different types and values. I think the authors put a subjectively positive spin on their decision; limiting the instruction set should reduce the scope of potential vulnerabilities, but it comes at the cost of expressivity.
+
+Given that the IR and Source Code language are still very much in development, it will be interesting to see how limitations on the bytecode instruction set affects how expressive the higher level representations can really be. As Libra matures over time, I'd venture that the codebase for all three representations would grow to accommodate more use cases. The Move code available to the public right now is likely limited on purpose, as Libra's maintainers would rather support a safer DSL that is more secure than it is expressive to build trust in the platform.
 
 <br>
 ##### 4 Authenticated Data Structures and Storage
