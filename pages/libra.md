@@ -84,7 +84,17 @@ Given that the IR and Source Code language are still very much in development, i
 <br>
 ##### 4 Authenticated Data Structures and Storage
 
-The actual implementation of Libra
+In this section, the authors dive into the data structures behind the data models described in section 2. The Libra Blockchain's technical implementation is dominated by [Merkle Trees](https://en.wikipedia.org/wiki/Merkle_tree), and the use of this structure is perhaps its greatest distinction from existing blockchain systems.
+
+Before diving into how the ledger history, event list, ledger state, etc are stored within Merkle Trees, it's helpful to have a bit of background on authenticated data structures (ADS). For me, this [paper](https://www.cs.umd.edu/~mwh/papers/gpads.pdf) was particularly useful for achieving basic comprehension of the motivations, terminology, and technicalities surrounding ADS's in general. I'd recommend reading section 2, which mentions Merkle Trees as a canonical example of an ADS. In one sentence, ADS's are useful because they allow untrusted *provers* (i.e. validators) to perform operations on and modify the state of the data structure; such changes can be checked for authenticity by *verifiers* (i.e. clients). In a certain sense, today's most popular blockchain systems can be thought of as a decentralized, distributed ADS. The illustration below depicts a simplified workflow of how provers modify and verifiers check the state of an ADS. The label's letters correspond to the notation used in Section 4.1 of the paper.
+
+<img src="/static/pictures/Libra/4-ads-flow.png" alt="ADS Flow" style="height:250px;display:block;margin-left:auto;margin-right:auto"/>
+
+What is the significance of a prover being *untrusted*? After all, as of today, the only validators are verified members of the Libra Association; these validators are, in a sense, trusted. However, as Libra expands later on, the plan is that entities from the general public can become validators. At that point, trust in validators is no longer a guarantee, which is why authentication with *untrusted* provers modifying the ADS must be tolerable.
+
+So what does a result (R), proof of the computation (π), and authentication look like in the context of a Merkle Tree data structure?
+
+So why not just use a normal linked-list style blockchain? What's all the hurrah over using a Merkle Tree? This change originates out of the drive for scalability and a more efficient authentication process for a client.
 
 <br>
 ##### Questions & Thoughts
