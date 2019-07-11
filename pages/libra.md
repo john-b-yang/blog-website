@@ -125,10 +125,12 @@ The runtime of a simple retrieval operation with Merkle Trees is clearly faster 
 
 This prompts an interesting question. If Libra becomes the global platform it wants to be, just how much storage space would the Libra blockchain require? The paper doesn't provide any quantities reflecting the storage capacity requirements of a single ledger state, a ledger history with N states, or the size of the cryptographic hashes. Without these number, it's difficult to come up with a fair estimate.
 
-Just out of curiosity, let's base the estimation off block sizes from Bitcoin. A Bitcoin block is around 1-2 MB containing multiple transactions. Since Libra's blocks contain a single transaction, we could venture that 1 MB per block is an upper bound. However, for every one Bitcoin block, there will be multiple Libra blocks for each transaction. Therefore, representing the same set of transactions in Libra will likely require more storage in total. Now, if we use the SHA-256 cryptographic hash, we can assume that the hash blocks will be at least 256 bits, an insignificant amount much smaller than a single node. A Merkle Tree's total storage size will definitely be larger than a linked list blockchain, with the majority of the difference coming from the single transaction per block model, and a minor amount due to cryptographic hash blocks. This calculation only considers the ledger history Merkle Tree. I admit, there are many unconfirmed assumptions with the calculation above, but regardless, storage will be constant challenge as the use of Libra proliferates.
+Just out of curiosity, let's base the estimation off block sizes from Bitcoin. A Bitcoin block is around 1-2 MB containing multiple transactions. Since Libra's blocks contain a single transaction, we could venture that 1 MB per block is an upper bound. However, for every one Bitcoin block, there will be multiple Libra blocks for each transaction. Therefore, representing the same set of transactions in Libra will likely require more storage in total. Now, if we use the SHA-256 cryptographic hash, we can assume that the hash blocks will be at least 256 bits, an insignificant amount much smaller than a single Xact node. A Merkle Tree's total storage size will definitely be larger than a linked list blockchain, with the majority of the difference coming from the single transaction per block model, and a minor amount due to cryptographic hash blocks. This calculation only considers the ledger history Merkle Tree. I admit, there are many unconfirmed assumptions with the calculation above, but regardless, storage will be constant challenge as the use of Libra proliferates.
 
 <br>
-##### 5 Byzantine  Fault Tolerant Consensus
+##### 5 Byzantine Fault Tolerant Consensus
+
+
 
 <br>
 ##### Miscellaneous
