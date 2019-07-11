@@ -86,17 +86,51 @@ Given that the IR and Source Code language are still very much in development, i
 
 In this section, the authors dive into the data structures behind the data models described in section 2. The Libra Blockchain's technical implementation is dominated by [Merkle Trees](https://en.wikipedia.org/wiki/Merkle_tree), and the use of this structure is perhaps its greatest distinction from existing blockchain systems.
 
+**Part 1: ADS's and Merkle Tree Basics**
+
 Before diving into how the ledger history, event list, ledger state, etc are stored within Merkle Trees, it's helpful to have a bit of background on authenticated data structures (ADS). For me, this [paper](https://www.cs.umd.edu/~mwh/papers/gpads.pdf) was particularly useful for achieving basic comprehension of the motivations, terminology, and technicalities surrounding ADS's in general. I'd recommend reading section 2, which mentions Merkle Trees as a canonical example of an ADS. In one sentence, ADS's are useful because they allow untrusted *provers* (i.e. validators) to perform operations on and modify the state of the data structure; such changes can be checked for authenticity by *verifiers* (i.e. clients). In a certain sense, today's most popular blockchain systems can be thought of as a decentralized, distributed ADS. The illustration below depicts a simplified workflow of how provers modify and verifiers check the state of an ADS. The label's letters correspond to the notation used in Section 4.1 of the paper.
 
 <img src="/static/pictures/Libra/4-ads-flow.png" alt="ADS Flow" style="height:250px;display:block;margin-left:auto;margin-right:auto"/>
 
 What is the significance of a prover being *untrusted*? After all, as of today, the only validators are verified members of the Libra Association; these validators are, in a sense, trusted. However, as Libra expands later on, the plan is that entities from the general public can become validators. At that point, trust in validators is no longer a guarantee, which is why authentication with *untrusted* provers modifying the ADS must be tolerable.
 
-So what does a result (R), proof of the computation (π), and authentication look like in the context of a Merkle Tree data structure?
+The cryptography of an ADT varies from one data structure to another. So what does a result (R), proof of the computation (π), and authentication look like in the context of a Merkle Tree data structure? Figure 4 in Section 4.1, copy and pasted below with a couple additions, identifies the components of the Merkle tree that correspond to each label.
 
-So why not just use a normal linked-list style blockchain? What's all the hurrah over using a Merkle Tree? This change originates out of the drive for scalability and a more efficient authentication process for a client.
+<img src="/static/pictures/Libra/4-merkle-ads.png" alt="Merkle ADS" style="height:300px;display:block;margin-left:auto;margin-right:auto"/>
+
+Recall from the previous diagram, the verifier's authenticator is actually the root node of the Merkle Tree, which is just a hash across the entire tree. As we can deduce from the example above, the proof for any committed state consists of the additional hash values that one would need to calculate the root node's value. To elaborate a bit, for s2, the hashes h2, h3, and h4 would be required to verify authenticity correctly.
+
+**Part 2: Implementation**
+
+Libra uses many, many Merkle Trees. The Ledger History and each Transaction's Ledger State and Event Tree are all modeled as Merkle Trees. Figure 3 in Section 4.1 is an excellent diagram highlighting the relationships between different components of the Libra Blockchain along with the type of data structure used for representation.
+
+<img src="/static/pictures/Libra/4-libra-structs.png" alt="Merkle ADS" style="height:300px;display:block;margin-left:auto;margin-right:auto"/>
+
+* The Ledger History *Merkle Tree*'s leaves map a version number to a Transaction.
+* The Ledger State *Merkle Tree*'s leaves represent the state of all accounts at a particular version. The key is the account's address while the value is the authenticator (hash).
+* The Event List *Merkle Tree*'s leaves map an index [J] to a tuple (event [A], data payload [P], Counter [C]). The index indicates the chronological order the events occurred.
+* The accounts' contents are stored as an *ordered map* of access paths (i.e. &lt;account address (creator)&gt; / &lt;module name&gt; / &lt;resource type&gt;) to values.
+
+In the author's discussion, it's apparent that storing Merkle Trees with a tractable amount of data will be a challenge as Libra's history of transactions grows with time. The paper mentions some techniques for minimizing the size of the Merkle tree representation, including pruning, sparse trees, and saving partial representation instead of the whole tree. However, it seems that at this point, there's no way to store a compacted version of Libra's full ledger history.
+
+**Part 3: Merkle Tree Pros and Cons**
+
+So why not just use a normal linked-list style blockchain? What's all the hurrah over using a Merkle Tree? This change originates out of the drive for scalability and a more efficient authentication process for a client. The diagram below stores the same data using the Merkle Tree data structure and a more traditional, linked list style blockchain.
+
+<img src="/static/pictures/Libra/4-merkle-vs-ll.png" alt="Merkle ADS" style="height:300px;display:block;margin-left:auto;margin-right:auto"/>
+
+Let's say that a client who trusts the 3rd block (State 2) wants to verify the authenticity of the 1st block (State 0). In a linked list setting, a client would need to retrieve every ancestor node between the trusted block (State 2) and block in question (State 0), then recompute [# ancestor blocks] hashes (a.k.a. N), simplifying to an O(N) runtime. On the other hand, for a Merkle Tree, only *log N* hashes are required for authentication.
+
+The runtime of a simple retrieval operation with Merkle Trees is clearly faster than linked lists, but that comes at the cost of space. The diagram also makes it obvious that Merkle Trees many more nodes than a linked list blockchain. A full Merkle tree with N leaves of actual data will required 2*N-1 nodes to store correctly ([proof](https://www.quora.com/How-many-nodes-does-a-full-binary-tree-with-N-leaves-contain)), nearly double the size of a linked list storing the same amount.
+
+This prompts an interesting question. If Libra becomes the global platform it wants to be, just how much storage space would the Libra blockchain require? The paper doesn't provide any quantities reflecting the storage capacity requirements of a single ledger state, a ledger history with N states, or the size of the cryptographic hashes. Without these number, it's difficult to come up with a fair estimate.
+
+Just out of curiosity, let's base the estimation off block sizes from Bitcoin. A Bitcoin block is around 1-2 MB containing multiple transactions. Since Libra's blocks contain a single transaction, we could venture that 1 MB per block is an upper bound. However, for every one Bitcoin block, there will be multiple Libra blocks for each transaction. Therefore, representing the same set of transactions in Libra will likely require more storage in total. Now, if we use the SHA-256 cryptographic hash, we can assume that the hash blocks will be at least 256 bits, an insignificant amount much smaller than a single node. A Merkle Tree's total storage size will definitely be larger than a linked list blockchain, with the majority of the difference coming from the single transaction per block model, and a minor amount due to cryptographic hash blocks. This calculation only considers the ledger history Merkle Tree. I admit, there are many unconfirmed assumptions with the calculation above, but regardless, storage will be constant challenge as the use of Libra proliferates.
 
 <br>
-##### Questions & Thoughts
-Can a single module declare multiple resource types?
-If an account is deleted or removed, what happens to the modules it defines or the resources that it contains?
+##### 5 Byzantine  Fault Tolerant Consensus
+
+<br>
+##### Miscellaneous
+1. Can a single module declare multiple resource types? - Yes, a single Move module can declare multiple structs, each with their own set of procedures
+2. If an account is deleted or removed, what happens to the modules it defines or the resources that it contains? - Discussed in 4.4 under "Account Eviction and Recaching"
