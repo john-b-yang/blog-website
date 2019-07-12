@@ -145,7 +145,7 @@ Beyond just the word "blockchain", the implementation and consensus protocols of
 
 The term "blockchain" seems to be tossed around increasingly indiscriminately these days as a catch-all term to describe the new wave of distributed systems technology. The Libra "Blockchain" is a case in point example of how the word has become a marketing buzzword. I know that sounds negative, but my intention is not to criticize, but rather, to clarify. Before reading this paper, the word "blockchain" prompted expectations of a system more similar to Bitcoin and Ethereum. Instead, Libra's most notable differences are that it
 
-&bull; Is a permissioned, classical approach to the problem of building a distributed system operating on a global scale. <br>
+&bull; Is a permissioned, classical consensus-based approach to the problem of building a distributed system operating on a global scale. <br>
 &bull; Uses an authenticated, sparse Merkle Tree data structure for *everything*, not Linked Lists. <br>
 &bull; Exercises a classical, elected-leader consensus protocol operating within a *permissioned* distributed setting. <br>
 &bull; Is based on the Move language which redefines the process in which smart contracts (a.k.a. resources, modules, and scripts) are written and checked for safety.
@@ -153,8 +153,8 @@ The term "blockchain" seems to be tossed around increasingly indiscriminately th
 It will be very exciting to see how the move language, data structure implementation, consensus protocol, and additional aspects of the Libra Blockchain evolve over time. Thanks for reading!
 
 ##### References
-&bull; More on the lineage of pBFT => HotStuff => LibraBFT: [Link](https://www.theblockcrypto.com/2019/06/19/a-technical-perspective-on-facebooks-librabft-consensus-algorithm/)
 
-##### Miscellaneous
-1. Can a single module declare multiple resource types? - Yes, a single Move module can declare multiple structs, each with their own set of procedures
-2. If an account is deleted or removed, what happens to the modules it defines or the resources that it contains? - Discussed in 4.4 under "Account Eviction and Recaching"
+&bull; The Lineage of pBFT => HotStuff => LibraBFT: [Link](https://www.theblockcrypto.com/2019/06/19/a-technical-perspective-on-facebooks-librabft-consensus-algorithm/) <br>
+&bull; The [HotStuff](https://arxiv.org/abs/1803.05069) and [pBFT](http://pmg.csail.mit.edu/papers/osdi99.pdf) papers <br>
+&bull; An introductory [paper](https://www.cs.umd.edu/~mwh/papers/gpads.pdf) discussing Authenticated Data Structures <br>
+&bull; The [Libra Blockchain](https://developers.libra.org/docs/the-libra-blockchain-paper) paper link
