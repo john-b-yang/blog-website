@@ -1,8 +1,8 @@
 title: A Technical Dissection of the Libra Blockchain
 date: 2019-06-20
-description: So turns out, the Libra "Blockchain" isn't an actual blockchain? A discussion and benefits analysis of Libra's implementation
+description: So turns out, the Libra "Blockchain" isn't an actual blockchain?
 image: /static/pictures/Libra/head-image.png
-readtime: 11 MINS
+readtime: 17 MINS
 time: THURSDAY, JUNE 20, 2019
 tags: [Paper]
 
@@ -10,7 +10,7 @@ Recently, Facebook has taken a dive into the field of cryptocurrency with the an
 
 There's been plenty of comments and criticism targeting the monetary implications that come with Libra's growth. However, in this article, I'll be more focused on summarizing the technical innovations powering the Libra platform, specifically the [Libra Blockchain](https://developers.libra.org/docs/the-libra-blockchain-paper). I'm primarily interested in how Libra attempts to address questions regarding how to support scalability and eliminate computational inefficiency (a.k.a. Proof of Work), challenges well publicized by the proliferation of Bitcoin and other cryptocurrency predecessors. Additionally, Libra adopts and mirrors smart contracts, an age old idea implemented in Ethereum, allowing client users to create their own protocols for a broad range of business. While the concept of smart contracts has indubitably made blockchain more useful, there have been no shortage of security issues associated with poorly written contracts. I'll also be examining Libra's companion DSL for programming smart contracts, called Move! It's an interesting redesign of Solidity that aims to make writing a contract a much safer, yet sufficiently expressive process.
 
-This article's structure is the same as the Libra Blockchain PDF. Per section, I'll attempt to highlight and analysis Libra's advancements from the technical and industry perspective of established cryptocurrencies like Ethereum and Bitcoin. I'll try to avoid repeating the paper and keep things concise by focusing on the analysis instead of facts. As usual, feedback and criticism are always welcome in the form of a comment below. Thanks for reading!
+This article's structure is the same as the Libra Blockchain PDF. I only cover the first five sections of the paper. This is because I believe the majority of Libra's differences from a traditional blockchain system are found here. Per section, I'll attempt to highlight and analysis Libra's advancements from the technical and industry perspective of established cryptocurrencies like Ethereum and Bitcoin. I'll try to avoid repeating the paper and keep things concise by focusing on the analysis instead of facts. As usual, feedback and criticism are always welcome in the form of a comment below. Thanks for reading!
 
 <br>
 ##### 1 Introduction
@@ -130,9 +130,31 @@ Just out of curiosity, let's base the estimation off block sizes from Bitcoin. A
 <br>
 ##### 5 Byzantine Fault Tolerant Consensus
 
+Let's start with a quick primer concerning *consensus*. Consensus describes the process in which multiple entities reach an agreement on a unified, single state or data value in a distributed setting. In all forms consensus, there is often a "leader" responsible for proposing modifications to the existing state. Consensus algorithms are ideally designed to tolerate a certain level of crashes and failures, inevitable aspects of distributed systems. Byzantine failures refer to entities or processes intentionally acting maliciously to influence consensus in such a way that benefits themselves (i.e. forks, double spend attacks). Byzantine Fault Tolerant (BFT) algorithms refer to consensus protocols that can tolerate a certain level of Byzantine failures.
 
+There are two primary categories of consensus protocols. Classical consensus algorithms involve participants exchanging rounds of messages containing votes and safety-proofs. The leader is usually elected or rotated out deterministically. Consensus is achieved by majority vote. These protocols work well in authenticated, *permissioned* environments where the participants are cryptographically verified. More recently, the "Nakamoto" style algorithms popularized by Bitcoin determine the leader (i.e. miner who adds the next block) randomly via a cryptographic puzzle. Consensus in this context is recognized as the "longest chain", or the chain with the most amount of proof of work invested in it. Unlike classical consensus, algorithsm like Proof of Work / Stake / Time still work in *public* distributed systems where there is no requirement of trusted participants.
+
+So where does LibraBFT sit in all this? Unlike Bitcoin and Ethereum's Proof of Work consensus, the LibraBFT consensus protocol is a *classical* consensus algorithm. LibraBFT is largely based on the [HotStuff](https://arxiv.org/abs/1803.05069) consensus algorithm developed at VMWare Research, which in turn is built on top of the Practical Byzantine Fault Tolerance Algorithm ([pBFT](http://pmg.csail.mit.edu/papers/osdi99.pdf)) created at MIT CSAIL. The theory and implementation of these algorithms constitute an entire different field of research that I will not dive into here. The visualization below is my own attempt at showing the consensus protocol works. I think the main takeaway from this section should be that the LibraBFT consensus protocol is, in any sense, randomized or non-deterministic.
+
+<img src="/static/pictures/Libra/5-libraBFT-flow.png" alt="LibraBFT Consensus" style="width:700px;display:block;margin-left:auto;margin-right:auto"/>
 
 <br>
+##### Summary
+
+Beyond just the word "blockchain", the implementation and consensus protocols of Libra and popular cryptocurrency systems like Ethereum and Bitcoin could not be more different. The defining traits that we tend to associate today's most popular blockchain systems include the use of linked-list data structures to model a ledger history, along with a non-deterministic consensus protocol functioning in a public setting that *randomly* elects leaders who can append the new block. While Libra's conceptualized data model has a chronological, linear flow to it, its implementation and consensus protocol differ drastically.
+
+The term "blockchain" seems to be tossed around increasingly indiscriminately these days as a catch-all term to describe the new wave of distributed systems technology. The Libra "Blockchain" is a case in point example of how the word has become a marketing buzzword. I know that sounds negative, but my intention is not to criticize, but rather, to clarify. Before reading this paper, the word "blockchain" prompted expectations of a system more similar to Bitcoin and Ethereum. Instead, Libra's most notable differences are that it
+
+&bull; Is a permissioned, classical approach to the problem of building a distributed system operating on a global scale. <br>
+&bull; Uses an authenticated, sparse Merkle Tree data structure for *everything*, not Linked Lists. <br>
+&bull; Exercises a classical, elected-leader consensus protocol operating within a *permissioned* distributed setting. <br>
+&bull; Is based on the Move language which redefines the process in which smart contracts (a.k.a. resources, modules, and scripts) are written and checked for safety.
+
+It will be very exciting to see how the move language, data structure implementation, consensus protocol, and additional aspects of the Libra Blockchain evolve over time. Thanks for reading!
+
+##### References
+&bull; More on the lineage of pBFT => HotStuff => LibraBFT: [Link](https://www.theblockcrypto.com/2019/06/19/a-technical-perspective-on-facebooks-librabft-consensus-algorithm/)
+
 ##### Miscellaneous
 1. Can a single module declare multiple resource types? - Yes, a single Move module can declare multiple structs, each with their own set of procedures
 2. If an account is deleted or removed, what happens to the modules it defines or the resources that it contains? - Discussed in 4.4 under "Account Eviction and Recaching"
