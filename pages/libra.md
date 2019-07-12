@@ -1,6 +1,6 @@
 title: A Technical Dissection of the Libra Blockchain
 date: 2019-06-20
-description: So turns out, the Libra "Blockchain" isn't an actual blockchain?
+description: In a certain sense, the Libra "Blockchain" isn't a blockchain at all...
 image: /static/pictures/Libra/head-image.png
 readtime: 17 MINS
 time: THURSDAY, JUNE 20, 2019
