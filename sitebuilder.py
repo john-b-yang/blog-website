@@ -1,4 +1,5 @@
 import sys, os
+import json
 
 # Imports
 from flask import Flask, render_template
@@ -33,7 +34,9 @@ def about():
 
 @app.route('/projects/')
 def projects():
-    return render_template('projects.html')
+    with open('data/projects.json') as projects_json:
+        projects_data = json.load(projects_json)
+        return render_template('projects.html', projects=projects_data)
 
 @app.route('/resources/')
 def resources():

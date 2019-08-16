@@ -1,87 +1,45 @@
-{% extends "base.html" %} {% block page_title %} Projects {% endblock %} {% block content %}
-<h4 class="post-title">Projects</h4> This is a compilation of some of the selected projects that I've worked on before. Click the projects' titles for more information. Check it out!
+{% extends "base.html" %}
+
+{% block page_title %} Projects {% endblock %}
+
+{% block content %}
+<h4 class="post-title">Projects</h4>
+This is a compilation of some of the selected projects that
+I've worked on before. Click the projects' titles for more information.
+Check it out!
 <br><br>
 <div class="card-row">
-    <div>
-        <div class="card card-1">
-            <img style="display:block;margin:auto;" src="/static/pictures/Projects/GAssistant.png" />
-            <!-- <button class="buttonSec" style="margin-bottom:-10px"><h5><strong>Capone</strong></h5></button>
-            <div class="pop">
-                <span>✖</span>
-                <h5><strong>Capone</strong></h5>
-                <p>Take it, whip it, intermission, let the birds fly</p>
-                <p><a href="https://github.com/averyyip/capone" target="_blank">Website</a></p>
-            </div> -->
-            <p><a href="https://github.com/averyyip/capone" target="_blank"><strong class="project-title">Capone</strong></a></p>
-            <p class="light-text">Google Assistant tool predicting spending trends using ARIMA and financial history</p>
-        </div>
-        <div class="card card-1">
-            <img style="display:block;margin:auto;" src="/static/pictures/Projects/Basketball.png" />
-            <p><a href="http://amzn.to/2ndWGVY" target="_blank"><strong class="project-title">Basketball Trivia</strong></a></p>
-            <p class="light-text">Voice driven multiple choice game for Amazon Alexa</p>
-        </div>
-        <div class="card card-1">
-            <img style="display:block;margin:auto;" src="/static/pictures/Projects/FlightBot.png" />
-            <p><a href="https://devpost.com/software/flightbot" target="_blank"><strong class="project-title">FlightBot</strong></a></p>
-            <p class="light-text">Feature phone utility for booking curated flights via SMS text and phone calls</p>
-        </div>
+  {% for project in projects.personal %}
+  {% if loop.index % 3 == 1 %} <div> {% endif %}
+    <div class="card card-1">
+      <img style="display:block;margin:auto;" src="/static/pictures/Projects/{{ project.image }}" />
+      <p><a href="{{ project.link }}" target="_blank"><strong class="project-title">{{ project.title }}</strong></a></p>
+      <p class="light-text">{{ project.description }}</p>
     </div>
-    <div>
-        <div class="card card-1">
-            <img style="display:block;margin:auto;" src="/static/pictures/Projects/Webpage.png" />
-            <p><a href="https://john-b-yang.github.io" target="_blank"><strong class="project-title">Personal Website</strong></a></p>
-            <p class="light-text">Portfolio website showcasing my past experiences, skills, and interests.</p>
-        </div>
-        <div class="card card-1">
-            <img style="display:block;margin:auto;" src="/static/pictures/Projects/AutiBot2.png" />
-            <p><a href="https://devpost.com/software/autibot" target="_blank"><strong class="project-title">AutiBot</strong></a></p>
-            <p class="light-text">Brain training app geared towards helping children with mental challenges</p>
-        </div>
-        <div class="card card-1">
-            <img style="display:block;margin:auto;" src="/static/pictures/Projects/SchoolBus.png" />
-            <p><a href="https://devpost.com/software/detroit-student-transit" target="_blank"><strong class="project-title">Detroit Transport</strong></a></p>
-            <p class="light-text">Web + Mobile Platform facilitating safety in Detroit's public transit systems</p>
-        </div>
-    </div>
-    <div>
-        <div class="card card-1">
-            <img style="display:block;margin:auto;" src="/static/pictures/Projects/RoundAbout.png" />
-            <p><a href="https://github.com/john-b-yang/Voyager" target="_blank"><strong class="project-title">RoundAbout</strong></a></p>
-            <p class="light-text">iOS application that provides efficient multi-destination routing</p>
-        </div>
-        <div class="card card-1">
-            <img style="display:block;margin:auto;" src="/static/pictures/Projects/Imperium.png" />
-            <p><a href="https://devpost.com/software/imperium" target="_blank"><strong class="project-title">Imperium</strong></a></p>
-            <p class="light-text">A low cost, uncomplicated, accessible Parkinson's partner</p>
-        </div>
-        <div class="card card-1">
-            <img style="display:block;margin:auto;" src="/static/pictures/Projects/Concentration.png" />
-            <p><a href="https://concentration-game-2017.herokuapp.com/index.html" target="_blank"><strong class="project-title">Concentration</strong></a></p>
-            <p class="light-text">Small web game put together using HTML/CSS sprinkled with Javascript</p>
-        </div>
-    </div>
+  {% if (loop.index % 3 == 0) or
+    (loop.index == projects.personal|length) %}
+  </div>
+  {% endif %}
+  {% endfor %}
 </div>
 
-<h5 class="post-title">Academics</h5> An additional list containing some of the projects I've worked on from both Berkeley's Computer Science curriculum and research efforts!
+<h5 class="post-title">Academics</h5>
+An additional list containing some of the projects I've worked on
+from both UC Berkeley's Computer Science curriculum and research efforts!
 <br><br>
 <div class="card-row">
-    <div>
-        <div class="card card-1">
-            <img style="display:block;margin:auto;" src="/static/pictures/Projects/graphics-card.png" />
-            <p><a href="http://www.peterqiu.com/cs184-final-project-proposal/final.html" target="_blank"><strong class="project-title">GPU Acceleration</strong></a></p>
-            <p class="light-text">(CS 184) Improving path tracing execution speed with NVIDIA's GPU-enabled OptiX graphics library</p>
-        </div>
-        <div class="card card-1">
-            <img style="display:block;margin:auto;" src="/static/pictures/Projects/March-Madness.png" />
-            <p><a href="https://github.com/john-b-yang/march-madness" target="_blank"><strong class="project-title">March Madness Preduction</strong></a></p>
-            <p class="light-text">(DS 100) Logistic Regression + Feature Engineering to predict the outcomes of the 2018 March Madness Tournament</p>
-        </div>
-        <div class="card card-1">
-            <img style="display:block;margin:auto;" src="/static/pictures/Projects/Radio-Antenna.png" />
-            <p><a href="http://nu6xb.eecs.berkeley.edu/site/index.php/club-news/projects/satellite-tracking-project/" target="_blank"><strong class="project-title">Satellite Tracking</strong></a></p>
-            <p class="light-text">Helping to deploy a M2 Leo-pack, polarized antenna for Low Earth Orbit Satellite communications.</p>
-        </div>
+  {% for project in projects.academic %}
+  {% if loop.index % 3 == 1 %} <div> {% endif %}
+    <div class="card card-1">
+      <img style="display:block;margin:auto;" src="/static/pictures/Projects/{{ project.image }}" />
+      <p><a href="{{ project.link }}" target="_blank"><strong class="project-title">{{ project.title }}</strong></a></p>
+      <p class="light-text">{{ project.description }}</p>
     </div>
+  {% if (loop.index % 3 == 0) or
+    (loop.index == projects.personal|length) %}
+  </div>
+  {% endif %}
+  {% endfor %}
 </div>
 <br><br>
 {% endblock content %}
