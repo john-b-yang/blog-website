@@ -75,6 +75,10 @@
     "Check In": "http://tinyurl.com/john61c",
     "Weekly Email Sign Up": "https://forms.gle/xs6AM1tJrKuikbyV8"
   },
+  "misc": {
+    "Exam Questions, sorted by topic": "https://docs.google.com/document/d/1uMZREWBVfOFu_2RUZNf6zrQ28Y5dsrkDGWkXmuHZ9Nk/edit?usp=sharing",
+    "C & Memory Notes (Fall 2017 CS 61C Course Staff)": "https://d1b10bmlvqabco.cloudfront.net/attach/j6fe5friemd22w/hzd1madqsie3ts/j7kw6i4tmqf8/61C_Note_1_Memory.pdf"
+  },
   "schedule": {
     "discussion": "Monday / Wednesday | 12-1 p.m. | Etcheverry 3119",
     "lab": "Tuesday / Thursday | 1-3 p.m. | Soda 273",

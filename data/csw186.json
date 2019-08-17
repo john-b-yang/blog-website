@@ -4,6 +4,16 @@
     "name": "Introduction to Database Systems",
     "link": "https://berkeley-cs186.github.io"
   },
+  "discussion_links": [
+    {
+      "link": "https://espn.com",
+      "title": "SQL"
+    }
+  ],
+  "misc": {
+    "B-Tree Interactive Visualization": "https://www.cs.usfca.edu/~galles/visualization/BTree.html",
+    "SQLFiddle (Web App for SQL Queries)": "http://sqlfiddle.com/"
+  },
   "schedule": {
     "discussion": "Tuesday | 10-11 | Soda 320",
     "office_hours": "Thursday | 9-11 a.m. | Soda 283E"

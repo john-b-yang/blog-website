@@ -42,4 +42,13 @@
 <p>Default Content</p>
 {% endblock class %}
 
+{% if info.misc %}
+<p><b>Miscellaneous</b></p>
+<ul>
+  {% for entry in info.misc %}
+  <li><a href="{{ info.misc[entry] }}" target="_blank">{{ entry }}</a></li>
+  {% endfor %}
+</ul>
+{% endif %}
+
 {% endblock content %}
