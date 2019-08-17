@@ -1,0 +1,74 @@
+{
+  "check_in": "http://tinyurl.com/john61c",
+  "discussion_links": [
+    {
+      "link": "https://docs.google.com/presentation/d/1p7TCt58Pta0IchB70g5Yl1fYNtievUBKirefGU0kQrc/edit?usp=sharing",
+      "number": 0,
+      "title": "Number Representation"
+    },
+    {
+      "link": "https://docs.google.com/presentation/d/1XV1mqI-1TUaLdbp8acAli-LRqDPj_KPskhM0c8MGaqo/edit?usp=sharing",
+      "number": 1,
+      "title": "C Basics"
+    },
+    {
+      "link": "https://docs.google.com/presentation/d/1hD-tBfHny599bQFCWt7E3lU6dYimIZ_jR3rDvIM6hrY/edit?usp=sharing",
+      "number": 2,
+      "title": "C Memory Management, RISC-V Intro"
+    },
+    {
+      "link": "https://docs.google.com/presentation/d/1ihYPvvLZLCIC6PIp1fLnspdKgpMvr1FjlhR3S9Adnws/edit?usp=sharing",
+      "number": 3,
+      "title": "RISC-V, Instruction Format"
+    },
+    {
+      "link": "https://docs.google.com/presentation/d/1HNRPI0M_tMKzcrdKC_Kfk4roXJ9nizIjJmSOhbfW6fM/edit?usp=sharing",
+      "number": 4,
+      "title": "Floating Point, CALL"
+    },
+    {
+      "link": "https://docs.google.com/presentation/d/1AEn5wkRy7jN3B5jxpdHyf6QDyjL2Zv7k2_3Hl4BFIbc/edit?usp=sharing",
+      "number": 5,
+      "title": "Logic, SDS, Finite State Machines"
+    },
+    {
+      "link": "https://docs.google.com/presentation/d/1D0PVqyyqddnaf-Mrp_Gb1pC1RcJnVtSfhxgCFCws06Q/edit?usp=sharing",
+      "number": 6,
+      "title": "Single Cycle Datapath"
+    },
+    {
+      "link": "https://docs.google.com/presentation/d/1uUPOR5Skh9TS6S6hQtN6up2kJIhPTJn-oIPO0crspSA/edit?usp=sharing",
+      "number": 7,
+      "title": "Pipelining"
+    },
+    {
+      "link": "https://docs.google.com/presentation/d/1al7z4w_WVTLsQM4WOCfhTIb1EQ-AVNkUgFsHKsvCD98/edit?usp=sharing",
+      "number": 8,
+      "title": "Caches",
+    },
+    {
+      "link": "https://docs.google.com/presentation/d/12-wyAvqrAueQnHWG6zHD6Pf7z2M0ZEIi8EkBEy0E-qo/edit?usp=sharing",
+      "number": 9,
+      "title": "AMAT, Flynn's Taxonomy, DLP, TLP"
+    },
+    {
+      "link": "https://docs.google.com/presentation/d/172k7sG9AcmmTFwMlVp6A8fU1uBdsnE2BVq-GfAuY6N4/edit?usp=sharing",
+      "number": 10,
+      "title": "WSC, Spark",
+    },
+    {
+      "link": "https://docs.google.com/presentation/d/1KrNUePoPm_MORivxp9zlDcxCnaoyEyGM17VX9xxgW9s/edit?usp=sharing",
+      "number": 11,
+      "title": "Virtual Memory"
+    },
+    {
+      "link": "",
+      "number": 12,
+      "title": "ECC, RAID, I/O"
+    }
+  ],
+  "discussion_time": "Mo/We, 12-1 p.m., Etcheverry 3119",
+  "lab_time": "Tu/Th, 1-3 p.m., Soda 273",
+  "office_hours": "We, 2-4 p.m., Soda Alcove 611",
+  "sign_up": "https://forms.gle/xs6AM1tJrKuikbyV8"
+}
