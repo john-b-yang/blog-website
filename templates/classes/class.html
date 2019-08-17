@@ -2,6 +2,23 @@
 
 {% block content %}
 <h5 class="post-title">{{ info.title }}</h5>
+
+{% if info.discussion_links %}
+<p class="class-section-title"><i>Discussion Slides</i></p>
+<ul>
+  {% for discussion in info.discussion_links %}
+  <li>
+    <a href="{{ discussion.link }}" target="_blank">
+    {% if discussion.number or discussion.number == 0 %}
+    {{ discussion.number }}:
+    {% endif %}
+    {{ discussion.title }}
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}
+
 {% block class %}
 <p>Default Content</p>
 {% endblock class %}
