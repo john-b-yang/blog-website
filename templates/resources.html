@@ -4,100 +4,38 @@
 
 {% block content %}
 <h4 class="post-title">Resources</h4>
-This is a curated list of links to resources that I've created during my past teaching and instructor tenures! Some resources may require a berkeley.edu email to view.
-<br>
-<div class="custom-row">
-    <div class="custom-column">
-        <h5 class="post-title">CS 61C</h5>
-        <h6 class="post-title"><i>My Sections and Office Hours | Summer 2019</i></h6>
-        <ul>
-            <li>Discussion: Mo/We, 12-1 p.m., Etcheverry 3119</li>
-            <li>Lab: Tu/Th, 1-3 p.m., Soda 273</li>
-            <li>Office Hours: We, 2-4 p.m., Soda Alcove 611</li>
-        </ul>
-        <h6 class="post-title"><i>Logistics</i></h6>
-        <ul>
-            <li>Check In Form (EPA!) <a href="http://tinyurl.com/john61c" target="_blank">Link</a></li>
-            <li>Weekly Email Sign Up <a href="https://forms.gle/xs6AM1tJrKuikbyV8" target="_blank">Link</a></li>
-        </ul>
-        <h6 class="post-title"><i>Discussion Slides</i></h6>
-        <ul>
-            <li><a href="https://docs.google.com/presentation/d/1p7TCt58Pta0IchB70g5Yl1fYNtievUBKirefGU0kQrc/edit?usp=sharing" target="_blank">0: Number Representation</a></li>
-            <li><a href="https://docs.google.com/presentation/d/1XV1mqI-1TUaLdbp8acAli-LRqDPj_KPskhM0c8MGaqo/edit?usp=sharing" target="_blank">1: C Basics</a></li>
-            <li><a href="https://docs.google.com/presentation/d/1hD-tBfHny599bQFCWt7E3lU6dYimIZ_jR3rDvIM6hrY/edit?usp=sharing" target="_blank">2: C Memory Management, RISC-V Intro</a></li>
-            <li><a href="https://docs.google.com/presentation/d/1ihYPvvLZLCIC6PIp1fLnspdKgpMvr1FjlhR3S9Adnws/edit?usp=sharing" target="_blank">3: RISC-V, Instruction Formats</a></li>
-            <li><a href="https://docs.google.com/presentation/d/1HNRPI0M_tMKzcrdKC_Kfk4roXJ9nizIjJmSOhbfW6fM/edit?usp=sharing" target="_blank">4: Floating Point, CALL</a></li>
-            <li><a href="https://docs.google.com/presentation/d/1AEn5wkRy7jN3B5jxpdHyf6QDyjL2Zv7k2_3Hl4BFIbc/edit?usp=sharing" target="_blank">5: Logic, SDS, Finite State Machines</a></li>
-            <li><a href="https://docs.google.com/presentation/d/1D0PVqyyqddnaf-Mrp_Gb1pC1RcJnVtSfhxgCFCws06Q/edit?usp=sharing" target="_blank">6: Single Cycle Datapath</a></li>
-            <li><a href="https://docs.google.com/presentation/d/1uUPOR5Skh9TS6S6hQtN6up2kJIhPTJn-oIPO0crspSA/edit?usp=sharing" target="_blank">7: Pipelining</a></li>
-            <li><a href="https://docs.google.com/presentation/d/1al7z4w_WVTLsQM4WOCfhTIb1EQ-AVNkUgFsHKsvCD98/edit?usp=sharing" target="_blank">8: Caches</a></li>
-            <li><a href="https://docs.google.com/presentation/d/12-wyAvqrAueQnHWG6zHD6Pf7z2M0ZEIi8EkBEy0E-qo/edit?usp=sharing" target="_blank">9: AMAT, Flynn's Taxonomy, DLP, TLP</a></li>
-            <li><a href="https://docs.google.com/presentation/d/172k7sG9AcmmTFwMlVp6A8fU1uBdsnE2BVq-GfAuY6N4/edit?usp=sharing" target="_blank">10: WSC, Spark</a></li>
-            <li><a href="https://docs.google.com/presentation/d/1KrNUePoPm_MORivxp9zlDcxCnaoyEyGM17VX9xxgW9s/edit?usp=sharing" target="_blank">11: Virtual Memory</a></li>
-            <li><a href="https://docs.google.com/presentation/d/1ZeSKhe7eZd0TGp5gh8Xh3LdvqixNoTrgnhmGkR7ywAw/edit?usp=sharing" target="_blank">12: ECC, RAID, I/O</a></li>
-        </ul>
+This is a curated list of links to resources that I've created during my past teaching and instructor tenures. Some resources may require a berkeley.edu email to view.
+<br><br>
+<div class="card-row">
+  <div>
+    <div class="card-course card-course-1">
+        <img src="/static/pictures/Courses/cs88.png" />
+        <p class="light-text">
+          <a href="{{ url_for("cs88") }}">
+            <b>CS 88: Computational Structures in Data Science</b>
+          </a>
+          <br>Fall 2018, Spring 2019
+        </p>
     </div>
-    <div class="custom-column">
-        <h5 class="post-title">CS 88</h5>
-        <h6 class="post-title"><i>My Sections and Office Hours | Spring 2019</i></h6>
-        <ul>
-            <li>Lab Section: Tuesday, 6:00 p.m. - 8:00 p.m.</li>
-            <li>Office Hours: Friday, 11:00 a.m. - 12:00 p.m.</li>
-        </ul>
-        <h6 class="post-title"><i>Exam Practice</i></h6>
-        <ul>
-            <li>Midterm Review <a href="https://goo.gl/Siey4z" target="_blank">Spring 2019 Slides</a></li>
-            <li>
-                Midterm Review
-                <a href="/static/misc/worksheets/midterm/cs88_midterm_review.pdf" target="_blank">Worksheet</a> |
-                <a href="/static/misc/worksheets/midterm/cs88_midterm_review_sol.pdf" target="_blank">Solutions</a>
-            </li>
-        </ul>
-        <h6 class="post-title"><i>Discussion Slides</i></h6>
-        <ul>
-            <li><a href="https://goo.gl/5dctJL" target="_blank">Abstractions + Dictionaries</a></li>
-            <li><a href="https://goo.gl/kpa8ua" target="_blank">Declarative Programming + SQL</a></li>
-            <li><a href="https://goo.gl/Rv8KAC" target="_blank">Exceptions + Inheritance</a></li>
-            <li><a href="https://goo.gl/7Sihno" target="_blank">Higher Order Functions</a></li>
-            <li><a href="https://goo.gl/jgXzSM" target="_blank">Iterators and Generators</a></li>
-            <li><a href="https://goo.gl/jxmYw1" target="_blank">List Comprehension + Iteration</a></li>
-            <li><a href="https://goo.gl/dCX1Yx" target="_blank">List Manipulation + Recursion</a></li>
-            <li><a href="https://goo.gl/t31VsP" target="_blank">Mutation</a></li>
-            <li><a href="https://goo.gl/j9UaGw" target="_blank">Object Oriented Programming</a></li>
-        </ul>
-        <h6 class="post-title"><i>Practice Material</i></h6>
-        <ul>
-            <li>Exceptions:
-                <a href="/static/misc/worksheets/exceptions/cs88_worksheet_exceptions.pdf" target="_blank">Worksheet</a> |
-                <a href="/static/misc/worksheets/exceptions/cs88_worksheet_exceptions_sol.pdf" target="_blank">Solutions</a> |
-                <a href="/static/misc/worksheets/exceptions/exceptions.py" target="_blank">Python Code</a>
-            </li>
-            <li>Iterators:
-                <a href="/static/misc/worksheets/iterators/cs88_worksheet_iterators.pdf" target="_blank">Worksheet</a> |
-                <a href="/static/misc/worksheets/iterators/cs88_worksheet_iterators_sol.pdf" target="_blank">Solutions</a> |
-                <a href="/static/misc/worksheets/iterators/iterators.py" target="_blank">Python Code</a>
-            </li>
-            <li>Recursion:
-                <a href="/static/misc/worksheets/recursion/cs88_worksheet_recursion.pdf" target="_blank">Worksheet</a> |
-                <a href="/static/misc/worksheets/recursion/cs88_worksheet_recursion_sol.pdf" target="_blank">Solutions</a> |
-                <a href="/static/misc/worksheets/recursion/recursion.py" target="_blank">Python Code</a>
-            </li>
-            <li>SQL:
-                <a href="/static/misc/worksheets/sql/cs88_worksheet_sql.pdf" target="_blank">Worksheet</a> |
-                <a href="/static/misc/worksheets/sql/cs88_worksheet_sql_sol.pdf" target="_blank">Solutions</a>
-            </li>
-        </ul>
+    <div class="card-course card-course-1">
+        <img src="/static/pictures/Courses/cs61c.png" />
+        <p class="light-text">
+          <a href="{{ url_for("cs61c") }}">
+            <b>CS 61C: Great Ideas in Computer Architecture (Machine Structures)</b>
+          </a>
+          <br>Summer 2019
+        </p>
     </div>
-    <div class="custom-column">
-        <h5 class="post-title">CS w186</h5>
-        <h6 class="post-title"><i>My Sections and Office Hours | Fall 2019</i></h6>
-        <ul>
-            TBA
-        </ul>
-        <h6 class="post-title"><i>Exam Practice</i></h6>
-        <h6 class="post-title"><i>Discussion Slides</i></h6>
-        <h6 class="post-title"><i>Practice Material</i></h6>
+    <div class="card-course card-course-1">
+        <img src="/static/pictures/Courses/csw186.png" />
+        <p class="light-text">
+          <a href="{{ url_for("csw186") }}">
+            <b>CS w186: Introduction to Database Systems</b>
+          </a>
+          <br>Fall 2019
+        </p>
     </div>
+  </div>
 </div>
 <br>
 <h5 class="post-title">Miscellaneous</h5>
