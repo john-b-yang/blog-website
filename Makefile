@@ -1,4 +1,5 @@
 server = sitebuilder.py
+build_dir = WangZhan
 
 # usage: make preview
 preview:
@@ -15,8 +16,8 @@ deploy:
 	python $(server) build && \
 	cd ../Website && \
 	git pull origin master && \
-	cp -r ../build/* . && \
-	cp -r ../build/*.gitignore . && \
+	cp -r ../$(build_dir)/build/* . && \
+	cp -r ../$(build_dir)/.gitignore . && \
 	git add -A && \
 	git commit -m 'deploy: $(m)' && \
 	git push origin master	
