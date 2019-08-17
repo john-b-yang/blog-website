@@ -38,6 +38,24 @@ def projects():
         projects_data = json.load(projects_json)
         return render_template('projects.html', projects=projects_data)
 
+@app.route('/cs88/')
+def cs88():
+    with open('data/cs88.json') as cs88_json:
+        cs88_data = json.load(cs88_json)
+        return render_template('classes/cs88.html', info=cs88_data)
+
+@app.route('/cs61c/')
+def cs61c():
+    with open('data/cs61c.json') as cs61c_json:
+        cs61c_data = json.load(cs61c_json)
+        return render_template('classes/cs61c.html', info=cs61c_data)
+
+@app.route('/csw186/')
+def csw186():
+    with open('data/csw186.json') as csw186_json:
+        csw186_data = json.load(csw186_json)
+        return render_template('classes/csw186.html', info=csw186_data)
+
 @app.route('/resources/')
 def resources():
     return render_template('resources.html')
@@ -56,24 +74,6 @@ def page(path):
 def page_not_found(path):
     # note that we set the 404 status explicitly
     return render_template('404.html'), 404
-
-@app.route('/cs88/')
-def cs88():
-    with open('data/cs88.json') as cs88_json:
-        projects_data = json.load(cs88_json)
-        return render_template('classes/cs88.html', info=cs88_json)
-
-@app.route('/cs61c/')
-def cs61c():
-    with open('data/cs61c.json') as cs61c_json:
-        projects_data = json.load(cs61c_json)
-        return render_template('classes/cs61c.html', info=cs61c_json)
-
-@app.route('/csw186/')
-def csw186():
-    with open('data/csw186.json') as csw186_json:
-        projects_data = json.load(csw186_json)
-        return render_template('classes/csw186.html', info=csw186_json)
 
 if __name__ == '__main__':
     if len(sys.argv) > 1 and sys.argv[1] == "build":
