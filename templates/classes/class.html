@@ -1,10 +1,29 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h5 class="post-title">{{ info.title }}</h5>
+<h5 class="post-title">
+  <a href="{{ info.course.link }}" target="_blank">{{ info.course.id}}</a>
+  - {{ info.course.name }}
+</h5>
+
+<p><b>Schedule</b></p>
+<ul>
+  <li>{% if info.schedule.discussion %} Discussion: {{ info.schedule.discussion }}{% endif %}</li>
+  <li>{% if info.schedule.lab %}Lab: {{ info.schedule.lab }}{% endif %}</li>
+  <li>Office Hours: {{ info.schedule.office_hours }}</li>
+</ul>
+
+{% if info.logistics %}
+<p><b>Logistics</b></p>
+<ul>
+  {% for entry in info.logistics %}
+  <li>{{ entry }}: {{ info.logistics[entry] }}</li>
+  {% endfor %}
+</ul>
+{% endif %}
 
 {% if info.discussion_links %}
-<p class="class-section-title"><i>Discussion Slides</i></p>
+<p><b>Discussion Slides</b></p>
 <ul>
   {% for discussion in info.discussion_links %}
   <li>

@@ -37,34 +37,39 @@
       "title": "Object Oriented Programming"
     }
   ],
-  "lab_time": "Tu, 6-8 p.m., Evans 6",
-  "miscellaneous": {
-    "Midterm": {
+  "practice": {
+    "description": "A list of worksheets, solutions, and example code I wrote for various CS 88 topics",
+    "Exceptions": {
+      "worksheet": "/static/misc/worksheets/exceptions/cs88_worksheet_exceptions.pdf",
+      "solutions": "/static/misc/worksheets/exceptions/cs88_worksheet_exceptions_sol.pdf",
+      "python": "/static/misc/worksheets/exceptions/exceptions.py"
+    },
+    "Iterators": {
+      "worksheet": "/static/misc/worksheets/iterators/cs88_worksheet_iterators.pdf",
+      "solutions": "/static/misc/worksheets/iterators/cs88_worksheet_iterators_sol.pdf",
+      "python": "/static/misc/worksheets/iterators/iterators.py"
+    },
+    "Recursion": {
+      "worksheet": "/static/misc/worksheets/recursion/cs88_worksheet_recursion.pdf",
+      "solutions": "/static/misc/worksheets/recursion/cs88_worksheet_recursion_sol.pdf",
+      "python": "/static/misc/worksheets/recursion/recursion.py"
+    },
+    "SQL": {
+      "worksheet": "/static/misc/worksheets/sql/cs88_worksheet_sql.pdf",
+      "solutions": "/static/misc/worksheets/sql/cs88_worksheet_sql_sol.pdf"
+    },
+    "Midterm Review": {
       "worksheet": "/static/misc/worksheets/midterm/cs88_midterm_review.pdf",
       "solutions": "/static/misc/worksheets/midterm/cs88_midterm_review_sol.pdf"
-    },
-    "practice": {
-      "Exceptions": {
-        "worksheet": "/static/misc/worksheets/exceptions/cs88_worksheet_exceptions.pdf",
-        "solutions": "/static/misc/worksheets/exceptions/cs88_worksheet_exceptions_sol.pdf",
-        "python": "/static/misc/worksheets/exceptions/exceptions.py"
-      },
-      "Iterators": {
-        "worksheet": "/static/misc/worksheets/iterators/cs88_worksheet_iterators.pdf",
-        "solutions": "/static/misc/worksheets/iterators/cs88_worksheet_iterators_sol.pdf",
-        "python": "/static/misc/worksheets/iterators/iterators.py"
-      },
-      "Recursion": {
-        "worksheet": "/static/misc/worksheets/recursion/cs88_worksheet_recursion.pdf",
-        "solutions": "/static/misc/worksheets/recursion/cs88_worksheet_recursion_sol.pdf",
-        "python": "/static/misc/worksheets/recursion/recursion.py"
-      },
-      "SQL": {
-        "worksheet": "/static/misc/worksheets/sql/cs88_worksheet_sql.pdf",
-        "solutions": "/static/misc/worksheets/sql/cs88_worksheet_sql_sol.pdf"
-      }
     }
   },
-  "office_hours": "F, 11-12 p.m., Soda 341B",
-  "title": "CS 88: Computational Structures in Data Science"
+  "course": {
+    "id": "CS 88",
+    "name": "Computational Structures in Data Science",
+    "link": "https://cs88-website.github.io"
+  },
+  "schedule": {
+    "lab": "Tuesday | 6-8 p.m. | Evans 6",
+    "office_hours": "Friday | 11-12 p.m. | Soda 341B"
+  }
 }

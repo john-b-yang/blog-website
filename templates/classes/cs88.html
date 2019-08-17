@@ -3,5 +3,24 @@
 {% block page_title %} CS 88 {% endblock %}
 
 {% block class %}
-<p>TODO</p>
+<p>
+  <b>Practice</b> <br>
+  {{ info.practice.description }}
+</p>
+
+<ul>
+  {% for exercise in info.practice %}
+  {% if exercise != "description" %}
+  <li>
+    {{ exercise }}:
+    <a href="{{ info.practice[exercise].worksheet }}" target="_blank">Worksheet</a> |
+    <a href="{{ info.practice[exercise].solutions }}" target="_blank">Solutions</a>
+    {% if info.practice[exercise].python %}
+    | <a href="{{ info.practice[exercise].python }}" target="_blank">Python Code</a>
+    {% endif %}
+  </li>
+  {% endif %}
+  {% endfor %}
+</ul>
+
 {% endblock class %}
