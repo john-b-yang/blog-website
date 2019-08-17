@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
+<a href="{{ url_for("resources") }}"><i class="fa fa-arrow-left"></i> Back</a>
+
 <h5 class="post-title">
   <a href="{{ info.course.link }}" target="_blank">{{ info.course.id}}</a>
   - {{ info.course.name }}
