@@ -1,10 +1,6 @@
 {% extends "base.html" %}
 
 {% block content %}
-<p>
-  <a href="{{ url_for("resources") }}"><i class="fa fa-arrow-left"></i><font color="black"> Back</font></a>
-</p>
-
 <h5 class="post-title" style="border:1px; border-style:solid; border-color:rgb(27, 156, 226); padding: 1em;">
   <a href="{{ info.course.link }}" target="_blank">{{ info.course.id}}</a>
   - {{ info.course.name }}
