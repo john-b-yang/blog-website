@@ -6,11 +6,12 @@
   },
   "discussion_links": [
     {
-      "link": "https://espn.com",
-      "title": "SQL"
+      "link": "https://drive.google.com/drive/folders/1ZEghd3youBlwfGTUIJeJmE3un2s9RbSi?usp=sharing",
+      "title": "Discussion Slides"
     }
   ],
   "misc": {
+    "Discussion Clarifications": "https://docs.google.com/document/d/15-EfDuVjZm1tNFTi_GXWreY5xV6ZDgv41hDU0-dl-5Y/edit?usp=sharing"
     "B-Tree Interactive Visualization": "https://www.cs.usfca.edu/~galles/visualization/BTree.html",
     "SQLFiddle (Web App for SQL Queries)": "http://sqlfiddle.com/"
   },
