@@ -32,10 +32,6 @@ def index():
 def blogs():
     return render_template('blogs.html', pages=pages)
 
-# @app.route('/about/')
-# def about():
-#     return render_template('about.html')
-
 @app.route('/projects/')
 def projects():
     with open('data/projects.json') as projects_json:
@@ -57,10 +53,10 @@ def cs186():
     with open('data/cs186.json') as cs186_json:
         return render_template('classes/cs186.html', info=json.load(cs186_json))
 
-@app.route('/cs169')
+@app.route('/cs169/')
 def cs169():
     with open('data/cs169.json') as cs169_json:
-        return render_template('classes/cs186.html', info=json.load(cs169_json))
+        return render_template('classes/cs169.html', info=json.load(cs169_json))
 
 @app.route('/resources/')
 def resources():
