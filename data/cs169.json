@@ -1,0 +1,18 @@
+{
+  "course": {
+    "id": "CS 169",
+    "name": "Software Engineering",
+    "link": "www.google.com"
+  },
+  "discussion_links": [
+    {
+      "link": "",
+      "title": "Coming soon..."
+    }
+  ],
+  "misc": {},
+  "schedule": {
+    "discussion": "Coming soon...",
+    "office_hours": "Coming soon..."
+  }
+}

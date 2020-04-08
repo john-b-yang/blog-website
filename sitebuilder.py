@@ -45,20 +45,22 @@ def projects():
 @app.route('/cs88/')
 def cs88():
     with open('data/cs88.json') as cs88_json:
-        cs88_data = json.load(cs88_json)
-        return render_template('classes/cs88.html', info=cs88_data)
+        return render_template('classes/cs88.html', info=json.load(cs88_json))
 
 @app.route('/cs61c/')
 def cs61c():
     with open('data/cs61c.json') as cs61c_json:
-        cs61c_data = json.load(cs61c_json)
-        return render_template('classes/cs61c.html', info=cs61c_data)
+        return render_template('classes/cs61c.html', info=json.load(cs61c_json))
 
-@app.route('/csw186/')
-def csw186():
-    with open('data/csw186.json') as csw186_json:
-        csw186_data = json.load(csw186_json)
-        return render_template('classes/csw186.html', info=csw186_data)
+@app.route('/cs186/')
+def cs186():
+    with open('data/cs186.json') as cs186_json:
+        return render_template('classes/cs186.html', info=json.load(cs186_json))
+
+@app.route('/cs169')
+def cs169():
+    with open('data/cs169.json') as cs169_json:
+        return render_template('classes/cs186.html', info=json.load(cs169_json))
 
 @app.route('/resources/')
 def resources():
