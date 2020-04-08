@@ -2,15 +2,6 @@ body {
     font-family: 'Helvetica Neue', 'Arial', sans-serif;
 }
 
-.container {
-    padding: 10px 30px 10px 30px;
-    background-color: white;
-    margin: auto;
-    height: 100%;
-    overflow: auto;
-    min-height: 100vh;
-}
-
 #picture-header {
     line-height: 0px;
     margin-top: -5px;
@@ -19,13 +10,9 @@ body {
 /* Upper Right Links Animations */
 
 #link-list {
+    color:white;
     display: inline-block;
     font-family: 'HelveticaNeue-Light', 'Arial', sans-serif;
-    font-size: 20px;
-    zoom: 1;
-    *display: inline;
-    padding-left: 25px;
-    color: black;
 }
 
 /* Text Fade Animation */
@@ -221,4 +208,12 @@ hr.fade {
   display: block;
   height: 75px;
   margin: auto;
+}
+
+/* Navigation Bar */
+.navbar {
+  background: rgb(27, 156, 226);
+  top: 0;
+  right: 0;
+  left: 0;
 }

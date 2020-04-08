@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h4 class="post-title">Posts <span class="light-text" style="font-size: 16px;">tagged {{ tag }}</span></h4>
+    <h3 class="post-title">
+      <a href="{{ url_for("blogs") }}" style="color:black;">Posts</a>
+      <span class="light-text" style="font-size: 16px;">tagged {{ tag }}</span>
+    </h3>
     {% with pages=pages  %}
         {% include "_list.html" %}
     {% endwith %}
