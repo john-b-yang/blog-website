@@ -55,7 +55,8 @@ def cs186():
 
 @app.route('/cs169/')
 def cs169():
-    return render_template('classes/cs169.html')
+    with open('data/cs169.json') as cs169_json:
+        return render_template('classes/cs169.html', info=json.load(cs169_json))
 
 @app.route('/resources/')
 def resources():

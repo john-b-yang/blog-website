@@ -12,14 +12,26 @@
   <li>Office Hours: To be determined...</li>
 </ul>
 
-<p><h5>Slides</h5></p>
-<ul>
-  <li><a href="" target="_blank">To Do</a></li>
-</ul>
+<p><h5>Module Resources</h5></p>
+<table class="resourceTable">
+  <tr>
+    <th>Section</th>
+    <th>Slides</th>
+    <th>Notes</th>
+  </tr>
+  {% for disc in info.resources %}
+  <tr>
+    <td>{{ disc.title }}</td>
+    <td><a href="{{ disc.slides }}" target="_blank">Link</a></td>
+    <td><a href="{{ disc.notes }}" target="_blank">Link</a></td>
+  </tr>
+  {% endfor %}
+</table>
 
 <p><h5>Miscellaneous</h5></p>
 <ul>
   <li>Fall 2019 Lecture Notes: <a href="https://docs.google.com/document/d/1r_vByTrDdjcE9ASiEQNzbJ8rS6dlFO-JvC62RlXy5Vs/edit?usp=sharing" target="_blank">link</a></li>
   <li>Fall 2019 Cheat Sheets: <a href="https://docs.google.com/document/d/1opmpFJzLxbX6aXG0EeZQIjPEn2i8QOuX-XM01PpX2zE/edit?usp=sharing" target="_blank">link</a></li>
+  <li>Liang Gong (Fall 2016 TA) Slides: <a href="https://drive.google.com/drive/u/0/folders/0B-ZdRSO5HUpuRzV0dGxDR0R4QUU" target="_blank">link</a></li>
 </ul>
 {% endblock content %}

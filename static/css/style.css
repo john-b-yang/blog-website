@@ -217,3 +217,21 @@ hr.fade {
   right: 0;
   left: 0;
 }
+
+/* Resources Table */
+.resourceTable {
+  table-layout: auto;
+  width: 85%;
+}
+
+.resourceTable th {
+  border: 1px solid #dddddd;
+}
+
+.resourceTable td {
+  padding: 5px;
+}
+
+.resourceTable tr:nth-child(even) {
+  background-color: #dddddd;
+}
