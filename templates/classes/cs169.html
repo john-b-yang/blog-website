@@ -8,22 +8,31 @@
 
 <p><h5>Schedule</h5></p>
 <ul>
-  <li>Discussion: N/A - There are no mandatory discussion sections.</li>
+  <li>Discussion: N/A - No sections</li>
   <li>Office Hours: To be determined...</li>
 </ul>
 
-<p><h5>Module Resources</h5></p>
+<p><h5>Discussions</h5></p>
+<p>
+There are no discussion sections for the Summer 2020 iteration of CS W169A. However, there are still discussion sheets made available for extra practice. These are in no way mandatory or graded, and purely for the benefit of understanding the material better. The worksheet exercises are more hands-on than the textbook, but not as difficult as the CHIPS. If you're having difficulty starting a coding assignment, the corresponding worksheet for the module could be a good place to start.
+</p>
 <table class="resourceTable">
   <tr>
     <th>Section</th>
-    <th>Slides</th>
-    <th>Notes</th>
+    <th class="nonSection">Slides</th>
+    <th class="nonSection">Notes</th>
+    <th class="nonSection">Worksheet</th>
+    <th class="nonSection">Solutions</th>
+    <th class="nonSection">Code</th>
   </tr>
-  {% for disc in info.resources %}
+  {% for disc in info.discussions %}
   <tr>
     <td>{{ disc.title }}</td>
-    <td><a href="{{ disc.slides }}" target="_blank">Link</a></td>
-    <td><a href="{{ disc.notes }}" target="_blank">Link</a></td>
+    <td class="nonSection"><a href="{{ disc.slides }}" target="_blank">Link</a></td>
+    <td class="nonSection"><a href="{{ disc.notes }}" target="_blank">Link</a></td>
+    <td class="nonSection"><a href="{{ disc.worksheet }}" target="_blank">Link</a></td>
+    <td class="nonSection"><a href="{{ disc.solutions }}" target="_blank">Link</a></td>
+    <td class="nonSection"><a href="{{ disc.code }}" target="_blank">Link</a></td>
   </tr>
   {% endfor %}
 </table>

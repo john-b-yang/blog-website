@@ -1,19 +1,28 @@
 {
-  "resources": [
+  "discussions": [
     {
       "title": "Introduction to SaaS, Agile, and Cloud Computing",
       "slides": "Todo",
-      "notes": "Todo"
+      "nots": "Todo",
+      "worksheet": "Todo",
+      "solutions": "Todo",
+      "code": "Todo"
     },
     {
       "title": "How to Learn a New Language: Ruby",
       "slides": "Todo",
-      "notes": "Todo"
+      "nots": "Todo",
+      "worksheet": "/static/misc/worksheets/cs169/module2/disc2.pdf",
+      "solutions": "Todo",
+      "code": "Todo"
     },
     {
-      "title": "Module 3: SaaS Architecture",
+      "title": "SaaS Architecture",
       "slides": "Todo",
-      "notes": "Todo"
+      "nots": "Todo",
+      "worksheet": "/static/misc/worksheets/cs169/module3/disc3.pdf",
+      "solutions": "Todo",
+      "code": "Todo"
     }
   ]
 }

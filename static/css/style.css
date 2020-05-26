@@ -221,15 +221,16 @@ hr.fade {
 /* Resources Table */
 .resourceTable {
   table-layout: auto;
-  width: 85%;
+  width: 100%;
 }
 
-.resourceTable th {
-  border: 1px solid #dddddd;
+.resourceTable .nonSection {
+  width: 12%;
 }
 
-.resourceTable td {
+.resourceTable th, td {
   padding: 5px;
+  border: 1px solid #dddddd;
 }
 
 .resourceTable tr:nth-child(even) {
