@@ -6,7 +6,7 @@
   - {{ info.course.name }}
 </h5>
 
-<p><b>Schedule</b></p>
+<p><h5>Schedule</h5></p>
 <ul>
   <li>{% if info.schedule.discussion %} Discussion: {{ info.schedule.discussion }}{% endif %}</li>
   <li>{% if info.schedule.lab %}Lab: {{ info.schedule.lab }}{% endif %}</li>
@@ -14,7 +14,7 @@
 </ul>
 
 {% if info.logistics %}
-<p><b>Logistics</b></p>
+<p><h5>Logistics</h5></p>
 <ul>
   {% for entry in info.logistics %}
   <li>{{ entry }}: {{ info.logistics[entry] }}</li>
@@ -23,7 +23,7 @@
 {% endif %}
 
 {% if info.discussion_links %}
-<p><b>Discussion Slides</b></p>
+<p><h5>Discussion Slides</h5></p>
 <ul>
   {% for discussion in info.discussion_links %}
   <li>
@@ -43,7 +43,7 @@
 {% endblock class %}
 
 {% if info.misc %}
-<p><b>Miscellaneous</b></p>
+<p><h5>Miscellaneous</h5></p>
 <ul>
   {% for entry in info.misc %}
   <li><a href="{{ info.misc[entry] }}" target="_blank">{{ entry }}</a></li>
