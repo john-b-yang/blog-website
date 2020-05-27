@@ -27,6 +27,13 @@
       "worksheet": "/static/misc/worksheets/cs169/module4/disc4.pdf",
       "solutions": "Todo",
       "code": "Todo"
+    },
+    {
+      "title": "Behavior Driven Design",
+      "slides": "Todo",
+      "worksheet": "/static/misc/worksheets/cs169/module7/disc7.pdf",
+      "solutions": "/static/misc/worksheets/cs169/module7/disc7_sol.pdf",
+      "code": "Todo"
     }
   ]
 }
