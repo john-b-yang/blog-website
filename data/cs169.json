@@ -25,8 +25,8 @@
       "title": "Introduction to MVC and Rails",
       "slides": "Todo",
       "worksheet": "/static/misc/worksheets/cs169/module4/disc4.pdf",
-      "solutions": "Todo",
-      "code": "Todo"
+      "solutions": "/static/misc/worksheets/cs169/module4/disc4_sol.pdf",
+      "code": "https://github.com/john-b-yang/cs169-exercises"
     },
     {
       "title": "Behavior Driven Design",
