@@ -12,20 +12,27 @@
       "slides": "Todo",
       "worksheet": "/static/misc/worksheets/cs169/module2/disc2.pdf",
       "solutions": "/static/misc/worksheets/cs169/module2/disc2_sol.pdf",
-      "code": "/static/misc/worksheets/cs169/module2/disc2.rb"
+      "code": "https://github.com/john-b-yang/cs169-exercises/blob/master/discussions/disc2.rb"
     },
     {
       "title": "SaaS Architecture",
       "slides": "Todo",
       "worksheet": "/static/misc/worksheets/cs169/module3/disc3.pdf",
       "solutions": "/static/misc/worksheets/cs169/module3/disc3_sol.pdf",
-      "code": "/static/misc/worksheets/cs169/module3/disc3.rb"
+      "code": "https://github.com/john-b-yang/cs169-exercises/blob/master/discussions/disc3.rb"
     },
     {
       "title": "Introduction to MVC and Rails",
       "slides": "Todo",
       "worksheet": "/static/misc/worksheets/cs169/module4/disc4.pdf",
       "solutions": "/static/misc/worksheets/cs169/module4/disc4_sol.pdf",
+      "code": "https://github.com/john-b-yang/cs169-exercises/tree/master/sinatra-intro"
+    },
+    {
+      "title": "Advanced Rails",
+      "slides": "Todo",
+      "worksheet": "/static/misc/worksheets/cs169/module5/disc5.pdf",
+      "solutions": "/static/misc/worksheets/cs169/module5/disc5_sol.pdf",
       "code": "https://github.com/john-b-yang/cs169-exercises"
     },
     {
