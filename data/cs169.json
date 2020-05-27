@@ -3,7 +3,6 @@
     {
       "title": "Introduction to SaaS, Agile, and Cloud Computing",
       "slides": "Todo",
-      "nots": "Todo",
       "worksheet": "Todo",
       "solutions": "Todo",
       "code": "Todo"
@@ -11,16 +10,21 @@
     {
       "title": "How to Learn a New Language: Ruby",
       "slides": "Todo",
-      "nots": "Todo",
       "worksheet": "/static/misc/worksheets/cs169/module2/disc2.pdf",
-      "solutions": "Todo",
-      "code": "Todo"
+      "solutions": "/static/misc/worksheets/cs169/module2/disc2_sol.pdf",
+      "code": "/static/misc/worksheets/cs169/module2/disc2.rb"
     },
     {
       "title": "SaaS Architecture",
       "slides": "Todo",
-      "nots": "Todo",
       "worksheet": "/static/misc/worksheets/cs169/module3/disc3.pdf",
+      "solutions": "/static/misc/worksheets/cs169/module3/disc3_sol.pdf",
+      "code": "/static/misc/worksheets/cs169/module3/disc3.rb"
+    },
+    {
+      "title": "Introduction to MVC and Rails",
+      "slides": "Todo",
+      "worksheet": "/static/misc/worksheets/cs169/module4/disc4.pdf",
       "solutions": "Todo",
       "code": "Todo"
     }
