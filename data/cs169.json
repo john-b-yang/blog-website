@@ -33,7 +33,7 @@
       "slides": "Todo",
       "worksheet": "/static/misc/worksheets/cs169/module5/disc5.pdf",
       "solutions": "/static/misc/worksheets/cs169/module5/disc5_sol.pdf",
-      "code": "https://github.com/john-b-yang/cs169-exercises"
+      "code": "https://github.com/john-b-yang/cs169-exercises/blob/master/discussions/disc5.rb"
     },
     {
       "title": "Behavior Driven Design",
