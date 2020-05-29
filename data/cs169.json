@@ -41,6 +41,13 @@
       "worksheet": "/static/misc/worksheets/cs169/module7/disc7.pdf",
       "solutions": "/static/misc/worksheets/cs169/module7/disc7_sol.pdf",
       "code": "Todo"
+    },
+    {
+      "title": "Cucumber, Capybara",
+      "slides": "https://drive.google.com/open?id=1R3HRbvV_uqAhxAUxoWXoipN0DNZsVgfq",
+      "worksheet": "/static/misc/worksheets/cs169/module7/disc7_cuke.pdf",
+      "solutions": "/static/misc/worksheets/cs169/module7/disc7_cuke_sol.pdf",
+      "code": ""
     }
   ]
 }
