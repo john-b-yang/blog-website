@@ -58,6 +58,11 @@ def cs169():
     with open('data/cs169.json') as cs169_json:
         return render_template('classes/cs169.html', info=json.load(cs169_json))
 
+@app.route('/cs161/')
+def cs161():
+    with open('data/cs161.json') as cs161_json:
+        return render_template('classes/cs161.html', info=json.load(cs161_json))
+
 @app.route('/resources/')
 def resources():
     return render_template('resources.html')

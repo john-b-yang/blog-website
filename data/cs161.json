@@ -1,0 +1,17 @@
+{
+  "course": {
+    "id": "CS 161",
+    "name": "Computer Security",
+    "link": "https://cs161.org/"
+  },
+  "discussion_links": [
+    {
+      "link": "",
+      "title": "Coming in August"
+    }
+  ],
+  "schedule": {
+    "discussion": "TBD",
+    "office_hours": "TBD"
+  }
+}
