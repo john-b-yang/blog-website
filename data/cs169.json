@@ -5,56 +5,56 @@
       "slides": "https://drive.google.com/open?id=1PSjPwOmCeZjOX_wh0UE4JstxVXYAamhi",
       "worksheet": "/static/misc/worksheets/cs169/module2/disc2.pdf",
       "solutions": "/static/misc/worksheets/cs169/module2/disc2_sol.pdf",
-      "code": "https://github.com/john-b-yang/cs169-exercises/blob/master/discussions/disc2.rb"
+      "code": "https://github.com/saasbook/courseware/blob/master/discussions/module2/disc2.rb"
     },
     {
       "title": "SaaS Architecture",
       "slides": "https://drive.google.com/open?id=1_1TQccqrsrCjpa4BMieQcN6UhNobgFW3",
       "worksheet": "/static/misc/worksheets/cs169/module3/disc3.pdf",
       "solutions": "/static/misc/worksheets/cs169/module3/disc3_sol.pdf",
-      "code": "https://github.com/john-b-yang/cs169-exercises/blob/master/discussions/disc3.rb"
+      "code": "https://github.com/saasbook/courseware/blob/master/discussions/module3/disc3.rb"
     },
     {
       "title": "Introduction to MVC and Rails",
       "slides": "https://drive.google.com/open?id=1PuIVirmUL6dk4ZSKahL4Z3Ygmo1BoemA",
       "worksheet": "/static/misc/worksheets/cs169/module4/disc4.pdf",
       "solutions": "/static/misc/worksheets/cs169/module4/disc4_sol.pdf",
-      "code": "https://github.com/john-b-yang/cs169-exercises/tree/master/sinatra-intro"
+      "code": "https://github.com/saasbook/courseware/tree/master/discussions/module4/sinatra-intro"
     },
     {
       "title": "Rails App",
       "slides": "https://drive.google.com/open?id=1h1RUvRUTqW0tYuNgH5zTRIVgeojQppIK",
       "worksheet": "/static/misc/worksheets/cs169/module4/disc4_app.pdf",
       "solutions": "/static/misc/worksheets/cs169/module4/disc4_app_sol.pdf",
-      "code": "https://github.com/john-b-yang/cs169-exercises/tree/master/rails-intro/todo_app"
+      "code": "https://github.com/saasbook/courseware/tree/master/discussions/module4/todo_app"
     },
     {
       "title": "Advanced Rails",
       "slides": "https://drive.google.com/open?id=1jMt8qErNDCdTC1YOFTleUBkBskV7lAsv",
       "worksheet": "/static/misc/worksheets/cs169/module5/disc5.pdf",
       "solutions": "/static/misc/worksheets/cs169/module5/disc5_sol.pdf",
-      "code": "https://github.com/john-b-yang/cs169-exercises/blob/master/discussions/disc5.rb"
+      "code": "https://github.com/saasbook/courseware/blob/master/discussions/module5/disc5.rb"
     },
     {
       "title": "Behavior Driven Design",
       "slides": "https://drive.google.com/open?id=1-rDjBwhX_BTWwRa73mCuNmACTTxjDEdh",
       "worksheet": "/static/misc/worksheets/cs169/module7/disc7.pdf",
       "solutions": "/static/misc/worksheets/cs169/module7/disc7_sol.pdf",
-      "code": "Todo"
+      "code": "N/A"
     },
     {
       "title": "Cucumber, Capybara",
       "slides": "https://drive.google.com/open?id=1R3HRbvV_uqAhxAUxoWXoipN0DNZsVgfq",
       "worksheet": "/static/misc/worksheets/cs169/module7/disc7_cuke.pdf",
       "solutions": "/static/misc/worksheets/cs169/module7/disc7_cuke_sol.pdf",
-      "code": "https://github.com/john-b-yang/cs169-exercises/blob/master/discussions/disc7.rb"
+      "code": "https://github.com/saasbook/courseware/blob/master/discussions/module7/disc7.rb"
     },
     {
       "title": "Design Patterns",
       "slides": "https://drive.google.com/open?id=1qkCxNs90D7Hi00MVWGiM6gITUfb5ymgv",
       "worksheet": "/static/misc/worksheets/cs169/module11/disc11.pdf",
       "solutions": "/static/misc/worksheets/cs169/module11/disc11.pdf",
-      "code": "https://github.com/john-b-yang/cs169-exercises/blob/master/discussions/disc11.rb"
+      "code": "https://github.com/saasbook/courseware/blob/master/discussions/module11/disc11.rb"
     }
   ]
 }

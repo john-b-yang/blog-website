@@ -32,7 +32,13 @@ All the code is located at <a href="https://github.com/john-b-yang/cs169-exercis
     <td class="nonSection"><a href="{{ disc.slides }}" target="_blank">Link</a></td>
     <td class="nonSection"><a href="{{ disc.worksheet }}" target="_blank">Link</a></td>
     <td class="nonSection"><a href="{{ disc.solutions }}" target="_blank">Link</a></td>
-    <td class="nonSection"><a href="{{ disc.code }}" target="_blank">Link</a></td>
+    <td class="nonSection">
+      {% if disc.code != "N/A" %}
+        <a href="{{ disc.code }}" target="_blank">Link</a>
+      {% else %}
+        No code
+      {% endif %}
+    </td>
   </tr>
   {% endfor %}
 </table>
