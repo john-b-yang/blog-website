@@ -5,56 +5,64 @@
       "slides": "https://drive.google.com/open?id=1PSjPwOmCeZjOX_wh0UE4JstxVXYAamhi",
       "worksheet": "https://github.com/saasbook/courseware/blob/master/discussions/module2/disc2.pdf",
       "solutions": "https://github.com/saasbook/courseware/blob/master/discussions/module2/disc2_sol.pdf",
-      "code": "https://github.com/saasbook/courseware/blob/master/discussions/module2/disc2.rb"
+      "code": "https://github.com/saasbook/courseware/blob/master/discussions/module2/disc2.rb",
+      "video": "https://www.youtube.com/watch?v=ogg1v4215pI"
     },
     {
       "title": "SaaS Architecture",
       "slides": "https://drive.google.com/open?id=1_1TQccqrsrCjpa4BMieQcN6UhNobgFW3",
       "worksheet": "https://github.com/saasbook/courseware/blob/master/discussions/module3/disc3_sol.pdf",
       "solutions": "https://github.com/saasbook/courseware/blob/master/discussions/module3/disc3_sol.pdf",
-      "code": "https://github.com/saasbook/courseware/blob/master/discussions/module3/disc3.rb"
+      "code": "https://github.com/saasbook/courseware/blob/master/discussions/module3/disc3.rb",
+      "video": "N/A"
     },
     {
       "title": "Introduction to MVC and Rails",
       "slides": "https://drive.google.com/open?id=1PuIVirmUL6dk4ZSKahL4Z3Ygmo1BoemA",
       "worksheet": "https://github.com/saasbook/courseware/blob/master/discussions/module4/disc4_sinatra.pdf",
       "solutions": "https://github.com/saasbook/courseware/blob/master/discussions/module4/disc4_sinatra_sol.pdf",
-      "code": "https://github.com/saasbook/courseware/tree/master/discussions/module4/sinatra-intro"
+      "code": "https://github.com/saasbook/courseware/tree/master/discussions/module4/sinatra-intro",
+      "video": "N/A"
     },
     {
       "title": "Rails App",
       "slides": "https://drive.google.com/open?id=1h1RUvRUTqW0tYuNgH5zTRIVgeojQppIK",
       "worksheet": "https://github.com/saasbook/courseware/blob/master/discussions/module4/disc4_rails.pdf",
       "solutions": "https://github.com/saasbook/courseware/blob/master/discussions/module4/disc4_rails_sol.pdf",
-      "code": "https://github.com/saasbook/courseware/tree/master/discussions/module4/todo_app"
+      "code": "https://github.com/saasbook/courseware/tree/master/discussions/module4/todo_app",
+      "video": "N/A"
     },
     {
       "title": "Advanced Rails",
       "slides": "https://drive.google.com/open?id=1jMt8qErNDCdTC1YOFTleUBkBskV7lAsv",
       "worksheet": "https://github.com/saasbook/courseware/blob/master/discussions/module5/disc5.pdf",
       "solutions": "https://github.com/saasbook/courseware/blob/master/discussions/module5/disc5_sol.pdf",
-      "code": "https://github.com/saasbook/courseware/blob/master/discussions/module5/disc5.rb"
+      "code": "https://github.com/saasbook/courseware/blob/master/discussions/module5/disc5.rb",
+      "video": "N/A"
     },
     {
       "title": "Behavior Driven Design",
       "slides": "https://drive.google.com/open?id=1-rDjBwhX_BTWwRa73mCuNmACTTxjDEdh",
       "worksheet": "https://github.com/saasbook/courseware/blob/master/discussions/module7/disc7_bdd.pdf",
       "solutions": "https://github.com/saasbook/courseware/blob/master/discussions/module7/disc7_bdd_sol.pdf",
-      "code": "N/A"
+      "code": "N/A",
+      "video": "N/A"
     },
     {
       "title": "Cucumber, Capybara",
       "slides": "https://drive.google.com/open?id=1R3HRbvV_uqAhxAUxoWXoipN0DNZsVgfq",
       "worksheet": "https://github.com/saasbook/courseware/blob/master/discussions/module7/disc7_cuke.pdf",
       "solutions": "https://github.com/saasbook/courseware/blob/master/discussions/module7/disc7_cuke_sol.pdf",
-      "code": "https://github.com/saasbook/courseware/blob/master/discussions/module7/disc7.rb"
+      "code": "https://github.com/saasbook/courseware/blob/master/discussions/module7/disc7.rb",
+      "video": "N/A"
     },
     {
       "title": "Design Patterns",
       "slides": "https://drive.google.com/open?id=1qkCxNs90D7Hi00MVWGiM6gITUfb5ymgv",
       "worksheet": "https://github.com/saasbook/courseware/blob/master/discussions/module11/disc11.pdf",
       "solutions": "https://github.com/saasbook/courseware/blob/master/discussions/module11/disc11_sol.pdf",
-      "code": "https://github.com/saasbook/courseware/blob/master/discussions/module11/disc11.rb"
+      "code": "https://github.com/saasbook/courseware/blob/master/discussions/module11/disc11.rb",
+      "video": "N/A"
     }
   ]
 }

@@ -28,6 +28,7 @@ All the code is located at <a href="https://github.com/saasbook/courseware" targ
     <th class="nonSection">Worksheet</th>
     <th class="nonSection">Solutions</th>
     <th class="nonSection">Code</th>
+    <th class="nonSection">Walkthrough</th>
   </tr>
   {% for disc in info.discussions %}
   <tr>
@@ -40,6 +41,13 @@ All the code is located at <a href="https://github.com/saasbook/courseware" targ
         <a href="{{ disc.code }}" target="_blank">Link</a>
       {% else %}
         No code
+      {% endif %}
+    </td>
+    <td class="nonSection">
+      {% if disc.video != "N/A" %}
+        <a href="{{ disc.video }}" target="_blank">Link</a>
+      {% else %}
+        TBA
       {% endif %}
     </td>
   </tr>
