@@ -63,6 +63,14 @@
       "solutions": "https://github.com/saasbook/courseware/blob/master/discussions/module11/disc11_sol.pdf",
       "code": "https://github.com/saasbook/courseware/blob/master/discussions/module11/disc11.rb",
       "video": "N/A"
+    },
+    {
+      "title": "Introduction to JavaScript",
+      "slides": "N/A",
+      "worksheet": "https://github.com/saasbook/courseware/blob/master/discussions/module6/disc6.pdf",
+      "solutions": "https://github.com/saasbook/courseware/blob/master/discussions/module6/disc6_sol.pdf",
+      "code": "N/A",
+      "video": "N/A"
     }
   ]
 }
