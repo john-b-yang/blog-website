@@ -71,6 +71,14 @@
       "solutions": "https://github.com/saasbook/courseware/blob/master/discussions/module6/disc6_sol.pdf",
       "code": "N/A",
       "video": "N/A"
+    },
+    {
+      "title": "Test Driven Development in Ruby",
+      "slides": "N/A",
+      "worksheet": "https://github.com/saasbook/courseware/blob/master/discussions/module8/disc8.pdf",
+      "solutions": "https://github.com/saasbook/courseware/blob/master/discussions/module8/disc8_sol.pdf",
+      "code": "N/A",
+      "video": "N/A"
     }
   ]
 }
