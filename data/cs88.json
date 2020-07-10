@@ -40,27 +40,27 @@
   "practice": {
     "description": "A list of worksheets, solutions, and example code I wrote for various CS 88 topics",
     "Exceptions": {
-      "worksheet": "/static/misc/worksheets/cs88/exceptions/cs88_worksheet_exceptions.pdf",
-      "solutions": "/static/misc/worksheets/cs88/exceptions/cs88_worksheet_exceptions_sol.pdf",
-      "python": "/static/misc/worksheets/cs88/exceptions/exceptions.py"
+      "worksheet": "https://github.com/john-b-yang/course-dev/blob/master/cs88/exceptions/cs88_worksheet_exceptions.pdf",
+      "solutions": "https://github.com/john-b-yang/course-dev/blob/master/cs88/exceptions/cs88_worksheet_exceptions_sol.pdf",
+      "python": "https://github.com/john-b-yang/course-dev/blob/master/cs88/exceptions/exceptions.py"
     },
     "Iterators": {
-      "worksheet": "/static/misc/worksheets/cs88/iterators/cs88_worksheet_iterators.pdf",
-      "solutions": "/static/misc/worksheets/cs88/iterators/cs88_worksheet_iterators_sol.pdf",
-      "python": "/static/misc/worksheets/cs88/iterators/iterators.py"
+      "worksheet": "https://github.com/john-b-yang/course-dev/blob/master/cs88/iterators/cs88_worksheet_iterators.pdf",
+      "solutions": "https://github.com/john-b-yang/course-dev/blob/master/cs88/iterators/cs88_worksheet_iterators_sol.pdf",
+      "python": "https://github.com/john-b-yang/course-dev/blob/master/cs88/iterators/iterators.py"
     },
     "Recursion": {
-      "worksheet": "/static/misc/worksheets/cs88/recursion/cs88_worksheet_recursion.pdf",
-      "solutions": "/static/misc/worksheets/cs88/recursion/cs88_worksheet_recursion_sol.pdf",
-      "python": "/static/misc/worksheets/cs88/recursion/recursion.py"
+      "worksheet": "https://github.com/john-b-yang/course-dev/blob/master/cs88/recursion/cs88_worksheet_recursion.pdf",
+      "solutions": "https://github.com/john-b-yang/course-dev/blob/master/cs88/recursion/cs88_worksheet_recursion_sol.pdf",
+      "python": "https://github.com/john-b-yang/course-dev/blob/master/cs88/recursion/recursion.py"
     },
     "SQL": {
-      "worksheet": "/static/misc/worksheets/cs88/sql/cs88_worksheet_sql.pdf",
-      "solutions": "/static/misc/worksheets/cs88/sql/cs88_worksheet_sql_sol.pdf"
+      "worksheet": "https://github.com/john-b-yang/course-dev/blob/master/cs88/sql/cs88_worksheet_sql.pdf",
+      "solutions": "https://github.com/john-b-yang/course-dev/blob/master/cs88/sql/cs88_worksheet_sql_sol.pdf"
     },
     "Midterm Review": {
-      "worksheet": "/static/misc/worksheets/cs88/midterm/cs88_midterm_review.pdf",
-      "solutions": "/static/misc/worksheets/cs88/midterm/cs88_midterm_review_sol.pdf"
+      "worksheet": "https://github.com/john-b-yang/course-dev/blob/master/cs88/midterm/cs88_midterm_review.pdf",
+      "solutions": "https://github.com/john-b-yang/course-dev/blob/master/cs88/midterm/cs88_midterm_review_sol.pdf"
     }
   },
   "course": {
