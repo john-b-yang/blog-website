@@ -12,7 +12,7 @@ I've worked on before. Click each project's title for more information.
   {% if loop.index % 3 == 1 %} <div> {% endif %}
     <div class="card card-1">
       <img style="display:block;margin:auto;" src="/static/pictures/Projects/{{ project.image }}" />
-      <p><a href="{{ project.link }}" target="_blank"><strong class="project-title" style="font-size: 20px;">{{ project.title }}</strong></a></p>
+      <p><a href="{{ project.link }}"><strong class="project-title" style="font-size: 20px;">{{ project.title }}</strong></a></p>
       <p class="light-text">{{ project.description }}</p>
     </div>
   {% if (loop.index % 3 == 0) or
@@ -31,7 +31,7 @@ from both UC Berkeley's Computer Science curriculum and research efforts.
   {% if loop.index % 3 == 1 %} <div> {% endif %}
     <div class="card card-1">
       <img style="display:block;margin:auto;" src="/static/pictures/Projects/{{ project.image }}" />
-      <p><a href="{{ project.link }}" target="_blank"><strong class="project-title" style="font-size: 20px;">{{ project.title }}</strong></a></p>
+      <p><a href="{{ project.link }}"><strong class="project-title" style="font-size: 20px;">{{ project.title }}</strong></a></p>
       <p class="light-text">{{ project.description }}</p>
     </div>
   {% if (loop.index % 3 == 0) or

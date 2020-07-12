@@ -2,7 +2,7 @@
 
 {% block content %}
 <h5 class="post-title" style="border:1px; border-style:solid; border-color:rgb(27, 156, 226); padding: 1em;">
-  <a href="{{ info.course.link }}" target="_blank">{{ info.course.id}}</a>
+  <a href="{{ info.course.link }}">{{ info.course.id}}</a>
   - {{ info.course.name }}
 </h5>
 
@@ -27,7 +27,7 @@
 <ul>
   {% for discussion in info.discussion_links %}
   <li>
-    <a href="{{ discussion.link }}" target="_blank">
+    <a href="{{ discussion.link }}">
     {% if discussion.number or discussion.number == 0 %}
     {{ discussion.number }}:
     {% endif %}
@@ -46,7 +46,7 @@
 <p><h5>Miscellaneous</h5></p>
 <ul>
   {% for entry in info.misc %}
-  <li><a href="{{ info.misc[entry] }}" target="_blank">{{ entry }}</a></li>
+  <li><a href="{{ info.misc[entry] }}">{{ entry }}</a></li>
   {% endfor %}
 </ul>
 {% endif %}

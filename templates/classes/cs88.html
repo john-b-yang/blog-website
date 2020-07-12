@@ -13,10 +13,10 @@
   {% if exercise != "description" %}
   <li>
     {{ exercise }}:
-    <a href="{{ info.practice[exercise].worksheet }}" target="_blank">Worksheet</a> |
-    <a href="{{ info.practice[exercise].solutions }}" target="_blank">Solutions</a>
+    <a href="{{ info.practice[exercise].worksheet }}">Worksheet</a> |
+    <a href="{{ info.practice[exercise].solutions }}">Solutions</a>
     {% if info.practice[exercise].python %}
-    | <a href="{{ info.practice[exercise].python }}" target="_blank">Python Code</a>
+    | <a href="{{ info.practice[exercise].python }}">Python Code</a>
     {% endif %}
   </li>
   {% endif %}
