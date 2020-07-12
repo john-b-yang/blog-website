@@ -7,11 +7,32 @@
   <a href="https://cs161.org">CS 161</a> - Computer Security
 </h5>
 
-<p><h5>Office Hours</h5></p>
+<h5>Office Hours</h5>
 <p>
   To Be Determined
 </p>
 
-<p><h5>Demonstrations</h5></p>
+<h5>Demonstrations</h5>
+<p>This repository is a collection of hands on demo's I wrote for UC Berkeley's
+CS 161 Computer Security course. Check out the full collection on Github
+<a href="https://github.com/john-b-yang/course-dev/cs161">here</a></p>
+{% for demo in info.demos %}
+{% if (loop.index % 4 == 1) %}
+<div class="cs161-demo-table">
+{% endif %}
+  <div class="demo-card">
+    <div class="picture">
+      <span style="display:inline-blockvertical-align:middle"></span>
+      <img src="{{ demo.picture }}">
+    </div>
+    <div class="description">
+      <p><a href="{{ demo.link }}">{{ demo.title }}</a><br>{{ demo.description }}</p>
+    </div>
+  </div>
+{% if (loop.index % 4 == 0) or
+  (loop.index == info.demos|length) %}
+</div>
+{% endif %}
+{% endfor %}
 
 {% endblock content %}

@@ -1,17 +1,16 @@
 {
-  "course": {
-    "id": "CS 161",
-    "name": "Computer Security",
-    "link": "https://cs161.org/"
-  },
-  "discussion_links": [
+  "demos": [
     {
-      "link": "",
-      "title": "Coming in August"
+      "title": "Buffer Overflow",
+      "picture": "/static/pictures/Courses/demos/overflow.png",
+      "description": "The OB - Original Bug Since 1972",
+      "link": "https://github.com/john-b-yang/course-dev/tree/master/cs161/buffer-overflow"
+    },
+    {
+      "title": "SQL Injection",
+      "picture": "/static/pictures/Courses/demos/syringe.png",
+      "description": "Wash your queries…and hands!",
+      "link": "https://github.com/john-b-yang/course-dev/tree/master/cs161/sql-injection"
     }
-  ],
-  "schedule": {
-    "discussion": "TBD",
-    "office_hours": "TBD"
-  }
+  ]
 }

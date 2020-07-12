@@ -237,3 +237,30 @@ hr.fade {
 .resourceTable tr:nth-child(even) {
   background-color: #dddddd;
 }
+
+/* CS 161 Demo Cards */
+
+.cs161-demo-table {
+  display: flex;
+}
+
+.cs161-demo-table .demo-card {
+  margin: 5px;
+  display: flex;
+  border-color: gray;
+  border-style: dotted;
+  width: 25%;
+  height: 100px;
+  border-radius: 5px;
+}
+
+.cs161-demo-table .demo-card .picture {
+  width: 40%;
+  text-align: center;
+  margin: 1em 0;
+}
+
+.cs161-demo-table .demo-card .description {
+  flex-grow: 1;
+  vertical-align: middle;
+}
