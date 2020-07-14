@@ -263,4 +263,5 @@ hr.fade {
 .cs161-demo-table .demo-card .description {
   flex-grow: 1;
   vertical-align: middle;
+  padding-right: 5px;
 }
