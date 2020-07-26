@@ -11,6 +11,12 @@
       "picture": "/static/pictures/Courses/demos/syringe.png",
       "description": "Wash your queries…and hands!",
       "link": "https://github.com/john-b-yang/course-dev/tree/master/cs161/sql-injection"
+    },
+    {
+    "title": "Clickjacking",
+    "picture": "/static/pictures/Courses/demos/clickjack.png",
+    "description": "Get off my plane!… I mean page!",
+    "link": "https://github.com/john-b-yang/course-dev/tree/master/cs161/clickjack"
     }
   ]
 }
