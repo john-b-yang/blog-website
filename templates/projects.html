@@ -40,5 +40,24 @@ from both UC Berkeley's Computer Science curriculum and research efforts.
   {% endif %}
   {% endfor %}
 </div>
+
+<h5 class="post-title">Presentations</h5>
+I very much enjoy pitching, product demonstrations, and academic presentations.
+Here's a clip of public speaking oriented work I've done in the past.
+<br><br>
+<div class="card-row">
+  {% for presentation in projects.presentations %}
+  {% if loop.index % 3 == 1 %} <div> {% endif %}
+    <div class="card card-1">
+      <img style="display:block;margin:auto;" src="/static/pictures/Projects/{{ presentation.image }}" />
+      <p><a href="{{ presentation.link }}"><strong class="project-title" style="font-size: 20px;">{{ presentation.title }}</strong></a></p>
+      <p class="light-text">{{ presentation.description }}</p>
+    </div>
+  {% if (loop.index % 3 == 0) or
+    (loop.index == projects.presentations|length) %}
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>
 <br><br>
 {% endblock content %}

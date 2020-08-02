@@ -68,5 +68,13 @@
       "link": "http://nu6xb.eecs.berkeley.edu/site/index.php/club-news/projects/satellite-tracking-project/",
       "title": "Satellite Tracking"
     }
+  ],
+  "presentations": [
+    {
+      "description": "Facebook 2016 Global Hackathon Presentation | (Starts 34:15)",
+      "image": "fb-hack.jpg",
+      "link": "https://www.facebook.com/watch/live/?v=10153916963680988&ref=watch_permalink",
+      "title": "HSHS iOS App"
+    }
   ]
 }
