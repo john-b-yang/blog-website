@@ -35,4 +35,24 @@ CS 161 Computer Security course. Check out the full collection on Github
 {% endif %}
 {% endfor %}
 
+<br>
+<h5>Discussions</h5>
+These are the companion slides created for each discussion section. You can find worksheets and solutions on the course website.
+<table style="width:50%;">
+  <tr>
+    <th>Topic</th>
+    <th>Slides</th>
+  </tr>
+  {% for disc in info.discussions %}
+  <tr>
+    <td>{{ disc.title }}</td>
+    <td>
+      {% if disc.slides != "" %}
+        <a href="{{ disc.slides }}">Link</a>
+      {% endif %}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
 {% endblock content %}

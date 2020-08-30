@@ -18,5 +18,27 @@
     "description": "Get off my plane!… I mean page!",
     "link": "https://github.com/john-b-yang/course-dev/tree/master/cs161/clickjack"
     }
+  ],
+  "discussions": [
+    {
+      "title": "x86, GDB, and Security Principles",
+      "slides": "https://docs.google.com/presentation/d/1M_3DsR96y4d_K1MCSLmUJ3lj28T_HfSy1Qz1ePEZdFU/edit?usp=sharing"
+    },
+    {
+      "title": "Software Security",
+      "slides": ""
+    },
+    {
+      "title": "Cryptography I",
+      "slides": ""
+    },
+    {
+      "title": "Cryptography II",
+      "slides": ""
+    },
+    {
+      "title": "Cryptography III",
+      "slides": ""
+    }
   ]
 }
