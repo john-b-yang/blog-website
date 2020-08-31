@@ -22,23 +22,28 @@
   "discussions": [
     {
       "title": "x86, GDB, and Security Principles",
-      "slides": "https://docs.google.com/presentation/d/1M_3DsR96y4d_K1MCSLmUJ3lj28T_HfSy1Qz1ePEZdFU/edit?usp=sharing"
+      "slides": "https://docs.google.com/presentation/d/1M_3DsR96y4d_K1MCSLmUJ3lj28T_HfSy1Qz1ePEZdFU/edit?usp=sharing",
+      "note": ""
     },
     {
       "title": "Software Security",
-      "slides": ""
+      "slides": "",
+      "note": ""
     },
     {
       "title": "Cryptography I",
-      "slides": ""
+      "slides": "",
+      "note": ""
     },
     {
       "title": "Cryptography II",
-      "slides": ""
+      "slides": "",
+      "note": ""
     },
     {
       "title": "Cryptography III",
-      "slides": ""
+      "slides": "",
+      "note": ""
     }
   ]
 }

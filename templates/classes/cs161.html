@@ -42,15 +42,13 @@ These are the companion slides created for each discussion section. You can find
   <tr>
     <th>Topic</th>
     <th>Slides</th>
+    <th>Notes</th>
   </tr>
   {% for disc in info.discussions %}
   <tr>
     <td>{{ disc.title }}</td>
-    <td>
-      {% if disc.slides != "" %}
-        <a href="{{ disc.slides }}">Link</a>
-      {% endif %}
-    </td>
+    <td> {% if disc.slides != "" %} <a href="{{ disc.slides }}">Link</a> {% endif %}</td>
+    <td> {% if disc.note != "" %} <a href="{{ disc.note }}">Link</a> {% endif %}</td>
   </tr>
   {% endfor %}
 </table>
