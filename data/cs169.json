@@ -1,84 +1,102 @@
 {
   "discussions": [
     {
-      "title": "How to Learn a New Language: Ruby",
-      "slides": "https://drive.google.com/open?id=1PSjPwOmCeZjOX_wh0UE4JstxVXYAamhi",
+      "title": "Module 1: Intro to SaaS, Agile",
+      "slides": "https://docs.google.com/presentation/d/1q0JymEf97z6oslifyq2p-J2LVXF8kORIg10B-nsjGZk/edit?usp=sharing",
+      "worksheet": "",
+      "solutions": "",
+      "code": ""
+    },
+    {
+      "title": "Module 2: Learning Languages, Ruby",
+      "slides": "https://docs.google.com/presentation/d/1TqWnuBNVwq9DQDC17jUkZU4WYajmmDyC_0okSG25_nU/edit?usp=sharing",
       "worksheet": "https://github.com/saasbook/courseware/blob/master/discussions/module2/disc2.pdf",
       "solutions": "https://github.com/saasbook/courseware/blob/master/discussions/module2/disc2_sol.pdf",
-      "code": "https://github.com/saasbook/courseware/blob/master/discussions/module2/disc2.rb",
-      "video": "https://www.youtube.com/watch?v=ogg1v4215pI"
+      "code": "https://github.com/saasbook/courseware/blob/master/discussions/module2/disc2.rb"
     },
     {
-      "title": "SaaS Architecture",
-      "slides": "https://drive.google.com/open?id=1_1TQccqrsrCjpa4BMieQcN6UhNobgFW3",
+      "title": "Module 3: SaaS Architecture",
+      "slides": "https://docs.google.com/presentation/d/1LWAbtWrmHekj9QR7LifktJbpJ344ehfklzyiY4--0qU/edit?usp=sharing",
       "worksheet": "https://github.com/saasbook/courseware/blob/master/discussions/module3/disc3_sol.pdf",
       "solutions": "https://github.com/saasbook/courseware/blob/master/discussions/module3/disc3_sol.pdf",
-      "code": "https://github.com/saasbook/courseware/blob/master/discussions/module3/disc3.rb",
-      "video": "N/A"
+      "code": "https://github.com/saasbook/courseware/blob/master/discussions/module3/disc3.rb"
     },
     {
-      "title": "Introduction to MVC and Rails",
-      "slides": "https://drive.google.com/open?id=1PuIVirmUL6dk4ZSKahL4Z3Ygmo1BoemA",
+      "title": "Module 4: Intro to MVC & Rails (Pt 1)",
+      "slides": "https://docs.google.com/presentation/d/1fZVdxoP968SF0lw25Q5KYfdJX6cL-dV6ToWPWT0dG8A/edit?usp=sharing",
       "worksheet": "https://github.com/saasbook/courseware/blob/master/discussions/module4/disc4_sinatra.pdf",
       "solutions": "https://github.com/saasbook/courseware/blob/master/discussions/module4/disc4_sinatra_sol.pdf",
-      "code": "https://github.com/saasbook/courseware/tree/master/discussions/module4/sinatra-intro",
-      "video": "N/A"
+      "code": "https://github.com/saasbook/courseware/tree/master/discussions/module4/sinatra-intro"
     },
     {
-      "title": "Rails App",
-      "slides": "https://drive.google.com/open?id=1h1RUvRUTqW0tYuNgH5zTRIVgeojQppIK",
+      "title": "Module 4: Intro to MVC & Rails (Pt 2)",
+      "slides": "https://docs.google.com/presentation/d/1fZVdxoP968SF0lw25Q5KYfdJX6cL-dV6ToWPWT0dG8A/edit?usp=sharing",
       "worksheet": "https://github.com/saasbook/courseware/blob/master/discussions/module4/disc4_rails.pdf",
       "solutions": "https://github.com/saasbook/courseware/blob/master/discussions/module4/disc4_rails_sol.pdf",
-      "code": "https://github.com/saasbook/courseware/tree/master/discussions/module4/todo_app",
-      "video": "N/A"
+      "code": "https://github.com/saasbook/courseware/tree/master/discussions/module4/todo_app"
     },
     {
-      "title": "Advanced Rails",
-      "slides": "https://drive.google.com/open?id=1jMt8qErNDCdTC1YOFTleUBkBskV7lAsv",
+      "title": "Module 5: Advanced SaaS Mechanisms",
+      "slides": "https://docs.google.com/presentation/d/1t6CTv2Ub2HmQfzsncuS-GR8442V-kzWeLkMyV3I08QQ/edit?usp=sharing",
       "worksheet": "https://github.com/saasbook/courseware/blob/master/discussions/module5/disc5.pdf",
       "solutions": "https://github.com/saasbook/courseware/blob/master/discussions/module5/disc5_sol.pdf",
-      "code": "https://github.com/saasbook/courseware/blob/master/discussions/module5/disc5.rb",
-      "video": "N/A"
+      "code": "https://github.com/saasbook/courseware/blob/master/discussions/module5/disc5.rb"
     },
     {
-      "title": "Behavior Driven Design",
-      "slides": "https://drive.google.com/open?id=1-rDjBwhX_BTWwRa73mCuNmACTTxjDEdh",
-      "worksheet": "https://github.com/saasbook/courseware/blob/master/discussions/module7/disc7_bdd.pdf",
-      "solutions": "https://github.com/saasbook/courseware/blob/master/discussions/module7/disc7_bdd_sol.pdf",
-      "code": "N/A",
-      "video": "N/A"
-    },
-    {
-      "title": "Cucumber, Capybara",
-      "slides": "https://drive.google.com/open?id=1R3HRbvV_uqAhxAUxoWXoipN0DNZsVgfq",
-      "worksheet": "https://github.com/saasbook/courseware/blob/master/discussions/module7/disc7_cuke.pdf",
-      "solutions": "https://github.com/saasbook/courseware/blob/master/discussions/module7/disc7_cuke_sol.pdf",
-      "code": "https://github.com/saasbook/courseware/blob/master/discussions/module7/disc7.rb",
-      "video": "N/A"
-    },
-    {
-      "title": "Design Patterns",
-      "slides": "https://drive.google.com/open?id=1qkCxNs90D7Hi00MVWGiM6gITUfb5ymgv",
-      "worksheet": "https://github.com/saasbook/courseware/blob/master/discussions/module11/disc11.pdf",
-      "solutions": "https://github.com/saasbook/courseware/blob/master/discussions/module11/disc11_sol.pdf",
-      "code": "https://github.com/saasbook/courseware/blob/master/discussions/module11/disc11.rb",
-      "video": "N/A"
-    },
-    {
-      "title": "Introduction to JavaScript",
-      "slides": "N/A",
+      "title": "Module 6: SaaS Clients",
+      "slides": "https://docs.google.com/presentation/d/1nfXaEGMTeyJ-687GwZZh0lLdWutXJhh5Wd2GoIkMeZs/edit?usp=sharing",
       "worksheet": "https://github.com/saasbook/courseware/blob/master/discussions/module6/disc6.pdf",
       "solutions": "https://github.com/saasbook/courseware/blob/master/discussions/module6/disc6_sol.pdf",
-      "code": "https://github.com/saasbook/courseware/tree/master/discussions/module6",
-      "video": "N/A"
+      "code": "https://github.com/saasbook/courseware/tree/master/discussions/module6"
     },
     {
-      "title": "Test Driven Development in Ruby",
-      "slides": "N/A",
+      "title": "Module 7: Behavior Driven Design (Pt 1)",
+      "slides": "https://docs.google.com/presentation/d/1uN5BgGQcHSn546OK20Z4y8L5se-lJ0AR0KvgLBSl23c/edit?usp=sharing",
+      "worksheet": "https://github.com/saasbook/courseware/blob/master/discussions/module7/disc7_bdd.pdf",
+      "solutions": "https://github.com/saasbook/courseware/blob/master/discussions/module7/disc7_bdd_sol.pdf",
+      "code": ""
+    },
+    {
+      "title": "Module 7: Behavior Driven Design (Pt 2)",
+      "slides": "https://docs.google.com/presentation/d/1uN5BgGQcHSn546OK20Z4y8L5se-lJ0AR0KvgLBSl23c/edit?usp=sharing",
+      "worksheet": "https://github.com/saasbook/courseware/blob/master/discussions/module7/disc7_cuke.pdf",
+      "solutions": "https://github.com/saasbook/courseware/blob/master/discussions/module7/disc7_cuke_sol.pdf",
+      "code": "https://github.com/saasbook/courseware/blob/master/discussions/module7/disc7.rb"
+    },
+    {
+      "title": "Module 8: Test Driven Development",
+      "slides": "https://docs.google.com/presentation/d/16nWhkWDc2YZkkMK7DVj-baoAku0sW00o0KgYRIDZ-Zo/edit?usp=sharing",
       "worksheet": "https://github.com/saasbook/courseware/blob/master/discussions/module8/disc8.pdf",
       "solutions": "https://github.com/saasbook/courseware/blob/master/discussions/module8/disc8_sol.pdf",
-      "code": "N/A",
-      "video": "N/A"
+      "code": ""
+    },
+    {
+      "title": "Module 9: Legacy Code, Refactoring",
+      "slides": "https://docs.google.com/presentation/d/14a48pJQx2L0rLNFXvdrddF9l6vZs0gvFTyI4iC_Igoc/edit?usp=sharing",
+      "worksheet": "",
+      "solutions": "",
+      "code": ""
+    },
+    {
+      "title": "Module 10: Agile Teams",
+      "slides": "https://docs.google.com/presentation/d/1g5ehyZru4UbtZc0Vopgi1f7D0N8eJ1_m7CCql3AGEy0/edit?usp=sharing",
+      "worksheet": "",
+      "solutions": "",
+      "code": ""
+    },
+    {
+      "title": "Module 11: Design Patterns",
+      "slides": "https://docs.google.com/presentation/d/1ctXqp6vAdg9DblRQNjT7dVrD2N9gz8ky4MpuGpx5v3Y/edit?usp=sharing",
+      "worksheet": "https://github.com/saasbook/courseware/blob/master/discussions/module11/disc11.pdf",
+      "solutions": "https://github.com/saasbook/courseware/blob/master/discussions/module11/disc11_sol.pdf",
+      "code": "https://github.com/saasbook/courseware/blob/master/discussions/module11/disc11.rb"
+    },
+    {
+      "title": "Module 12: Dev/Ops",
+      "slides": "https://docs.google.com/presentation/d/1iy-sYh1ak3De223l4mH98Mv8SmcBtKQGfp-kuQWRYRk/edit?usp=sharing",
+      "worksheet": "",
+      "solutions": "",
+      "code": ""
     }
   ]
 }
