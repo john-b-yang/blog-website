@@ -36,12 +36,17 @@
       "note": ""
     },
     {
-      "title": "Cryptography II",
+      "title": "Web Security II",
+      "slides": "https://docs.google.com/presentation/d/1DhB6h1HrDVPUP1CnAW-KsLIjAsA8920j9MLH6c65XsA/edit?usp=sharing",
+      "note": ""
+    },
+    {
+      "title": "Web Security III",
       "slides": "",
       "note": ""
     },
     {
-      "title": "Cryptography III",
+      "title": "Network Security I",
       "slides": "",
       "note": ""
     }
