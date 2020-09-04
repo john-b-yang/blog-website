@@ -17,7 +17,7 @@
 CS 161 Computer Security course. Check out the full collection on Github
 <a href="https://github.com/john-b-yang/course-dev/tree/master/cs161">here</a></p>
 {% for demo in info.demos %}
-{% if (loop.index % 4 == 1) %}
+{% if (loop.index % 3 == 1) %}
 <div class="cs161-demo-table">
 {% endif %}
   <div class="demo-card">
@@ -29,7 +29,7 @@ CS 161 Computer Security course. Check out the full collection on Github
       <p><a href="{{ demo.link }}">{{ demo.title }}</a><br>{{ demo.description }}</p>
     </div>
   </div>
-{% if (loop.index % 4 == 0) or
+{% if (loop.index % 3 == 0) or
   (loop.index == info.demos|length) %}
 </div>
 {% endif %}

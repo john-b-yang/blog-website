@@ -13,10 +13,16 @@
       "link": "https://github.com/john-b-yang/course-dev/tree/master/cs161/sql-injection"
     },
     {
-    "title": "Clickjacking",
-    "picture": "/static/pictures/Courses/demos/clickjack.png",
-    "description": "Get off my plane!… I mean page!",
-    "link": "https://github.com/john-b-yang/course-dev/tree/master/cs161/clickjack"
+      "title": "Clickjacking",
+      "picture": "/static/pictures/Courses/demos/clickjack.png",
+      "description": "Get off my plane!… I mean page!",
+      "link": "https://github.com/john-b-yang/course-dev/tree/master/cs161/clickjack"
+    },
+    {
+      "title": "Stored XSS",
+      "picture": "/static/pictures/Courses/demos/stored-xss.png",
+      "description": "<script>alert('evil laugh')</script>",
+      "link": "https://github.com/john-b-yang/course-dev/tree/master/cs161/stored-xss"
     }
   ],
   "discussions": [
