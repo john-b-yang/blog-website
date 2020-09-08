@@ -23,6 +23,12 @@
       "picture": "/static/pictures/Courses/demos/stored-xss.png",
       "description": "<script>alert('evil laugh')</script>",
       "link": "https://github.com/john-b-yang/course-dev/tree/master/cs161/stored-xss"
+    },
+    {
+      "title": "CSRF",
+      "picture": "/static/pictures/Courses/demos/csrf.png",
+      "description": "CSRF, one click attacks in disguise!",
+      "link": "https://github.com/john-b-yang/course-dev/tree/master/cs161/csrf"
     }
   ],
   "discussions": [
