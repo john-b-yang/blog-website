@@ -3,8 +3,8 @@
     {
       "title": "Module 1: Intro to SaaS, Agile",
       "slides": "https://docs.google.com/presentation/d/1q0JymEf97z6oslifyq2p-J2LVXF8kORIg10B-nsjGZk/edit?usp=sharing",
-      "worksheet": "",
-      "solutions": "",
+      "worksheet": "https://github.com/saasbook/courseware/blob/master/discussions/module1/disc1.pdf",
+      "solutions": "https://github.com/saasbook/courseware/blob/master/discussions/module1/disc1_sol.pdf",
       "code": ""
     },
     {
@@ -94,8 +94,8 @@
     {
       "title": "Module 12: Dev/Ops",
       "slides": "https://docs.google.com/presentation/d/1iy-sYh1ak3De223l4mH98Mv8SmcBtKQGfp-kuQWRYRk/edit?usp=sharing",
-      "worksheet": "",
-      "solutions": "",
+      "worksheet": "https://github.com/saasbook/courseware/blob/master/discussions/module12/disc12.pdf",
+      "solutions": "https://github.com/saasbook/courseware/blob/master/discussions/module12/disc12_sol.pdf",
       "code": ""
     }
   ]
