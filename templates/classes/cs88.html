@@ -3,24 +3,30 @@
 {% block page_title %} CS 88 {% endblock %}
 
 {% block class %}
-<p>
-  <b>Practice</b> <br>
-  {{ info.practice.description }}
-</p>
+<h5>Worksheets</h5>
+{{ info.practice.description }}
 
-<ul>
+<table class="resourceTable">
+  <tr>
+    <th>Topic</th>
+    <th>Worksheet</th>
+    <th>Solutions</th>
+    <th>Python Code</th>
+  </tr>
   {% for exercise in info.practice %}
-  {% if exercise != "description" %}
-  <li>
-    {{ exercise }}:
-    <a href="{{ info.practice[exercise].worksheet }}">Worksheet</a> |
-    <a href="{{ info.practice[exercise].solutions }}">Solutions</a>
-    {% if info.practice[exercise].python %}
-    | <a href="{{ info.practice[exercise].python }}">Python Code</a>
+  <tr>
+    {% if exercise != "description" %}
+    <td>{{ exercise }}</td>
+    <td><a href="{{ info.practice[exercise].worksheet }}">Link</a></td>
+    <td><a href="{{ info.practice[exercise].solutions }}">Link</a></td>
+    <td>
+      {% if info.practice[exercise].python %}
+      <a href="{{ info.practice[exercise].python }}">Code</a>
+      {% endif %}
+    </td>
     {% endif %}
-  </li>
-  {% endif %}
+  </tr>
   {% endfor %}
-</ul>
+</table>
 
 {% endblock class %}

@@ -38,7 +38,7 @@
     }
   ],
   "practice": {
-    "description": "A list of worksheets, solutions, and example code I wrote for various CS 88 topics",
+    "description": "A list of worksheets, solutions, and example code I wrote for various CS 88 topics.",
     "Exceptions": {
       "worksheet": "https://github.com/john-b-yang/course-dev/blob/master/cs88/exceptions/cs88_worksheet_exceptions.pdf",
       "solutions": "https://github.com/john-b-yang/course-dev/blob/master/cs88/exceptions/cs88_worksheet_exceptions_sol.pdf",

@@ -234,10 +234,6 @@ hr.fade {
   border: 1px solid #dddddd;
 }
 
-.resourceTable tr:nth-child(even) {
-  background-color: #dddddd;
-}
-
 /* CS 161 Demo Cards */
 
 .cs161-demo-table {
