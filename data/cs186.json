@@ -4,6 +4,60 @@
     "name": "Introduction to Database Systems",
     "link": "https://berkeley-cs186.github.io"
   },
+  "discussion_links": [
+    {
+      "link": "https://docs.google.com/presentation/d/1LKU8R9QAuNJzGr1vIBMqA0CViiTK7cMRZpODE7jhS08/edit?usp=sharing",
+      "title": "Intro, Relations, SQL"
+    },
+    {
+      "link": "https://docs.google.com/presentation/d/1BcVoc5iDPzGLjrF2vbiq0ex_xGsLo8vs49zCpy4I6vA/edit?usp=sharing",
+      "title": "Disk, Files, Buffers"
+    },
+    {
+      "link": "https://docs.google.com/presentation/d/1fEkf9qT-9q7xN9DlrHkwk9po-xZeJIKurBtStoqZBNE/edit?usp=sharing",
+      "title": "B+ Trees"
+    },
+    {
+      "link": "https://docs.google.com/presentation/d/1TMZu2Yasx04gW_mDuuWZSgkuiKOc-yHDuEd8e0EuZF0/edit?usp=sharing",
+      "title": "Buffer Management, Relational Algebra"
+    },
+    {
+      "link": "https://docs.google.com/presentation/d/1RBzUFGmdO_IGaDIx_VQvYHjciLSx1ymipzG3bq8UoCY/edit?usp=sharing",
+      "title": "Sorting & Hashing"
+    },
+    {
+      "link": "https://docs.google.com/presentation/d/1w2j27eSRPtxq9xvqY1GkWwZ0EgyE3ChfQJvcfuwQdSQ/edit?usp=sharing",
+      "title": "Joins"
+    },
+    {
+      "link": "https://docs.google.com/presentation/d/1RvGRx8Lt6Ug_apew6tKsZfNzEsjlShcFroVPXpeB7S8/edit?usp=sharing",
+      "title": "Selectivity Estimation & Query Optimization"
+    },
+    {
+      "link": "https://docs.google.com/presentation/d/1315fyRaWtG_F0L1LvZvTK1ubNgyA35rqJTnSuyIvDas/edit?usp=sharing",
+      "title": "Parallel Query Processing"
+    },
+    {
+      "link": "https://docs.google.com/presentation/d/1hjTJD3Y0_fOX-oHCb2AY-oB7Yt4asRLQTbzoBEvDa7w/edit?usp=sharing",
+      "title": "Transactions & Concurrency"
+    },
+    {
+      "link": "https://docs.google.com/presentation/d/1pGwntrJO0rnxWmgrpdTuWIjws-a2CNGK2U2jNUegZZY/edit?usp=sharing",
+      "title": "Database Design"
+    },
+    {
+      "link": "https://docs.google.com/presentation/d/1R6m9aSpMh4lwwws0KF7yHzUAxivQz8E0zr0JSHZORRs/edit?usp=sharing",
+      "title": "Text Search"
+    },
+    {
+      "link": "https://docs.google.com/presentation/d/1WIStsxDyMp3ELKIg0UlU489rPUDXmEjzMpNmuXIhRCg/edit?usp=sharing",
+      "title": "Recovery"
+    },
+    {
+      "link": "https://docs.google.com/presentation/d/1fquXuQyiYs1H4CkfOEvex1dUg6s59oxACNsZ47TG2WA/edit?usp=sharing",
+      "title": "Distributed Transactions"
+    }
+  ],
   "misc": {
     "Discussion Clarifications": "https://docs.google.com/document/d/15-EfDuVjZm1tNFTi_GXWreY5xV6ZDgv41hDU0-dl-5Y/edit?usp=sharing",
     "B-Tree Interactive Visualization": "https://www.cs.usfca.edu/~galles/visualization/BTree.html",
