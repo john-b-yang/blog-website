@@ -253,10 +253,12 @@ hr.fade {
   width: 40%;
   text-align: center;
   margin: 1em 0;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .cs161-demo-table .demo-card .description {
   flex-grow: 1;
   vertical-align: middle;
-  padding-right: 5px;
+  padding: 2px;
 }
