@@ -234,6 +234,16 @@ hr.fade {
   border: 1px solid #dddddd;
 }
 
+.resourceTable tr:nth-child(even) { background-color: #f3f3f3; }
+.resourceTable tr:hover { background-color: #dedede; }
+
+.resourceTable th {
+  background-color: rgb(27, 156, 226);
+  color: white;
+  padding: 10px 0px 10px 5px;
+  text-align: left;
+}
+
 /* CS 161 Demo Cards */
 
 .cs161-demo-table {
