@@ -69,60 +69,16 @@ CS 161 Computer Security course. Check out the full collection on Github
 
 <table>
   <tr>
+    {% for topic, links in info.misc.items() %}
     <td style="width:25%; border:none; vertical-align: baseline;">
-      <b>Cryptography</b>
+      <b>{{ topic }}</b>
       <ul>
-        <li>Diffie-Hellman Key Exchange |
-          <a href="https://www.youtube.com/watch?v=NmM9HA2MQGI&ab_channel=Computerphile">Video</a></li>
-        <li>MITM Attacks |
-          <a href="https://www.youtube.com/watch?v=vsXMMT2CqqE&ab_channel=Computerphile">Video</a></li>
-        <li>Password Cracking |
-          <a href="https://www.youtube.com/watch?v=7U-RbOKanYs&ab_channel=Computerphile">Video</a></li>
-        <li>SHA (Secure Hashing Algorithm) |
-          <a href="https://www.youtube.com/watch?v=DMtFhACPnTY&ab_channel=Computerphile">Video</a></li>
-        <li>Secure Stream Ciphers (HMAC) |
-          <a href="https://www.youtube.com/watch?v=wlSG3pEiQdc&ab_channel=Computerphile">Video</a></li>
+        {% for title, link in links.items() %}
+        <li>{{ title }} | <a href="{{ link }}">▶</a></li>
+        {% endfor %}
       </ul>
     </td>
-    <td style="width:25%; border:none; vertical-align: baseline;">
-      <b>Web Security</b>
-      <ul>
-        <li>Clickjacking |
-          <a href="https://www.hacksplaining.com/exercises/click-jacking">Site</a></li>
-        <li>Cross Site Request Forgery |
-          <a href="https://www.hacksplaining.com/exercises/csrf">Site</a></li>
-        <li>Reflected XSS |
-          <a href="https://www.hacksplaining.com/exercises/xss-reflected">Site</a></li>
-        <li>SQL Injection |
-          <a href="https://www.hacksplaining.com/exercises/sql-injection">Site</a></li>
-        <li>Stored XSS |
-          <a href="https://www.hacksplaining.com/exercises/xss-stored">Site</a></li>
-      </ul>
-    </td>
-    <td style="width:25%; border:none; vertical-align: baseline;">
-      <b>Software Security</b>
-      <ul>
-        <li>Buffer Overflow Exploits |
-          <a href="https://www.youtube.com/watch?v=1S0aBV-Waeo&ab_channel=Computerphile">Video</a></li>
-        <li>Linux Stack Smashing |
-          <a href="https://blog.techorganic.com/2015/04/10/64-bit-linux-stack-smashing-tutorial-part-1/">Site</a></li>
-        <li>Super Mario 3 Stack Underflow |
-          <a href="https://www.youtube.com/watch?v=WWbZFj-cLvk&ab_channel=Bismuth">Video</a></li>
-      </ul>
-    </td>
-    <td style="width:25%; border:none; vertical-align: baseline;">
-      <b>Network Security</b>
-      <ul>
-        <li>DNS Cache Poisoning |
-          <a href="https://www.youtube.com/watch?v=7MT1F0O3_Yw">Video</a></li>
-        <li>Morris Worm |
-          <a href="https://www.youtube.com/watch?v=o2dj2gnxjtU">Video</a></li>
-        <li>Mr. Robot |
-          <a href="https://www.youtube.com/watch?v=r1z5y8mMi6M">Video</a></li>
-        <li>Slow Loris Attack |
-          <a href="https://www.youtube.com/watch?v=XiFkyR35v2Y">Video</a></li>
-      </ul>
-    </td>
+    {% endfor %}
   </tr>
 </table>
 

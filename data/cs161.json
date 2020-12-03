@@ -116,5 +116,32 @@
       "title": "Encryption (MT Review)",
       "link": "https://drive.google.com/file/d/1SDRyOrLuqp704yRZyWaQ3-OWmHis_h-M/view?usp=sharing"
     }
-  ]
+  ],
+  "misc": {
+    "Cryptography": {
+      "Diffie-Hellman Key Exchange": "https://www.youtube.com/watch?v=NmM9HA2MQGI",
+      "MITM Attacks": "https://www.youtube.com/watch?v=vsXMMT2CqqE",
+      "Password Cracking": "https://www.youtube.com/watch?v=7U-RbOKanYs",
+      "SHA (Secure Hashing Algorithm)": "https://www.youtube.com/watch?v=DMtFhACPnTY",
+      "Secure Stream Ciphers (HMAC)": "https://www.youtube.com/watch?v=wlSG3pEiQdc"
+    },
+    "Web Security": {
+      "Clickjacking": "https://www.hacksplaining.com/exercises/click-jacking",
+      "Cross Site Request Forgery": "https://www.hacksplaining.com/exercises/csrf",
+      "Reflected XSS": "https://www.hacksplaining.com/exercises/xss-reflected",
+      "SQL Injection": "https://www.hacksplaining.com/exercises/sql-injection",
+      "Stored XSS": "https://www.hacksplaining.com/exercises/xss-stored"
+    },
+    "Software Security": {
+      "Buffer Overflow Exploits": "https://www.youtube.com/watch?v=1S0aBV-Waeo",
+      "Linux Stack Smashing": "https://blog.techorganic.com/2015/04/10/64-bit-linux-stack-smashing-tutorial-part-1/",
+      "Super Mario 3 Stack Underflow": "https://www.youtube.com/watch?v=WWbZFj-cLvk"
+    },
+    "Network Security": {
+      "DNS Cache Poisoning": "https://www.youtube.com/watch?v=7MT1F0O3_Yw",
+      "Morris Worm": "https://www.youtube.com/watch?v=o2dj2gnxjtU",
+      "Mr. Robot": "https://www.youtube.com/watch?v=r1z5y8mMi6M",
+      "Slow Loris Attack": "https://www.youtube.com/watch?v=XiFkyR35v2Y"
+    }
+  }
 }
