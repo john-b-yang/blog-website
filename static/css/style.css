@@ -86,7 +86,7 @@ body {
 }
 
 .block:hover {
-    background-color: rgb(27, 156, 226);
+    background-color: #1b9ce2;
 }
 
 .block a:hover {
@@ -108,6 +108,13 @@ body {
     text-align: left;
 }
 
+.class-title {
+    border: 1px;
+    border-style: solid;
+    border-color: #1b9ce2;
+    padding: 1em;
+}
+
 /* Tag Level Styling */
 
 i {
@@ -119,7 +126,7 @@ i {
 }
 
 i:hover {
-    color: rgb(27, 156, 226);
+    color: #1b9ce2;
 }
 
 hr.fade {
@@ -178,7 +185,7 @@ hr.fade {
 }
 
 .project-title:hover {
-    color: rgb(27, 156, 226);
+    color: #1b9ce2;
 }
 
 /* Courses Section Boxes */
@@ -213,7 +220,7 @@ hr.fade {
 
 /* Navigation Bar */
 .navbar {
-  background: rgb(27, 156, 226);
+  background: #1b9ce2;
   top: 0;
   right: 0;
   left: 0;
@@ -238,7 +245,7 @@ hr.fade {
 .resourceTable tr:hover { background-color: #dedede; }
 
 .resourceTable th {
-  background-color: rgb(27, 156, 226);
+  background-color: #1b9ce2;
   color: white;
   padding: 10px 0px 10px 5px;
   text-align: left;

@@ -107,3 +107,23 @@
 .icon-button:hover .icon-twitter, .icon-button:hover .icon-facebook, .icon-button:hover .icon-google-plus, .icon-button:hover .icon-linkedin, .icon-button:hover .icon-mail-forward {
     color: white;
 }
+
+/* Video Play Button */
+.video-button {
+  background: #1b9ce2;
+  border-radius: 15px;
+  box-shadow: 0px 5px 0px 0px #2181b5;
+  color: white;
+  cursor: pointer;
+  margin: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+	transition: .2s;
+  width: 20%;
+  word-wrap: break-word;
+}
+
+.video-button:active {
+	transform: translateY(5px);
+	box-shadow: 0px 1px 0px 0px #2181b5;
+}

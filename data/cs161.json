@@ -98,5 +98,23 @@
       "slides": "https://docs.google.com/presentation/d/1jBTo3ddXjtPf9ZnqUeOe2CPqSKLfmG1awMrVouO81lY/edit?usp=sharing",
       "note": "https://drive.google.com/file/d/1WsDrfQyFRwqhSaGNmaPC3NmCZuzQOGIM/view?usp=sharing"
     }
+  ],
+  "videos": [
+    {
+      "title": "x86, GDB, Principles",
+      "link": "https://cs161.org/lecture?kaltura_video_id=0_4qlvl85u"
+    },
+    {
+      "title": "Software Security",
+      "link": "https://cs161.org/lecture?kaltura_video_id=0_q9emwb13"
+    },
+    {
+      "title": "Cryptography I",
+      "link": "https://cs161.org/lecture?kaltura_video_id=0_p0c6et2o"
+    },
+    {
+      "title": "Encryption (MT Review)",
+      "link": "https://drive.google.com/file/d/1SDRyOrLuqp704yRZyWaQ3-OWmHis_h-M/view?usp=sharing"
+    }
   ]
 }

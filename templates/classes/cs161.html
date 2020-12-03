@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h5 class="post-title" style="border:1px; border-style:solid; border-color:rgb(27, 156, 226); padding: 1em;">
+<h5 class="post-title class-title">
   <a href="https://cs161.org">CS 161</a> - Computer Security
 </h5>
 
@@ -35,7 +35,7 @@ CS 161 Computer Security course. Check out the full collection on Github
 
 <br>
 <h5>Discussions</h5>
-<p>These are the companion slides created for each discussion section. You can find worksheets and solutions on the course website.</p>
+<p>These are the companion slides and notes created for each discussion section. You can find worksheets and solutions on the course website.</p>
 <table class="resourceTable">
   <tr>
     <th>Topic</th>
@@ -50,6 +50,17 @@ CS 161 Computer Security course. Check out the full collection on Github
   </tr>
   {% endfor %}
 </table>
+
+<br>
+<h5>Walkthroughs</h5>
+<p>These are recorded walkthroughs of the first three discussions and a midterm review session.</p>
+<div style="display:flex;">
+  {% for video in info.videos %}
+  <div onclick="location.href='{{ video.link }}';" class="video-button">
+  	<p>▶ {{ video.title }}</p>
+  </div>
+  {% endfor %}
+</div>
 
 <br>
 <h5>Miscellaneous</h5>
