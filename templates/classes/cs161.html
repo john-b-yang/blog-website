@@ -53,14 +53,18 @@ CS 161 Computer Security course. Check out the full collection on Github
 
 <br>
 <h5>Walkthroughs</h5>
-<p>These are recorded walkthroughs of the first three discussions and a midterm review session.</p>
+<p>These are recorded walkthroughs of the first three discussions and midterm + final review sessions on cryptography.</p>
+{% for video in info.videos %}
+{% if loop.index % 4 == 1 %}
 <div style="display:flex;">
-  {% for video in info.videos %}
+{% endif %}
   <div onclick="location.href='{{ video.link }}';" class="video-button">
   	<p>▶ {{ video.title }}</p>
   </div>
-  {% endfor %}
+{% if (loop.index % 4 == 0) or (loop.index == info.videos|length) %}
 </div>
+{% endif %}
+{% endfor %}
 
 <br>
 <h5>Miscellaneous</h5>
