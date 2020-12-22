@@ -108,26 +108,6 @@
     color: white;
 }
 
-/* Video Play Button */
-.video-button {
-  background: #1b9ce2;
-  border-radius: 15px;
-  box-shadow: 0px 5px 0px 0px #2181b5;
-  color: #c8d1d9;
-  cursor: pointer;
-  margin: 5px;
-  padding-left: 15px;
-  padding-right: 15px;
-	transition: .2s;
-  width: 20%;
-  word-wrap: break-word;
-}
-
-.video-button:active {
-	transform: translateY(5px);
-	box-shadow: 0px 1px 0px 0px #2181b5;
-}
-
 /* Underline Animation */
 a.left {
   color: #c8d1d9;

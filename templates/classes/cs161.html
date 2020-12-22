@@ -2,18 +2,20 @@
 
 {% block content %}
 <h5 class="post-title class-title">
-  <a href="https://cs161.org">CS 161</a> - Computer Security
+  <a class="left" href="https://cs161.org">CS 161</a>: Computer Security
 </h5>
 
 <h5>Office Hours</h5>
 <p>
-  Wed. 6-8 p.m. PST | <a href="https://oh.cs161.org/">OH Queue</a>
+  Wed. 6-8 p.m. PST | <a href="https://oh.cs161.org/" class="dimLink">OH Queue</a>
 </p>
 
 <h5>Demonstrations</h5>
-<p>This repository is a collection of hands on demo's I wrote for UC Berkeley's
-CS 161 Computer Security course. Check out the full collection on Github
-<a href="https://github.com/john-b-yang/course-dev/tree/master/cs161">here</a></p>
+<p>
+  This repository is a collection of hands on demo's I wrote for UC Berkeley's
+  CS 161 Computer Security course. Check out the full collection on
+  <a href="https://github.com/john-b-yang/course-dev/tree/master/cs161" class="dimLink">Github</a>.
+</p>
 {% for demo in info.demos %}
 {% if (loop.index % 3 == 1) %}
 <div class="cs161-demo-table">
@@ -24,7 +26,11 @@ CS 161 Computer Security course. Check out the full collection on Github
       <img src="{{ demo.picture }}">
     </div>
     <div class="description">
-      <p><a href="{{ demo.link }}">{{ demo.title }}</a><br>{{ demo.description }}</p>
+      <p>
+        <a href="{{ demo.link }}" class="left" style="font-weight:bold;">
+          > {{ demo.title }}
+        </a><br>{{ demo.description }}
+      </p>
     </div>
   </div>
 {% if (loop.index % 3 == 0) or
@@ -66,19 +72,17 @@ CS 161 Computer Security course. Check out the full collection on Github
 <br>
 <h5>Walkthroughs</h5>
 <p>These are recorded walkthroughs of the first three discussions and midterm + final review sessions on cryptography.</p>
-{% for video in info.videos %}
-{% if loop.index % 4 == 1 %}
-<div style="display:flex;">
-{% endif %}
-  <div onclick="location.href='{{ video.link }}';" class="video-button">
-  	<p>▶ {{ video.title }}</p>
-  </div>
-{% if (loop.index % 4 == 0) or (loop.index == info.videos|length) %}
-</div>
-{% endif %}
-{% endfor %}
 
-<br>
+<ul>
+{% for video in info.videos %}
+  <li>
+    <a href="{{ video.link }}" class="link-fa">
+      <i class="fa fa-film fa-sm"></i>
+    </a> {{ video.title }}
+  </li>
+{% endfor %}
+</ul>
+
 <h5>Miscellaneous</h5>
 <p>There's a potpourri of fantastic online resources which explain the theoretical, mathematical, and practical topics
   in this class to much greater depths. This is a compilation of my personal favorites.</p>
@@ -102,6 +106,6 @@ CS 161 Computer Security course. Check out the full collection on Github
   </tr>
 </table>
 
-To realize your dreams of being a movie hacker, check <a href="https://hackertyper.net/">this</a> out. 😎
+To realize your dreams of being a movie hacker, check <a href="https://hackertyper.net/" class="dimLink">this</a> out. 😎
 
 {% endblock content %}

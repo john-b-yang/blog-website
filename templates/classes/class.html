@@ -2,8 +2,7 @@
 
 {% block content %}
 <h5 class="post-title class-title">
-  <a href="{{ info.course.link }}">{{ info.course.id}}</a>
-  - {{ info.course.name }}
+  <a class="left" href="{{ info.course.link }}">{{ info.course.id }}</a>: {{ info.course.name }}
 </h5>
 
 <h5>Schedule</h5>
@@ -17,7 +16,7 @@
 <h5>Logistics</h5>
 <ul>
   {% for entry in info.logistics %}
-  <li>{{ entry }}: {{ info.logistics[entry] }}</li>
+  <li><a href="{{ info.logistics[entry] }}" class="dimLink">{{ entry }}</a></li>
   {% endfor %}
 </ul>
 {% endif %}
@@ -50,7 +49,7 @@
 <p><h5>Miscellaneous</h5></p>
 <ul>
   {% for entry in info.misc %}
-  <li><a href="{{ info.misc[entry] }}">{{ entry }}</a></li>
+  <li><a href="{{ info.misc[entry] }}" class="dimLink">{{ entry }}</a></li>
   {% endfor %}
 </ul>
 {% endif %}

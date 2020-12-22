@@ -10,7 +10,6 @@ body {
 }
 
 /* Upper Right Links Animations */
-
 .link-list {
     color: #c8d1d9;
     display: inline-block;
@@ -18,7 +17,6 @@ body {
 }
 
 /* Text Fade Animation */
-
 #body-fade {
     animation: fadein 1s;
     -moz-animation: fadein 1s;
@@ -69,7 +67,6 @@ body {
 }
 
 /* Tag Blocks */
-
 .block {
     width: auto;
     padding: 1px 10px 1px 10px;
@@ -92,7 +89,6 @@ body {
 }
 
 /* Fonts */
-
 .light-text {
     font-family: 'HelveticaNeue-Light', 'Arial', sans-serif;
 }
@@ -110,7 +106,6 @@ body {
 }
 
 /* Tag Level Styling */
-
 i {
     -moz-transition: all .2s ease-in;
     -o-transition: all .2s ease-in;
@@ -133,7 +128,6 @@ hr.fade {
 }
 
 /* Project Section Boxes */
-
 .card-row {
     display: flex;
     flex-direction: column;
@@ -141,7 +135,6 @@ hr.fade {
 }
 
 /* Project Section Text */
-
 #card-image {
     display: block;
     margin-left: auto;
@@ -161,7 +154,6 @@ hr.fade {
 }
 
 /* Courses Section Boxes */
-
 .card-course {
     background: #161c22;
     display: inline-block;
@@ -227,7 +219,6 @@ hr.fade {
 }
 
 /* CS 161 Demo Cards */
-
 .cs161-demo-table {
   display: flex;
 }
@@ -275,4 +266,9 @@ hr.fade {
   border: none;
   border-radius: 10px;
   padding: 15px;
+}
+
+/* Hover Link Styling */
+.dimLink:hover {
+  opacity: 0.7;
 }
