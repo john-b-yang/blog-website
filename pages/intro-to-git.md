@@ -49,7 +49,15 @@ git add (name of change here)
 
 'git add' is the Git command responsible for selecting modifications. When a file is modified, your computer has no idea which modifications are or aren't important. 'git add' is essentially your way of picking out the modifications that you're telling your computer you'd like to keep. A file that has been added is considered 'staged'. To select a change individually, just 'git add (name of modification here)'. Out of the options, you will most likely be using 'git add -A' the most.
 
-<img src="/static/pictures/GitCS61B/add-options.png" alt="Add Options" style="width:400px;"/>
+<table class="resourceTable">
+  <tr><th>Option</th><th>Purpose</th></tr>
+  <tr><td>-A</td><td>Stage all recorded changes. Same combination of '.' and '-u'</td></tr>
+  <tr><td>.</td><td>Stage new and changed files, but not deleted files</td></tr>
+  <tr><td>-u</td><td>Stage changed and deleted files, but not new files</td></tr>
+  <tr><td>-v</td><td>Verbose, provides more information about execution</td></tr>
+  <tr><td>-f</td><td>Allows you to add ignored files</td></tr>
+  <tr><td>-i</td><td>Interactive Mode</td></tr>
+</table>
 
 **Committing Staged Changes**
 
@@ -59,7 +67,12 @@ git commit -m 'Commit Message Here'
 
 It's time to ship the apples. 'git commit'  finalizes the staged changes you want to keep and revises the .git file to store a new latest version of the directory. With git commit, you can view previous versions of the directory, compare different commits, and revert back to a previous commit in case something happens to your project.
 
-<img src="/static/pictures/GitCS61B/commit-options.png" alt="Commit Options" style="width:400px;"/>
+<table class="resourceTable">
+  <tr><th>Option</th><th>Purpose</th></tr>
+  <tr><td>-a/--all</td><td>Stage changed and deleted files, but not untracked files</td></tr>
+  <tr><td>-p</td><td>Interactive patch allowing you to choose changes to commit</td></tr>
+  <tr><td>-m</td><td>Edit commit message, multiple -m's are separated into paragraphs</td></tr>
+</table>
 
 **Removing or Postponing Changes**<br>
 <pre class="prettyprint lang-bsh background">
@@ -84,7 +97,34 @@ So far, the above commands have been enacting change on a local level. With 'git
 
 **Miscellaneous Commands**<br>
 
-<img src="/static/pictures/GitCS61B/commands-misc.png" alt="Commit Options" style="width:500px;"/>
+<table class="resourceTable">
+  <tr><th>Command</th><th>Purpose</th><th>Options</th></tr>
+  <tr>
+    <td>git config</td>
+    <td>Configuration. Change your username and password, use --global for every repository</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>git blame</td>
+    <td>Show who, what, and when something changed in a file</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>git diff</td>
+    <td>View changes that have occurred in tracked files</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>git log</td>
+    <td>Show history of commits starting with latest commit.</td>
+    <td>-p (file changes over time)</td>
+  </tr>
+  <tr>
+    <td>git status</td>
+    <td>Show the status of different files and changes since the most recent commit</td>
+    <td>-s (short)</td>
+  </tr>
+</table>
 
 <br>
 ##### Workflow
@@ -170,7 +210,33 @@ Branches are simply pointers to commits. As a convention, the 'master' branch te
 
 Let's start from the basics: creating and switching from branch to branch! Every repository has at least one branch, commonly called the master branch. When you create another branch, you're photo-copying your project at its latest commit. Local branches have a corresponding remote branch that exists on Github. With branches, your 'push' command will look a bit different. Instead of 'git push origin master', you'd replace 'origin' and 'master' with your remote and local branch names in that order.
 
-<img src="/static/pictures/GitCS61B/commands-branch.png" alt="Branch Options" style="width:400px;"/>
+<table class="resourceTable">
+  <tr><th>Commands + Options</th><th>Purpose</th></tr>
+  <tr>
+    <td>git branch</td>
+    <td>View list of all branches</td>
+  </tr>
+  <tr>
+    <td>git branch (name)</td>
+    <td>Create a new branch with 'name'</td>
+  </tr>
+  <tr>
+    <td>git branch -d (name)</td>
+    <td>Delete a branch with 'name'</td>
+  </tr>
+  <tr>
+    <td>git branch -r</td>
+    <td>List remote branches</td>
+  </tr>
+  <tr>
+    <td>git branch -a</td>
+    <td>List local + remote branches</td>
+  </tr>
+  <tr>
+    <td>git checkout (name)</td>
+    <td>Switch onto existing branch named 'name'</td>
+  </tr>
+</table>
 
 *Retrieve Updates from Remote Repository*
 
@@ -178,7 +244,21 @@ Continuing with Randy, let's say Randy pushed a couple changes to the remote rep
 
 Keep in mind, however, that this command is where merge conflicts most often appear. If the same file is modified both locally and remotely, git pull is what exposes the conflict. Some best practices are to make sure to 'git stash' conflicting changes before pulling.
 
-<img src="/static/pictures/GitCS61B/commands-remote.png" alt="Remote Options" style="width:500px;"/>
+<table class="resourceTable">
+  <tr><th>Commands + Options</th><th>Purpose</th></tr>
+  <tr>
+    <td>git pull (remote) (branch)</td>
+    <td>Applies 'remote' modifications to local 'branch'</td>
+  </tr>
+  <tr>
+    <td>git fetch (remote)</td>
+    <td>Retrieves changes from 'remote', does not apply them locally</td>
+  </tr>
+  <tr>
+    <td>git merge (branch)</td>
+    <td>Combines two branches by creating a new commit or fast forwarding</td>
+  </tr>
+</table>
 
 <br>
 ##### The Grand Finale!!
