@@ -30,10 +30,32 @@ All the code is located at <a href="https://github.com/john-b-yang/course-dev/tr
   {% for disc in info.discussions %}
   <tr>
     <td>{{ disc.title }}</td>
-    <td class="nonSection"><a href="{{ disc.slides }}">Link</a></td>
-    <td class="nonSection"> {% if disc.worksheet != "" %} <a href="{{ disc.worksheet }}">Link</a> {% endif %}</td>
-    <td class="nonSection"> {% if disc.solutions != "" %} <a href="{{ disc.solutions }}">Link</a> {% endif %}</td>
-    <td class="nonSection"> {% if disc.code != "" %} <a href="{{ disc.code }}">Link</a> {% endif %}</td>
+    <td class="nonSection">
+      <a href="{{ disc.slides }}" class="link-fa">
+        <i class="fa fa-tv fa-sm"></i>
+      </a>
+    </td>
+    <td class="nonSection">
+      {% if disc.worksheet != "" %}
+      <a href="{{ disc.worksheet }}" class="link-fa">
+        <i class="fa fa-paste fa-sm"></i>
+      </a>
+      {% endif %}
+    </td>
+    <td class="nonSection">
+      {% if disc.solutions != "" %}
+      <a href="{{ disc.solutions }}" class="link-fa">
+        <i class="fa fa-check-square fa-sm"></i>
+      </a>
+      {% endif %}
+    </td>
+    <td class="nonSection">
+      {% if disc.code != "" %}
+      <a href="{{ disc.code }}" class="link-fa">
+        <i class="fa fa-code fa-sm"></i>
+      </a>
+      {% endif %}
+    </td>
   </tr>
   {% endfor %}
 </table>

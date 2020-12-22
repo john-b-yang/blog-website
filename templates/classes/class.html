@@ -32,7 +32,11 @@
   {% for discussion in info.discussion_links %}
   <tr>
     <td>{{ discussion.title }}</td>
-    <td><a href="{{ discussion.link }}">Link</a></td>
+    <td>
+      <a href="{{ discussion.link }}" class="link-fa">
+        <i class="fa fa-tv fa-sm"></i>
+      </a>
+    </td>
   </tr>
   {% endfor %}
 </table>

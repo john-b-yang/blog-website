@@ -45,8 +45,20 @@ CS 161 Computer Security course. Check out the full collection on Github
   {% for disc in info.discussions %}
   <tr>
     <td>{{ disc.title }}</td>
-    <td>{% if disc.slides != "" %} <a href="{{ disc.slides }}">Link</a> {% endif %}</td>
-    <td>{% if disc.note != "" %} <a href="{{ disc.note }}">Link</a> {% endif %}</td>
+    <td>
+      {% if disc.slides != "" %}
+      <a href="{{ disc.slides }}" class="link-fa">
+        <i class="fa fa-tv fa-sm"></i>
+      </a>
+      {% endif %}
+    </td>
+    <td>
+      {% if disc.note != "" %}
+      <a href="{{ disc.note }}" class="link-fa">
+        <i class="fa fa-paste fa-sm"></i>
+      </a>
+      {% endif %}
+    </td>
   </tr>
   {% endfor %}
 </table>
@@ -78,7 +90,11 @@ CS 161 Computer Security course. Check out the full collection on Github
       <b>{{ topic }}</b>
       <ul>
         {% for title, link in links.items() %}
-        <li><a href="{{ link }}" class="tag-link"><i class="fa fa-film fa-sm"></i></a> {{ title }}</li>
+        <li>
+          <a href="{{ link }}" class="link-fa">
+            <i class="fa fa-film fa-sm"></i>
+          </a> {{ title }}
+        </li>
         {% endfor %}
       </ul>
     </td>
