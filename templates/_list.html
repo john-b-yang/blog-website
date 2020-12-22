@@ -13,7 +13,7 @@
       {% endif %}
       <br>
       {{ page.description }} <br>
-      <a class="left" href="{{ url_for("page", path=page.path) }}">Read More</a>
+      <a class="left" href="{{ url_for("page", path=page.path) }}"><i>Read More</i></a>
     </li>
     {% if not loop.last %}<br><br>{% endif %}
 {% else %}

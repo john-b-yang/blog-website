@@ -33,12 +33,12 @@
     <nav class="navbar">
       <div class="container">
         <a style="color:white;"><b>JOHN</b> YANG</a>
-        <div style="float:right;display:flex;">
+        <div style="float:right;">
           <ul style="list-style:none;display:flex;">
-            <a href="{{ url_for("index") }}"><li id="link-list">ABOUT</li></a>
-            <a href="{{ url_for("blogs") }}"><li id="link-list">BLOG</li></a>
-            <a href="{{ url_for("resources") }}"><li id="link-list">RESOURCES</li></a>
-            <a href="{{ url_for("projects") }}"><li id="link-list">PROJECTS</li></a>
+            <a href="{{ url_for("index") }}" class="left"><li class="link-list">ABOUT</li></a>
+            <a href="{{ url_for("blogs") }}" class="left"><li class="link-list">BLOG</li></a>
+            <a href="{{ url_for("resources") }}" class="left"><li class="link-list">RESOURCES</li></a>
+            <a href="{{ url_for("projects") }}" class="left"><li class="link-list">PROJECTS</li></a>
           </ul>
         </div>
       </div>
