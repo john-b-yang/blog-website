@@ -78,7 +78,7 @@ CS 161 Computer Security course. Check out the full collection on Github
       <b>{{ topic }}</b>
       <ul>
         {% for title, link in links.items() %}
-        <li>{{ title }} | <a href="{{ link }}">▶</a></li>
+        <li><a href="{{ link }}" class="tag-link"><i class="fa fa-film fa-sm"></i></a> {{ title }}</li>
         {% endfor %}
       </ul>
     </td>

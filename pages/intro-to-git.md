@@ -19,7 +19,8 @@ Git is popular among computer scientists across all levels as a source code mana
 
 To understand the true power of Git, another way to define its utility is outside the context of programming. In fact, you can use Git to save changes for anything, from PDFs to JPGs to GIFs. Although this thinking is a bit reductive, for now, you can think of Git as an elaborate, well-documented 'save' function. A Git file is capable of recording any changes for any computer file across any period of time.
 
-**Github vs. Git**<br>
+**Github vs. Git**
+
 Github is a service that does web based hosting of your code and allows you to save your git history to a remote server. In contrast, git by itself performs the above operations on a 'local' level, which just means that everything you do happens and stays on your computer. Github is also know as the company that manages the whole process of saving your local git changes to a remote server. Their website serves as an online platform that allows you to view revisions and monitor collaborations. In addition, in case anything happens to your computer, your code will be recoverable and safe as long as you've committed it to Github. It's a fantastic resource.
 
 **Resources**
@@ -33,56 +34,65 @@ Github is a service that does web based hosting of your code and allows you to s
 ##### Commands
 Here, we're going to review some of the basic commands in git, especially the options associated with adding, removing, and monitoring changes in your files. Don't be worried if by the end of this section, you're still not sure how each command is related or come together. We'll go over that in the next section titled  "Workflow". One term we're going to be using multiple times is "option". An option can be thought of as a parameter for a unix command, and they usually come in the form of -(character) or --(word). There are a multitude of options with varying utility, but for now, we'll review the staples. If you're interested in learning about more options out there, you can always type in just the git command itself (i.e. 'git add') and you'll be given a list describing the syntax, parameters, and utility of each option.
 
-**An Anecdote**<br>
+**An Anecdote**
+
 Perhaps the greatest initial barrier to learning Git is understanding what each command is actually doing. Here's a somewhat silly anecdote that, I hope, will serve as a roadmap for comprehending Git going forwards. Imagine an apple farmer. As a farmer, the first thing you'd probably do is pick every apple off of your tree. Then, you'd inspect your harvest, throwing out the bad apples that have mold, insects, etc., while keeping the good ones. Finally, you'd pack the good apples and send them off to the store and turn it into profit.
 
 Git works in a similar fashion. You're the apple farmer. An apple is the equivalent to modifying your project. In other words, every changed file is recorded with a unique signature aka the apple. When you 'git add', you're telling the computer which modifications, or which apples, you want to keep. Finally, with 'git commit', you've packed up the modifications and officially saved a new version of your directory.
 
-**Adding / Staging Changes**<br>
-<pre class="inline-block prettyprint lang-bsh" style="border-radius: 10px;padding: 15px;">
+**Adding / Staging Changes**
+
+<pre class="prettyprint lang-bsh background">
 git add -A
 git add (name of change here)
 </pre>
+
 'git add' is the Git command responsible for selecting modifications. When a file is modified, your computer has no idea which modifications are or aren't important. 'git add' is essentially your way of picking out the modifications that you're telling your computer you'd like to keep. A file that has been added is considered 'staged'. To select a change individually, just 'git add (name of modification here)'. Out of the options, you will most likely be using 'git add -A' the most.
 
-<img src="/static/pictures/GitCS61B/add-options.png" alt="Add Options" style="width:400px;display:block;margin-left:0;"/>
+<img src="/static/pictures/GitCS61B/add-options.png" alt="Add Options" style="width:400px;"/>
 
-**Committing Staged Changes**<br>
-<pre class="inline-block prettyprint lang-bsh" style="border-radius: 10px;padding: 15px;">
+**Committing Staged Changes**
+
+<pre class="prettyprint lang-bsh background">
 git commit -m 'Commit Message Here'
 </pre>
+
 It's time to ship the apples. 'git commit'  finalizes the staged changes you want to keep and revises the .git file to store a new latest version of the directory. With git commit, you can view previous versions of the directory, compare different commits, and revert back to a previous commit in case something happens to your project.
 
-<img src="/static/pictures/GitCS61B/commit-options.png" alt="Commit Options" style="width:400px;display:block;margin-left:0;"/>
+<img src="/static/pictures/GitCS61B/commit-options.png" alt="Commit Options" style="width:400px;"/>
 
 **Removing or Postponing Changes**<br>
-<pre class="inline-block prettyprint lang-bsh" style="border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-bsh background">
 git checkout -- (filename)
 git rm (filename)
 git rm --cached (filename)
 git stash save --keep-index
 git stash drop
 </pre>
+
 You've encountered a change that you don't want. Time for cleanup. There are two ways to deal with changes that you want. Either delete those changes, or store these changes to be introduced later. Keep in mind, the process of removing files is different for files that *have* been committed versus those that *have not* been committed yet. If your file has *not* been committed, the 'git checkout -- <filename>' command
 
 One way to go about deleting a file is 'git rm'. This command removes a file from a working directory. Unlike a regular unix 'rm', 'git rm' not only removes the file, but also stages that deletion. If you only want to delete the file from your .git file, but would like to keep a copy in your local directory, use the '--cached' option. Keep in mind, 'git rm' removes *files*, not *changes*. On the other hand, if you're not sure you want to keep the changes you've made, use the 'git stash' command. 'git stash save' allows you to remember the modifications you've made while returning you to the latest commit of your working directory.
 
 **Remote Repository Interaction**<br>
-<pre class="inline-block prettyprint lang-bsh" style="border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-bsh background">
 git remote add origin <remote repo url>
 git remote prune
 </pre>
+
 So far, the above commands have been enacting change on a local level. With 'git remote', we are able to manage Github repositories stored in remote servers. Most remote commands will revolve around getting/setting repository URLs or renaming branches. A sizable set of remote commands also deal with branch management, so we will touch on them in this table, but if you're unclear as to what those are, refer to the collaboration section.
 
-**Miscellaneous Commands**<br><br>
-<img src="/static/pictures/GitCS61B/commands-misc.png" alt="Commit Options" style="width:500px;display:block;margin-left:0;"/>
+**Miscellaneous Commands**<br>
+
+<img src="/static/pictures/GitCS61B/commands-misc.png" alt="Commit Options" style="width:500px;"/>
 
 <br>
 ##### Workflow
 This next setcion is intended to give you a working understanding of how you can use Git and Github with the commands we just introduced. By the end of the this section, you should know how to create local and remote repositories, push changes to both, and remove both.
 
-**Creating Repositories**<br>
-<pre class="inline-block prettyprint lang-bsh" style="border-radius: 10px;padding: 15px;">
+**Creating Repositories**
+
+<pre class="prettyprint lang-bsh background">
 git init
 touch test.py
 git add -A
@@ -106,16 +116,18 @@ Up until this point, we've only been using git on a local level. The last two li
 2. Windows : https://support.microsoft.com/en-us/help/14201/windows-show-hidden-files<br>
 3. Mac: type 'defaults write com.apple.finder AppleShowAllFiles YES' into terminal, then option key + right click Finder and select relaunch.<br>
 
-**Recording Changes**<br>
-<pre class="inline-block prettyprint lang-bsh" style="border-radius: 10px;padding: 15px;">
+**Recording Changes**
+
+<pre class="prettyprint lang-bsh background">
 git add -A
 git commit -m 'Initial Commit'
 git push origin master
 </pre>
 After you've created a local .git file, this series of commands will dominate your day to day interactions with git. This is essentially the same as the above code segment, except you no longer need to 'git init' because you've already created a .git file, and you don't need to 'git remote add origin' unless the URL of your remote Github repository changed.
 
-**Copy an Existing Remote Repository**<br>
-<pre class="inline-block prettyprint lang-bsh" style="border-radius: 10px;padding: 15px;">
+**Copy an Existing Remote Repository**
+
+<pre class="prettyprint lang-bsh background">
 git clone https://github.com/(username)/(repository-name).git
 </pre>
 Let's say while searching Github, you come across a python game project that you find very interesting. Sigh, if you could only download the code and play with it. Thanks to Github's support for an open source community, you can do exactly that! Go to the repository's webpage, copy the github site link, and paste it into terminal with the command above. 'git clone' does exactly what it says it does, it 'clones' a repository.
@@ -148,7 +160,7 @@ So your game's going pretty well so far. It's a RPG game set in the 1970s with g
 Luckily, Git doesn't force you to choose one or the other. Introducing *git branch*. 'git branch' allows you to create different copies of your project from the same commit. Here's a visualization to help:
 
 <br>
-<img src="/static/pictures/GitCS61B/branching.png" alt="Add Options" style="height:150px;display:block;margin-left:auto;margin-right:auto;"/><br>
+<img src="/static/pictures/GitCS61B/branching.png" alt="Add Options" style="height:150px;"/><br>
 
 Branches are simply pointers to commits. As a convention, the 'master' branch tends to be a pointer to the working version of a project. By the example, the 'master' branch would most likely hold the latest working copy of your game while the 'feature' branch would point to the multiplayer project. When you merge a branch with another, just like before, it's important to make sure there are no conflicts.
 
@@ -158,7 +170,7 @@ Branches are simply pointers to commits. As a convention, the 'master' branch te
 
 Let's start from the basics: creating and switching from branch to branch! Every repository has at least one branch, commonly called the master branch. When you create another branch, you're photo-copying your project at its latest commit. Local branches have a corresponding remote branch that exists on Github. With branches, your 'push' command will look a bit different. Instead of 'git push origin master', you'd replace 'origin' and 'master' with your remote and local branch names in that order.
 
-<img src="/static/pictures/GitCS61B/commands-branch.png" alt="Branch Options" style="width:400px;display:block;margin-left:0;"/>
+<img src="/static/pictures/GitCS61B/commands-branch.png" alt="Branch Options" style="width:400px;"/>
 
 *Retrieve Updates from Remote Repository*
 
@@ -166,11 +178,11 @@ Continuing with Randy, let's say Randy pushed a couple changes to the remote rep
 
 Keep in mind, however, that this command is where merge conflicts most often appear. If the same file is modified both locally and remotely, git pull is what exposes the conflict. Some best practices are to make sure to 'git stash' conflicting changes before pulling.
 
-<img src="/static/pictures/GitCS61B/commands-remote.png" alt="Remote Options" style="width:500px;display:block;margin-left:0;"/>
+<img src="/static/pictures/GitCS61B/commands-remote.png" alt="Remote Options" style="width:500px;"/>
 
 <br>
 ##### The Grand Finale!!
 
 Whew, that was a lot! Great job getting through all that material! At the end of the day, all of the above boils down to the below!
 
-<img src="/static/pictures/GitCS61B/terminal-transcript.png" alt="Terminal Transcript" style="width:700px;display:block;margin-left:auto;margin-right:auto;"/>
+<img src="/static/pictures/GitCS61B/terminal-transcript.png" alt="Terminal Transcript" style="width:700px;"/>

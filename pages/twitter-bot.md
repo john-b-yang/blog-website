@@ -32,7 +32,7 @@ In the original sentence, the word 'I' appears three times, and it is followed b
 
 Let's think about the best data structure for representing a Markov Chain. We want a construct that will be able to store nodes and edges. We also need to preserve relationships between nodes and edges in the format of a one to many association. In this case, a Map / Dictionary would best suite our purposes. Given that each node can have multiple edges, we define the key to be the node, and the value to be a list of edges. We could create Node and Edge classes. However, to reduce the map's complexity, we can define a Node as just the word and the Edge as a list of tuples, where each pair is the subsequent word and the probability it shows up. The above graph would be encoded as such:
 
-<pre class="inline-block prettyprint lang-js" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-js background">
 [
     {"I": [{"eat" : 1}]},
     {"eat": [{"fast" : 0.5}, {"slow" : 0.5}]},
@@ -59,7 +59,7 @@ I approached this problem in an inductive manner where I identified the starting
 
 Exactly how to translate the previous paragraph into code is a bit daunting. To help, I'll explain my own implementation of the above idea, and hopefully it'll clarify some statements while providing some inspiration for what you might do.
 
-<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-py background">
 def generateSentence(markov_gram_length):
     curr = random.choice(starts) # Choose starting point
     sent = curr.capitalize() # Sentence to return
@@ -88,7 +88,7 @@ By this step, your actual bot is complete! You have a fully functioning Python p
 
 Before we even think about posting, we have to establish a connection between the module and the Twitter account. To do so, we'll be create a OAuth1Session with our Twitter account. OAuth is simply a protocol that authenticates our application with Twitter's API. There are four different kinds of keys required to establish a session. After you create a Twitter Account, you can find / generate all four keys by visiting the [apps](https://apps.twitter.com/) link. Once we've created the session, to post tweets, we can make a POST call that takes 2 parameters: 1. A URL denoting the "tweet" operation and 2. A JSON containing the sentence we want to "tweet". The primary code snippets are presented here (visit the [twitter.py](http://bit.ly/2zNYICA) file for the full detail):
 
-<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-py background">
 # Create Authentication Session w/ 4 Keys.
 # I recommend keeping the values for these keys in a hidden file (refer to last paragraph of this step)
 session = OAuth1Session(consumer_key, client_secret=consumer_secret,
@@ -119,7 +119,7 @@ Congrats! By this point, you have an actual Twitter Bot! Now, people all over th
 
 Here's the main code we'll be looking at (from [server.py](http://bit.ly/2zMEObc)):
 
-<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-py background">
 from flask import Flask, render_template, request, redirect
 import make_sentence, os, twitter
 app = Flask(__name__)
@@ -161,7 +161,7 @@ The [procfile](http://bit.ly/2hlbm0A) is a file that specifies how to run the we
 
 There are some things to watch out for. Make sure the libraries and, more importantly, their versions that you specified in [requirements.txt](http://bit.ly/2jkXMig) are compatible with the Python runtime version you specified in [runtime.txt](http://bit.ly/2hrMk3v). I ran into error where I submitted a runtime file with version 2.7, yet the versions for the python-dotenv library was too high. Also, remember the conditional block in Step 5?
 
-<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-py background">
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
@@ -178,7 +178,7 @@ All right, your bot is decked out. You have something that can be viewed by anyo
 
 First and foremost, we want to create a Python module that generates and tweets a sentence in one stroke. This is a pretty straightforward task, where we just mix, order, and daisy chain the modules we wrote in previous steps. I designed my previous modules in such a way that I directly feed the output of the 'make_sentence' method into the 'tweet' function. It's a very simple program, but it combines all the gears to pack a powerful punch of execution. For reference, the function is located in the [tweetjob.py](http://bit.ly/2yQzh3q) file.
 
-<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-py background">
 import make_sentence, twitter, datetime
 
 if __name__ == '__main__':
@@ -189,13 +189,13 @@ if __name__ == '__main__':
 
 We have the functionality, but how do we automate it? We'll use a bit of shell programming magic to make it happen! First, you're going to write a dirt simple shell script. Create a file with the extension '.sh'. Then, put the following segment of code inside. Make sure to include the *absolute* path to your Python module. Here's [mine](http://bit.ly/2xFEypz) as an example. You only need the second line, and you can ignore the >> for now.
 
-<pre class="inline-block prettyprint lang-bash" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-bash background">
 python /(Absolute path to your automated tweet file)/tweetjob.py
 </pre>
 
 When you run this shell file (put a './' in front of the filename), it'll execute the automated tweet file, just like it would on terminal. What makes this shell program special is when we register it as a cronjob on our local computer! Cron is a time-based job scheduler that's available in all Unix based computer operating systems. A cronjob is a process or set of commands that we can create and configure to run periodically. All cronjobs are stored within a 'crontab' file. By editing the crontab, we can specify which shell scripts we want to run and often we want to execute them. You can edit the crontab by typing 'crontab -e', and it sends you to a vim editor screen where you'll want to enter the following line:
 
-<pre class="inline-block prettyprint lang-bash" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-bash background">
 0 12 * * * bash /(Absolute path to your shell script)/tweetscript.sh
 </pre>
 

@@ -55,7 +55,7 @@ When looking at the three sheets and the information provided, I found some of t
 **Computation**<br>
 All my computation was completed within a Jupyter notebook. I'll take this section to walk through my code and explain what I did each step of the way. First up is a list of some of the more helpful libraries I decide to use. Pandas and Numpy are pretty standard libraries to do data processing. The assortment of Plotly, Cufflinks and Matplotlib commands are graphing tools.
 
-<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-py background">
 import pandas as pd
 import numpy as np
 from plotly import __version__
@@ -69,7 +69,7 @@ cf.go_offline()
 
 Before diving into the actual computation process, I cleaned up and reorganized some of the data. The rearrangement made it easier to perform data traversal later in the code. One cool feature of Pandas is the ability to perform multi-indexing aka setting and organizing multiple columns as indices for your table. Through multi-indexing, I was able to group games by the day they occurred. This made for an easier traversal process.
 
-<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-py background">
 # Read excel data sheets in as Panda Tables
 division_info = pd.read_excel("Analytics_Attachment.xlsx", sheetname="Division_Info")
 scores = pd.read_excel("Analytics_Attachment.xlsx", sheetname="2016_17_NBA_Scores")
@@ -92,7 +92,7 @@ scores.set_index(['Date', 'Game No.'], inplace=True)
 
 Now that the data has been organized properly, we'll proceed to iterate through the table and make the appropriate modifications to the division_info table to reflect the correct answers. The general idea is to have an outer 'for' loop that iterates through every single date. We pull the games associated with each date and iterate through those, updating the 'division_info' table as we go. Then, we perform elimination calculation as follows: Find the eighth place team and the last place team that has not been eliminated yet. If the number of games left + last place team's wins is less than the eighth place team's wins, then the last place team is eliminated. If and when a team is eliminated, the day of the game in that iteration is registered under the 'Eliminate Date' column (created in line 13 in the previous code block).
 
-<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-py background">
 # Iterating through the MultiIndex Dataframe by Date
 for value in scores.index.get_level_values('Date').unique():
     currentDate = value.strftime('%Y-%m-%d') # Reformatting the date index value

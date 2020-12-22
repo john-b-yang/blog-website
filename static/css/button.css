@@ -1,7 +1,7 @@
 /* Wrapper */
 
 .icon-button {
-    background-color: white;
+    background: #161c22;
     border-radius: 3.6rem;
     cursor: pointer;
     display: inline-block;
@@ -126,4 +126,26 @@
 .video-button:active {
 	transform: translateY(5px);
 	box-shadow: 0px 1px 0px 0px #2181b5;
+}
+
+/* Underline Animation */
+a.left {
+    position: relative;
+}
+
+a.left:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  background-color: #1b9ce2;
+}
+
+a.left:hover:before {
+  visibility: visible;
+  width: 100%;
 }

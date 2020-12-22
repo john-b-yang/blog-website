@@ -43,24 +43,22 @@
         </div>
       </div>
     </nav>
-    <div class="container">
+    <div class="container" style="padding-bottom:100px;">
         <br>
         <main id="body-fade">
             {% block content %}
             <p>Default content to be displayed</p>
             {% endblock content %}
         </main>
-        <br><hr><br>
-        <div style="text-align:center;">
-            <footer>
-                <a href="https://www.linkedin.com/in/jyang20"><i class="fa fa-linkedin fa-lg"></i></a>
-                &emsp; <a href="http://github.com/john-b-yang"><i class="fa fa-github fa-lg"></i></a>
-                &emsp; <a href="https://vsco.co/krucyfixor/gallery"><i class="fa fa-camera-retro fa-lg"></i></a>
-            </footer>
-            <p class="light-text" style="color:gray"> John Yang &copy; 2020 </p>
-        </div>
-        <p><br></p>
     </div>
+    <nav class="navfoot">
+      <div style="text-align:center;">
+        &copy; 2020 |
+        &thinsp; <a href="https://www.linkedin.com/in/jyang20" class="tag-link"><i class="fa fa-linkedin fa-lg"></i></a>
+        &thinsp; <a href="http://github.com/john-b-yang" class="tag-link"><i class="fa fa-github fa-lg tag-link"></i></a>
+        &thinsp; <a href="https://vsco.co/krucyfixor/gallery" class="tag-link"><i class="fa fa-camera-retro fa-lg"></i></a>
+      </div>
+    </nav>
     <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
     <script src="/static/js/button.js"></script>
 </body>

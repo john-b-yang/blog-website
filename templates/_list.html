@@ -4,17 +4,18 @@
       <b>{{ page.title }}</b><br />
       {{ page.date }}
       {% if page.meta.tags|length %}
-        | <img style="margin-bottom:-2px" src="/static/pictures/tags.png" height=15/>
+        | <i class="fa fa-tags fa-lg"></i>
         {% for page_tag in page.meta.tags %}
+          <div class="block">
             <a href="{{ url_for("tag", tag=page_tag) }}">{{ page_tag}}</a>
-            {% if not loop.last %},{% endif %}
+          </div>
         {% endfor %}
       {% endif %}
-      <br />
-      {{ page.description }} <br />
-      <a href="{{ url_for("page", path=page.path) }}">Read More</a>
+      <br>
+      {{ page.description }} <br>
+      <a class="left" href="{{ url_for("page", path=page.path) }}">Read More</a>
     </li>
-    {% if not loop.last %}<br />{% endif %}
+    {% if not loop.last %}<br><br>{% endif %}
 {% else %}
     <li>No page.</li>
 {% endfor %}

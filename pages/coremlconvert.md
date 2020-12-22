@@ -20,7 +20,7 @@ Before diving into the technicalities of the application itself, I thought it'd 
 
 Creating an MLModel file isn't all that difficult. In fact, it's a pretty redundant process. First, you'll import the corresponding libraries for the models that you're looking to convert. Then, you'll take whatever data set you're using for predictions and train the model around it. Finally, once you've trained the model, Apple's *coremltools* python [package](https://apple.github.io/coremltools/) provides a simple 'convert' function that takes in your trained Python model as a parameter and spits out an '.mlmodel' file. In code, it's as simple as running the following code. In this example, I'll be using the acclaimed Titanic data set and a Random Forest Classifier to predict which passengers survived the icy debacle (full disclosure, this model's performance is terrible and is only intended for demonstration purposes).
 
-<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-py background">
 # Importing Sklearn, Pandas, and Numpy Libraries
 import sklearn
 from sklearn.ensemble import RandomForestClassifier
@@ -65,7 +65,7 @@ This singular observation is the foundation of my idea for automated CoreML conv
 
 My implementation is as follows:
 
-<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-py background">
 # Basics
 import sys
 import numpy as np

@@ -22,7 +22,7 @@ Ultimately, I settled on using [Flask](http://flask.pocoo.org/) for its simplici
 
 To keep all your modules and dependencies in order, I recommend creating a virtual environment, whether it's with the "virtualenv" module or an Anaconda environment. Within your Terminal, assuming you're using Anaconda, you'll want to type in something along the lines of this. The first three lines create the folder and python file that will contain your blog's Flask code. The remaining lines set up the virtual environment and install the necessary packages.
 
-<pre class="inline-block prettyprint lang-bsh" style="border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-bsh background">
 $ mkdir flask_blog
 $ cd flask_blog
 $ touch server.py
@@ -33,7 +33,7 @@ $ pip install Flask Frozen-Flask Flask-FlatPages
 
 Pip will most likely install some extra dependencies that Flask comes with, but those are the bare necessities. Now, within the server.py file, you'll want to enter the following code.
 
-<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-py background">
 import sys, os
 from flask import Flask
 app = Flask(__name__)
@@ -50,7 +50,7 @@ if __name__ == "__main__":
 
 If you go back to Terminal and run the following command, you should see an output similar to the following. If you point your web browser at the given URL, you should see output like the third line begin to pop up. The webpage itself should just be a plain white screen with the words "Hello World!" at the top left corner.
 
-<pre class="inline-block prettyprint lang-sh" style="border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-sh background">
 $ python server.py
   * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
 127.0.0.1 - - [05/Jan/2019 17:48:24] "GET / HTTP/1.1" 200 -
@@ -58,7 +58,7 @@ $ python server.py
 
 Note that at this point, you can start creating new routes using the same methodology as above. For example, if I wanted to create a new URL route at *welcome* pointing at a web page that displays "Welcome to my webpage!" (http://127.0.0.1:8000/welcome), I would just put the following block within the code.
 
-<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-py background">
 @app.route("/welcome/")
 def welcome():
     return "Welcome to my webpage!"
@@ -69,7 +69,7 @@ def welcome():
 
 The next step involves enabling the Flask app to create and display webpages from text files like Markdown! To make this happen, let's first create a markdown file that we can draw information from. Make sure that within Terminal, you're still within the *flask_blog* folder and type the following commands.
 
-<pre class="inline-block prettyprint lang-sh" style="border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-sh background">
 $ mkdir pages
 $ touch pages/example-text.md
 $ vi touch pages/example-text.md
@@ -79,7 +79,7 @@ Within Vim on Terminal, enter the following content within the *example-text.md*
 
 Note that when Jinja2 renders content from a flat page, the metadata is not displayed. Only the content below is shown. Metadata can be particularly useful when it comes to organizing and filtering our text files, whether it's for our own or users' purposes. For example, if you want to display your blog entries chronologically, it might be useful to have a *date* metadata. In addition, if your users would like to filter your blog posts by category, it could be cool to have a series of *tag* metadata. Metadata is interpreted as YAML, so your metadata can have one of many types including string, boolean, integer, float, list, and even dictionaries.
 
-<pre class="inline-block prettyprint lang-txt" style="border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-txt background">
 title: My First Entry
 date: 2018-01-01
 
@@ -88,7 +88,7 @@ This is my **first** blog post ever! Welcome!
 
 Now that our folder is set up, let's perform some Python acrobatics so that our web app can render a markdown file's content by its name! You can learn more about how to configure the Flat Pages module [here](https://pythonhosted.org/Flask-FlatPages/).
 
-<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-py background">
 import sys, os
 from flask import Flask
 from flask_flatpages import FlatPages
@@ -125,7 +125,7 @@ if __name__ == "__main__":
 
 At this point, our web page is able to render content, but it doesn't look very pretty. Using the Jinja2 template engine mixed with HTML, we can create webpage templates to add color, organization, and styling to our page content. Within the *flask_blog* directory, let's do the following:
 
-<pre class="inline-block prettyprint lang-bsh" style="border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-bsh background">
 $ mkdir templates
 $ touch templates/base.html
 $ touch templates/page.html
@@ -133,7 +133,7 @@ $ touch templates/page.html
 
 Jinja2 works very similarly to Django's templates. I very much like Jinja2's "template inheritance" feature. What this means is that you can create layers of HTML files enveloped within one another. Let's check it out in action here. As suggested by the file name, the *base.html* file will form the foundation of your website's styling and layout, kind of like your "root" file. The focus here is to introduce basic styling and exercise some of Jinja2's features and syntax, so boilerplate code like the following should do.
 
-<pre class="inline-block prettyprint lang-html" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-html background">
 &lt;!doctype html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -161,9 +161,8 @@ Now, this looks like regular HTML, but there are a couple nice features to note.
 
 Next, let's hash out *page.html*, which in the template inheritance relationship, can be thought of as the "child" of *base.html*. Again, we're not doing anything too fancy here.
 
-<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-py background">
 {% extends "base.html" %}
-
 {% block content %}
     &lt;h2&gt;{{ page.title }}&lt;/h2&gt;
     {{ page.html|safe }}
@@ -178,7 +177,7 @@ Of course, there's a lot more to Jinja2 than what's presented here, but for setu
 
 Last but not least, to make sure these HTML files are rendered properly, we will use the *render_template* function from flask, then change the *def page(path)* function to return the rendered HTML file as opposed to the raw code, as follows.
 
-<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-py background">
 from flask import Flask, render_template
 ...
 def page(path):
@@ -199,7 +198,7 @@ Right now, our home page (the '/' route) only displays a single line of "Hello W
 
 Within terminal, in your *flask_blog* directory, create a file called *index.html*. The following code only contains the functionality for creating the list.
 
-<pre class="inline-block prettyprint lang-html" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-html background">
 {% extends "base.html" %}
 
 {% block content %}
@@ -219,7 +218,7 @@ Within terminal, in your *flask_blog* directory, create a file called *index.htm
 The syntax might look a little wonky at first, but it's pretty simple. The *pages* variable includes references to all the Markdown files within the *pages* directory. For every page, a hyperlink to it is created. In fact, if you create more markdown files within that directory, they will show up. On the other hand, if the *pages* directory is empty, the default "No pages so far" message will be shown instead.
 
 Last but not least, within the *server.py* file, remember to change the index method to the following.
-<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-py background">
 @app.route('/')
 def index():
     return render_template('index.html', pages=pages)
@@ -229,7 +228,7 @@ def index():
 
 Right now, our website is still dynamic, in that the Flask app still serves and renders flat pages from a file system. Our goal is to create a static set of files and assets that removes the Flask middleman service. It only takes a couple steps to make this happen.
 
-<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-py background">
 from flask_flatpages import FlatPages
 from flask_frozen import Freezer # Added
 ...
@@ -251,7 +250,7 @@ We've added three lines to our code. <br>
 
 In Terminal, if you run the command from within the *flask_blog* directory
 
-<pre class="inline-block prettyprint lang-bsh" style="border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-bsh background">
 $ python server.py build
 </pre>
 
@@ -259,7 +258,7 @@ A *build* folder will be autogenerated containing a series of *index.html* files
 
 For example, after following this tutorial, you should have a directory that looks something along the lines of this. I added a couple extra markdown files for multiple pages.
 
-<pre class="inline-block prettyprint lang-bsh" style="border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-bsh background">
 - flask_blog
     - pages
         - example-text.md
@@ -274,7 +273,7 @@ For example, after following this tutorial, you should have a directory that loo
 
 After running the command, your *build* directory should pop up within the flask_blog directory and look similar to the following.
 
-<pre class="inline-block prettyprint lang-bsh" style="border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-bsh background">
 - build
     - example-text
         - index.html
@@ -284,6 +283,3 @@ After running the command, your *build* directory should pop up within the flask
         - index.html
     - index.html
 </pre>
-
-<br>
-##### Conclusion

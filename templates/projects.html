@@ -8,7 +8,7 @@ I've worked on before. Click each project's title for more information.
 <div class="card-row">
   {% for project in projects.personal %}
   {% if loop.index % 3 == 1 %} <div> {% endif %}
-    <div class="card card-1">
+    <div class="card-course card-course-1">
       <img style="display:block;margin:auto;" src="/static/pictures/Projects/{{ project.image }}" />
       <p><a href="{{ project.link }}"><strong class="project-title" style="font-size: 20px;">{{ project.title }}</strong></a></p>
       <p class="light-text">{{ project.description }}</p>
@@ -27,7 +27,7 @@ from both UC Berkeley's Computer Science curriculum and research efforts.
 <div class="card-row">
   {% for project in projects.academic %}
   {% if loop.index % 3 == 1 %} <div> {% endif %}
-    <div class="card card-1">
+    <div class="card-course card-course-1">
       <img style="display:block;margin:auto;" src="/static/pictures/Projects/{{ project.image }}" />
       <p><a href="{{ project.link }}"><strong class="project-title" style="font-size: 20px;">{{ project.title }}</strong></a></p>
       <p class="light-text">{{ project.description }}</p>
@@ -46,7 +46,7 @@ Here's a clip of public speaking oriented work I've done in the past.
 <div class="card-row">
   {% for presentation in projects.presentations %}
   {% if loop.index % 3 == 1 %} <div> {% endif %}
-    <div class="card card-1">
+    <div class="card-course card-course-1">
       <img style="display:block;margin:auto;" src="/static/pictures/Projects/{{ presentation.image }}" />
       <p><a href="{{ presentation.link }}"><strong class="project-title" style="font-size: 20px;">{{ presentation.title }}</strong></a></p>
       <p class="light-text">{{ presentation.description }}</p>

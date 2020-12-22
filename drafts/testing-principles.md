@@ -36,7 +36,7 @@ For any class, it's never a bad idea to write a corresponding set of test method
 
 Here's an example of a Java class testing different aspects of a time format conversion class.
 
-<pre class="inline-block prettyprint lang-java" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-java background">
 class DateTimeConverterTest {
     void testConvertsUTCToPST () {...}
     void testThrowsExceptionIfIncorrectFormat () {...}

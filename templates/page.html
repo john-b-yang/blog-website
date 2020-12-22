@@ -5,25 +5,25 @@
 <div style="text-align:center;">
     <img src={{ page.image }} alt="Head Image" height=100px />
     <h3>{{ page.title }}</h3>
-    <div class="light-text" style="color:rgb(200,200,200)">
+    <div class="light-text">
         <p>{{ page.time }} &bull; {{ page.readtime }} </p>
         <p>
             {% for page_tag in page.meta.tags %}
             <div class="block">
-                <a href="{{ url_for("tag", tag=page_tag) }}">{{ page_tag }}</a>
+                <b><a href="{{ url_for("tag", tag=page_tag) }}">{{ page_tag }}</a></b>
             </div>
             <!-- {% if not loop.last %} | {% endif %}  -->
             {% endfor %}
         </p>
     </div>
 </div>
-<hr>
+<br>
 
-<div style="color:rgb(5,5,5)">
+<div class="blog">
     {{page.html|safe}}
 </div>
-<br>
-<hr class="fade">
+
+<br><hr class="fade"><br>
 
 <div>
     <div id="disqus_thread"></div>
@@ -43,8 +43,7 @@
     {% endblock %}
 </div>
 
-<br>
-<hr class="fade">
+<br><hr class="fade"><br>
 
 <div class="share">
     <h5 class="light-text">Share this blog!</h5>

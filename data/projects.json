@@ -1,7 +1,7 @@
 {
   "personal": [
     {
-      "description":  "Google Assistant tool predicting spending trends using ARIMA and financial history",
+      "description":  "Voice tool that predicts spending using ARIMA and financial history",
       "image": "GAssistant.png",
       "link": "https://github.com/averyyip/capone",
       "title": "Capone"
@@ -20,7 +20,7 @@
     },
     {
       "description": "Brain training app geared towards helping children with mental challenges",
-      "image": "AutiBot2.png",
+      "image": "AutiBot.png",
       "link": "https://devpost.com/software/autibot",
       "title": "AutiBot"
     },

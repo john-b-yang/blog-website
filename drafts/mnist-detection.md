@@ -12,7 +12,7 @@ In this article, my goal is to use the MNIST Classification problem as a conduit
 
 First and foremost, we're going to import the python-mnist library that contains the data set we want. In addition, we will also be using numpy and pandas as our main data processing tools along with multiple pre-built machine learning models from the sci-kit library.
 
-<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-py background">
 # Data Processing Tools
 import time
 import numpy as np
@@ -40,7 +40,7 @@ warnings.filterwarnings('ignore')
 
 With the following code, we load in the data, take the first 5000 data points, and randomly separate them into testing and training sets of images and labels. We perform some type-casting to make data manipulation a bit easier.
 
-<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-py background">
 mndata = MNIST('/Users/johnyang/Desktop/')
 mnist_images, mnist_labels = mndata.load_testing()
 
@@ -70,7 +70,7 @@ train_labels_array = train_labels.as_matrix()
 
 Here, we take the first row value in our data set, reshape the vector into a square matrix, and plot the result to graphically illustrate what the data looks like. As we can see, the original row vector is simply a flattened interpretation of the image data, and each square has a grayscale value between 0 and 1 where 0 is white and 1 is black.
 
-<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-py background">
 # Select first image from training set
 image = train_images.iloc[0].as_matrix()
 
@@ -93,7 +93,7 @@ When you think about it, the KNN model works pretty intuitively with this data s
 
 The only potential downside to this approach is that due to human handwriting, some numbers could be confused with one another. A poorly written '6' that doesn't have a very clear head could easily be confused as a '0'. In addition, a '7' without a distinguishable, top horizontal line could be classified incorrectly as a 1.
 
-<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-py background">
 test_images_len = test_images.shape[0]
 predictions = []
 
@@ -132,7 +132,7 @@ for i in range(int(batches)):
 
 ##### Part 5: Support Vector Machine
 
-<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-py background">
 # Trial 1: Apply SVM to raw data set
 svm_classifier = svm.SVC()
 svm_classifier.fit(train_images, train_labels.values.ravel())
@@ -140,13 +140,13 @@ accuracy = svm_classifier.score(test_images, test_labels)
 print(str(round(accuracy, 4)))
 </pre>
 
-<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-py background">
 # Denoising number boundaries to be more clear
 test_images[test_images > 0] = 1
 train_images[train_images > 0] = 1
 </pre>
 
-<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-py background">
 # Trial 2: Apply SVM to binary data set
 svm_classifier = svm.SVC()
 svm_classifier.fit(train_images, train_labels.values.ravel())
@@ -157,7 +157,7 @@ print(classification_report(train_labels, predictions))
 
 ##### Part 6: Logistic Regression
 
-<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-py background">
 import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
 mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
@@ -165,7 +165,7 @@ mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
 
 Softmax Regression Implementation
 
-<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-py background">
 # Placeholder: Value to be input when asking TensorFlow to run computation
 x = tf.placeholder(tf.float32, [None, 784])
 
@@ -179,7 +179,7 @@ y = tf.nn.softmax(tf.matmul(x, W) + b)
 
 Model Training
 
-<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-py background">
 # Cost / Loss Function: How far off our model is from desired outcome
 # Cross-entropy: Measures how inefficient predictions are for describing the truth
 y_prime = tf.placeholder(tf.float32, [None, 10])
@@ -191,7 +191,7 @@ train_step = tf.train.GradientDescentOptimizer(0.5).minimize(cross_entropy)
 
 Model Evaluation
 
-<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-py background">
 session = tf.InteractiveSession()
 tf.global_variables_initializer().run()
 
