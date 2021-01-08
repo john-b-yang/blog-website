@@ -17,6 +17,7 @@ app.config.from_object(__name__)
 pages = FlatPages(app)
 freezer = Freezer(app)
 markdown_manager = Markdown(app, extensions=['fenced_code'], output_format='html5',)
+tags = set([tag for page in list(pages) for tag in page.meta['tags']])
 
 # Functionalities
 # @app.context_processor
@@ -30,7 +31,7 @@ def index():
 
 @app.route('/blogs/')
 def blogs():
-    return render_template('blogs.html', pages=pages)
+    return render_template('blogs.html', pages=pages, tags=tags)
 
 @app.route('/projects/')
 def projects():
@@ -70,7 +71,7 @@ def resources():
 @app.route('/tag/<string:tag>/')
 def tag(tag):
     tagged = [p for p in pages if tag in p.meta.get('tags', [])]
-    return render_template('tag.html', pages=tagged, tag=tag)
+    return render_template('tag.html', pages=tagged, tag=tag, tags=tags)
 
 @app.route('/<path:path>/')
 def page(path):

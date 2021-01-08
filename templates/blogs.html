@@ -1,9 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h3 class="post-title"><b>Posts</b></h3>
+  <h3 class="post-title"><b>Posts</b></h3>
 
-    {% with pages = pages %}
-        {% include "_list.html" %}
-    {% endwith %}
+  <div class="block">
+    <a href="{{ url_for("blogs") }}">All</a>
+  </div>
+
+  {% for tag in tags %}
+    <div class="block">
+      <a href="{{ url_for("tag", tag=tag) }}">{{ tag }}</a>
+    </div>
+  {% endfor %}
+
+  {% with pages = pages %}
+    {% include "_list.html" %}
+  {% endwith %}
 {% endblock content %}
