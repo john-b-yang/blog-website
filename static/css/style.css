@@ -4,11 +4,6 @@ body {
     color: #c8d1d9;
 }
 
-#picture-header {
-    line-height: 0px;
-    margin-top: -5px;
-}
-
 /* Upper Right Links Animations */
 .link-list {
     color: #c8d1d9;
@@ -247,6 +242,10 @@ hr.fade {
 }
 
 /* Blog Post Styling */
+.blog {
+  line-height: 1.75;
+}
+
 .blog a {
   color: #1b9ce2;
 }
@@ -259,6 +258,10 @@ hr.fade {
   display: block;
   margin-left: auto;
   margin-right: auto
+}
+
+.blog pre {
+  line-height: 1.5;
 }
 
 .blog pre.background {

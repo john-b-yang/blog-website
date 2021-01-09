@@ -4,7 +4,7 @@ description: Get your own website up and running with just a couple lines of Pyt
 image: /static/pictures/FlaskBlog/head-image.png
 readtime: 11 MINS
 time: SUNDAY, DECEMBER 16, 2018
-tags: [Python, Tutorial]
+tags: [Python, Tutorial, Web]
 
 This post has been a long time coming. Today marks some time close to the one year anniversary of this blog, so to commemorate, I thought it'd be fun to write a post about how this website came to be! A year ago, I had always wanted to create my own portfolio website, and with the myriad of front end web design tools these days, the hardest part was figuring out *what* to use to put together a website that could handle an elastic amount of content. I wrote this blog as a detailed walkthrough of the first couple of steps I took to putting together the blog that you're reading today!
 

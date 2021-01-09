@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h3 class="post-title"><b>Papers</b></h3>
+  A collection of notes from past paper readings and reviews. Takeaways and thoughts within 500 words.
+
+  <ul>
+  {% for page in pages %}
+    <li>
+      <a style="color:white;" href="{{ url_for("review", path=page.path) }}"><b>{{ page.title }}</b></a> | {{ page.date }}
+    </li>
+  {% endfor %}
+  </ul>
+{% endblock content %}

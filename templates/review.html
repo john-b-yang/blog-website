@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br>
+<div style="text-align:center;">
+  <h4>{{ review.title }}</h4>
+  <div class="light-text">
+    <p>{{ review.time }} &bull;
+      <a href="{{ review.link }}" class="link-fa">
+        <i class="fa fa-file fa-sm"></i>
+      </a>
+    </p>
+  </div>
+</div>
+<br>
+
+<div class="blog">
+  {{review.html|safe}}
+</div>
+
+<br><hr class="fade"><br>
+
+<div>
+  <div id="disqus_thread"></div>
+  {% block javascript %}
+    <script type="text/javascript">
+      (function() {
+        var d = document,
+          s = d.createElement('script');
+        s.src = 'https://blog-byjohnyang.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>
+      Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+  {% endblock %}
+</div>
+{% endblock content %}

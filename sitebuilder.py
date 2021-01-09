@@ -17,7 +17,10 @@ app.config.from_object(__name__)
 pages = FlatPages(app)
 freezer = Freezer(app)
 markdown_manager = Markdown(app, extensions=['fenced_code'], output_format='html5',)
-tags = set([tag for page in list(pages) for tag in page.meta['tags']])
+
+posts = [page for page in list(pages) if page.path.startswith('p/')]
+reviews = [page for page in list(pages) if page.path.startswith('r/')]
+tags = sorted(set([tag for page in list(posts) for tag in page.meta['tags']]))
 
 # Functionalities
 # @app.context_processor
@@ -31,7 +34,11 @@ def index():
 
 @app.route('/blogs/')
 def blogs():
-    return render_template('blogs.html', pages=pages, tags=tags)
+    return render_template('blogs.html', pages=posts, tags=tags)
+
+@app.route('/papers/')
+def papers():
+    return render_template('papers.html', pages=reviews)
 
 @app.route('/projects/')
 def projects():
@@ -73,10 +80,13 @@ def tag(tag):
     tagged = [p for p in pages if tag in p.meta.get('tags', [])]
     return render_template('tag.html', pages=tagged, tag=tag, tags=tags)
 
-@app.route('/<path:path>/')
+@app.route('/post/<path:path>/')
 def page(path):
-    page = pages.get_or_404(path)
-    return render_template('page.html', page=page)
+    return render_template('page.html', page=pages.get_or_404(path))
+
+@app.route('/review/<path:path>/')
+def review(path):
+    return render_template('review.html', review=pages.get_or_404(path))
 
 @app.errorhandler(404)
 def page_not_found(path):

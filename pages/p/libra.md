@@ -4,7 +4,7 @@ description: In a certain sense, the Libra "Blockchain" isn't a blockchain at al
 image: /static/pictures/Libra/head-image.png
 readtime: 17 MINS
 time: THURSDAY, JUNE 20, 2019
-tags: [Paper]
+tags: [Blockchain]
 
 Recently, Facebook has taken a dive into the field of cryptocurrency with the announcement of Libra, a financial service founded upon cryptographic principles and blockchain technology with a long term, grand vision of becoming a unified economic infrastructure on a multinational, global scale. Since its release several weeks ago, there have been plenty of reactions and feedback from news outlets and industry professionals debating the economic ramifications of the Libra organization. Regardless of the debate, Libra's coming out party marks an exciting milestone with regards to the formalization of blockchain technology as a potential solution for enforcing trust, integrity, and authentication in an increasingly digitalized world.
 

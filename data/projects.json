@@ -1,49 +1,49 @@
 {
   "personal": [
     {
-      "description":  "Voice tool that predicts spending using ARIMA and financial history",
+      "description":  "Predicting spending via ARIMA, financial history",
       "image": "GAssistant.png",
       "link": "https://github.com/averyyip/capone",
       "title": "Capone"
     },
     {
-      "description": "Voice driven multiple choice game for Amazon Alexa",
+      "description": "Voice driven multiple choice game for Alexa",
       "image": "Basketball.png",
       "link": "http://amzn.to/2ndWGVY",
       "title": "Basketball Trivia"
     },
     {
-      "description": "Feature phone utility for booking curated flights via SMS text and phone calls",
+      "description": "Feature phone tool - Book flights via SMS text",
       "image": "FlightBot.png",
       "link": "https://devpost.com/software/flightbot",
       "title": "FlightBot"
     },
     {
-      "description": "Brain training app geared towards helping children with mental challenges",
+      "description": "Brain training + analysis app for children",
       "image": "AutiBot.png",
       "link": "https://devpost.com/software/autibot",
       "title": "AutiBot"
     },
     {
-      "description": "Web + Mobile Platform facilitating safety in Detroit's public transit systems",
+      "description": "Schedule student transport via Detroit's public transit",
       "image": "SchoolBus.png",
       "link": "https://devpost.com/software/detroit-student-transit",
       "title": "Detroit Transport"
     },
     {
-      "description": "iOS application that provides efficient multi-destination routing",
+      "description": "On-demand, multi-destination routing",
       "image": "RoundAbout.png",
       "link": "https://github.com/john-b-yang/Voyager",
       "title": "RoundAbout"
     },
     {
-      "description": "A low cost, uncomplicated, wearable, and accessible Parkinson's partner",
+      "description": "Wearable, accessible Parkinson's partner",
       "image": "Imperium.png",
       "link": "https://devpost.com/software/imperium",
       "title": "Imperium"
     },
     {
-      "description": "Small web game put together using HTML/CSS sprinkled with Javascript",
+      "description": "Small web game built with JS and <3",
       "image": "Concentration.png",
       "link": "https://concentration-game-2017.herokuapp.com/index.html",
       "title": "Concentration"
@@ -51,19 +51,19 @@
   ],
   "academic": [
     {
-      "description": "(CS 184) Improving path tracing execution speed with NVIDIA's GPU-enabled OptiX graphics library",
+      "description": "Accelerate path tracing execution with GPUs, OptiX",
       "image": "graphics-card.png",
       "link": "http://www.peterqiu.com/cs184-final-project-proposal/final.html",
-      "title": "GPU Acceleration"
+      "title": "Ray Tracing Speedup"
     },
     {
-      "description": "(DS 100) Logistic Regression + Feature Engineering to predict the outcomes of the 2018 March Madness Tournament",
+      "description": "Filling out the 2018 NCAA Bracket w/ Logistic Regression",
       "image": "March-Madness.png",
       "link": "https://github.com/john-b-yang/march-madness",
-      "title": "March Madness Prediction"
+      "title": "Predict March Madness"
     },
     {
-      "description": "Helping to deploy a M2 Leo-pack, polarized antenna for Low Earth Orbit Satellite communications.",
+      "description": "Deploying a M2 Leo-pack, polarized antenna",
       "image": "Radio-Antenna.png",
       "link": "http://nu6xb.eecs.berkeley.edu/site/index.php/club-news/projects/satellite-tracking-project/",
       "title": "Satellite Tracking"
