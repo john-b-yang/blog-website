@@ -192,7 +192,7 @@ You have a pretty skeleton of a blog, albeit the lack of styling and a friendly 
 
 At this point, I hope it's becoming apparent how easy creating a blog can be with Flask. You could go on to add more CSS styling, create new content in the form of templates or Markdown files, or deploy the website so your friends can check it out! These next couple sections will discuss potential improvements and augmentations for your website.
 
-<span style="color:blue">**Home Page**</span>
+**HOME PAGE**
 
 Right now, our home page (the '/' route) only displays a single line of "Hello World". Not very exciting. Let's add a page that lists all the available pages that a website visitor can check out.
 
@@ -224,7 +224,7 @@ def index():
     return render_template('index.html', pages=pages)
 </pre>
 
-<span style="color:blue">**Static Web App**</span>
+**STATIC WEB APP**
 
 Right now, our website is still dynamic, in that the Flask app still serves and renders flat pages from a file system. Our goal is to create a static set of files and assets that removes the Flask middleman service. It only takes a couple steps to make this happen.
 

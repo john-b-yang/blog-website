@@ -36,11 +36,11 @@ In this section, the authors discuss Libra's general organization and data model
 
 From a high level, the Libra Blockchain can be visualized by the following diagram. For the most part, the general layout greatly resembles a traditional blockchain. One notable difference is that blockchains such as Bitcoin tend to group multiple transactions. However, a block (or in this case, "version") in Libra is distinguished by a *single* transaction. This model makes it much more straightforward for answering any queries regarding a ledger's state at any version. Incrementing a ledger's state per transactions also provides greater search granularity. Per usual, new transactions can only be added on top the most recent ledger state version.
 
-<img src="/static/pictures/Libra/2-ledger-overview.png" alt="Ledger Overview" style="height:200px;"/>
+<img src="/static/pictures/Libra/2-ledger-overview.png" alt="Ledger Overview" style="height:180px;"/>
 
 The next question that might naturally arise is, what goes into a **ledger's state**? It's really just a simple key-value store associating each account address with a set of resources (data values, i.e. how much Libra Coin does 0x123... have?) and modules (smart contracts, a.k.a. Move bytecode defining a new resource's type + associated procedures. i.e. transfer of Libra Coin between accounts). The below diagram is essentially appropriated from the paper, just with a couple additional illustrations for greater clarity and detail.
 
-<img src="/static/pictures/Libra/2-ledger-state.png" alt="Ledger State" style="height:300px;"/>
+<img src="/static/pictures/Libra/2-ledger-state.png" alt="Ledger State" style="height:350px;"/>
 
 The schematics governing account addresses are nothing new. Each user has a verifying + signing key, and the public key, which would be the addresses in the above diagram, is just a cryptographic hash of the verifying key. Resources, broken down, simply associate a resource type (defined by modules) with a particular quantity or value.
 
@@ -73,7 +73,7 @@ Although the Prologue and Epilogue steps involve running Move bytecode, the clie
 
 The remainder of this section previews the technical foundations and design motivations of the Move DSL for writing modules and scripts in Libra. The Move programming language can be broken down into three different representations. As of this article, the source language is not available to the general public, so preliminary script and module development can only be written in the intermediate representation, which the authors claim is still human readable.
 
-<img src="/static/pictures/Libra/3-move-basics.png" alt="Move Basics" style="height:150px;"/>
+<img src="/static/pictures/Libra/3-move-basics.png" alt="Move Basics" style="height:120px;padding:10px"/>
 
 There are two notable facets of Move that I think are worth pointing out with regards to security. First, the safety checks and guarantees that the Move Virtual Machine performs before processing a transaction (recall Step 3 from above) are enacted on Move bytecode (a.k.a. *bytecode verification*). This is wise design; performing safety checks at the IR or Source Code level presents an opportunity for malicious clients to evade these checks by simply just writing the code at a lower level. Again, however, how comprehensive these checks are have yet to be elaborated upon by the Libra team.
 
@@ -90,7 +90,7 @@ In this section, the authors dive into the data structures behind the data model
 
 Before diving into how the ledger history, event list, ledger state, etc are stored within Merkle Trees, it's helpful to have a bit of background on authenticated data structures (ADS). For me, this [paper](https://www.cs.umd.edu/~mwh/papers/gpads.pdf) was particularly useful for achieving basic comprehension of the motivations, terminology, and technicalities surrounding ADS's in general. I'd recommend reading section 2, which mentions Merkle Trees as a canonical example of an ADS. In one sentence, ADS's are useful because they allow untrusted *provers* (i.e. validators) to perform operations on and modify the state of the data structure; such changes can be checked for authenticity by *verifiers* (i.e. clients). In a certain sense, today's most popular blockchain systems can be thought of as a decentralized, distributed ADS. The illustration below depicts a simplified workflow of how provers modify and verifiers check the state of an ADS. The label's letters correspond to the notation used in Section 4.1 of the paper.
 
-<img src="/static/pictures/Libra/4-ads-flow.png" alt="ADS Flow" style="height:250px;"/>
+<img src="/static/pictures/Libra/4-ads-flow.png" alt="ADS Flow" style="height:300px;"/>
 
 What is the significance of a prover being *untrusted*? After all, as of today, the only validators are verified members of the Libra Association; these validators are, in a sense, trusted. However, as Libra expands later on, the plan is that entities from the general public can become validators. At that point, trust in validators is no longer a guarantee, which is why authentication with *untrusted* provers modifying the ADS must be tolerable.
 
@@ -104,7 +104,7 @@ Recall from the previous diagram, the verifier's authenticator is actually the r
 
 Libra uses many, many Merkle Trees. The Ledger History and each Transaction's Ledger State and Event Tree are all modeled as Merkle Trees. Figure 3 in Section 4.1 is an excellent diagram highlighting the relationships between different components of the Libra Blockchain along with the type of data structure used for representation.
 
-<img src="/static/pictures/Libra/4-libra-structs.png" alt="Merkle ADS" style="height:300px;"/>
+<img src="/static/pictures/Libra/4-libra-structs.png" alt="Merkle ADS" style="height:350px;"/>
 
 * The Ledger History *Merkle Tree*'s leaves map a version number to a Transaction.
 * The Ledger State *Merkle Tree*'s leaves represent the state of all accounts at a particular version. The key is the account's address while the value is the authenticator (hash).
@@ -117,7 +117,7 @@ In the author's discussion, it's apparent that storing Merkle Trees with a tract
 
 So why not just use a normal linked-list style blockchain? What's all the hurrah over using a Merkle Tree? This change originates out of the drive for scalability and a more efficient authentication process for a client. The diagram below stores the same data using the Merkle Tree data structure and a more traditional, linked list style blockchain.
 
-<img src="/static/pictures/Libra/4-merkle-vs-ll.png" alt="Merkle ADS" style="height:300px;"/>
+<img src="/static/pictures/Libra/4-merkle-vs-ll.png" alt="Merkle ADS" style="height:350px;"/>
 
 Let's say that a client who trusts the 3rd block (State 2) wants to verify the authenticity of the 1st block (State 0). In a linked list setting, a client would need to retrieve every ancestor node between the trusted block (State 2) and block in question (State 0), then recompute [# ancestor blocks] hashes (a.k.a. N), simplifying to an O(N) runtime. On the other hand, for a Merkle Tree, only *log N* hashes are required for authentication.
 

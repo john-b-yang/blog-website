@@ -25,7 +25,7 @@ After Step 1, you've successfully read the source code of the website containing
 The Markov Chain is a structure that falls under the domain of discrete math and probability. There is a plethora of mathematics and applications that I highly recommend diving into (Google's PageRank algorithm, the backbone of Search, is a Markov Process!). However, for the sake of this tutorial, we'll use Markov Chains primarily for how it can make future predictions of a state based on its present state. To illustrate this concept, let's say we're given a sentence "I eat fast, you eat slow, I eat fast, I eat slow". A Markov Chain can be thought of as a graph-like snapshot of the structure of this sentence, where each node is a word 'A', and each edge is a probability reflecting the likelihood of a word 'B', following word 'A'.
 
 <br>
-![](/static/pictures/MarkovChain.png)
+![](/static/pictures/TwitterBot/MarkovChain.png)
 
 <br>
 In the original sentence, the word 'I' appears three times, and it is followed by the word 'eat' all three times. Therefore, there is a probability of 3/3 or 1 that any random traversal of the map involving 'I' will be followed by 'eat'. On the other hand, 'fast' appears two times, followed by 'you' and 'I' respectively. Therefore, there is a 1/2 probability that a random traversal from 'fast' results in 'I', and a 1/2 probability it results in 'you'. In this step of the program, we will be applying the same logic from above to map an entire book. In Step 3, we will generate a random sentence by performing a traversal on the resulting Markov Chain representation of the book.

@@ -19,7 +19,7 @@
       "title": "FlightBot"
     },
     {
-      "description": "Brain training + analysis app for children",
+      "description": "Brain training + analysis iOS app for children",
       "image": "AutiBot.png",
       "link": "https://devpost.com/software/autibot",
       "title": "AutiBot"
@@ -31,19 +31,19 @@
       "title": "Detroit Transport"
     },
     {
-      "description": "On-demand, multi-destination routing",
+      "description": "iOS app for on-demand, multi-destination routing",
       "image": "RoundAbout.png",
       "link": "https://github.com/john-b-yang/Voyager",
       "title": "RoundAbout"
     },
     {
-      "description": "Wearable, accessible Parkinson's partner",
+      "description": "Wearable assistive tech for Parkinson's patients",
       "image": "Imperium.png",
       "link": "https://devpost.com/software/imperium",
       "title": "Imperium"
     },
     {
-      "description": "Small web game built with JS and <3",
+      "description": "Match-the-tiles web game built with JS and <3",
       "image": "Concentration.png",
       "link": "https://concentration-game-2017.herokuapp.com/index.html",
       "title": "Concentration"
@@ -60,7 +60,7 @@
       "description": "Filling out the 2018 NCAA Bracket w/ Logistic Regression",
       "image": "March-Madness.png",
       "link": "https://github.com/john-b-yang/march-madness",
-      "title": "Predict March Madness"
+      "title": "March Madness"
     },
     {
       "description": "Deploying a M2 Leo-pack, polarized antenna",

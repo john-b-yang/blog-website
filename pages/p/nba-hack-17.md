@@ -25,7 +25,7 @@ From these observations, this problem can be modeled as a binomial distribution.
 **Computation**<br>
 The formula for calculating the probability of a binomial distribution can be logically arrived upon. To calculate the probability of exactly k successes in n trials, the formula is:
 
-<img src="/static/pictures/2017NBAHack/BinomialFormula.png" alt="Drawing" style="height: 30px;"/>
+<img src="/static/pictures/2017NBAHack/BinomialFormula.png" alt="Drawing" style="height:60px;"/>
 
 With this formula, assuming that a ”success” is a loss and ”p” would be the probability of losing, we could calculate the probability losing k games given all possible orders of losing those games out of 82. However, in this question, we’re focusing on consecutive games.
 
@@ -33,11 +33,11 @@ An alternative approach would be to count the number of win-lose sequences that 
 
 Given the number of choices, we can apply the probability formula above as the following:
 
-<img src="/static/pictures/2017NBAHack/BinomialFormula2.png" alt="Drawing" style="height: 30px;"/>
+<img src="/static/pictures/2017NBAHack/BinomialFormula2.png" alt="Drawing" style="height:60px;"/>
 
 We would need to calculate all probabilities of k losses from 0 to 41 losses (given that more than 41 losses would guarantee consecutive losses). Therefore, we could take the summation of probabilities across these range of losses. The final equation would be the following:
 
-<img src="/static/pictures/2017NBAHack/BinomialFormula3.png" alt="Drawing" style="height: 30px;"/>
+<img src="/static/pictures/2017NBAHack/BinomialFormula3.png" alt="Drawing" style="height:60px;"/>
 
 As we can see, there is a 5.88% chance that the Warriors do not lose consecutive games. Therefore, I would conclude that it is *highly unlikely the Warriors will not lose consecutive games during the regular season*.
 
