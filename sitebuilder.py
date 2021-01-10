@@ -18,8 +18,12 @@ pages = FlatPages(app)
 freezer = Freezer(app)
 markdown_manager = Markdown(app, extensions=['fenced_code'], output_format='html5',)
 
-posts = [page for page in list(pages) if page.path.startswith('p/')]
-reviews = [page for page in list(pages) if page.path.startswith('r/')]
+posts, reviews = [], []
+for page in list(pages):
+    if page.path.startswith('r/'):
+        reviews.append(page)
+    else:
+        posts.append(page)
 tags = sorted(set([tag for page in list(posts) for tag in page.meta['tags']]))
 
 # Functionalities
