@@ -206,7 +206,7 @@ Within terminal, in your *flask_blog* directory, create a file called *index.htm
     &lt;ul&gt;
     {% for page in pages %}
         &lt;li&gt;
-            &lt;a href="{{ url_for("page", page=page.path) }}">{{ page.title }}</a>
+            &lt;a href="{{ url_for("page", path=page.path) }}"&gt;{{ page.title }}&lt;/a&gt;
         &lt;/li&gt;
     {% else %}
         &lt;li&gt;No pages so far&lt;/li&gt;
