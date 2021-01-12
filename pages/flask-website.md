@@ -11,7 +11,11 @@ tags: [Python, Tutorial, Web]
     <b>Notes</b>: Click this <a href="/static/pictures/Flaskblog/test-flask.zip">link</a> to download a ZIP file that contains the compiled version of all the code below.
   </p>
   <p>
-    If you created your personal website based on this tutorial, drop the link as a comment at the bottom of this post, and I'll put a link to it in this box! :)
+    If you created your personal website based on this tutorial, drop the link as a comment at the bottom of this post, and I'll put a link to it below!
+  </p>
+  <p>
+    john-b-yang <a href="https://github.com/john-b-yang/blog-website">Github</a></li>,
+    mjt145 <a href="https://github.com/mjt145/flask_blog">Github</a>
   </p>
 </div>
 
