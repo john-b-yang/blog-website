@@ -6,9 +6,16 @@ readtime: 11 MINS
 time: SUNDAY, DECEMBER 16, 2018
 tags: [Python, Tutorial, Web]
 
-This post has been a long time coming. Today marks some time close to the one year anniversary of this blog, so to commemorate, I thought it'd be fun to write a post about how this website came to be! A year ago, I had always wanted to create my own portfolio website, and with the myriad of front end web design tools these days, the hardest part was figuring out *what* to use to put together a website that could handle an elastic amount of content. I wrote this blog as a detailed walkthrough of the first couple of steps I took to putting together the blog that you're reading today!
+<div style="border-width:1px; border-color:#58a6ff; border-style:solid; padding-left:10px; padding-right:10px;">
+  <p>
+    <b>Notes</b>: Click this <a href="/static/pictures/Flaskblog/test-flask.zip">link</a> to download a ZIP file that contains the compiled version of all the code below.
+  </p>
+  <p>
+    If you created your personal website based on this tutorial, drop the link as a comment at the bottom of this post, and I'll put a link to it in this box! :)
+  </p>
+</div>
 
-**Note** Click this [link](/static/pictures/Flaskblog/test-flask.zip) to download a ZIP file that contains the compiled version of all the code below.
+This post has been a long time coming. Today marks some time close to the one year anniversary of this blog, so to commemorate, I thought it'd be fun to write a post about how this website came to be! A year ago, I had always wanted to create my own portfolio website, and with the myriad of front end web design tools these days, the hardest part was figuring out *what* to use to put together a website that could handle an elastic amount of content. I wrote this blog as a detailed walkthrough of the first couple of steps I took to putting together the blog that you're reading today!
 
 <br>
 ##### A Brief Discussion about Flask
