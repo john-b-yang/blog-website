@@ -9,7 +9,7 @@
 
   {% for tag in tags %}
     <div class="block">
-      <a href="{{ url_for("tag", tag=tag) }}">{{ tag }}</a>
+      <a href="{{ url_for("blog_tag", tag=tag) }}">{{ tag }}</a>
     </div>
   {% endfor %}
 

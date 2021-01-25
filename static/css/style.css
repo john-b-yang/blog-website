@@ -79,6 +79,19 @@ body {
     background: #4176b7;
 }
 
+.block-selected {
+    width: auto;
+    padding: 1px 10px 1px 10px;
+    margin: auto;
+    background: #4176b7;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+.block-selected a {
+    color: white;
+}
+
 .share {
     text-align: center;
 }

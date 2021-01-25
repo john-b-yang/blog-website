@@ -3,63 +3,62 @@
 {% block content %}
 <br>
 <div style="text-align:center;">
-    <img src={{ page.image }} alt="Head Image" height=100px />
-    <h3>{{ page.title }}</h3>
-    <div class="light-text">
-        <p>{{ page.time }} &bull; {{ page.readtime }} </p>
-        <p>
-            {% for page_tag in page.meta.tags %}
-            <div class="block">
-                <b><a href="{{ url_for("tag", tag=page_tag) }}">{{ page_tag }}</a></b>
-            </div>
-            <!-- {% if not loop.last %} | {% endif %}  -->
-            {% endfor %}
-        </p>
-    </div>
+  <img src={{ page.image }} alt="Head Image" height=100px />
+  <h3>{{ page.title }}</h3>
+  <div class="light-text">
+    <p>{{ page.time }} &bull; {{ page.readtime }} </p>
+    <p>
+      {% for page_tag in page.meta.tags %}
+      <div class="block">
+        <b><a href="{{ url_for("blog_tag", tag=page_tag) }}">{{ page_tag }}</a></b>
+      </div>
+      {% endfor %}
+    </p>
+  </div>
 </div>
 <br>
 
 <div class="blog">
-    {{page.html|safe}}
+  {{page.html|safe}}
 </div>
 
 <br><hr class="fade"><br>
 
 <div>
-    <div id="disqus_thread"></div>
-    {% block javascript %}
-        <script type="text/javascript">
-            (function() {
-                var d = document,
-                    s = d.createElement('script');
-                s.src = 'https://blog-byjohnyang.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-            })();
-        </script>
-        <noscript>
-            Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-    {% endblock %}
+  <div id="disqus_thread"></div>
+  {% block javascript %}
+    <script type="text/javascript">
+      (function() {
+        var d = document,
+          s = d.createElement('script');
+        s.src = 'https://blog-byjohnyang.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>
+      Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+  {% endblock %}
 </div>
 
 <br><hr class="fade"><br>
 
 <div class="share">
-    <h5 class="light-text">Share this blog!</h5>
-    <a href="http://www.facebook.com/sharer.php?u=https://john-b-yang.github.io" class="icon-button facebook">
-        <i class="icon-facebook"></i><span></span></a>
+  <h5 class="light-text">Share this blog!</h5>
+  <a href="http://www.facebook.com/sharer.php?u=https://john-b-yang.github.io" class="icon-button facebook">
+    <i class="icon-facebook"></i><span></span></a>
 
-    &nbsp; <a href="https://twitter.com/share?text=Check%20out%20this%20blog!%20https://john-b-yang.github.io" class="icon-button twitter">
-        <i class="icon-twitter"></i><span></span></a>
+  &nbsp; <a href="https://twitter.com/share?text=Check%20out%20this%20blog!%20https://john-b-yang.github.io" class="icon-button twitter">
+    <i class="icon-twitter"></i><span></span></a>
 
-    &nbsp; <a href="https://plus.google.com/share?url=https://john-b-yang.github.io" class="icon-button google-plus">
-        <i class="icon-google-plus"></i><span></span></a>
+  &nbsp; <a href="https://plus.google.com/share?url=https://john-b-yang.github.io" class="icon-button google-plus">
+    <i class="icon-google-plus"></i><span></span></a>
 
-    &nbsp; <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://john-b-yang.github.io" class="icon-button linkedin">
-        <i class="icon-linkedin"></i><span></span></a>
+  &nbsp; <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://john-b-yang.github.io" class="icon-button linkedin">
+    <i class="icon-linkedin"></i><span></span></a>
 
-    &nbsp; <a href="mailto:?Subject=John Yang's Blog&amp;Body=Check%20out%20this%20blog:%20https://john-b-yang.github.io" class="icon-button mail-forward">
-        <i class="icon-mail-forward"></i><span></span></a>
+  &nbsp; <a href="mailto:?Subject=John Yang's Blog&amp;Body=Check%20out%20this%20blog:%20https://john-b-yang.github.io" class="icon-button mail-forward">
+    <i class="icon-mail-forward"></i><span></span></a>
 </div>
 {% endblock content %}

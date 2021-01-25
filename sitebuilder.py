@@ -24,7 +24,8 @@ for page in list(pages):
         reviews.append(page)
     else:
         posts.append(page)
-tags = sorted(set([tag for page in list(posts) for tag in page.meta['tags']]))
+blog_tags = sorted(set([tag for page in list(posts) for tag in page.meta['tags']]))
+review_tags = set([tag for page in list(reviews) for tag in page.meta['tags']])
 
 # Functionalities
 # @app.context_processor
@@ -38,11 +39,20 @@ def index():
 
 @app.route('/blogs/')
 def blogs():
-    return render_template('blogs.html', pages=posts, tags=tags)
+    return render_template('blogs.html', pages=posts, tags=blog_tags)
+
+@app.route('/blogs/<string:tag>/')
+def blog_tag(tag):
+    tagged = [p for p in posts if tag in p.meta.get('tags', [])]
+    return render_template('tag.html', pages=tagged, tags=blog_tags, tag=tag)
 
 @app.route('/papers/')
 def papers():
-    return render_template('papers.html', pages=reviews)
+    return render_template('papers.html', pages=reviews, tags=review_tags, tag="all")
+
+@app.route('/papers/<string:tag>/')
+def paper_tag(tag):
+    return render_template('papers.html', pages=reviews, tags=review_tags, tag=tag)
 
 @app.route('/projects/')
 def projects():
@@ -78,11 +88,6 @@ def cs161():
 @app.route('/resources/')
 def resources():
     return render_template('resources.html')
-
-@app.route('/tag/<string:tag>/')
-def tag(tag):
-    tagged = [p for p in pages if tag in p.meta.get('tags', [])]
-    return render_template('tag.html', pages=tagged, tag=tag, tags=tags)
 
 @app.route('/<path:path>/')
 def page(path):

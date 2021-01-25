@@ -7,7 +7,7 @@
         | <i class="fa fa-tags fa-lg"></i>
         {% for page_tag in page.meta.tags %}
           <div class="block">
-            <a href="{{ url_for("tag", tag=page_tag) }}">{{ page_tag }}</a>
+            <a href="{{ url_for("blog_tag", tag=page_tag) }}">{{ page_tag }}</a>
           </div>
         {% endfor %}
       {% endif %}
