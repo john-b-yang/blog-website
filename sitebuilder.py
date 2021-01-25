@@ -39,12 +39,12 @@ def index():
 
 @app.route('/blogs/')
 def blogs():
-    return render_template('blogs.html', pages=posts, tags=blog_tags)
+    return render_template('blogs.html', pages=posts, tags=blog_tags, tag="all")
 
 @app.route('/blogs/<string:tag>/')
 def blog_tag(tag):
     tagged = [p for p in posts if tag in p.meta.get('tags', [])]
-    return render_template('tag.html', pages=tagged, tags=blog_tags, tag=tag)
+    return render_template('blogs.html', pages=tagged, tags=blog_tags, tag=tag)
 
 @app.route('/papers/')
 def papers():
