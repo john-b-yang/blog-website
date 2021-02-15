@@ -2,9 +2,10 @@
 
 {% block content %}
 <h3 class="post-title"><b>Projects</b></h3>
-A compilation of some of the selected projects that
-I've worked on before. Click each project's title for more information.
-<br><br>
+<p>
+  A compilation of some of the selected projects that
+  I've worked on before. Click each project's title for more information.
+</p>
 <div class="card-row">
   {% for project in projects.personal %}
   {% if loop.index % 3 == 1 %} <div> {% endif %}
