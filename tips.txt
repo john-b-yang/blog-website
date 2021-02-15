@@ -35,3 +35,5 @@ Finished:
 - Organize Articles by Date
 - Included About Page
 - Create Projects Tab
+- README Visualizations (https://github.com/bramp/js-sequence-diagrams)
+- Overview on Technical Writing (https://medium.com/technical-writing-is-easy/diagrams-in-documentation-markdown-guide-4e78419e8d2f)

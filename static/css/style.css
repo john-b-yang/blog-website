@@ -226,6 +226,13 @@ hr.fade {
   text-align: left;
 }
 
+.record {}
+
+.record th, td {
+  border: 2px solid #c8d1d9;
+  padding: 5px;
+}
+
 /* CS 161 Demo Cards */
 .cs161-demo-table {
   display: flex;
