@@ -4,6 +4,44 @@ body {
     color: #c8d1d9;
 }
 
+/* Subscribe form input + button styling */
+.signup {
+  padding: 0px 5px;
+}
+
+.signup input {
+  width: 30%;
+  padding: 0px 5px;
+}
+
+.signup input::placeholder {
+  color: #484e58;
+}
+
+.signup button {
+  background-color: #238636;
+  border: 2px solid #2ea043;
+  border-radius: 5px;
+  color: white;
+  display: inline;
+  padding: 5px 15px;
+}
+
+.signup button:hover {
+  background-color: #2ea043;
+}
+
+.signup #loader {
+  border: 2px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 2px solid #2ea043;
+  display: none;
+  width: 20px;
+  height: 20px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
 /* Upper Right Links Animations */
 .link-list {
     color: #c8d1d9;
