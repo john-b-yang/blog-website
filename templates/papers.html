@@ -32,9 +32,10 @@
     {% for page in pages | sort(attribute='date', reverse=True) %}
       {% if tag == 'all' or tag in page.tags %}
         <li>
-          <a style="color:white;" href="{{ url_for("review", path=page.path) }}">
+          {{ page.date }} | 
+          <a style="color:#c8d1d9;" href="{{ url_for("review", path=page.path) }}">
             <b>{{ page.title }}</b>
-          </a> | {{ page.date }}
+          </a>
         </li>
       {% endif %}
     {% endfor %}

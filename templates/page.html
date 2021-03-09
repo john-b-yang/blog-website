@@ -7,13 +7,6 @@
   <h3>{{ page.title }}</h3>
   <div class="light-text">
     <p>{{ page.time }} &bull; {{ page.readtime }} </p>
-    <p>
-      {% for page_tag in page.meta.tags %}
-      <div class="block">
-        <b><a href="{{ url_for("blog_tag", tag=page_tag) }}">{{ page_tag }}</a></b>
-      </div>
-      {% endfor %}
-    </p>
   </div>
 </div>
 <br>

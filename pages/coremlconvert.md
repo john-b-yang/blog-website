@@ -1,10 +1,9 @@
 title: Automated CoreML Conversion V1.0
 date: 2018-01-29
-description: Automating the redundancy of writing, testing, and deploying basic machine learning scripts to real world settings
+description: Automating the redundancy of writing, testing, and deploying ML models with Python
 image: /static/pictures/CoreMLConvert/CoreMLLogo.png
 readtime: 9 MINS
 time: MONDAY. JANUARY 29, 2018
-tags: [ML, Python]
 
 In recent years, the advent of machine learning has produced ripple effects felt across the software development process. Individuals and corporations have whipped up absolutely fantastic, futuristic concepts into reality with the help of machine learning tools, from [autonomous drones](https://www.nato.int/docu/review/2017/Also-in-2017/autonomous-military-drones-no-longer-science-fiction/EN/index.htm), to a [flawless Mario](https://www.youtube.com/watch?v=qv6UVOQ0F44), to the most elite [Go player](https://deepmind.com/research/alphago/) in human history!
 

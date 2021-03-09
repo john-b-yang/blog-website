@@ -18,13 +18,8 @@ pages = FlatPages(app)
 freezer = Freezer(app)
 markdown_manager = Markdown(app, extensions=['fenced_code'], output_format='html5',)
 
-posts, reviews = [], []
-for page in list(pages):
-    if page.path.startswith('r/'):
-        reviews.append(page)
-    else:
-        posts.append(page)
-blog_tags = sorted(set([tag for page in list(posts) for tag in page.meta['tags']]))
+posts = [page for page in list(pages) if not page.path.startswith('r/')]
+reviews = [page for page in list(pages) if page.path.startswith('r/')]
 review_tags = set([tag for page in list(reviews) for tag in page.meta['tags']])
 
 # Functionalities
@@ -39,12 +34,12 @@ def index():
 
 @app.route('/blogs/')
 def blogs():
-    return render_template('blogs.html', pages=posts, tags=blog_tags, tag="all")
+    return render_template('blogs.html', pages=posts, tag="all")
 
 @app.route('/blogs/<string:tag>/')
 def blog_tag(tag):
     tagged = [p for p in posts if tag in p.meta.get('tags', [])]
-    return render_template('blogs.html', pages=tagged, tags=blog_tags, tag=tag)
+    return render_template('blogs.html', pages=tagged, tag=tag)
 
 @app.route('/papers/')
 def papers():

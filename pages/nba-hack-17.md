@@ -3,7 +3,6 @@ date: 2017-11-08
 description: Will the 2018 Warriors ever lose? And what did the 2017 final regular season standings look like?
 image: /static/pictures/2017NBAHack/head-image.png
 readtime: 6 MINS
-tags: [Basketball, Python]
 time: SUNDAY. NOVEMBER 11, 2017
 
 Since 2016, the National Basketball Association began hosting an annual [NBA Hackathon](https://hackathon.nba.com/)! As a basketball aficionado and computer science student, I think sports analytics is an exciting Wild West part of the growing trend of information driven decision making. This past year, I submitted an application for the NBA application. As a part of the application, I had to design and compute answers for two different questions. Both were interesting brain teasers, and I thought I'd share my approaches to these problems in this post!
