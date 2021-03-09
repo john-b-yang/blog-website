@@ -152,6 +152,10 @@ body {
 }
 
 /* Tag Level Styling */
+.link-fa i {
+  color: #c8d1d9;
+}
+
 .link-fa i:hover {
   color: #1b9ce2;
 }
