@@ -84,6 +84,10 @@ def cs161():
 def resources():
     return render_template('resources.html')
 
+@app.route('/subscribe/')
+def subscribe():
+    return render_template('subscribe.html')
+
 @app.route('/<path:path>/')
 def page(path):
     return render_template('page.html', page=pages.get_or_404(path))

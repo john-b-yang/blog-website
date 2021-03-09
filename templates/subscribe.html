@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3 class="post-title"><b>Subscribe</b></h3>
+<p>
+  If you like my writing and would like to be notified of new content,
+  please subscribe! I usually post new material ~2 weeks. 📮
+</p>
+<p>
+  Your email will never be used outside of this list. To unsubscribe,
+  reply "unsubscribe" to any email update I've sent before.
+</p>
+<form name="submit-to-mail-list" class="signup">
+  <input name="email" type="email" placeholder="Email here ✉️" required>
+  <button class="signup" type="submit">Sign Up</button>
+  <div id="loader"></div>
+  <span id="signUpSuccess" style="display:none;">
+    ✅ You're all set! Talk to you soon. 😊
+  </span>
+  <span id="signUpFailure" style="display:none;">❌ Hmm something went wrong, try again later.</span><br>
+</form>
+<p>
+  Thanks for visiting!
+</p>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxD7IFnozaowRw2a-57mblzvDnIDRTn-tWCg1oohD0t-HxHOQ/exec'
+  const form = document.forms['submit-to-mail-list']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    document.getElementById("loader").style.display = 'block';
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        document.getElementById("loader").style.display = 'none';
+        console.log('Success!', response);
+        document.getElementById("signUpSuccess").style.display = 'block';
+      })
+      .catch(error => {
+        document.getElementById("loader").style.display = 'none';
+        console.error('Error!', error.message);
+        document.getElementById("signUpFail").style.display = 'block';
+      })
+  })
+</script>
+{% endblock content %}
