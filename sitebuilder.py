@@ -75,6 +75,11 @@ def cs161():
     with open('data/cs161.json') as cs161_json:
         return render_template('classes/cs161.html', info=json.load(cs161_json))
 
+@app.route('/cs1/')
+def cs1():
+    with open('data/cs1.json') as cs1_json:
+        return render_template('classes/cs1.html', info=json.load(cs1_json))
+
 @app.route('/resources/')
 def resources():
     return render_template('resources.html')

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h5 class="post-title class-title">
+  Societal Implications of Computer Science
+</h5>
+
+❗ Site is currently under construction ❗
+
+<h5>Class</h5>
+<p>
+  Weekly, Wed. 13:25 - 15:25 Beijing Time (GMT+8)
+  <br>
+  Begins <i>April 21, 2021</i>
+  <br>
+  Ends <i>June 8, 2021</i>
+</p>
+
+<h5>Objectives</h5>
+<p>
+  The goals of this course are to identity a range of legal, social and
+  professional issues from the realms of computer science, software
+  engineering and information systems. As a student, you will
+  develop an awareness and understanding of the positive and negative
+  impact that IT has had on various areas within society.
+</p>
+
+<h5>Schedule</h5>
+<table class="resourceTable">
+  <tr>
+    <th>Date</th>
+    <th>Topic(s)</th>
+    <th>Reading</th>
+  </tr>
+  {% for week in info.schedule %}
+  <tr>
+    <td style="width:5%;">{{ week.date }}</td>
+    <td style="width:45%;">
+      {% for topic in week.topics %}
+      {{ topic }}
+      (<a href="{{ week.slides[loop.index0] }}" class="link-fa">Slides</a>)
+      <br>
+      {% endfor %}
+    </td>
+    <td>
+      {% for reading, value in week.read_list.items() %}
+      (<a href="{{ value }}" class="link-fa">
+        {{ reading }}
+      </a>)
+      {% endfor %}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock content %}
