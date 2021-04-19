@@ -2,7 +2,7 @@
 
 {% block content %}
 <h5 class="post-title class-title">
-  Societal Implications of Computer Science
+  Computing & Society
 </h5>
 
 ❗ Site is currently under construction ❗
@@ -34,8 +34,8 @@
   </tr>
   {% for week in info.schedule %}
   <tr>
-    <td style="width:5%;">{{ week.date }}</td>
-    <td style="width:45%;">
+    <td style="width:20%;">{{ week.date }}</td>
+    <td style="width:40%;">
       {% for topic in week.topics %}
       {{ topic }}
       (<a href="{{ week.slides[loop.index0] }}" class="link-fa">Slides</a>)

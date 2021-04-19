@@ -1,56 +1,61 @@
 {
-  "course": {
-    "title": "Computers & Society",
-    "time": "Weekly, Wed. 13:25 - 15:25 Beijing Time (GMT+8)",
-    "start": "April 21, 2021",
-    "end": "June 8, 2021"
-  },
   "schedule": [
     {
-      "date": "4/21",
-      "topics": ["Topic 1", "Topic 2"],
-      "slides": ["test1", "test2"],
+      "date": "Session 1: 21 April",
+      "topics": [
+        "Professional ethics and computer ethics",
+        "Network ethics"
+      ],
+      "slides": [
+        "test1", 
+        "test2"
+      ],
       "read_list": {}
     },
     {
-      "date": "4/28",
-      "topics": [],
+      "date": "Session 2: 28 April",
+      "topics": [
+        "Intellectual property & Copyright",
+        "Software and internet intellectual property"
+      ],
+      "slides": [
+        "test1", 
+        "test2"
+      ],
+      "read_list": {}
+    },
+    {
+      "date": "Session 3: 12 May",
+      "topics": [
+        "Privacy and privacy protection",
+        "The protection of network privacy"
+      ],
       "slides": [],
       "read_list": {}
     },
     {
-      "date": "5/5",
-      "topics": [],
+      "date": "Session 4: 19 May",
+      "topics": [
+        "Computer security protection measures",
+        "Computer viruses"
+      ],
       "slides": [],
       "read_list": {}
     },
     {
-      "date": "5/12",
-      "topics": [],
+      "date": "Session 5: 26 May",
+      "topics": [
+        "Firewall technology",
+        "Software Risks & Algorithmic Bias "
+      ],
       "slides": [],
       "read_list": {}
     },
     {
-      "date": "5/19",
-      "topics": [],
-      "slides": [],
-      "read_list": {}
-    },
-    {
-      "date": "5/26",
-      "topics": [],
-      "slides": [],
-      "read_list": {}
-    },
-    {
-      "date": "6/2",
-      "topics": [],
-      "slides": [],
-      "read_list": {}
-    },
-    {
-      "date": "6/9",
-      "topics": [],
+      "date": "Session 6: 2 June",
+      "topics": [
+        "Course Review + Wrap Up"
+      ],
       "slides": [],
       "read_list": {}
     }
