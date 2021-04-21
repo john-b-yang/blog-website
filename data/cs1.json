@@ -1,7 +1,7 @@
 {
   "schedule": [
     {
-      "date": "Session 1: 21 April",
+      "date": "04/21",
       "topics": [
         "Professional ethics",
         "Ethics in Computer Software"
@@ -16,7 +16,7 @@
       ]
     },
     {
-      "date": "Session 2: 28 April",
+      "date": "4/28",
       "topics": [
         "Education",
         "Employment"
@@ -25,7 +25,7 @@
       "read_list": {}
     },
     {
-      "date": "Session 3: 12 May",
+      "date": "5/12",
       "topics": [
         "Software Risks & Algorithmic Bias",
         "Jobs & Automation"
@@ -34,7 +34,7 @@
       "read_list": {}
     },
     {
-      "date": "Session 4: 19 May",
+      "date": "5/19",
       "topics": [
         "Risks of Computers",
         "Security & Viruses" 
@@ -43,7 +43,7 @@
       "read_list": {}
     },
     {
-      "date": "Session 5: 26 May",
+      "date": "5/26",
       "topics": [
         "Copyright",
         "Intellectual Property"
@@ -54,7 +54,7 @@
       "read_list": {}
     },
     {
-      "date": "Session 6: 2 June",
+      "date": "6/2",
       "topics": [
         "Environmental Issues",
         "Course Wrap-up"
