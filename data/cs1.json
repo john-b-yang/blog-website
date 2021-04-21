@@ -9,7 +9,11 @@
       "slides": [
         "https://docs.google.com/presentation/d/1yZCRhfpsFQtoMqMICx2Py7tKRzW281yqzbQmaxnd07o/edit?usp=sharing"
       ],
-      "read_list": {}
+      "read_list": [
+        ["ACM", "Professional Code of Conduct", "https://www.acm.org/code-of-ethics"],
+        ["Fabio, Adam", "Killed by a Machine: The Therac-25", "https://hackaday.com/2015/10/26/killed-by-a-machine-the-therac-25/"],
+        ["Marshall, Aarian", "What Boeing's 737 MAX Has to Do With Cars", "https://www.wired.com/story/boeings-737-max-cars-software/"]
+      ]
     },
     {
       "date": "Session 2: 28 April",

@@ -5,8 +5,6 @@
   Computing & Society
 </h5>
 
-❗ Site is currently under construction ❗
-
 <h5>Class</h5>
 <p>
   Weekly, Wed. 13:25 - 15:25 Beijing Time (GMT+8)
@@ -36,7 +34,7 @@
   {% for week in info.schedule %}
   <tr>
     <td style="width:15%;">{{ week.date }}</td>
-    <td style="width:40%;">
+    <td style="width:35%;">
       {% for topic in week.topics %}
       {{ topic }}{% if not loop.last %}, {% endif %}
       {% endfor %}
@@ -48,14 +46,19 @@
       {% endif %}
     </td>
     <td>
-      {% for reading, value in week.read_list.items() %}
-      (<a href="{{ value }}" class="link-fa">
-        {{ reading }}
-      </a>)
+      {% for reading in week.read_list %}
+      - {{ reading[0] }}
+      (<a href="{{ reading[2] }}" class="link-fa">{{ reading[1] }}</a>)
+      <br>
       {% endfor %}
     </td>
   </tr>
   {% endfor %}
 </table>
+
+<h5>Feedback</h5>
+If you have feedback on the course, please feel free to leave a comment
+or critique through this Google
+<a href="https://forms.gle/LEh6tTA3FnJA3px2A">Form</a>!
 
 {% endblock content %}
