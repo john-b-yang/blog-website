@@ -30,17 +30,22 @@
   <tr>
     <th>Date</th>
     <th>Topic(s)</th>
+    <th>Slides</th>
     <th>Reading</th>
   </tr>
   {% for week in info.schedule %}
   <tr>
-    <td style="width:20%;">{{ week.date }}</td>
+    <td style="width:15%;">{{ week.date }}</td>
     <td style="width:40%;">
       {% for topic in week.topics %}
-      {{ topic }}
-      (<a href="{{ week.slides[loop.index0] }}" class="link-fa">Slides</a>)
-      <br>
+      {{ topic }}{% if not loop.last %}, {% endif %}
       {% endfor %}
+    </td>
+    <td style="width:10%;">
+      {% if loop.index0 < week.slides|length %}
+      <a href="{{ week.slides[loop.index0] }}" class="link-fa">Link</a>
+      <br>
+      {% endif %}
     </td>
     <td>
       {% for reading, value in week.read_list.items() %}

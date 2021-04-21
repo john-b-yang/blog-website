@@ -3,32 +3,28 @@
     {
       "date": "Session 1: 21 April",
       "topics": [
-        "Professional ethics and computer ethics",
-        "Network ethics"
+        "Professional ethics",
+        "Ethics in Computer Software"
       ],
       "slides": [
-        "test1", 
-        "test2"
+        "https://docs.google.com/presentation/d/1yZCRhfpsFQtoMqMICx2Py7tKRzW281yqzbQmaxnd07o/edit?usp=sharing"
       ],
       "read_list": {}
     },
     {
       "date": "Session 2: 28 April",
       "topics": [
-        "Intellectual property & Copyright",
-        "Software and internet intellectual property"
+        "Education",
+        "Employment"
       ],
-      "slides": [
-        "test1", 
-        "test2"
-      ],
+      "slides": [],
       "read_list": {}
     },
     {
       "date": "Session 3: 12 May",
       "topics": [
-        "Privacy and privacy protection",
-        "The protection of network privacy"
+        "Software Risks & Algorithmic Bias",
+        "Jobs & Automation"
       ],
       "slides": [],
       "read_list": {}
@@ -36,8 +32,8 @@
     {
       "date": "Session 4: 19 May",
       "topics": [
-        "Computer security protection measures",
-        "Computer viruses"
+        "Risks of Computers",
+        "Security & Viruses" 
       ],
       "slides": [],
       "read_list": {}
@@ -45,16 +41,19 @@
     {
       "date": "Session 5: 26 May",
       "topics": [
-        "Firewall technology",
-        "Software Risks & Algorithmic Bias "
+        "Copyright",
+        "Intellectual Property"
       ],
-      "slides": [],
+      "slides": [
+        
+      ],
       "read_list": {}
     },
     {
       "date": "Session 6: 2 June",
       "topics": [
-        "Course Review + Wrap Up"
+        "Environmental Issues",
+        "Course Wrap-up"
       ],
       "slides": [],
       "read_list": {}
