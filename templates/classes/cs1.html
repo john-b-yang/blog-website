@@ -43,9 +43,8 @@
       {% endfor %}
     </td>
     <td style="width:15%;">
-      {% if loop.index0 < week.slides|length %}
-      <a href="{{ week.slides[loop.index0] }}" class="link-fa">Link</a>
-      <br>
+      {% if week.slides != "" %}
+      <a href="{{ week.slides }}" class="link-fa">Link</a>
       {% endif %}
     </td>
     <td>

@@ -1,14 +1,12 @@
 {
   "schedule": [
     {
-      "date": "04/21",
+      "date": "4/21",
       "topics": [
         "Professional ethics",
         "Ethics in Computer Software"
       ],
-      "slides": [
-        "https://docs.google.com/presentation/d/1yZCRhfpsFQtoMqMICx2Py7tKRzW281yqzbQmaxnd07o/edit?usp=sharing"
-      ],
+      "slides": "https://docs.google.com/presentation/d/1yZCRhfpsFQtoMqMICx2Py7tKRzW281yqzbQmaxnd07o/edit?usp=sharing",
       "read_list": [
         ["ACM", "Professional Code of Conduct", "https://www.acm.org/code-of-ethics"],
         ["Fabio, Adam", "Killed by a Machine: The Therac-25", "https://hackaday.com/2015/10/26/killed-by-a-machine-the-therac-25/"],
@@ -18,11 +16,15 @@
     {
       "date": "4/28",
       "topics": [
-        "Education",
-        "Employment"
+        "Copyright",
+        "Intellectual Property"
       ],
-      "slides": [],
-      "read_list": {}
+      "slides": "https://docs.google.com/presentation/d/1N1xWiUfRImkgP3tAqDSnonB7r-RqhBTB0wrMycI_rbg/edit?usp=sharing",
+      "read_list": [
+        ["de Cardenas, Antonio", "Patent vs. Copyright Protection for Computer Software", "https://www.linkedin.com/pulse/patent-vs-copyright-protection-computer-software-de-cardenas-jd-mba/"],
+        ["Stallman, Richard", "Misinterpreting Copyright - A Series of Errors", "https://www.gnu.org/philosophy/misinterpreting-copyright.html"],
+        ["Reynolds, Matt", "What is Article 13? The EU's divisive new copyright plan explained", "https://www.wired.co.uk/article/what-is-article-13-article-11-european-directive-on-copyright-explained-meme-ban"]
+      ]
     },
     {
       "date": "5/12",
@@ -30,7 +32,7 @@
         "Software Risks & Algorithmic Bias",
         "Jobs & Automation"
       ],
-      "slides": [],
+      "slides": "",
       "read_list": {}
     },
     {
@@ -39,18 +41,16 @@
         "Risks of Computers",
         "Security & Viruses" 
       ],
-      "slides": [],
+      "slides": "",
       "read_list": {}
     },
     {
       "date": "5/26",
       "topics": [
-        "Copyright",
-        "Intellectual Property"
+        "Education",
+        "Employment"
       ],
-      "slides": [
-        
-      ],
+      "slides": "",
       "read_list": {}
     },
     {
@@ -59,7 +59,7 @@
         "Environmental Issues",
         "Course Wrap-up"
       ],
-      "slides": [],
+      "slides": "",
       "read_list": {}
     }
   ]
