@@ -33,7 +33,11 @@
         "Security Vulnerabilities & Viruses"
       ],
       "slides": "https://docs.google.com/presentation/d/1UelJYgSedK2rvZpcv9KDTJ8YP7OHTa97tOMdjPk5fTE/edit?usp=sharing",
-      "read_list": {}
+      "read_list": [
+        ["Chai, Wesley", "CIA Triad", "https://whatis.techtarget.com/definition/Confidentiality-integrity-and-availability-CIA"],
+        ["Wikipedia", "Saltzer and Shroeder's design principles", "https://en.wikipedia.org/wiki/Saltzer_and_Schroeder%27s_design_principles"],
+        ["Hacksplaning", "Security Training for Developers", "https://www.hacksplaining.com/"]
+      ]
     },
     {
       "date": "5/19",
