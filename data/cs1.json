@@ -29,17 +29,17 @@
     {
       "date": "5/12",
       "topics": [
-        "Software Risks & Algorithmic Bias",
-        "Jobs & Automation"
+        "Security Principles",
+        "Security Vulnerabilities & Viruses"
       ],
-      "slides": "",
+      "slides": "https://docs.google.com/presentation/d/1UelJYgSedK2rvZpcv9KDTJ8YP7OHTa97tOMdjPk5fTE/edit?usp=sharing",
       "read_list": {}
     },
     {
       "date": "5/19",
       "topics": [
-        "Risks of Computers",
-        "Security & Viruses" 
+        "Software Risks & Algorithmic Bias",
+        "Jobs & Automation"
       ],
       "slides": "",
       "read_list": {}
