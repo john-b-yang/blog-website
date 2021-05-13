@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h5 class="post-title class-title">
+  Mobile & Web Technologies | 西安科技大学高新学院
+</h5>
+
+<h5>Objectives</h5>
+<p>
+  The goals of this course are to study popular, modern
+  tools, languages, frameworks, and libraries for developing
+  front end, UI experiences as both websites and mobile apps.
+  We will also study networking and architecture concepts
+  that make large scale web apps a possibility.
+</p>
+
+<h5>Schedule</h5>
+<table class="resourceTable">
+  <tr>
+    <th>Date｜月期</th>
+    <th>Topic(s)｜话题</th>
+    <th>Slides｜幻灯片放映</th>
+  </tr>
+  {% for week in info.schedule %}
+  <tr>
+    <td style="width:20%;">{{ week.date }}</td>
+    <td style="width:35%;">
+      {% for topic in week.topics %}
+      {{ topic }}{% if not loop.last %}, {% endif %}
+      {% endfor %}
+    </td>
+    <td>
+      {% if week.slides != "" %}
+      <a href="{{ week.slides }}" class="link-fa">Link</a>
+      {% endif %}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+<h5>Feedback</h5>
+If you have feedback on the course, please feel free to leave a comment
+or critique through this Google
+<a href="https://forms.gle/27ByYgGfeacfcHUS6">Form</a>!
+
+{% endblock content %}

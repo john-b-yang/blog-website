@@ -80,6 +80,11 @@ def cs1():
     with open('data/cs1.json') as cs1_json:
         return render_template('classes/cs1.html', info=json.load(cs1_json))
 
+@app.route('/cs2/')
+def cs2():
+    with open('data/cs2.json') as cs2_json:
+        return render_template('classes/cs2.html', info=json.load(cs2_json))
+
 @app.route('/resources/')
 def resources():
     return render_template('resources.html')
