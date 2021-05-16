@@ -21,9 +21,9 @@
       ],
       "slides": "https://docs.google.com/presentation/d/1N1xWiUfRImkgP3tAqDSnonB7r-RqhBTB0wrMycI_rbg/edit?usp=sharing",
       "read_list": [
-        ["de Cardenas, Antonio", "Patent vs. Copyright Protection for Computer Software", "https://www.linkedin.com/pulse/patent-vs-copyright-protection-computer-software-de-cardenas-jd-mba/"],
+        ["de Cardenas, Antonio", "Patent vs. Copyright Protection for Software", "https://www.linkedin.com/pulse/patent-vs-copyright-protection-computer-software-de-cardenas-jd-mba/"],
         ["Stallman, Richard", "Misinterpreting Copyright - A Series of Errors", "https://www.gnu.org/philosophy/misinterpreting-copyright.html"],
-        ["Reynolds, Matt", "What is Article 13? The EU's divisive new copyright plan explained", "https://www.wired.co.uk/article/what-is-article-13-article-11-european-directive-on-copyright-explained-meme-ban"]
+        ["Reynolds, Matt", "What is Article 13?", "https://www.wired.co.uk/article/what-is-article-13-article-11-european-directive-on-copyright-explained-meme-ban"]
       ]
     },
     {
@@ -42,11 +42,15 @@
     {
       "date": "5/19",
       "topics": [
-        "Software Risks & Algorithmic Bias",
-        "Jobs & Automation"
+        "Software Risks",
+        "Algorithmic Bias"
       ],
-      "slides": "",
-      "read_list": {}
+      "slides": "https://docs.google.com/presentation/d/1iU8PEcFrSHvi1xqRmp1TNUKC4Ylybw0S6Zm8FbUiNSs/edit?usp=sharing",
+      "read_list": [
+        ["Hardt, Moritz", "Attacking discrimination with smarter ML", "https://research.google.com/bigpicture/attacking-discrimination-in-ml/"],
+        ["Dastin, Jeffrey", "Amazon scraps secret AI recruiting tool" , "https://www.reuters.com/article/us-amazon-com-jobs-automation-insight/amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK08G"],
+        ["Larson, Jeff", "How We Analyzed COMPAS", "https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm"]
+      ]
     },
     {
       "date": "5/26",
