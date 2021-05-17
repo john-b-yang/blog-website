@@ -2,10 +2,13 @@
   "schedule": [
     {
       "date": "5/13",
-      "topics": [
-        "Course Overview"
-      ],
+      "topics": ["Course Overview"],
       "slides": "https://docs.google.com/presentation/d/1d7G5j8S8-YUm7bzJOBLfOtbf8gwGbE9li5rCikYqMr4/edit?usp=sharing"
+    },
+    {
+      "date": "5/18",
+      "topics": ["Human Computer Interaction"],
+      "slides": "https://docs.google.com/presentation/d/1MOSB7bFgRjyR20jKwddXBwnuQiiYigV-hL-tn5hcQyU/edit?usp=sharing"
     }
   ]
 }
