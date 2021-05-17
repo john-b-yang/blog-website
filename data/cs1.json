@@ -68,11 +68,15 @@
     {
       "date": "6/2",
       "topics": [
-        "Environmental Issues",
-        "Course Wrap-up"
+        "War",
+        "Corporate Regulation"
       ],
-      "slides": "",
-      "read_list": {}
+      "slides": "https://docs.google.com/presentation/d/1jIazw9xvvn6co8fi1aNWixjLyaddTE36XHil0oCWIts/edit?usp=sharing",
+      "read_list": [
+        ["Greenberg, Any", "The Untold Story of NotPetya", "https://www.wired.com/story/notpetya-cyberattack-ukraine-russia-code-crashed-the-world/"],
+        ["Haselton, Todd", "Army's use of Microsoft's HoloLens goggles", "https://www.cnbc.com/2019/04/06/microsoft-hololens-2-army-plans-to-customize-as-ivas.html"],
+        ["Google AI", "Responsible AI Practices", "https://ai.google/responsibilities/responsible-ai-practices/"]
+      ]
     }
   ]
 }
