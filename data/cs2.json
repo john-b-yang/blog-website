@@ -9,6 +9,41 @@
       "date": "5/18",
       "topics": ["Human Computer Interaction"],
       "slides": "https://docs.google.com/presentation/d/1MOSB7bFgRjyR20jKwddXBwnuQiiYigV-hL-tn5hcQyU/edit?usp=sharing"
+    },
+    {
+      "date": "5/20",
+      "topics": ["JS/HTML/CSS Deep Dive"],
+      "slides": ""
+    },
+    {
+      "date": "5/27",
+      "topics": ["Front End JS Frameworks"],
+      "slides": ""
+    },
+    {
+      "date": "6/01",
+      "topics": ["APIs, Web Architectures"],
+      "slides": ""
+    },
+    {
+      "date": "5/20",
+      "topics": ["JS/HTML/CSS Deep Dive"],
+      "slides": ""
+    },
+    {
+      "date": "6/03",
+      "topics": ["Mobile JS Frameworks"],
+      "slides": ""
+    },
+    {
+      "date": "6/10",
+      "topics": ["Android Deep Dive"],
+      "slides": ""
+    },
+    {
+      "date": "6/17",
+      "topics": ["iOS Deep Dive"],
+      "slides": ""
     }
   ]
 }
