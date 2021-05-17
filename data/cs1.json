@@ -55,11 +55,15 @@
     {
       "date": "5/26",
       "topics": [
-        "Education",
-        "Employment"
+        "Technology for Political Agendas",
+        "Political Tech's Effects"
       ],
-      "slides": "",
-      "read_list": {}
+      "slides": "https://docs.google.com/presentation/d/1Fp4iWjxhaOHLhSu9PanVKAYk1e9MMseOBIyhPFpqIZw/edit?usp=sharing",
+      "read_list": [
+        ["Keegan, Jon", "Blue Feed, Red Feed", "https://graphics.wsj.com/blue-feed-red-feed/"],
+        ["Maniam, Shiva", "Tension between privacy, security concerns", "https://www.pewresearch.org/fact-tank/2016/02/19/americans-feel-the-tensions-between-privacy-and-security-concerns/"],
+        ["Bertoni, Steven", "How Jared Kushner Won Trump the White House", "https://www.forbes.com/sites/stevenbertoni/2016/11/22/exclusive-interview-how-jared-kushner-won-trump-the-white-house/?sh=3e66feb93af6"]
+      ]
     },
     {
       "date": "6/2",
