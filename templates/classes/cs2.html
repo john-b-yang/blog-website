@@ -26,9 +26,7 @@ Taught on behalf of Cardiff Metropolitan University at 西安科技大学高新�
   <tr>
     <td style="width:20%;">{{ week.date }}</td>
     <td style="width:35%;">
-      {% for topic in week.topics %}
-      {{ topic }}{% if not loop.last %}, {% endif %}
-      {% endfor %}
+      {{ week.topic }}
     </td>
     <td>
       {% if week.slides != "" %}

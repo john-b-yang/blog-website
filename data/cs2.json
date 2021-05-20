@@ -1,48 +1,43 @@
 {
-  "schedule": [
+  "schedule": [ 
     {
       "date": "5/13",
-      "topics": ["Course Overview"],
+      "topic": "Course Overview",
       "slides": "https://docs.google.com/presentation/d/1d7G5j8S8-YUm7bzJOBLfOtbf8gwGbE9li5rCikYqMr4/edit?usp=sharing"
     },
     {
       "date": "5/18",
-      "topics": ["Human Computer Interaction"],
+      "topic": "Human Computer Interaction",
       "slides": "https://docs.google.com/presentation/d/1MOSB7bFgRjyR20jKwddXBwnuQiiYigV-hL-tn5hcQyU/edit?usp=sharing"
     },
     {
       "date": "5/20",
-      "topics": ["JS/HTML/CSS Deep Dive"],
+      "topic": "HTML/CSS Deep Dive",
       "slides": "https://docs.google.com/presentation/d/10WXEA7cqqL7UqGbvE1CT2B5S3i9hB5_leuzQ5Sa6nGM/edit?usp=sharing"
     },
     {
       "date": "5/27",
-      "topics": ["Front End JS Frameworks"],
+      "topic": "JavaScript Deep Dive",
       "slides": "https://docs.google.com/presentation/d/1IhO8ZxNcKlDnJ7qH2nzRj-armkbzRzWGMPip-tdIHJs/edit?usp=sharing"
     },
     {
       "date": "6/01",
-      "topics": ["APIs, Web Architectures"],
-      "slides": ""
-    },
-    {
-      "date": "5/20",
-      "topics": ["JS/HTML/CSS Deep Dive"],
-      "slides": ""
+      "topic": "JavaScript Frameworks",
+      "slides": "https://docs.google.com/presentation/d/1O9vWOcLe8Synaa9UICoJTGq6BhFIgUUIb5nZkCXtB4g/edit?usp=sharing"
     },
     {
       "date": "6/03",
-      "topics": ["Mobile JS Frameworks"],
+      "topic": "APIs, Web Architecture",
       "slides": ""
     },
     {
       "date": "6/10",
-      "topics": ["Android Deep Dive"],
+      "topic": "Android Deep Dive",
       "slides": ""
     },
     {
       "date": "6/17",
-      "topics": ["iOS Deep Dive"],
+      "topic": "iOS Deep Dive",
       "slides": ""
     }
   ]
