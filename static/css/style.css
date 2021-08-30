@@ -144,13 +144,6 @@ body {
   text-align: left;
 }
 
-.class-title {
-  border: 1px;
-  border-style: solid;
-  border-color: #161c22;
-  padding: 1em;
-}
-
 /* Tag Level Styling */
 .link-fa i {
   color: #c8d1d9;
