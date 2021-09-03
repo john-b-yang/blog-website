@@ -8,6 +8,33 @@
 </h5>
 <hr />
 
-Coming Soon!
+<h5>Precept</h5>
+<b>Section P10A</b> | Fridays 1:30 p.m. - 2:50 p.m., Friend Center 007
+<br>
+<b>Attendance Link</b>:
+<a href="https://forms.gle/ZgWDJV7qmKLygx9z8" class="link-fa">
+  https://forms.gle/ZgWDJV7qmKLygx9z8
+</a>
+
+<h5>Office Hours</h5>
+To be determined
+
+<h5>Slides</h5>
+<table class="resourceTable">
+  <tr>
+    <th>Topic</th>
+    <th>Slides</th>
+  </tr>
+  {% for slide in info.slides %}
+  <tr>
+    <td>{{ slide.title }}</td>
+    <td>
+      <a href="{{ slide.link }}" class="link-fa">
+        <i class="fa fa-tv fa-sm"></i>
+      </a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
 
 {% endblock content %}

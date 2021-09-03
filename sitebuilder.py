@@ -85,7 +85,7 @@ def cs2():
     with open('data/cs2.json') as cs2_json:
         return render_template('classes/cs2.html', info=json.load(cs2_json))
 
-@app.route('/cs126/')
+@app.route('/cos126/')
 def cos126():
     with open('data/cos126.json') as cos126_json:
         return render_template('classes/cos126.html', info=json.load(cos126_json))
