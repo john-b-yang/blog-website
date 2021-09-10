@@ -1,8 +1,12 @@
 {
   "slides": [
     {
-      "title": "9/7: Introduction",
+      "title": "9/3: Introduction",
       "link": "https://docs.google.com/presentation/d/1abJ0kmQDlkW2TGeWj9XGqbCF_E4p-f1Iu90cWgVG0q4/edit?usp=sharing"
+    },
+    {
+      "title": "9/10: Conditionals & Loops",
+      "link": "https://docs.google.com/presentation/d/1aU7hHYBEahc8ZaW9BOTj3u-tbz11vSjpP25iODpXGXs/edit?usp=sharing"
     }
   ]
 }
