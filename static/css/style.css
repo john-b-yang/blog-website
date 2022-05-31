@@ -4,6 +4,10 @@ body {
   color: #c8d1d9;
 }
 
+.container {
+  width: 50%;
+}
+
 /* Subscribe form input + button styling */
 .signup {
   padding: 0px 5px;

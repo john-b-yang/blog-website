@@ -8,7 +8,9 @@
       <a style="color:#c8d1d9;font-size:large;" href="{{ url_for("page", path=page.path) }}">
         <b>{{ page.title }}</b>
       </a><br>
-      {{ page.date }} | {{ page.description }}
+      <span style="color:darkgrey;">
+        {{ page.date }} &bull; {{ page.description }}
+      </span>
     </div>
   {% else %}
     No posts yet!

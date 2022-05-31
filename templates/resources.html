@@ -4,96 +4,60 @@
 <h3 class="post-title"><b>Resources</b></h3>
 A curated list of links to resources that I've created during my past teaching and instructor tenures.
 <br><br>
-<b>Princeton University Courses</b>
-<div class="card-row">
-  <div>
-    <div class="card-course card-course-1">
-      <img src="/static/pictures/Courses/cos126.jpeg" />
-      <p class="light-text">
-        <a href="{{ url_for("cos126") }}">
-          <b class="project-title">Computer Science: An Interdisciplinary Approach</b>
-        </a>
-        <br>Fall 2021
-      </p>
-    </div>
-  </div>
-</div>
-<b>University of California, Berkeley Courses</b>
-<div class="card-row">
-  <div>
-    <div class="card-course card-course-1">
-      <img src="/static/pictures/Courses/cs161.png" />
-      <p class="light-text">
-        <a href="{{ url_for("cs161") }}">
-          <b class="project-title">CS 161: Computer Security</b>
-        </a>
-        <br>Fall 2020
-      </p>
-    </div>
-    <div class="card-course card-course-1">
-      <img src="/static/pictures/Courses/cs169.jpg" />
-      <p class="light-text">
-        <a href="{{ url_for("cs169") }}">
-          <b class="project-title">CS 169: Software Eng.</b>
-        </a>
-        <br>Summer 2020
-      </p>
-    </div>
-    <div class="card-course card-course-1">
-      <img src="/static/pictures/Courses/cs186.png" />
-      <p class="light-text">
-        <a href="{{ url_for("cs186") }}">
-          <b class="project-title">CS 186: Database Systems</b>
-        </a>
-        <br>Fall 2019, Spring 2020
-      </p>
-    </div>
-  </div>
-</div>
-<div class="card-row">
-  <div>
-    <div class="card-course card-course-1">
-      <img src="/static/pictures/Courses/cs88.png" />
-      <p class="light-text">
-        <a href="{{ url_for("cs88") }}">
-          <b class="project-title">CS 88: Intro Data Structures</b>
-        </a>
-        <br>Fall 2018, Spring 2019, Fall 2019
-      </p>
-    </div>
-    <div class="card-course card-course-1">
-      <img src="/static/pictures/Courses/cs61c.png" />
-      <p class="light-text">
-        <a href="{{ url_for("cs61c") }}">
-          <b class="project-title">CS 61C: Machine Structures</b>
-        </a>
-        <br>Summer 2019
-      </p>
-    </div>
-  </div>
-</div>
-<br>
-<b>Cardiff Metropolitan University Courses</b>
-<div class="card-row">
-  <div>
-    <div class="card-course card-course-1">
-      <img src="/static/pictures/Courses/cs2.png" />
-      <p class="light-text">
-        <a href="{{ url_for("cs2") }}">
-          <b class="project-title">Mobile & Web Technologies</b>
-        </a>
-        <br>Summer 2021
-      </p>
-    </div>
-    <div class="card-course card-course-1">
-      <img src="/static/pictures/Courses/cs1.png" />
-      <p class="light-text">
-        <a href="{{ url_for("cs1") }}">
-          <b class="project-title">Computing & Society</b>
-        </a>
-        <br>Spring 2021
-      </p>
-    </div>
-  </div>
-</div>
+<b><span style="color:#f58025;">Princeton University</span></b>
+<ul style="list-style:square;">
+  <li>
+    COS 326:
+    <span class="light-text">Principles of Computer System Design</span>
+  </li>
+  <li>
+    COS 126:
+    <span class="light-text">Computer Science: An Interdisciplinary Approach</span>
+    <a href="{{ url_for("cos126") }}">🔗</a>
+  </li>
+</ul>
+<b>
+  <span style="color:#FDB515;">University of California, </span>
+  <span style="color:#3B7EA1;">Berkeley</span>
+</b>
+<ul>
+  <li>
+    CS 161:
+    <span class="light-text">Computer Security</span>
+    <a href="{{ url_for("cs161") }}">🔗</a>
+  </li>
+  <li>
+    CS 169:
+    <span class="light-text">Software Engineering</span>
+    <a href="{{ url_for("cs169") }}">🔗</a>
+  </li>
+  <li>
+    CS 186:
+    <span class="light-text">Database Systems</span>
+    <a href="{{ url_for("cs186") }}">🔗</a>
+  </li>
+  <li>
+    CS 88:
+    <span class="light-text">Computational Structures in Data Science</span>
+    <a href="{{ url_for("cs88") }}">🔗</a>
+  </li>
+  <li>
+    CS 61C:
+    <span class="light-text">Machine Structures</span>
+    <a href="{{ url_for("cs61c") }}">🔗</a>
+  </li>
+</ul>
+<b><span style="color:#0067b5">Cardiff Metropolitan University</span></b>
+<ul>
+  <li>
+    CS 1:
+    <span class="light-text">Mobile & Web Technologies</span>
+    <a href="{{ url_for("cs2") }}">🔗</a>
+  </li>
+  <li>
+    CS 2:
+    <span class="light-text">Computing & Society</span>
+    <a href="{{ url_for("cs1") }}">🔗</a>
+  </li>
+</ul>
 {% endblock content %}
