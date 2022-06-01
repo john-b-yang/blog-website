@@ -238,6 +238,19 @@ hr.fade {
   position: fixed;
 }
 
+/* Teaching Page */
+.teaching li {
+  color: gray;
+}
+
+.teaching a {
+  color: #c8d1d9;
+}
+
+.teaching a:hover {
+  opacity: 0.7
+}
+
 /* Resources Table */
 .resourceTable {
   /* table-layout: auto; */
