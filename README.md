@@ -35,7 +35,7 @@ If you're interested in using this template, check out this [tutorial](http://jo
 - Collection of enjoyable readings
 - Convert projects page to flask metadata loop
 
-### Finished
+#### Finished
 - Make bottom buttons colorable
 - Correct links for share buttons
 - Add Disque Discussion Page
