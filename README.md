@@ -1,5 +1,4 @@
 # Personal Website
-### Link: john-b-yang.github.io
 
 [![HitCount](http://hits.dwyl.com/john-b-yang/blog-website.svg)](http://hits.dwyl.com/john-b-yang/blog-website)
 
@@ -9,7 +8,7 @@ Made with Flask + pure HTML/CSS with Jinja2 templating. The entire architecture 
 
 If you're interested in using this template, check out this [tutorial](http://john-b-yang.github.io/flask-website/) I wrote to help you get set up. Edit the "pages" folder to write your own new blog posts using Markdown files. For more styling related edits, look into the "static" folder for CSS, Javascript, and extra assets such as pictures.
 
-#### Tutorials
+### Tutorials
 - Add Social Share Buttons: https://simplesharebuttons.com/html-share-buttons/
 - Cool HR Styles: https://codepen.io/ibrahimjabbari/pen/ozinB
 - Social Sharing Buttons: https://codepen.io/minimalmonkey/pen/Ecpla?editors=1100
@@ -17,16 +16,16 @@ If you're interested in using this template, check out this [tutorial](http://jo
 - Tagging Git Commits: https://stackoverflow.com/questions/18216991/create-a-tag-in-github-repository
 - Paulund HTML/CSS/JS Tips: https://paulund.co.uk/
 
-#### Details
+### Details
 - When editing webpages, after editing html and css pages, the html edits will show up, but the css edits will not appear. This is b/c these websites cache those files instead of reloading them. To see css edits, perform a hard reload to bypass the cache. Hard Reload list: https://en.wikipedia.org/wiki/Wikipedia:Bypass_your_cache
 - Shotgun approach for font family - list in order of most preferred + specific to most general text. Some website cannot render fonts you're looking for.
 - Javascript inside a Jinja2 template: https://stackoverflow.com/questions/3412275/loading-external-script-with-jinja2-template-directive
 - Disqus Embed Code: https://help.disqus.com/customer/portal/articles/472097-universal-embed-code
 
-#### Other
+### Other
 - Stylesheets: <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
 
-#### Next Steps
+### Next Steps
 - Edit blog list design
 - Mask URL
 - Deploy on Elastic Beanstalk
@@ -36,7 +35,7 @@ If you're interested in using this template, check out this [tutorial](http://jo
 - Collection of enjoyable readings
 - Convert projects page to flask metadata loop
 
-#### Finished
+### Finished
 - Make bottom buttons colorable
 - Correct links for share buttons
 - Add Disque Discussion Page
