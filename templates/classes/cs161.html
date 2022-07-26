@@ -23,13 +23,13 @@
 {% endif %}
   <div class="demo-card">
     <div class="picture">
-      <span style="display:inline-blockvertical-align:middle"></span>
+      <span style="display:inline-block;vertical-align:middle"></span>
       <img src="{{ demo.picture }}">
     </div>
     <div class="description">
       <p>
-        <a href="{{ demo.link }}" class="left" style="font-weight:bold;">
-          > {{ demo.title }}
+        <a href="{{ demo.link }}" style="font-weight:bold;">
+          {{ demo.title }}
         </a><br>{{ demo.description }}
       </p>
     </div>
@@ -54,14 +54,14 @@
     <td>{{ disc.title }}</td>
     <td>
       {% if disc.slides != "" %}
-      <a href="{{ disc.slides }}" class="link-fa">
+      <a href="{{ disc.slides }}" class="dimLink">
         <i class="fa fa-tv fa-sm"></i>
       </a>
       {% endif %}
     </td>
     <td>
       {% if disc.note != "" %}
-      <a href="{{ disc.note }}" class="link-fa">
+      <a href="{{ disc.note }}" class="dimLink">
         <i class="fa fa-paste fa-sm"></i>
       </a>
       {% endif %}
@@ -77,7 +77,7 @@
 <ul>
 {% for video in info.videos %}
   <li>
-    <a href="{{ video.link }}" class="link-fa">
+    <a href="{{ video.link }}" class="dimLink">
       <i class="fa fa-film fa-sm"></i>
     </a> {{ video.title }}
   </li>
@@ -96,7 +96,7 @@
       <ul>
         {% for title, link in links.items() %}
         <li>
-          <a href="{{ link }}" class="link-fa">
+          <a href="{{ link }}" class="dimLink">
             <i class="fa fa-film fa-sm"></i>
           </a> {{ title }}
         </li>

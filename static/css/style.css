@@ -1,5 +1,5 @@
 body {
-  font-family: 'Helvetica Neue', 'Arial', sans-serif;
+  font-family: basic-sans, 'Helvetica Neue', 'Arial', sans-serif;
   background-color: #0f1218;
   color: #c8d1d9;
 }
@@ -287,7 +287,7 @@ hr.fade {
   display: flex;
   border-color: gray;
   border-style: dotted;
-  width: 25%;
+  width: 30%;
   border-radius: 5px;
 }
 

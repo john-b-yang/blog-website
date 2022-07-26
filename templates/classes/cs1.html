@@ -46,13 +46,13 @@ Taught on behalf of Cardiff Metropolitan University at 西安科技大学高新�
     </td>
     <td style="width:15%;">
       {% if week.slides != "" %}
-      <a href="{{ week.slides }}" class="link-fa">Link</a>
+      <a href="{{ week.slides }}" class="dimLink">Link</a>
       {% endif %}
     </td>
     <td>
       {% for reading in week.read_list %}
       - {{ reading[0] }}, 
-      <a href="{{ reading[2] }}" class="link-fa">{{ reading[1] }}</a>
+      <a href="{{ reading[2] }}" class="dimLink">{{ reading[1] }}</a>
       <br>
       {% endfor %}
     </td>

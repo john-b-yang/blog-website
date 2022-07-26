@@ -16,18 +16,18 @@
     {% if exercise != "description" %}
     <td>{{ exercise }}</td>
     <td>
-      <a href="{{ info.practice[exercise].worksheet }}" class="link-fa">
+      <a href="{{ info.practice[exercise].worksheet }}" class=""dimLink"">
         <i class="fa fa-paste fa-sm"></i>
       </a>
     </td>
     <td>
-      <a href="{{ info.practice[exercise].solutions }}" class="link-fa">
+      <a href="{{ info.practice[exercise].solutions }}" class=""dimLink"">
         <i class="fa fa-check-square fa-sm"></i>
       </a>
     </td>
     <td>
       {% if info.practice[exercise].python %}
-      <a href="{{ info.practice[exercise].python }}" class="link-fa">
+      <a href="{{ info.practice[exercise].python }}" class=""dimLink"">
         <i class="fa fa-code fa-sm"></i>
       </a>
       {% endif %}
