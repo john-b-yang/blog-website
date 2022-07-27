@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h5 class="post-title">
+<h5 class="header">
   <a class="left" href="{{ info.course.link }}">{{ info.course.id }}</a>: {{ info.course.name }}
 </h5>
 <hr />
@@ -17,14 +17,14 @@
 <h5>Logistics</h5>
 <ul>
   {% for entry in info.logistics %}
-  <li><a href="{{ info.logistics[entry] }}" class="dimLink">{{ entry }}</a></li>
+  <li><a href="{{ info.logistics[entry] }}">{{ entry }}</a></li>
   {% endfor %}
 </ul>
 {% endif %}
 
 {% if info.discussion_links %}
 <h5>Discussion Slides</h5>
-<table class="resourceTable">
+<table class="class-table">
   <tr>
     <th>Title</th>
     <th>Slides</th>
@@ -50,7 +50,7 @@
 <p><h5>Miscellaneous</h5></p>
 <ul>
   {% for entry in info.misc %}
-  <li><a href="{{ info.misc[entry] }}" class="dimLink">{{ entry }}</a></li>
+  <li><a href="{{ info.misc[entry] }}">{{ entry }}</a></li>
   {% endfor %}
 </ul>
 {% endif %}

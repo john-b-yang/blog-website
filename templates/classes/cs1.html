@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h5 class="post-title">
+<h5 class="header">
   Computing & Society
 </h5>
 Taught on behalf of Cardiff Metropolitan University at 西安科技大学高新学院.
@@ -29,7 +29,7 @@ Taught on behalf of Cardiff Metropolitan University at 西安科技大学高新�
 </p>
 
 <h5>Schedule</h5>
-<table class="resourceTable">
+<table class="class-table">
   <tr>
     <th>Date 月期</th>
     <th>Topic(s) 话题</th>
@@ -46,13 +46,13 @@ Taught on behalf of Cardiff Metropolitan University at 西安科技大学高新�
     </td>
     <td style="width:15%;">
       {% if week.slides != "" %}
-      <a href="{{ week.slides }}" class="dimLink">Link</a>
+      <a href="{{ week.slides }}">Link</a>
       {% endif %}
     </td>
     <td>
       {% for reading in week.read_list %}
       - {{ reading[0] }}, 
-      <a href="{{ reading[2] }}" class="dimLink">{{ reading[1] }}</a>
+      <a href="{{ reading[2] }}">{{ reading[1] }}</a>
       <br>
       {% endfor %}
     </td>

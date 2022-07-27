@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h3 class="post-title"><b>Projects</b></h3>
+<h3 class="header">Projects</h3>
 <p>
   A compilation of some of the selected projects that
   I've worked on before. Click each project's title for more information.
@@ -12,7 +12,7 @@
     <div class="card-course card-course-1">
       <img style="display:block;margin:auto;" src="/static/pictures/Projects/{{ project.image }}" />
       <p><a href="{{ project.link }}"><strong class="project-title" style="font-size:large;">{{ project.title }}</strong></a></p>
-      <p class="light-text">{{ project.description }}</p>
+      <p>{{ project.description }}</p>
     </div>
   {% if (loop.index % 3 == 0) or
     (loop.index == projects.personal|length) %}
@@ -21,7 +21,7 @@
   {% endfor %}
 </div>
 
-<h5 class="post-title">Academics</h5>
+<h5 class="header">Academics</h5>
 An additional list containing some of the projects I've worked on
 from both UC Berkeley's Computer Science curriculum and research efforts.
 <br><br>
@@ -31,7 +31,7 @@ from both UC Berkeley's Computer Science curriculum and research efforts.
     <div class="card-course card-course-1">
       <img style="display:block;margin:auto;" src="/static/pictures/Projects/{{ project.image }}" />
       <p><a href="{{ project.link }}"><strong class="project-title" style="font-size:large;">{{ project.title }}</strong></a></p>
-      <p class="light-text">{{ project.description }}</p>
+      <p>{{ project.description }}</p>
     </div>
   {% if (loop.index % 3 == 0) or
     (loop.index == projects.personal|length) %}
@@ -40,7 +40,7 @@ from both UC Berkeley's Computer Science curriculum and research efforts.
   {% endfor %}
 </div>
 
-<h5 class="post-title">Presentations</h5>
+<h5 class="header">Presentations</h5>
 I very much enjoy pitching, product demonstrations, and academic presentations.
 Here's a clip of public speaking oriented work I've done in the past.
 <br><br>
@@ -50,7 +50,7 @@ Here's a clip of public speaking oriented work I've done in the past.
     <div class="card-course card-course-1">
       <img style="display:block;margin:auto;" src="/static/pictures/Projects/{{ presentation.image }}" />
       <p><a href="{{ presentation.link }}"><strong class="project-title" style="font-size:large;">{{ presentation.title }}</strong></a></p>
-      <p class="light-text">{{ presentation.description }}</p>
+      <p>{{ presentation.description }}</p>
     </div>
   {% if (loop.index % 3 == 0) or
     (loop.index == projects.presentations|length) %}

@@ -52,42 +52,42 @@ def projects():
 
 @app.route('/cs88/')
 def cs88():
-    with open('data/cs88.json') as cs88_json:
+    with open('data/teach/cs88.json') as cs88_json:
         return render_template('classes/cs88.html', info=json.load(cs88_json))
 
 @app.route('/cs61c/')
 def cs61c():
-    with open('data/cs61c.json') as cs61c_json:
+    with open('data/teach/cs61c.json') as cs61c_json:
         return render_template('classes/cs61c.html', info=json.load(cs61c_json))
 
 @app.route('/cs186/')
 def cs186():
-    with open('data/cs186.json') as cs186_json:
+    with open('data/teach/cs186.json') as cs186_json:
         return render_template('classes/cs186.html', info=json.load(cs186_json))
 
 @app.route('/cs169/')
 def cs169():
-    with open('data/cs169.json') as cs169_json:
+    with open('data/teach/cs169.json') as cs169_json:
         return render_template('classes/cs169.html', info=json.load(cs169_json))
 
 @app.route('/cs161/')
 def cs161():
-    with open('data/cs161.json') as cs161_json:
+    with open('data/teach/cs161.json') as cs161_json:
         return render_template('classes/cs161.html', info=json.load(cs161_json))
 
 @app.route('/cs1/')
 def cs1():
-    with open('data/cs1.json') as cs1_json:
+    with open('data/teach/cs1.json') as cs1_json:
         return render_template('classes/cs1.html', info=json.load(cs1_json))
 
 @app.route('/cs2/')
 def cs2():
-    with open('data/cs2.json') as cs2_json:
+    with open('data/teach/cs2.json') as cs2_json:
         return render_template('classes/cs2.html', info=json.load(cs2_json))
 
 @app.route('/cos126/')
 def cos126():
-    with open('data/cos126.json') as cos126_json:
+    with open('data/teach/cos126.json') as cos126_json:
         return render_template('classes/cos126.html', info=json.load(cos126_json))
 
 @app.route('/resources/')
@@ -105,6 +105,11 @@ def page(path):
 @app.route('/review/<path:path>/')
 def review(path):
     return render_template('review.html', review=pages.get_or_404(path))
+
+@app.route('/publications/')
+def publications():
+    with open('data/publications.json') as pubs_json:
+        return render_template('publications.html', pubs=json.load(pubs_json))
 
 @app.errorhandler(404)
 def page_not_found(path):

@@ -1,0 +1,47 @@
+[
+    {
+        "title": "WebShop: Towards Scalable Real-World Web Interaction with Grounded Language Agents",
+        "authors": [
+            {
+                "name": "Shunyu Yao",
+                "site": "https://ysymyth.github.io/"
+            }, {
+                "name": "Howard Chen",
+                "site": "https://howard50b.github.io/"
+            }, {
+                "name": "John Yang"
+            }, {
+                "name": "Karthik Narasimhan",
+                "site": "https://www.cs.princeton.edu/~karthikn/"
+            }
+        ],
+        "year": 2022,
+        "site": "https://webshop-pnlp.github.io/",
+        "paper": "https://arxiv.org/pdf/2207.01206.pdf",
+        "code": "https://github.com/princeton-nlp/WebShop"
+    },
+    {
+        "title": "Quartz: A Framework for Engineering Secure Smart Contracts",
+        "authors": [
+            {
+                "name": "John Kolb",
+                "site": "https://jhkolb.github.io/"
+            },
+            {
+                "name": "John Yang"
+            },
+            {
+                "name": "Randy H Katz",
+                "site": "https://people.eecs.berkeley.edu/~randy/"
+            },
+            {
+                "name": "David E Culler",
+                "site": "https://people.eecs.berkeley.edu/~culler/"
+            }
+        ],
+        "year": 2020,
+        "paper": "https://www2.eecs.berkeley.edu/Pubs/TechRpts/2020/EECS-2020-178.pdf",
+        "code": "https://github.com/jhkolb/quartz",
+        "venue": "EECS Department, University of California, Berkeley, Tech. Rep. UCB/EECS-2020-178"
+    }
+]
