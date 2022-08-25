@@ -1,41 +1,39 @@
-{% extends "base.html" %}
-
-{% block content %}
+{% extends "base.html" %} {% block content %}
 <h3 class="header">Publications ✒️</h3>
 
 {% for pub in pubs %}
 <div class="publication">
-    <b>{{ pub.title }}</b>
-    <br>
-    <span>
-        {% for author in pub.authors %}
-            {% if loop.last %}and{% endif %}
-            {% if author.site %}
-                <a href="{{ author.site }}">{{ author.name }}</a>{% if not loop.last %},{% endif %}
-            {% else %}
-                {{ author.name }}{% if not loop.last %},{% endif %}
-            {% endif %}
-        {% endfor %}
-    </span>
-    <br>
-    <span>
-        {{ pub.year }}
-        {% if pub.venue %} &bull; {{ pub.venue }} {% endif %}
-    </span>
-    <br>
-    <span>
-        <a href="{{ pub.paper }}">
-            <button>PDF</button>
-        </a>
-        <a href="{{ pub.code }}">
-            <button>Code</button>
-        </a>
-        {% if pub.site %}
-        <a href="{{ pub.site }}">
-            <button>Site</button>
-        </a>
-        {% endif %}
-    </span>
+  <b>{{ pub.title }}</b>
+  <br />
+  <span>
+    {% for author in pub.authors %} {% if loop.last %}and{% endif %} {% if
+    author.site %}
+    <a href="{{ author.site }}">{{ author.name }}</a>{% if not loop.last %},{%
+    endif %} {% else %} {{ author.name }}{% if not loop.last %},{% endif %} {%
+    endif %} {% endfor %}
+  </span>
+  <br />
+  <span>
+    {{ pub.year }} {% if pub.venue %} &bull; {{ pub.venue }} {% endif %}
+  </span>
+  <br />
+  <span>
+    <a href="{{ pub.paper }}">
+      <button>PDF</button>
+    </a>
+    {% if pub.code %}
+    <a href="{{ pub.code }}">
+      <button>Code</button>
+    </a>
+    {% endif %} {% if pub.site %}
+    <a href="{{ pub.site }}">
+      <button>Site</button>
+    </a>
+    {% endif %} {% if pub.video %}
+    <a href="{{ pub.video }}">
+      <button>Video</button>
+    </a>
+    {% endif %}
+  </span>
 </div>
-{% endfor %}
-{% endblock content %}
+{% endfor %} {% endblock content %}
