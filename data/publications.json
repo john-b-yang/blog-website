@@ -18,7 +18,8 @@
         "year": 2022,
         "site": "https://webshop-pnlp.github.io/",
         "paper": "https://arxiv.org/pdf/2207.01206.pdf",
-        "code": "https://github.com/princeton-nlp/WebShop"
+        "code": "https://github.com/princeton-nlp/WebShop",
+        "venue": "NeurIPS"
     },
     {
         "title": "PrivShare: Privacy-Preserving Query Processing on Multiple Sources",
