@@ -1,7 +1,7 @@
 title: An Opinionated Introduction to Git
 date: 2019-04-19
 description: The Git tutorial I'd like to think I wish I had
-image: /static/pictures/GitCS61B/octocat.png
+image: /static/pictures/head-images/octocat.png
 readtime: 11 MINS
 time: FRIDAY, APRIL 19, 2019
 
@@ -199,7 +199,7 @@ So your game's going pretty well so far. It's a RPG game set in the 1970s with g
 Luckily, Git doesn't force you to choose one or the other. Introducing *git branch*. 'git branch' allows you to create different copies of your project from the same commit. Here's a visualization to help:
 
 <br>
-<img src="/static/pictures/GitCS61B/branching.png" alt="Add Options" style="height:150px;"/><br>
+<img src="/static/pictures/blogs/branching.png" alt="Add Options" style="height:150px;"/><br>
 
 Branches are simply pointers to commits. As a convention, the 'master' branch tends to be a pointer to the working version of a project. By the example, the 'master' branch would most likely hold the latest working copy of your game while the 'feature' branch would point to the multiplayer project. When you merge a branch with another, just like before, it's important to make sure there are no conflicts.
 
@@ -264,4 +264,4 @@ Keep in mind, however, that this command is where merge conflicts most often app
 
 Whew, that was a lot! Great job getting through all that material! At the end of the day, all of the above boils down to the below!
 
-<img src="/static/pictures/GitCS61B/terminal-transcript.png" alt="Terminal Transcript" style="width:700px;"/>
+<img src="/static/pictures/blogs/terminal-transcript.png" alt="Terminal Transcript" style="width:700px;"/>

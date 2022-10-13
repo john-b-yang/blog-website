@@ -1,7 +1,7 @@
 title: MNIST Handwriting Detection
 date: 2018-05-13
 description: Exploring different machine learning models through the "Hello World" of data sets
-image: /static/pictures/MNIST/head-image.png
+image: /static/pictures/head-images/MNIST.png
 readtime: 6 MINS
 tags: [ML, Python, Tutorial]
 time: SUNDAY, MAY 13, 2018

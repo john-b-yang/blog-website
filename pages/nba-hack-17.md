@@ -1,7 +1,7 @@
 title: 2017 NBA Hackathon Application
 date: 2017-11-08
 description: Will the 2018 Warriors ever lose? And what did the 2017 final regular season standings look like?
-image: /static/pictures/2017NBAHack/head-image.png
+image: /static/pictures/head-images/2017NBAHack.png
 readtime: 6 MINS
 time: SUNDAY. NOVEMBER 11, 2017
 
@@ -24,7 +24,7 @@ From these observations, this problem can be modeled as a binomial distribution.
 **Computation**<br>
 The formula for calculating the probability of a binomial distribution can be logically arrived upon. To calculate the probability of exactly k successes in n trials, the formula is:
 
-<img src="/static/pictures/2017NBAHack/BinomialFormula.png" alt="Drawing" style="height:60px;"/>
+<img src="/static/pictures/blogs/BinomialFormula.png" alt="Drawing" style="height:60px;"/>
 
 With this formula, assuming that a ”success” is a loss and ”p” would be the probability of losing, we could calculate the probability losing k games given all possible orders of losing those games out of 82. However, in this question, we’re focusing on consecutive games.
 
@@ -32,11 +32,11 @@ An alternative approach would be to count the number of win-lose sequences that 
 
 Given the number of choices, we can apply the probability formula above as the following:
 
-<img src="/static/pictures/2017NBAHack/BinomialFormula2.png" alt="Drawing" style="height:60px;"/>
+<img src="/static/pictures/blogs/BinomialFormula2.png" alt="Drawing" style="height:60px;"/>
 
 We would need to calculate all probabilities of k losses from 0 to 41 losses (given that more than 41 losses would guarantee consecutive losses). Therefore, we could take the summation of probabilities across these range of losses. The final equation would be the following:
 
-<img src="/static/pictures/2017NBAHack/BinomialFormula3.png" alt="Drawing" style="height:60px;"/>
+<img src="/static/pictures/blogs/BinomialFormula3.png" alt="Drawing" style="height:60px;"/>
 
 As we can see, there is a 5.88% chance that the Warriors do not lose consecutive games. Therefore, I would conclude that it is *highly unlikely the Warriors will not lose consecutive games during the regular season*.
 
@@ -134,10 +134,10 @@ for value in scores.index.get_level_values('Date').unique():
 
 Here is a screenshot of the results for the Western Conference standings the code above generated:
 
-<img src="/static/pictures/2017NBAHack/ConferenceResults-West.png" alt="Drawing" style="height: 500px;"/>
+<img src="/static/pictures/blogs/ConferenceResults-West.png" alt="Drawing" style="height: 500px;"/>
 
 And now, a screenshot of the Eastern Conference standings:
 
-<img src="/static/pictures/2017NBAHack/ConferenceResults-East.png" alt="Drawing" style="height: 470px;"/>
+<img src="/static/pictures/blogs/ConferenceResults-East.png" alt="Drawing" style="height: 470px;"/>
 
 Based on the results I received, I believe my algorithm worked quite well. The only obstacle I failed to overcome was resolving tiebreakers. This year, the Chicago Bulls and the Miami Heat tied for the eighth seed in the Eastern Conference. In reality, the Chicago Bulls broke the tie by having a better conference record. However, my program only tracks the raw win-loss record, not conference or home wins and losses, so the Bulls and Heat are listed as both making the playoffs. In addition, the ties between the Cleveland Cavaliers - Toronto Raptors and LA Clippers – Utah Jazz are suspect to being in the wrong order. The NBA rule book features a series of criteria for tiebreakers, including head to head records, division / conference win percentages, and win/loss percentages versus conferences. Implementing these tiebreakers would require creating additional columns to store the aforementioned statistics.

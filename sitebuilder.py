@@ -36,7 +36,7 @@ def index():
 def blogs():
     return render_template('blogs.html', pages=posts, tag="all")
 
-@app.route('/papers/')
+@app.route('/readings/')
 def papers():
     return render_template('papers.html', pages=reviews, tags=review_tags, tag="all")
 

@@ -1,7 +1,7 @@
 title: Automated CoreML Conversion V1.0
 date: 2018-01-29
 description: Automating the redundancy of writing, testing, and deploying ML models with Python
-image: /static/pictures/CoreMLConvert/CoreMLLogo.png
+image: /static/pictures/head-images/CoreMLLogo.png
 readtime: 9 MINS
 time: MONDAY. JANUARY 29, 2018
 
@@ -151,7 +151,7 @@ In summary, I'm pretty proud of the framework above. It's a functional and sensi
 ##### Decorations: An Accessible Platform
 This script by itself is not entirely accessible. I could've put it on Github with a tutorial, but when an opportunity like this arises, why not slap on a web platform? Again, the goal of this project is to introduce ease of use in the CoreML conversion process. Therefore, it'd make sense to abstract some aspects of the script that might not be intuitive. To be upfront, there's nothing brilliant or original about creating the website. The intention of this section is less about teaching and more about explaining the reasonings behind what aspects of CoreML conversion should be user defined. This is a screenshot of the main page:
 
-<img src="/static/pictures/CoreMLConvert/CoreMLWebsite.png" alt="Drawing" style="height:400px;display: block;margin-left:auto;margin-right:auto"/>
+<img src="/static/pictures/blogs/CoreMLWebsite.png" alt="Drawing" style="height:400px;display: block;margin-left:auto;margin-right:auto"/>
 
 As you can see, at its current state, it's a very rudimentary layout. I'm working on making the UI more bearable, so the emphasis right now is entirely on the UX aspect. Hopefully, it's intuitive to understand how the website works. The user uploads a file containing the label and vector data. Then, the user can select models to test from a predefined list of choices. The third step involves specifying the test-train split value, aka what percentage of the data set should be allocated for what purposes. Last but not least, the user indicates which column in the data set contains the label data. The Flask backend routing checks whether all these parameters have been filled. If so, the data is translated and fed into the conversion function above. The resulting string output containing the performance of each model is output on a separate *results* page that appears after clicking *generate*. Last but not least, on the *results* page, the user can select a model to be converted into CoreML format with the data set, then download the ML Model. As you can see, it's not all that complicated.
 

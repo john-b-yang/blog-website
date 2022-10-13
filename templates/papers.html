@@ -1,13 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h3 class="header">Papers</h3>
+  <h3 class="header">Readings</h3>
   <p>
-    A collection of notes from past paper readings and reviews.
-    These reviews are written with an intended audience of those with
-    an undergraduate computer science background.
-    At the moment, I'm reading papers from the
-    <a href="http://www.redbook.io/">Red Book</a>.
+    A collection of notes from past paper readings.
+    Currently, I'm reading papers from Prof.
+    <a href="https://www.cs.princeton.edu/~danqic/">Danqi Chen</a>'s
+    Fall 2022 <a href="https://www.cs.princeton.edu/courses/archive/fall22/cos597G/">COS 597G</a>
+    class.
+
+    <br>
+    Prior papers were source from the <a href="http://www.redbook.io/">Red Book</a>.
   </p>
 
   {% if tag == 'all' %}
@@ -30,12 +33,25 @@
 
   <ul>
     {% for page in pages | sort(attribute='date', reverse=True) %}
+      {% if loop.index0 == 0 %}
+        {{ (page.date|string)[:4] }}
+      {% elif (loop.previtem.date|string)[:4] != (page.date|string)[:4] %}
+        <div style="margin-top:10px;">{{ (page.date|string)[:4] }}</div>
+      {% endif %}
       {% if tag == 'all' or tag in page.tags %}
         <li>
-          {{ page.date }} | 
+          <div style="display:flex">
+            <div style="flex:20%;color:#8c8b8b;max-width:60px;">{{ (page.date|string)[5:] }}</div>
+            <div style="flex:80%">
+              <a style="color:#c8d1d9;" href="{{ url_for("review", path=page.path) }}">
+                <b>{{ page.title }}</b>
+              </a>
+            </div>
+          </div>
+          <!-- {{ page.date }}
           <a style="color:#c8d1d9;" href="{{ url_for("review", path=page.path) }}">
             <b>{{ page.title }}</b>
-          </a>
+          </a> -->
         </li>
       {% endif %}
     {% endfor %}

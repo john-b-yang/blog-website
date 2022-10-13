@@ -1,13 +1,13 @@
 title: Static Websites with Frozen Flask
 date: 2018-12-16
 description: Get your own website up and running with just a couple lines of Python + Flask!
-image: /static/pictures/FlaskBlog/head-image.png
+image: /static/pictures/head-images/FlaskBlog.png
 readtime: 11 MINS
 time: SUNDAY, DECEMBER 16, 2018
 
 <div style="border-width:1px; border-color:#58a6ff; border-style:solid; padding-left:10px; padding-right:10px;">
   <p>
-    <b>Notes</b>: Click this <a href="/static/pictures/Flaskblog/test-flask.zip">link</a> to download a ZIP file that contains the compiled version of all the code below.
+    <b>Notes</b>: Click this <a href="/static/misc/test-flask.zip">link</a> to download a ZIP file that contains the compiled version of all the code below.
   </p>
   <p>
     If you created your personal website based on this tutorial, drop the link as a comment at the bottom of this post, and I'll put a link to it below!

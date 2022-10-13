@@ -2,37 +2,37 @@
   "demos": [
     {
       "title": "Buffer Overflow",
-      "picture": "/static/pictures/Courses/demos/overflow.png",
+      "picture": "/static/pictures/courses/demos/overflow.png",
       "description": "The OB - Original Bug, Wrecking Havoc Since 1972",
       "link": "https://github.com/john-b-yang/course-dev/tree/master/cs161/buffer-overflow"
     },
     {
       "title": "SQL Injection",
-      "picture": "/static/pictures/Courses/demos/syringe.png",
+      "picture": "/static/pictures/courses/demos/syringe.png",
       "description": "Wash your queries…and hands! Also, xkcd.com/327/",
       "link": "https://github.com/john-b-yang/course-dev/tree/master/cs161/sql-injection"
     },
     {
       "title": "Clickjacking",
-      "picture": "/static/pictures/Courses/demos/clickjack.png",
+      "picture": "/static/pictures/courses/demos/clickjack.png",
       "description": "Get Off My Page! - Harrison Ford in Air Force 2: Cyberwar",
       "link": "https://github.com/john-b-yang/course-dev/tree/master/cs161/clickjack"
     },
     {
       "title": "Stored XSS",
-      "picture": "/static/pictures/Courses/demos/stored-xss.png",
+      "picture": "/static/pictures/courses/demos/stored-xss.png",
       "description": "<script>alert('Evil Laughing - Dr. Evil')</script>",
       "link": "https://github.com/john-b-yang/course-dev/tree/master/cs161/stored-xss"
     },
     {
       "title": "CSRF",
-      "picture": "/static/pictures/Courses/demos/csrf.png",
+      "picture": "/static/pictures/courses/demos/csrf.png",
       "description": "(In Transformers Theme) CSRF, one click attacks in disguiseee",
       "link": "https://github.com/john-b-yang/course-dev/tree/master/cs161/csrf"
     },
     {
       "title": "Command Injection",
-      "picture": "/static/pictures/Courses/demos/cmd-inject.png",
+      "picture": "/static/pictures/courses/demos/cmd-inject.png",
       "description": "Like Prof. Plankton's Mind Control Shampoo, but code!",
       "link": "https://github.com/john-b-yang/course-dev/tree/master/cs161/cmd-injection"
     }

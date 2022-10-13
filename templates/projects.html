@@ -10,7 +10,7 @@
   {% for project in projects.personal %}
   {% if loop.index % 3 == 1 %} <div> {% endif %}
     <div class="card-course card-course-1">
-      <img style="display:block;margin:auto;" src="/static/pictures/Projects/{{ project.image }}" />
+      <img style="display:block;margin:auto;" src="/static/pictures/projects/{{ project.image }}" />
       <p><a href="{{ project.link }}"><strong class="project-title" style="font-size:large;">{{ project.title }}</strong></a></p>
       <p>{{ project.description }}</p>
     </div>
@@ -29,7 +29,7 @@ from both UC Berkeley's Computer Science curriculum and research efforts.
   {% for project in projects.academic %}
   {% if loop.index % 3 == 1 %} <div> {% endif %}
     <div class="card-course card-course-1">
-      <img style="display:block;margin:auto;" src="/static/pictures/Projects/{{ project.image }}" />
+      <img style="display:block;margin:auto;" src="/static/pictures/projects/{{ project.image }}" />
       <p><a href="{{ project.link }}"><strong class="project-title" style="font-size:large;">{{ project.title }}</strong></a></p>
       <p>{{ project.description }}</p>
     </div>
@@ -48,7 +48,7 @@ Here's a clip of public speaking oriented work I've done in the past.
   {% for presentation in projects.presentations %}
   {% if loop.index % 3 == 1 %} <div> {% endif %}
     <div class="card-course card-course-1">
-      <img style="display:block;margin:auto;" src="/static/pictures/Projects/{{ presentation.image }}" />
+      <img style="display:block;margin:auto;" src="/static/pictures/projects/{{ presentation.image }}" />
       <p><a href="{{ presentation.link }}"><strong class="project-title" style="font-size:large;">{{ presentation.title }}</strong></a></p>
       <p>{{ presentation.description }}</p>
     </div>
