@@ -5,6 +5,9 @@
 <div style="margin:0 auto;width:80%;text-align:center;">
   <h4>{{ review.title }}</h4>
   <div>
+    {% if review.authors %}
+    <p>{{ review.authors }}</p>
+    {% endif %}
     <p>{{ review.time }} &bull;
       <a href="{{ review.link }}">
         <i class="fa fa-file fa-sm"></i>
