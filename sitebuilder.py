@@ -20,7 +20,15 @@ markdown_manager = Markdown(app, extensions=['fenced_code'], output_format='html
 
 posts = [page for page in list(pages) if not page.path.startswith('r/')]
 reviews = [page for page in list(pages) if page.path.startswith('r/')]
-review_tags = set([tag for page in list(reviews) for tag in page.meta['tags']])
+
+# Sort review tags by most popular
+review_tags = {}
+for page in list(reviews):
+    for tag in page.meta['tags']:
+        if tag not in review_tags:
+            review_tags[tag] = 0
+        review_tags[tag] += 1
+review_tags = dict(sorted(review_tags.items(), key=lambda item: -1 * item[1])[:10])
 
 # Functionalities
 # @app.context_processor
