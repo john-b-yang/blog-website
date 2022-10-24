@@ -6,11 +6,16 @@
   <b>{{ pub.title }}</b>
   <br />
   <span>
-    {% for author in pub.authors %} {% if loop.last %}and{% endif %} {% if
-    author.site %}
-    <a href="{{ author.site }}">{{ author.name }}</a>{% if not loop.last %},{%
-    endif %} {% else %} {{ author.name }}{% if not loop.last %},{% endif %} {%
-    endif %} {% endfor %}
+    {% for author in pub.authors %}
+      {% if loop.last %}and{% endif %}
+      {% if author.site %}
+        <a href="{{ author.site }}">{{ author.name }}</a>
+        {% if not loop.last %},{% endif %}
+      {% else %}
+        {{ author.name }}
+        {% if not loop.last %},{% endif %}
+      {% endif %}
+    {% endfor %}
   </span>
   <br />
   <span>
@@ -18,18 +23,25 @@
   </span>
   <br />
   <span>
+    {% if not pub.paper and not pub.code and not pub.site and not pub.video %}
+    <i>Paper details coming soon</i>
+    {% endif %}
+    {% if pub.paper %}
     <a href="{{ pub.paper }}">
       <button>PDF</button>
     </a>
+    {% endif %}
     {% if pub.code %}
     <a href="{{ pub.code }}">
       <button>Code</button>
     </a>
-    {% endif %} {% if pub.site %}
+    {% endif %}
+    {% if pub.site %}
     <a href="{{ pub.site }}">
       <button>Site</button>
     </a>
-    {% endif %} {% if pub.video %}
+    {% endif %}
+    {% if pub.video %}
     <a href="{{ pub.video }}">
       <button>Video</button>
     </a>

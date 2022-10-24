@@ -1,5 +1,21 @@
 [
     {
+        "title": "Towards an Enhanced, Faithful, and Adaptable Web Interaction Environment",
+        "authors": [
+            {
+                "name": "John Yang"
+            }, {
+                "name": "Howard Chen",
+                "site": "https://howard50b.github.io/"
+            }, {
+                "name": "Karthik Narasimhan",
+                "site": "https://www.cs.princeton.edu/~karthikn/"
+            }
+        ],
+        "year": 2022,
+        "venue": "Language & Reinforcement Learning (LaReL) Workshop @ NeurIPS"
+    },
+    {
         "title": "WebShop: Towards Scalable Real-World Web Interaction with Grounded Language Agents",
         "authors": [
             {
