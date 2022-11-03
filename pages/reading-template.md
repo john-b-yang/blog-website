@@ -62,3 +62,10 @@ Here it is:
 I'll do my best to abide by this questions for summarizations of my future readings (that you can find in the [Readings](https://john-b-yang.github.io/readings/) tab!).
 
 Thanks for reading! I'm curious to here from you, what questions or approaches do you keep in mind or exercise when reading?
+
+##### Edits
+11/3 - Came across this Twitter take on how to approach paper reading and liked it! Purpose-driven reading is the way to go.
+
+<div style="text-align:center">
+<blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">&quot;I am not sure how deep I should read each paper,&quot; a new student asked me. &quot;Think about the purpose of reading this paper before doing so, and stop when the purpose is met,&quot; I said. (1/n)</p>&mdash; Hsuan-Tien Lin (@hsuantienlin) <a href="https://twitter.com/hsuantienlin/status/1588159935056994310?ref_src=twsrc%5Etfw">November 3, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
