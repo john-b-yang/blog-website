@@ -12,6 +12,12 @@
       <a href="{{ review.link }}">
         <i class="fa fa-file fa-sm"></i>
       </a>
+      {% if review.github %}
+      &bull;
+      <a href="{{ review.github }}">
+        <i class="fa fa-github fa-sm"></i>
+      </a>
+      {% endif %}
     </p>
     <p>
       {% for page_tag in review.tags %}
