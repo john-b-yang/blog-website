@@ -15,7 +15,8 @@
         "year": 2022,
         "venue": "Language & Reinforcement Learning (LaReL) Workshop @ NeurIPS",
         "paper": "https://openreview.net/pdf?id=y-F1kab2Its",
-        "code": "https://github.com/princeton-nlp/attribute-tagging"
+        "code": "https://github.com/princeton-nlp/attribute-tagging",
+        "poster": "/static/pictures/LaReL-poster.png"
     },
     {
         "title": "WebShop: Towards Scalable Real-World Web Interaction with Grounded Language Agents",

@@ -46,6 +46,11 @@
       <button>Video</button>
     </a>
     {% endif %}
+    {% if pub.poster %}
+    <a href="{{ pub.poster }}">
+      <button>Poster</button>
+    </a>
+    {% endif %}
   </span>
 </div>
 {% endfor %} {% endblock content %}
