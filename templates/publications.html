@@ -9,11 +9,9 @@
     {% for author in pub.authors %}
       {% if loop.last %}and{% endif %}
       {% if author.site %}
-        <a href="{{ author.site }}">{{ author.name }}</a>
-        {% if not loop.last %},{% endif %}
+        <a href="{{ author.site }}">{{ author.name }}</a>{% if not loop.last %},{% endif %}
       {% else %}
-        {{ author.name }}
-        {% if not loop.last %},{% endif %}
+        {{ author.name }}{% if not loop.last %},{% endif %}
       {% endif %}
     {% endfor %}
   </span>
