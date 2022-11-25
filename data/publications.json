@@ -86,6 +86,7 @@
             }
         ],
         "year": 2020,
+        "site": "https://www2.eecs.berkeley.edu/Pubs/TechRpts/2020/EECS-2020-178.html",
         "paper": "https://www2.eecs.berkeley.edu/Pubs/TechRpts/2020/EECS-2020-178.pdf",
         "code": "https://github.com/jhkolb/quartz",
         "venue": "EECS Department, University of California, Berkeley, Tech. Rep. UCB/EECS-2020-178"
