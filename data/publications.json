@@ -38,7 +38,8 @@
         "site": "https://webshop-pnlp.github.io/",
         "paper": "https://arxiv.org/pdf/2207.01206.pdf",
         "code": "https://github.com/princeton-nlp/WebShop",
-        "venue": "NeurIPS"
+        "venue": "NeurIPS",
+        "poster": "/static/pictures/ws-poster.png"
     },
     {
         "title": "PrivShare: Privacy-Preserving Query Processing on Multiple Sources",
