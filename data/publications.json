@@ -42,32 +42,6 @@
         "poster": "/static/pictures/ws-poster.png"
     },
     {
-        "title": "PrivShare: Privacy-Preserving Query Processing on Multiple Sources",
-        "authors": [
-            {
-                "name": "Xiaoyuan Liu",
-                "site": "http://xiaoyuanliu.cn/"
-            }, {
-                "name": "John Yang"
-            }, {
-                "name": "Tynan Sigg",
-                "site": "https://www.linkedin.com/in/tynan-sigg/"
-            }, {
-                "name": "Ni Trieu",
-                "site": "https://nitrieu.github.io/"
-            }, {
-                "name": "Dawn Song",
-                "site": "https://people.eecs.berkeley.edu/~dawnsong/"
-            }
-        ],
-        "year": 2021,
-        "poster": "https://docs.google.com/presentation/d/1NMzCp6xKdCh1HMn3z-17_hQnqbHZ392S9ZGAk96IBR4",
-        "paper": "/static/misc/privshare.pdf",
-        "code": "https://github.com/camelop/privshare-protocol",
-        "video": "https://www.youtube.com/watch?v=74sT54JIw6s&ab_channel=UCBRISELab",
-        "venue": "preprint"
-    },
-    {
         "title": "Quartz: A Framework for Engineering Secure Smart Contracts",
         "authors": [
             {
