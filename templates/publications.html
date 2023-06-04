@@ -7,7 +7,6 @@
   <br />
   <span>
     {% for author in pub.authors %}
-      {% if loop.last %}and{% endif %}
       {% if author.site %}
         <a href="{{ author.site }}">{{ author.name }}</a>{% if not loop.last %},{% endif %}
       {% else %}
@@ -18,10 +17,6 @@
   <br />
   <span>
     {{ pub.year }} {% if pub.venue %} &bull; {{ pub.venue }} {% endif %}
-    {% if "PrivShare" in pub.title %}
-      &bull; 2021 JP Morgan Faculty Research Award
-      (<a href="https://www.jpmorgan.com/technology/artificial-intelligence/research-awards/faculty-research-awards-2021">press</a>) 
-    {% endif %}
   </span>
   <br />
   <span>
