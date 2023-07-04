@@ -1,5 +1,31 @@
 [
     {
+        "title": "InterCode: Standardizing and Benchmarking Interactive Coding with Execution Feedback",
+        "authors": [
+            {
+                "name": "John Yang"
+            },
+            {
+                "name": "Akshara Prabhakar",
+                "site": "https://aksh555.github.io/"
+            },
+            {
+                "name": "Karthik Narasimhan",
+                "site": "https://www.cs.princeton.edu/~karthikn/"
+            },
+            {
+                "name": "Shunyu Yao",
+                "site": "https://ysymyth.github.io/"
+            }
+        ],
+        "year": 2023,
+        "site": "https://intercode-benchmark.github.io/",
+        "venue": "preprint",
+        "paper": "https://arxiv.org/abs/2306.14898",
+        "code": "https://github.com/princeton-nlp/intercode",
+        "tweet": "https://twitter.com/ShunyuYao12/status/1675903408727896066"
+    },
+    {
         "title": "Referral Augmentation for Zero-Shot Information Retrieval",
         "authors": [
             {

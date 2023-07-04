@@ -48,6 +48,11 @@
       <button>Video</button>
     </a>
     {% endif %}
+    {% if pub.tweet %}
+    <a href="{{ pub.tweet }}">
+      <button>Tweet</button>
+    </a>
+    {% endif %}
   </span>
 </div>
 {% endfor %} {% endblock content %}
