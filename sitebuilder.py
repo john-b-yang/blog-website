@@ -93,16 +93,6 @@ def cs2():
     with open('data/teach/cs2.json') as cs2_json:
         return render_template('classes/cs2.html', info=json.load(cs2_json))
 
-@app.route('/cos126/')
-def cos126():
-    with open('data/teach/cos126.json') as cos126_json:
-        return render_template('classes/cos126.html', info=json.load(cos126_json))
-
-@app.route('/cos324/')
-def cos324():
-    with open('data/teach/cos324.json') as cos324_json:
-        return render_template('classes/cos324.html', info=json.load(cos324_json))
-
 @app.route('/resources/')
 def resources():
     return render_template('resources.html')
