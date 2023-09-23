@@ -1,121 +1,127 @@
-[
-    {
-        "title": "InterCode: Standardizing and Benchmarking Interactive Coding with Execution Feedback",
-        "authors": [
-            {
-                "name": "John Yang"
-            },
-            {
-                "name": "Akshara Prabhakar",
-                "site": "https://aksh555.github.io/"
-            },
-            {
-                "name": "Karthik Narasimhan",
-                "site": "https://www.cs.princeton.edu/~karthikn/"
-            },
-            {
-                "name": "Shunyu Yao",
-                "site": "https://ysymyth.github.io/"
-            }
-        ],
-        "year": 2023,
-        "site": "https://intercode-benchmark.github.io/",
-        "venue": "preprint",
-        "paper": "https://arxiv.org/abs/2306.14898",
-        "code": "https://github.com/princeton-nlp/intercode",
-        "tweet": "https://twitter.com/ShunyuYao12/status/1675903408727896066"
-    },
-    {
-        "title": "Referral Augmentation for Zero-Shot Information Retrieval",
-        "authors": [
-            {
-                "name": "Michael William Tang",
-                "site": "https://michaeltang.xyz/"
-            },
-            {
-                "name": "Shunyu Yao",
-                "site": "https://ysymyth.github.io/"
-            },
-            {
-                "name": "John Yang"
-            },
-            {
-                "name": "Karthik Narasimhan",
-                "site": "https://www.cs.princeton.edu/~karthikn/"
-            }
-        ],
-        "year": 2023,
-        "venue": "preprint",
-        "paper": "https://arxiv.org/abs/2305.15098",
-        "code": "https://github.com/michaelwilliamtang/referral-augment",
-        "tweet": "https://twitter.com/ShunyuYao12/status/1661340889724100611"
-    },
-    {
-        "title": "Towards an Enhanced, Faithful, and Adaptable Web Interaction Environment",
-        "authors": [
-            {
-                "name": "John Yang"
-            }, {
-                "name": "Howard Chen",
-                "site": "https://howard50b.github.io/"
-            }, {
-                "name": "Karthik Narasimhan",
-                "site": "https://www.cs.princeton.edu/~karthikn/"
-            }
-        ],
-        "year": 2022,
-        "venue": "Language & Reinforcement Learning (LaReL) Workshop @ NeurIPS",
-        "paper": "https://openreview.net/pdf?id=y-F1kab2Its",
-        "code": "https://github.com/princeton-nlp/attribute-tagging",
-        "poster": "/static/pictures/LaReL-poster.png"
-    },
-    {
-        "title": "WebShop: Towards Scalable Real-World Web Interaction with Grounded Language Agents",
-        "authors": [
-            {
-                "name": "Shunyu Yao",
-                "site": "https://ysymyth.github.io/"
-            }, {
-                "name": "Howard Chen",
-                "site": "https://howard50b.github.io/"
-            }, {
-                "name": "John Yang"
-            }, {
-                "name": "Karthik Narasimhan",
-                "site": "https://www.cs.princeton.edu/~karthikn/"
-            }
-        ],
-        "year": 2022,
-        "site": "https://webshop-pnlp.github.io/",
-        "paper": "https://arxiv.org/pdf/2207.01206.pdf",
-        "code": "https://github.com/princeton-nlp/WebShop",
-        "venue": "NeurIPS",
-        "poster": "/static/pictures/ws-poster.png",
-        "tweet": "https://twitter.com/ShunyuYao12/status/1546220013186596864"
-    },
-    {
-        "title": "Quartz: A Framework for Engineering Secure Smart Contracts",
-        "authors": [
-            {
-                "name": "John Kolb",
-                "site": "https://jhkolb.github.io/"
-            },
-            {
-                "name": "John Yang"
-            },
-            {
-                "name": "Randy H Katz",
-                "site": "https://people.eecs.berkeley.edu/~randy/"
-            },
-            {
-                "name": "David E Culler",
-                "site": "https://people.eecs.berkeley.edu/~culler/"
-            }
-        ],
-        "year": 2020,
-        "site": "https://www2.eecs.berkeley.edu/Pubs/TechRpts/2020/EECS-2020-178.html",
-        "paper": "https://www2.eecs.berkeley.edu/Pubs/TechRpts/2020/EECS-2020-178.pdf",
-        "code": "https://github.com/jhkolb/quartz",
-        "venue": "EECS Department, University of California, Berkeley, Tech. Rep. UCB/EECS-2020-178"
-    }
-]
+{
+    "Preprints": [
+        {
+            "title": "Referral Augmentation for Zero-Shot Information Retrieval",
+            "authors": [
+                {
+                    "name": "Michael William Tang",
+                    "site": "https://michaeltang.xyz/"
+                },
+                {
+                    "name": "Shunyu Yao",
+                    "site": "https://ysymyth.github.io/"
+                },
+                {
+                    "name": "John Yang"
+                },
+                {
+                    "name": "Karthik Narasimhan",
+                    "site": "https://www.cs.princeton.edu/~karthikn/"
+                }
+            ],
+            "year": 2023,
+            "venue": "preprint",
+            "paper": "https://arxiv.org/abs/2305.15098",
+            "code": "https://github.com/michaelwilliamtang/referral-augment",
+            "tweet": "https://twitter.com/ShunyuYao12/status/1661340889724100611"
+        }
+    ],
+    "Peer Reviewed": [
+        {
+            "title": "InterCode: Standardizing and Benchmarking Interactive Coding with Execution Feedback",
+            "authors": [
+                {
+                    "name": "John Yang"
+                },
+                {
+                    "name": "Akshara Prabhakar",
+                    "site": "https://aksh555.github.io/"
+                },
+                {
+                    "name": "Karthik Narasimhan",
+                    "site": "https://www.cs.princeton.edu/~karthikn/"
+                },
+                {
+                    "name": "Shunyu Yao",
+                    "site": "https://ysymyth.github.io/"
+                }
+            ],
+            "year": 2023,
+            "site": "https://intercode-benchmark.github.io/",
+            "venue": "NeurIPS (Datasets & Benchmarks)",
+            "paper": "https://arxiv.org/abs/2306.14898",
+            "code": "https://github.com/princeton-nlp/intercode",
+            "tweet": "https://twitter.com/ShunyuYao12/status/1675903408727896066"
+        },
+        {
+            "title": "WebShop: Towards Scalable Real-World Web Interaction with Grounded Language Agents",
+            "authors": [
+                {
+                    "name": "Shunyu Yao",
+                    "site": "https://ysymyth.github.io/"
+                }, {
+                    "name": "Howard Chen",
+                    "site": "https://howard50b.github.io/"
+                }, {
+                    "name": "John Yang"
+                }, {
+                    "name": "Karthik Narasimhan",
+                    "site": "https://www.cs.princeton.edu/~karthikn/"
+                }
+            ],
+            "year": 2022,
+            "site": "https://webshop-pnlp.github.io/",
+            "paper": "https://arxiv.org/pdf/2207.01206.pdf",
+            "code": "https://github.com/princeton-nlp/WebShop",
+            "venue": "NeurIPS",
+            "poster": "/static/pictures/ws-poster.png",
+            "tweet": "https://twitter.com/ShunyuYao12/status/1546220013186596864"
+        },
+        {
+            "title": "Quartz: A Framework for Engineering Secure Smart Contracts",
+            "authors": [
+                {
+                    "name": "John Kolb",
+                    "site": "https://jhkolb.github.io/"
+                },
+                {
+                    "name": "John Yang"
+                },
+                {
+                    "name": "Randy H Katz",
+                    "site": "https://people.eecs.berkeley.edu/~randy/"
+                },
+                {
+                    "name": "David E Culler",
+                    "site": "https://people.eecs.berkeley.edu/~culler/"
+                }
+            ],
+            "year": 2020,
+            "site": "https://www2.eecs.berkeley.edu/Pubs/TechRpts/2020/EECS-2020-178.html",
+            "paper": "https://www2.eecs.berkeley.edu/Pubs/TechRpts/2020/EECS-2020-178.pdf",
+            "code": "https://github.com/jhkolb/quartz",
+            "venue": "EECS Department, University of California, Berkeley, Tech. Rep. UCB/EECS-2020-178"
+        }
+    ],
+    "Workshop": [
+        {
+            "title": "Towards an Enhanced, Faithful, and Adaptable Web Interaction Environment",
+            "authors": [
+                {
+                    "name": "John Yang"
+                }, {
+                    "name": "Howard Chen",
+                    "site": "https://howard50b.github.io/"
+                }, {
+                    "name": "Karthik Narasimhan",
+                    "site": "https://www.cs.princeton.edu/~karthikn/"
+                }
+            ],
+            "year": 2022,
+            "venue": "Language & Reinforcement Learning (LaReL) Workshop @ NeurIPS",
+            "paper": "https://openreview.net/pdf?id=y-F1kab2Its",
+            "code": "https://github.com/princeton-nlp/attribute-tagging",
+            "poster": "/static/pictures/LaReL-poster.png"
+        }
+    ]
+}

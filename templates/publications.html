@@ -1,7 +1,10 @@
 {% extends "base.html" %} {% block content %}
 <h3 class="header">Publications ✒️</h3>
 
-{% for pub in pubs %}
+{% for group in pubs %}
+<b style="color:#a9a9a9">{{ group }}</b>
+<hr style="border: 1px solid gray" />
+{% for pub in pubs[group] %}
 <div class="publication">
   <b>{{ pub.title }}</b>
   <br />
@@ -55,4 +58,6 @@
     {% endif %}
   </span>
 </div>
-{% endfor %} {% endblock content %}
+{% endfor %}
+{% endfor %}
+{% endblock content %}
