@@ -59,7 +59,7 @@
             ],
             "year": 2023,
             "venue": "preprint",
-            "paper": "/static/misc/Intercode_CTF.pdf",
+            "paper": "/static/misc/preprint_InterCode_CTF.pdf",
             "code": "https://github.com/princeton-nlp/intercode"
         },
         {
@@ -184,6 +184,19 @@
             "paper": "https://openreview.net/pdf?id=y-F1kab2Its",
             "code": "https://github.com/princeton-nlp/attribute-tagging",
             "poster": "/static/pictures/LaReL-poster.png"
+        }
+    ],
+    "Miscellaneous": [
+        {
+            "title": "Learning Language through Interactions with the Digital World",
+            "authors": [
+                {
+                    "name": "John Yang"
+                }
+            ],
+            "year": 2022,
+            "paper": "/static/misc/thesis_learn_digital.pdf",
+            "venue": "M.S.E. Thesis | Princeton University"
         }
     ]
 }
