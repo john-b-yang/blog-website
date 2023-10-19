@@ -39,6 +39,34 @@
             "tweet": "https://twitter.com/jyangballin/status/1711822353473437953"
         },
         {
+            "title": "Language Agents as Hackers: Evaluating Cybersecurity Skills with Capture the Flag",
+            "authors": [
+                {
+                    "name": "John Yang"
+                },
+                {
+                    "name": "Akshara Prabhakar",
+                    "site": "https://aksh555.github.io/"
+                },
+                {
+                    "name": "Shunyu Yao",
+                    "site": "https://ysymyth.github.io/"
+                },
+                {
+                    "name": "Kexin Pei",
+                    "site": "https://sites.google.com/site/kexinpeisite/"
+                },
+                {
+                    "name": "Karthik Narasimhan",
+                    "site": "https://www.cs.princeton.edu/~karthikn/"
+                }
+            ],
+            "year": 2023,
+            "venue": "preprint",
+            "paper": "/static/misc/preprint_InterCode_CTF.pdf",
+            "code": "https://github.com/princeton-nlp/intercode"
+        },
+        {
             "title": "Referral Augmentation for Zero-Shot Information Retrieval",
             "authors": [
                 {
