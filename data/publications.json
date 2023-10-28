@@ -39,34 +39,6 @@
             "tweet": "https://twitter.com/jyangballin/status/1711822353473437953"
         },
         {
-            "title": "Language Agents as Hackers: Evaluating Cybersecurity Skills with Capture the Flag",
-            "authors": [
-                {
-                    "name": "John Yang"
-                },
-                {
-                    "name": "Akshara Prabhakar",
-                    "site": "https://aksh555.github.io/"
-                },
-                {
-                    "name": "Shunyu Yao",
-                    "site": "https://ysymyth.github.io/"
-                },
-                {
-                    "name": "Kexin Pei",
-                    "site": "https://sites.google.com/site/kexinpeisite/"
-                },
-                {
-                    "name": "Karthik Narasimhan",
-                    "site": "https://www.cs.princeton.edu/~karthikn/"
-                }
-            ],
-            "year": 2023,
-            "venue": "preprint",
-            "paper": "/static/misc/preprint_InterCode_CTF.pdf",
-            "code": "https://github.com/princeton-nlp/intercode"
-        },
-        {
             "title": "Referral Augmentation for Zero-Shot Information Retrieval",
             "authors": [
                 {
@@ -171,6 +143,36 @@
     ],
     "Workshop": [
         {
+            "title": "Language Agents as Hackers: Evaluating Cybersecurity Skills with Capture the Flag",
+            "authors": [
+                {
+                    "name": "John Yang"
+                },
+                {
+                    "name": "Akshara Prabhakar",
+                    "site": "https://aksh555.github.io/"
+                },
+                {
+                    "name": "Shunyu Yao",
+                    "site": "https://ysymyth.github.io/"
+                },
+                {
+                    "name": "Kexin Pei",
+                    "site": "https://sites.google.com/site/kexinpeisite/"
+                },
+                {
+                    "name": "Karthik Narasimhan",
+                    "site": "https://www.cs.princeton.edu/~karthikn/"
+                }
+            ],
+            "year": 2023,
+            "workshop": "Multi-Agent Security Workshop",
+            "venue": "NeurIPS 2023",
+            "venue_link": "https://sites.google.com/view/masec",
+            "paper": "/static/misc/preprint_InterCode_CTF.pdf",
+            "code": "https://github.com/princeton-nlp/intercode"
+        },
+        {
             "title": "Towards an Enhanced, Faithful, and Adaptable Web Interaction Environment",
             "authors": [
                 {
@@ -184,7 +186,9 @@
                 }
             ],
             "year": 2022,
-            "venue": "Language & Reinforcement Learning (LaReL) Workshop @ NeurIPS",
+            "workshop": "Language & Reinforcement Learning Workshop",
+            "venue": "NeurIPS 2022",
+            "venue_link": "https://larel-workshop.github.io/",
             "paper": "https://openreview.net/pdf?id=y-F1kab2Its",
             "code": "https://github.com/princeton-nlp/attribute-tagging",
             "poster": "/static/pictures/LaReL-poster.png"

@@ -19,7 +19,15 @@
   </span>
   <br />
   <span>
-    {{ pub.year }} {% if pub.venue %} &bull; {{ pub.venue }} {% endif %}
+    {{ pub.year }} 
+    {% if pub.venue_link and pub.venue %}
+    &bull;
+    <a href="{{ pub.venue_link }}">
+      {{ pub.workshop }}
+    </a> @ {{ pub.venue }}
+    {% elif pub.venue %}
+    &bull; {{ pub.workshop }} @ {{ pub.venue }}
+    {% endif %}
   </span>
   <br />
   <span>
