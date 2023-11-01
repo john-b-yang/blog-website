@@ -28,6 +28,9 @@
     {% elif pub.venue %}
     &bull; {{ pub.venue }}
     {% endif %}
+    {% if pub.award %}
+    &bull; <span style="color:red;">{{ pub.award }}</span>
+    {% endif %}
   </span>
   <br />
   <span>

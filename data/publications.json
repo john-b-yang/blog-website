@@ -170,7 +170,8 @@
             "venue": "NeurIPS 2023",
             "venue_link": "https://sites.google.com/view/masec",
             "paper": "/static/misc/preprint_InterCode_CTF.pdf",
-            "code": "https://github.com/princeton-nlp/intercode"
+            "code": "https://github.com/princeton-nlp/intercode",
+            "award": "Oral"
         },
         {
             "title": "Towards an Enhanced, Faithful, and Adaptable Web Interaction Environment",
