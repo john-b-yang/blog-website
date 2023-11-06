@@ -33,7 +33,7 @@ hr.fade {
 }
 
 .container {
-  width: 50%;
+  margin: 0 auto;
 }
 
 .header {
@@ -345,4 +345,25 @@ hr.fade {
 
 .block-selected a {
   color: white;
+}
+
+/* ------ RESPONSIVE STYLES ------ */
+
+/* Phone */
+@media (min-width: 450px) {
+}
+
+/* Tablet */
+@media (min-width: 769px) {
+}
+
+/* Laptop */
+@media (min-width: 960px) {
+}
+
+/* Desktop */
+@media (min-width: 1140px) {
+  .container {
+    max-width: 50%;
+  }
 }

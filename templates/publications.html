@@ -37,19 +37,14 @@
     {% if not pub.paper and not pub.code and not pub.site and not pub.video %}
     <i>Paper details coming soon</i>
     {% endif %}
-    {% if pub.paper %}
-    <a href="{{ pub.paper }}">
-      <button>PDF</button>
-    </a>
-    {% endif %}
     {% if pub.code %}
     <a href="{{ pub.code }}">
       <button>Code</button>
     </a>
     {% endif %}
-    {% if pub.site %}
-    <a href="{{ pub.site }}">
-      <button>Site</button>
+    {% if pub.paper %}
+    <a href="{{ pub.paper }}">
+      <button>PDF</button>
     </a>
     {% endif %}
     {% if pub.poster %}
@@ -57,9 +52,14 @@
       <button>Poster</button>
     </a>
     {% endif %}
-    {% if pub.video %}
-    <a href="{{ pub.video }}">
-      <button>Video</button>
+    {% if pub.site %}
+    <a href="{{ pub.site }}">
+      <button>Site</button>
+    </a>
+    {% endif %}
+    {% if pub.talk %}
+    <a href="{{ pub.talk }}">
+      <button>Talk</button>
     </a>
     {% endif %}
     {% if pub.tweet %}
