@@ -90,7 +90,8 @@
             "venue": "NeurIPS (Datasets & Benchmarks)",
             "paper": "https://arxiv.org/abs/2306.14898",
             "code": "https://github.com/princeton-nlp/intercode",
-            "tweet": "https://twitter.com/ShunyuYao12/status/1675903408727896066"
+            "tweet": "https://twitter.com/ShunyuYao12/status/1675903408727896066",
+            "poster": "/static/pictures/posters/2023-InterCode.pdf"
         },
         {
             "title": "WebShop: Towards Scalable Real-World Web Interaction with Grounded Language Agents",
@@ -113,7 +114,7 @@
             "paper": "https://arxiv.org/pdf/2207.01206.pdf",
             "code": "https://github.com/princeton-nlp/WebShop",
             "venue": "NeurIPS",
-            "poster": "/static/pictures/ws-poster.png",
+            "poster": "/static/pictures/posters/2022-WebShop.png",
             "tweet": "https://twitter.com/ShunyuYao12/status/1546220013186596864"
         },
         {
@@ -172,6 +173,7 @@
             "venue_link": "https://sites.google.com/view/masec",
             "paper": "/static/misc/preprint_InterCode_CTF.pdf",
             "code": "https://github.com/princeton-nlp/intercode",
+            "poster": "/static/pictures/posters/2023-MASec.pdf",
             "award": "Oral"
         },
         {
@@ -193,7 +195,7 @@
             "venue_link": "https://larel-workshop.github.io/",
             "paper": "https://openreview.net/pdf?id=y-F1kab2Its",
             "code": "https://github.com/princeton-nlp/attribute-tagging",
-            "poster": "/static/pictures/LaReL-poster.png"
+            "poster": "/static/pictures/posters/2022-LaReL.png"
         }
     ],
     "Miscellaneous": [
