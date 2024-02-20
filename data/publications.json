@@ -31,11 +31,11 @@
             "title": "SWE-bench: Can Language Models Resolve Real-World Github Issues?",
             "authors": [
                 {
-                    "name": "John Yang*"
-                },
-                {
                     "name": "Carlos E. Jimenez*",
                     "site": "http://www.carlosejimenez.com/"
+                },
+                {
+                    "name": "John Yang*"
                 },
                 {
                     "name": "Alexander Wettig",
@@ -98,10 +98,10 @@
             "title": "WebShop: Towards Scalable Real-World Web Interaction with Grounded Language Agents",
             "authors": [
                 {
-                    "name": "Shunyu Yao",
+                    "name": "Shunyu Yao*",
                     "site": "https://ysymyth.github.io/"
                 }, {
-                    "name": "Howard Chen",
+                    "name": "Howard Chen*",
                     "site": "https://howard50b.github.io/"
                 }, {
                     "name": "John Yang"
