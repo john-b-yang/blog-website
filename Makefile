@@ -1,5 +1,5 @@
 server = sitebuilder.py
-build_dir = WangZhan
+build_dir = repo
 
 # usage: make preview
 preview:
