@@ -14,7 +14,7 @@ push:
 # usage: make deploy m="commit message"
 deploy:
 	python $(server) build && \
-	cd ../Website && \
+	cd ../deploy && \
 	git pull origin master && \
 	cp -r ../$(build_dir)/build/* . && \
 	cp -r ../$(build_dir)/.gitignore . && \
