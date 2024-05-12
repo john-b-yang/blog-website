@@ -1,6 +1,44 @@
 {
     "Preprints": [
         {
+            "title": "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering",
+            "authors": [
+                {
+                    "name": "John Yang*"
+                },
+                {
+                    "name": "Carlos E. Jimenez*",
+                    "site": "http://www.carlosejimenez.com/"
+                },
+                {
+                    "name": "Alexander Wettig",
+                    "site": "https://www.cs.princeton.edu/~awettig/"
+                },
+                {
+                    "name": "Kilian Lieret",
+                    "site": "https://www.lieret.net/"
+                },
+                {
+                    "name": "Shunyu Yao",
+                    "site": "https://ysymyth.github.io/"
+                },
+                {
+                    "name": "Karthik Narasimhan",
+                    "site": "https://www.cs.princeton.edu/~karthikn/"
+                },
+                {
+                    "name": "Ofir Press",
+                    "site": "https://ofir.io/"
+                }
+            ],
+            "year": 2024,
+            "venue": "preprint",
+            "paper": "https://swe-agent.com/paper.pdf",
+            "code": "https://github.com/princeton-nlp/SWE-agent",
+            "site": "https://swe-agent.com/",
+            "tweet": "https://twitter.com/jyangballin/status/1775114444370051582"
+        },
+        {
             "title": "Referral Augmentation for Zero-Shot Information Retrieval",
             "authors": [
                 {
@@ -65,7 +103,8 @@
             "site": "https://swe-bench.github.io",
             "talk": "https://www.youtube.com/watch?v=DrLdvbkgmeA",
             "tweet": "https://twitter.com/jyangballin/status/1711822353473437953",
-            "award": "Oral"
+            "award": "Oral",
+            "poster": ""
         },
         {
             "title": "InterCode: Standardizing and Benchmarking Interactive Coding with Execution Feedback",
@@ -117,31 +156,6 @@
             "venue": "NeurIPS",
             "poster": "/static/pictures/posters/2022-WebShop.png",
             "tweet": "https://twitter.com/ShunyuYao12/status/1546220013186596864"
-        },
-        {
-            "title": "Quartz: A Framework for Engineering Secure Smart Contracts",
-            "authors": [
-                {
-                    "name": "John Kolb",
-                    "site": "https://jhkolb.github.io/"
-                },
-                {
-                    "name": "John Yang"
-                },
-                {
-                    "name": "Randy H Katz",
-                    "site": "https://people.eecs.berkeley.edu/~randy/"
-                },
-                {
-                    "name": "David E Culler",
-                    "site": "https://people.eecs.berkeley.edu/~culler/"
-                }
-            ],
-            "year": 2020,
-            "site": "https://www2.eecs.berkeley.edu/Pubs/TechRpts/2020/EECS-2020-178.html",
-            "paper": "https://www2.eecs.berkeley.edu/Pubs/TechRpts/2020/EECS-2020-178.pdf",
-            "code": "https://github.com/jhkolb/quartz",
-            "venue": "EECS Department, University of California, Berkeley, Tech. Rep. UCB/EECS-2020-178"
         }
     ],
     "Workshop": [
@@ -210,6 +224,31 @@
             "year": 2022,
             "paper": "/static/misc/thesis_learn_digital.pdf",
             "venue": "M.S.E. Thesis | Princeton University"
+        },
+        {
+            "title": "Quartz: A Framework for Engineering Secure Smart Contracts",
+            "authors": [
+                {
+                    "name": "John Kolb",
+                    "site": "https://jhkolb.github.io/"
+                },
+                {
+                    "name": "John Yang"
+                },
+                {
+                    "name": "Randy H Katz",
+                    "site": "https://people.eecs.berkeley.edu/~randy/"
+                },
+                {
+                    "name": "David E Culler",
+                    "site": "https://people.eecs.berkeley.edu/~culler/"
+                }
+            ],
+            "year": 2020,
+            "site": "https://www2.eecs.berkeley.edu/Pubs/TechRpts/2020/EECS-2020-178.html",
+            "paper": "https://www2.eecs.berkeley.edu/Pubs/TechRpts/2020/EECS-2020-178.pdf",
+            "code": "https://github.com/jhkolb/quartz",
+            "venue": "EECS Department, University of California, Berkeley, Tech. Rep. UCB/EECS-2020-178"
         }
     ]
 }
