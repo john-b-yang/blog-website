@@ -104,7 +104,7 @@
             "talk": "https://www.youtube.com/watch?v=DrLdvbkgmeA",
             "tweet": "https://twitter.com/jyangballin/status/1711822353473437953",
             "award": "Oral",
-            "poster": ""
+            "poster": "/static/pictures/posters/2024-SWEbench.pdf"
         },
         {
             "title": "InterCode: Standardizing and Benchmarking Interactive Coding with Execution Feedback",
