@@ -37,7 +37,9 @@
             "code": "https://github.com/princeton-nlp/SWE-agent",
             "site": "https://swe-agent.com/",
             "tweet": "https://twitter.com/jyangballin/status/1775114444370051582"
-        },
+        }
+    ],
+    "Peer Reviewed": [
         {
             "title": "Referral Augmentation for Zero-Shot Information Retrieval",
             "authors": [
@@ -57,14 +59,12 @@
                     "site": "https://www.cs.princeton.edu/~karthikn/"
                 }
             ],
-            "year": 2023,
-            "venue": "preprint",
+            "year": 2024,
+            "venue": "ACL (Findings)",
             "paper": "https://arxiv.org/abs/2305.15098",
             "code": "https://github.com/michaelwilliamtang/referral-augment",
             "tweet": "https://twitter.com/ShunyuYao12/status/1661340889724100611"
-        }
-    ],
-    "Peer Reviewed": [
+        },
         {
             "title": "SWE-bench: Can Language Models Resolve Real-World Github Issues?",
             "authors": [
