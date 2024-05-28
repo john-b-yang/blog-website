@@ -1,5 +1,5 @@
 {% extends "base.html" %} {% block content %}
-<h3 class="header">Publications ✒️</h3>
+<h3 class="header">Publications</h3>
 
 {% for group in pubs %}
 <b style="color:#a9a9a9">{{ group }}</b>
@@ -13,7 +13,7 @@
       {% if author.site %}
         <a href="{{ author.site }}">{{ author.name }}</a>{% if not loop.last %},{% endif %}
       {% else %}
-        {{ author.name }}{% if not loop.last %},{% endif %}
+        <u>{{ author.name }}</u>{% if not loop.last %},{% endif %}
       {% endif %}
     {% endfor %}
   </span>

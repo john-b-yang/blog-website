@@ -1,26 +1,33 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <p>
-    👋 Hello! I'm John.
-  </p>
-  <p>
-    Currently, I'm a research assistant working at <span style="color:#f58025;">Princeton University</span>,
-    advised by Professor <a href="https://www.cs.princeton.edu/~karthikn/">Karthik Narasimhan</a>.
-  </p>
-  <p>
-    I'm also an incoming 1st year Ph.D. student in Computer Science at <span style="color:#E04F39">Stanford University</span>.
-  </p>
-  <p>
-    Previously, I completed my M.S.E. in Computer Science at <span style="color:#f58025;">Princeton University</span>.
-    Before that, I finished my B.S. in Computer Science at the <span style="color:#FDB515;">University of California, </span>
-    <span style="color:#00B0DA;">Berkeley</span>.
-  </p>
-  <p>
-    I'm interested in Language Agents, Language Model Evaluation, and Software Engineering.
-  </p>
-  <p>
-    Thanks for visiting! Check out a couple posts and feel free to
-    get in touch through Twitter or LinkedIn.
-  </p>
+  <div style="display:flex; flex-wrap:wrap; align-items: flex-start;">
+    <img src="/static/profpic.jpg" style="border-radius: 50%;height: 10em;width: auto;margin: 1em 2em 0 0" />
+    <div style="flex: 1">
+      <p>
+        👋 Hello! I'm John.
+      </p>
+      <p>
+        I'm an incoming 1st year Ph.D. student in Computer Science at <span style="color:#E04F39">Stanford University</span> 🌲.
+      </p>
+      <p>
+        Previously, I completed my M.S.E. in Computer Science at <span style="color:#f58025;">Princeton University</span> 🐯,
+        advised by Professor <a href="https://www.cs.princeton.edu/~karthikn/">Karthik Narasimhan</a>.
+        Before that, I finished my B.S. in Computer Science at the <span style="color:#FDB515;">University of California, </span>
+        <span style="color:#00B0DA;">Berkeley</span> 🐻.
+      </p>
+      <p>
+        I'm interested in Language Agents, Language Model Evaluation, and Software Engineering.
+      </p>
+      <p>
+        If you'd like to get in touch, feel free to reach out through
+        <a href="https://x.com/jyangballin">Twitter</a>,
+        <a href="https://www.linkedin.com/in/jyang20/">LinkedIn</a>,
+        or schedule a meeting through <a href="https://calendly.com/byjohnyang/20min">Calendly</a>.
+      </p>
+      <p>
+        Thanks for visiting!
+      </p>
+    </div>
+  </div>
 {% endblock content %}

@@ -359,11 +359,7 @@ hr.fade {
 
 /* Laptop */
 @media (min-width: 960px) {
-}
-
-/* Desktop */
-@media (min-width: 1140px) {
   .container {
-    max-width: 50%;
+    max-width: 960px;
   }
 }
