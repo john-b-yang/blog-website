@@ -215,6 +215,29 @@
     ],
     "Miscellaneous": [
         {
+            "title": "Introducing SWE-bench Verified",
+            "authors": [
+                {"name": "Neil Chowdhury*", "site": "https://nchowdhury.com/"},
+                {"name": "James Aung*", "site": "https://jamesaung.com/"},
+                {"name": "Chan Jun Shern*", "site": "https://junshern.github.io/"},
+                {"name": "Oliver Jaffe*", "site": "https://www.linkedin.com/in/ollie-jaffe-216247135/"},
+                {"name": "Dane Sherburn*", "site": "http://danesherbs.com/"},
+                {"name": "Giulio Starace*", "site": "https://www.giuliostarace.com/"},
+                {"name": "Evan Mays", "site": "https://evanmays.com/"},
+                {"name": "Rachel Dias", "site": "https://www.linkedin.com/in/rachel-dias-5a2173142/"},
+                {"name": "Marwan Aljubeh", "site": "https://www.linkedin.com/in/maljubeh"},
+                {"name": "Mia Glaese", "site": "https://www.linkedin.com/in/amelia-glaese/"},
+                {"name": "Carlos E. Jimenez", "site": "https://www.carlosejimenez.com/"},
+                {"name": "John Yang"},
+                {"name": "Kevin Liu", "site": "https://kliu.io/"},
+                {"name": "Aleksander Madry", "site": "https://madry.mit.edu/"}
+            ],
+            "year": 2024,
+            "paper": "https://openai.com/index/introducing-swe-bench-verified/",
+            "tweet": "https://x.com/OpenAI/status/1823404955933548818",
+            "venue": "OpenAI Technical Blog"
+        },
+        {
             "title": "Learning Language through Interactions with the Digital World",
             "authors": [
                 {
