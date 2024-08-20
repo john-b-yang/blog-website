@@ -12,7 +12,7 @@
     {% for author in pub.authors %}
       {% if author.site %}
         <a href="{{ author.site }}">{{ author.name }}</a>{% if not loop.last %},{% endif %}
-      {% elif author.name == "John Yang" %}
+      {% elif author.name == "John Yang" or author.name == "John Yang*" %}
         <u>{{ author.name }}</u>{% if not loop.last %},{% endif %}
       {% else %}
         {{ author.name }}{% if not loop.last %},{% endif %}
