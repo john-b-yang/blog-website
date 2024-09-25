@@ -1,5 +1,5 @@
 {
-    "Preprints": [
+    "Peer Reviewed": [
         {
             "title": "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering",
             "authors": [
@@ -32,14 +32,12 @@
                 }
             ],
             "year": 2024,
-            "venue": "preprint",
+            "venue": "NeurIPS",
             "paper": "https://arxiv.org/abs/2405.15793",
             "code": "https://github.com/princeton-nlp/SWE-agent",
             "site": "https://swe-agent.com/",
             "tweet": "https://twitter.com/jyangballin/status/1775114444370051582"
-        }
-    ],
-    "Peer Reviewed": [
+        },
         {
             "title": "Referral Augmentation for Zero-Shot Information Retrieval",
             "authors": [
