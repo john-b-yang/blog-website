@@ -56,10 +56,10 @@
                 }
             ],
             "year": 2024,
-            "paper": "",
+            "paper": "https://www.swebench.com/assets/paper.pdf",
             "code": "https://github.com/princeton-nlp/SWE-bench",
             "site": "https://swebench.com/multimodal",
-            "tweet": "",
+            "tweet": "https://x.com/jyangballin/status/1843285832263979470",
             "representative": true
         },
         {
