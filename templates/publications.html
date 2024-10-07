@@ -1,12 +1,12 @@
 {% extends "base.html" %} {% block content %}
 <h3 class="header">Publications</h3>
-
+<p>💡 = Representative Work</p>
 {% for group in pubs %}
 <b style="color:#a9a9a9">{{ group }}</b>
 <hr style="border: 1px solid gray" />
 {% for pub in pubs[group] %}
 <div class="publication">
-  <b>{{ pub.title }}</b>
+  <b>{% if pub.representative %}💡 {% endif %}{{ pub.title }}</b>
   <br />
   <span>
     {% for author in pub.authors %}

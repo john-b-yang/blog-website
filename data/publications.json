@@ -1,4 +1,141 @@
 {
+    "Preprint": [
+        {
+            "title": "SWE-bench Multimodal: Do AI Systems Generalize to Visual Software Domains?",
+            "authors": [
+                {
+                    "name": "John Yang*"
+                },
+                {
+                    "name": "Carlos E. Jimenez*",
+                    "site": "http://www.carlosejimenez.com/"
+                },
+                {
+                    "name": "Alex L. Zhang",
+                    "site": "https://alexzhang13.github.io/"
+                },
+                {
+                    "name": "Kilian Lieret",
+                    "site": "https://www.lieret.net/"
+                },
+                {
+                    "name": "Joyce Yang",
+                    "site": "https://www.linkedin.com/in/joyce-b-yang/"
+                },
+                {
+                    "name": "Xindi Wu",
+                    "site": "https://xindiwu.github.io/"
+                },
+                {
+                    "name": "Ori Press",
+                    "site": "https://oripress.com/"
+                },
+                {
+                    "name": "Niklas Muennighoff",
+                    "site": "https://muennighoff.github.io/"
+                },
+                {
+                    "name": "Gabriel Synnaeve",
+                    "site": "https://syhw.github.io/"
+                },
+                {
+                    "name": "Karthik Narasimhan",
+                    "site": "https://karthikncode.github.io/"
+                },
+                {
+                    "name": "Diyi Yang",
+                    "site": "https://cs.stanford.edu/~diyiy/index.html"
+                },
+                {
+                    "name": "Sida I. Wang",
+                    "site": "https://www.sidaw.xyz/"
+                },
+                {
+                    "name": "Ofir Press",
+                    "site": "https://ofir.io/"
+                }
+            ],
+            "year": 2024,
+            "paper": "",
+            "code": "https://github.com/princeton-nlp/SWE-bench",
+            "site": "https://swebench.com/multimodal",
+            "tweet": "",
+            "representative": true
+        },
+        {
+            "title": "EnIGMA: Enhanced Interactive Generative Model Agent for CTF Challenges",
+            "authors": [
+                {
+                    "name": "Talor Abramovich",
+                    "site": "https://www.linkedin.com/in/talor-abramovich-492a01214"
+                },
+                {
+                    "name": "Meet Udeshi",
+                    "site": "https://mudeshi.in/"
+                },
+                {
+                    "name": "Minghao Shao",
+                    "site": "https://www.linkedin.com/in/shao-minghao/"
+                },
+                {
+                    "name": "Kilian Lieret",
+                    "site": "https://www.lieret.net/"
+                },
+                {
+                    "name": "Haoran Xi",
+                    "site": "https://www.linkedin.com/in/haoran-xi-22841327b/"
+                },
+                {
+                    "name": "Kimberly Milner",
+                    "site": "https://paperswithcode.com/search?q=author%3AKimberly+Milner"
+                },
+                {
+                    "name": "Sofija Jancheska",
+                    "site": "https://www.researchgate.net/profile/Sofija_Jancheska"
+                },
+                {
+                    "name": "John Yang"
+                },
+                {
+                    "name": "Carlos E. Jimenez",
+                    "site": "https://www.carlosejimenez.com/"
+                },
+                {
+                    "name": "Farshad Khorrami",
+                    "site": "https://engineering.nyu.edu/faculty/farshad-khorrami"
+                },
+                {
+                    "name": "Prashanth Krishnamurthy",
+                    "site": "https://engineering.nyu.edu/faculty/prashanth-krishnamurthy"
+                },
+                {
+                    "name": "Brendan Dolan-Gavitt",
+                    "site": "https://engineering.nyu.edu/faculty/brendan-dolan-gavitt"
+                },
+                {
+                    "name": "Muhammad Shafique",
+                    "site": "https://nyuad.nyu.edu/en/academics/divisions/engineering/faculty/muhammad-shafique.html"
+                },
+                {
+                    "name": "Karthik Narasimhan",
+                    "site": "https://karthikncode.github.io/"
+                },
+                {
+                    "name": "Ramesh Karri",
+                    "site": "https://engineering.nyu.edu/faculty/ramesh-karri"
+                },
+                {
+                    "name": "Ofir Press",
+                    "site": "https://ofir.io/about/"
+                }
+            ],
+            "year": 2024,
+            "paper": "https://arxiv.org/abs/2409.16165",
+            "code": "https://github.com/princeton-nlp/SWE-agent",
+            "site": "https://enigma-agent.github.io/",
+            "tweet": "https://x.com/AbramovichTalor/status/1838580314861384033"
+        }
+    ],
     "Peer Reviewed": [
         {
             "title": "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering",
@@ -36,7 +173,8 @@
             "paper": "https://arxiv.org/abs/2405.15793",
             "code": "https://github.com/princeton-nlp/SWE-agent",
             "site": "https://swe-agent.com/",
-            "tweet": "https://twitter.com/jyangballin/status/1775114444370051582"
+            "tweet": "https://twitter.com/jyangballin/status/1775114444370051582",
+            "representative": true
         },
         {
             "title": "Referral Augmentation for Zero-Shot Information Retrieval",
@@ -102,7 +240,8 @@
             "talk": "https://www.youtube.com/watch?v=DrLdvbkgmeA",
             "tweet": "https://twitter.com/jyangballin/status/1711822353473437953",
             "award": "Oral",
-            "poster": "/static/pictures/posters/2024-SWEbench.pdf"
+            "poster": "/static/pictures/posters/2024-SWEbench.pdf",
+            "representative": true
         },
         {
             "title": "InterCode: Standardizing and Benchmarking Interactive Coding with Execution Feedback",
@@ -129,7 +268,8 @@
             "paper": "https://arxiv.org/abs/2306.14898",
             "code": "https://github.com/princeton-nlp/intercode",
             "tweet": "https://twitter.com/ShunyuYao12/status/1675903408727896066",
-            "poster": "/static/pictures/posters/2023-InterCode.pdf"
+            "poster": "/static/pictures/posters/2023-InterCode.pdf",
+            "representative": true
         },
         {
             "title": "WebShop: Towards Scalable Real-World Web Interaction with Grounded Language Agents",
@@ -187,7 +327,8 @@
             "paper": "/static/misc/preprint_InterCode_CTF.pdf",
             "code": "https://github.com/princeton-nlp/intercode",
             "poster": "/static/pictures/posters/2023-MASec.pdf",
-            "award": "Best Paper Award"
+            "award": "Best Paper Award",
+            "representative": true
         },
         {
             "title": "Towards an Enhanced, Faithful, and Adaptable Web Interaction Environment",
