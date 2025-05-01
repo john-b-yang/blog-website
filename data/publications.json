@@ -1,6 +1,25 @@
 {
     "Preprint": [
         {
+            "title": "SWE-smith: Scaling Data for Software Engineering Agents",
+            "authors": [
+                {"name": "John Yang"},
+                {"name": "Kilian Lieret", "site": "https://www.lieret.net/"},
+                {"name": "Carlos E. Jimenez", "site": "http://www.carlosejimenez.com/"},
+                {"name": "Alexander Wettig", "site": "https://www.cs.princeton.edu/~awettig/"},
+                {"name": "Kabir Khandpur", "site": "https://kabirk.com/"},
+                {"name": "Yanzhe Zhang", "site": "https://stevenyzzhang.github.io/website/"},
+                {"name": "Binyuan Hui", "site": "https://huybery.github.io/"},
+                {"name": "Ofir Press", "site": "https://ofir.io/"},
+                {"name": "Ludwig Schmidt", "site": "https://people.csail.mit.edu/ludwigs/"},
+                {"name": "Diyi Yang", "site": "https://cs.stanford.edu/~diyiy/index.html"}
+            ],
+            "year": 2025,
+            "paper": "https://swesmith.com/assets/paper.pdf",
+            "code": "https://github.com/SWE-bench/SWE-smith",
+            "site": "https://swesmith.com/"
+        },
+        {
             "title": "Collaborative Gym: A Framework for Enabling and Evaluating Human-Agent Collaboration",
             "authors": [
                 {"name": "Yijia Shao", "site": "https://cs.stanford.edu/~shaoyj/"},
@@ -36,7 +55,8 @@
             "year": 2025,
             "venue": "ICLR",
             "paper": "https://arxiv.org/abs/2410.03859",
-            "code": "https://github.com/princeton-nlp/SWE-bench", "site": "https://swebench.com/multimodal",
+            "code": "https://github.com/princeton-nlp/SWE-bench",
+            "site": "https://swebench.com/multimodal",
             "tweet": "https://x.com/jyangballin/status/1843285832263979470"
         },
         {
@@ -79,7 +99,8 @@
             "year": 2024,
             "venue": "NeurIPS",
             "paper": "https://arxiv.org/abs/2405.15793",
-            "code": "https://github.com/princeton-nlp/SWE-agent", "site": "https://swe-agent.com/",
+            "code": "https://github.com/princeton-nlp/SWE-agent",
+            "site": "https://swe-agent.com/",
             "tweet": "https://twitter.com/jyangballin/status/1775114444370051582"
         },
         {
@@ -110,7 +131,8 @@
             "year": 2024,
             "venue": "ICLR",
             "paper": "https://arxiv.org/abs/2310.06770",
-            "code": "https://github.com/princeton-nlp/SWE-bench", "site": "https://swe-bench.github.io",
+            "code": "https://github.com/princeton-nlp/SWE-bench",
+            "site": "https://swe-bench.github.io",
             "talk": "https://www.youtube.com/watch?v=DrLdvbkgmeA",
             "tweet": "https://twitter.com/jyangballin/status/1711822353473437953",
             "award": "Oral",
