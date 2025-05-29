@@ -20,6 +20,21 @@
             "site": "https://swesmith.com/"
         },
         {
+            "title": "LongCodeBench: Evaluating Coding LLMs at 1M Context Windows",
+            "authors": [
+                {"name": "Stefano Rando*", "site": "https://www.linkedin.com/in/stefano-rando-94b852183/en"},
+                {"name": "Luca Romani*", "site": "https://phd.uniroma1.it/web/LUCA-ROMANI_nP2005510_EN.aspx"},
+                {"name": "Alessio Sampieri*", "site": "https://scholar.google.com/citations?user=lzFb_ZUAAAAJ"},
+                {"name": "Luca Franco", "site": "https://fraluca.github.io/"},
+                {"name": "John Yang"},
+                {"name": "Yuta Kyuragi", "site": "https://www.linkedin.com/in/yuta-kyuragi-589128294/"},
+                {"name": "Fabio Galasso", "site": "https://fgalasso.bitbucket.io/"},
+                {"name": "Tatsunori Hashimoto", "site": "https://thashim.github.io/"}
+            ],
+            "year": 2025,
+            "paper": "https://arxiv.org/abs/2505.07897"
+        },
+        {
             "title": "Collaborative Gym: A Framework for Enabling and Evaluating Human-Agent Collaboration",
             "authors": [
                 {"name": "Yijia Shao", "site": "https://cs.stanford.edu/~shaoyj/"},
