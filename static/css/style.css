@@ -371,6 +371,10 @@ hr.fade {
   color: var(--text);
 }
 
+blockquote {
+  border-left: 5px solid var(--blue);
+}
+
 /* ------ RESPONSIVE STYLES ------ */
 
 /* Phone */

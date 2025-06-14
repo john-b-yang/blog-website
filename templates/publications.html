@@ -7,7 +7,7 @@
 <div class="publication">
   <b>{{ pub.title }}</b>
   <br />
-  <span>
+  <span style="opacity: 0.6;">
     {% for author in pub.authors %}
       {% if author.site %}
         <a href="{{ author.site }}">{{ author.name }}</a>{% if not loop.last %},{% endif %}
@@ -37,6 +37,11 @@
   <span>
     {% if not pub.paper and not pub.code and not pub.site and not pub.video %}
     <i>Paper details coming soon</i>
+    {% endif %}
+    {% if pub.blog %}
+    <a href="{{ pub.blog }}">
+      <button>Blog</button>
+    </a>
     {% endif %}
     {% if pub.code %}
     <a href="{{ pub.code }}">
