@@ -198,8 +198,7 @@ So your game's going pretty well so far. It's a RPG game set in the 1970s with g
 
 Luckily, Git doesn't force you to choose one or the other. Introducing *git branch*. 'git branch' allows you to create different copies of your project from the same commit. Here's a visualization to help:
 
-<br>
-<img src="/static/pictures/blogs/branching.png" alt="Add Options" style="height:150px;"/><br>
+<img src="/static/pictures/blogs/branching.png" alt="Add Options" style="width:100%;"/><br>
 
 Branches are simply pointers to commits. As a convention, the 'master' branch tends to be a pointer to the working version of a project. By the example, the 'master' branch would most likely hold the latest working copy of your game while the 'feature' branch would point to the multiplayer project. When you merge a branch with another, just like before, it's important to make sure there are no conflicts.
 
