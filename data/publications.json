@@ -17,7 +17,8 @@
             "year": 2025,
             "paper": "https://swesmith.com/assets/paper.pdf",
             "code": "https://github.com/SWE-bench/SWE-smith",
-            "site": "https://swesmith.com/"
+            "site": "https://swesmith.com/",
+            "tweet": "https://x.com/jyangballin/status/1920135686071488875"
         },
         {
             "title": "LongCodeBench: Evaluating Coding LLMs at 1M Context Windows",

@@ -10,7 +10,6 @@
     <a href="https://inst.eecs.berkeley.edu/~cs294-171/fa20/lectures/">Privacy Preserving Systems</a> class.
   </p>
 
-  Popular Tags: 
   {% if tag == 'all' %}
   <div class="block-selected">
   {% else %}
@@ -41,7 +40,7 @@
           <div style="display:flex">
             <div style="flex:20%;color:#8c8b8b;max-width:60px;">{{ (page.date|string)[5:] }}</div>
             <div style="flex:80%">
-              <a style="color:#c8d1d9;" href="{{ url_for("review", path=page.path) }}">
+              <a class="subtext" href="{{ url_for('review', path=page.path) }}">
                 <b>{{ page.title }}</b>
               </a>
             </div>

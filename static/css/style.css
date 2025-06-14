@@ -1,4 +1,18 @@
 :root {
+  --black: #fcfcfa;
+  --black-2: #faf9f5;
+  --blue: #0366d6;
+  --gray: #586069;
+  --green: #2ea043;
+  --white: #24292e;
+  --white-2: #586069;
+  --background: var(--black);
+  --text: var(--white);
+  --nav-bg: var(--black-2);
+  --border: var(--gray);
+}
+
+[data-theme="dark"] {
   --black: #0f1218;
   --black-2: #161c22;
   --blue: #1b9ce2;
@@ -6,12 +20,17 @@
   --green: #2ea043;
   --white: #c8d1d9;
   --white-2: #f0f0f0;
+  --background: var(--black);
+  --text: var(--white);
+  --nav-bg: var(--black-2);
+  --border: var(--gray);
 }
 
 body {
   font-family: basic-sans, 'Helvetica Neue', 'Arial', sans-serif;
-  background-color: var(--black);
-  color: var(--white);
+  background-color: var(--background);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body a {
@@ -107,7 +126,7 @@ hr.fade {
 }
 
 .class-table td, th {
-  border: 2px solid var(--black-2);
+  border: 2px solid var(--border);
   padding: 5px;
 }
 
@@ -117,7 +136,7 @@ hr.fade {
 }
 
 .record th, td {
-  border: 2px solid var(--white);
+  border: 2px solid var(--text);
   padding: 5px;
 }
 
@@ -129,7 +148,7 @@ hr.fade {
 .demos-grid .demo-card {
   margin: 5px;
   display: flex;
-  border-color: var(--gray);
+  border-color: var(--border);
   border-style: dotted;
   width: 30%;
   border-radius: 5px;
@@ -180,9 +199,9 @@ hr.fade {
 
 .publication button {
   background-color: transparent;
-  border: 2px solid var(--white);
+  border: 2px solid var(--text);
   border-radius: 5px;
-  color: var(--white);
+  color: var(--text);
   margin: 2px 5px 0px 0px;
 }
 
@@ -190,15 +209,15 @@ hr.fade {
 
 /* Navigation Bar */
 .navbar {
-  background: var(--black-2);
+  background: var(--nav-bg);
   top: 0;
   right: 0;
   left: 0;
-  color: var(--white);
+  color: var(--text);
 }
 
 .navbar a {
-  color: var(--white);
+  color: var(--text);
 }
 
 .navbar ul {
@@ -208,7 +227,7 @@ hr.fade {
 
 /* Navigation Footer */
 .navfoot {
-  background: var(--black-2);
+  background: var(--nav-bg);
   bottom: 0;
   right: 0;
   left: 0;
@@ -220,7 +239,7 @@ hr.fade {
 }
 
 .navfoot i {
-  color: var(--white);
+  color: var(--text);
 }
 
 .navfoot i:hover {
@@ -347,6 +366,11 @@ hr.fade {
   color: white;
 }
 
+/* Miscellaneous */
+.subtext {
+  color: var(--text);
+}
+
 /* ------ RESPONSIVE STYLES ------ */
 
 /* Phone */
@@ -360,6 +384,13 @@ hr.fade {
 /* Laptop */
 @media (min-width: 960px) {
   .container {
-    max-width: 960px;
+    max-width: 680px;
   }
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  text-decoration: none;
+  height: 0px;
 }

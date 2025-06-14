@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html data-theme="light">
 
 <head>
     <meta charset="utf-8">
@@ -45,6 +45,9 @@
             <a href="{{ url_for("blogs") }}" class="left"><li>BLOG</li></a>
             <a href="{{ url_for("resources") }}" class="left"><li>TEACH</li></a>
             <a href="{{ url_for("papers") }}" class="left"><li>READING</li></a>
+            <button id="theme-toggle" aria-label="Toggle theme" class="theme-toggle">
+              <i class="fa fa-sun-o"></i>
+            </button>
           </ul>
         </div>
       </div>
@@ -64,12 +67,36 @@
         <a href="https://www.linkedin.com/in/jyang20"><i class="fa fa-linkedin fa-lg"></i></a>&ensp;
         <a href="https://twitter.com/jyangballin"><i class="fa fa-twitter fa-lg"></i></a>
         <!-- Omitted "subscribe" w/ fa-envelope icon -->
-        <div style="float:right;">
+        <div class="subtext" style="float:right;">
           &copy; 2025
         </div>
       </div>
     </nav>
     <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script>
+      // Theme switching functionality
+      const themeToggle = document.getElementById('theme-toggle');
+      const html = document.documentElement;
+      
+      // Check for saved theme preference
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      html.setAttribute('data-theme', savedTheme);
+      updateThemeIcon(savedTheme);
+      
+      themeToggle.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+      });
+      
+      function updateThemeIcon(theme) {
+        const icon = themeToggle.querySelector('i');
+        icon.className = theme === 'dark' ? 'fa fa-sun-o' : 'fa fa-moon-o';
+      }
+    </script>
 </body>
 
 </html>
